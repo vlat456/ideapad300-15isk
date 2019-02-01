@@ -53,12 +53,12 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
     External (_PR_.EPCS, FieldUnitObj)
     External (_PR_.TRPD, FieldUnitObj)
     External (_PR_.TRPF, FieldUnitObj)
-    External (_SB_.PCI0.GFX0.CBLV, FieldUnitObj)
-    External (_SB_.PCI0.GFX0.CLID, FieldUnitObj)
-    External (_SB_.PCI0.GFX0.DD1F, UnknownObj)
-    External (_SB_.PCI0.GFX0.GLID, MethodObj)    // 1 Arguments
-    External (_SB_.PCI0.GFX0.GSCI, MethodObj)    // 0 Arguments
-    External (_SB_.PCI0.GFX0.GSSE, FieldUnitObj)
+    External (_SB_.PCI0.IGPU.CBLV, FieldUnitObj)
+    External (_SB_.PCI0.IGPU.CLID, FieldUnitObj)
+    External (_SB_.PCI0.IGPU.DD1F, UnknownObj)
+    External (_SB_.PCI0.IGPU.GLID, MethodObj)    // 1 Arguments
+    External (_SB_.PCI0.IGPU.GSCI, MethodObj)    // 0 Arguments
+    External (_SB_.PCI0.IGPU.GSSE, FieldUnitObj)
     External (_SB_.PCI0.PEG0.HPME, MethodObj)    // Warning: Unknown method, guessing 0 arguments
     External (_SB_.PCI0.PEG1.HPME, MethodObj)    // Warning: Unknown method, guessing 0 arguments
     External (_SB_.PCI0.PEG2.HPME, MethodObj)    // Warning: Unknown method, guessing 0 arguments
@@ -3156,7 +3156,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                     }
                 }
 
-                Device (GFX0)
+                Device (IGPU)
                 {
                     Name (_ADR, 0x00020000)  // _ADR: Address
                 }
@@ -14768,8 +14768,8 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                 SMID,   8
             }
 
-            OperationRegion (GFX0, SystemMemory, 0xFED15994, 0x08)
-            Field (GFX0, ByteAcc, NoLock, Preserve)
+            OperationRegion (IGPU, SystemMemory, 0xFED15994, 0x08)
+            Field (IGPU, ByteAcc, NoLock, Preserve)
             {
                 RP94,   8, 
                 Offset (0x04), 
@@ -15986,12 +15986,12 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                     Store (One, ECON)
                     If (LEqual (LSTE, Zero))
                     {
-                        Store (Zero, ^^^GFX0.CLID)
+                        Store (Zero, ^^^IGPU.CLID)
                     }
 
                     If (LEqual (LSTE, One))
                     {
-                        Store (0x03, ^^^GFX0.CLID)
+                        Store (0x03, ^^^IGPU.CLID)
                     }
 
                     Store (LSTE, LIDS)
@@ -16007,7 +16007,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
             {
                 Store (0x43, P80H)
                 Store (Zero, Local0)
-                Store (^^^GFX0.CBLV, Local1)
+                Store (^^^IGPU.CBLV, Local1)
                 And (Local1, 0xFF, Local1)
                 Switch (ToInteger (Local1))
                 {
@@ -16091,7 +16091,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                     }
                 }
 
-                Notify (^^^GFX0.DD1F, 0x87)
+                Notify (^^^IGPU.DD1F, 0x87)
                 Notify (VPC0, 0x80)
             }
 
@@ -16113,7 +16113,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                     }
                 }
 
-                Notify (^^^GFX0.DD1F, 0x86)
+                Notify (^^^IGPU.DD1F, 0x86)
                 Notify (VPC0, 0x80)
             }
 
@@ -16122,7 +16122,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                 Store (0x15, P80H)
                 Notify (PS2M, 0x0E)
                 Store (One, LIDS)
-                ^^^GFX0.GLID (LIDS)
+                ^^^IGPU.GLID (LIDS)
                 Notify (LID0, 0x80)
             }
 
@@ -16131,7 +16131,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                 Store (0x16, P80H)
                 Notify (PS2M, 0x0D)
                 Store (Zero, LIDS)
-                ^^^GFX0.GLID (LIDS)
+                ^^^IGPU.GLID (LIDS)
                 Notify (LID0, 0x80)
             }
 
@@ -17221,12 +17221,12 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                     {
                         If (LEqual (LIDS, Zero))
                         {
-                            Store (0x80000000, \_SB.PCI0.GFX0.CLID)
+                            Store (0x80000000, \_SB.PCI0.IGPU.CLID)
                         }
 
                         If (LEqual (LIDS, One))
                         {
-                            Store (0x80000003, \_SB.PCI0.GFX0.CLID)
+                            Store (0x80000003, \_SB.PCI0.IGPU.CLID)
                         }
                     }
 
@@ -19643,7 +19643,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
     {
         If (LEqual (And (DIDX, 0x0F00), 0x0400))
         {
-            Notify (\_SB.PCI0.GFX0.DD1F, Arg0)
+            Notify (\_SB.PCI0.IGPU.DD1F, Arg0)
         }
     }
 
@@ -19811,9 +19811,9 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
 
         Method (_L66, 0, NotSerialized)  // _Lxx: Level-Triggered GPE
         {
-            If (LAnd (\_SB.PCI0.GFX0.GSSE, LNot (GSMI)))
+            If (LAnd (\_SB.PCI0.IGPU.GSSE, LNot (GSMI)))
             {
-                \_SB.PCI0.GFX0.GSCI ()
+                \_SB.PCI0.IGPU.GSCI ()
             }
         }
 
