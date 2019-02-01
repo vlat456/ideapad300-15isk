@@ -1,0 +1,74 @@
+9:471  8:781  Found UEFI Acpi 2.0 RSDP at 77FFD014
+9:471  0:000  Saving ACPI tables from RSDP 77FFD014 to EFI\CLOVER\ACPI\origin ...
+9:471  0:000   77FFD014: 'RSD PTR ', Rev: 2 (Acpi 2.0 or newer), Len: 36 -> RSDP.aml
+9:473  0:002    (Xsdt: 77FCB188, Rsdt: 77FCB0C4)
+9:473  0:000    77FCB188: 'XSDT', 'CB-01', Rev: 1, Len: 244 -> XSDT.aml
+9:474  0:001    77FCB0C4: 'RSDT', 'CB-01', Rev: 1, Len: 140 -> RSDT.aml
+9:476  0:001    Tables in Xsdt: 26
+9:476  0:000    0. 77FEB000: 'FACP', 'CB-01', Rev: 5, Len: 268 -> FACP.aml
+9:479  0:003        (Dsdt: 77FD0000, Facs: 77F4E000, XDsdt: 77FD0000, XFacs: 0)
+9:479  0:000        77FD0000: 'DSDT', 'CB-01', Rev: 2, Len: 93330 -> DSDT.aml
+9:488  0:008        77F4E000: 'FACS', Ver: 2, Len: 64 -> FACS.aml
+9:489  0:001    1. 77FFC000: 'TCPA', 'CB-01', Rev: 2, Len: 50 -> TCPA.aml
+9:491  0:001    2. 77FFB000: 'UEFI', 'CB-01', Rev: 1, Len: 566 -> UEFI.aml
+9:493  0:001    3. 77FFA000: 'UEFI', 'CB-01', Rev: 1, Len: 66 -> UEFI.aml
+9:496  0:003    4. 77FF9000: 'SSDT', 'CB-01', Rev: 2, Len: 1207 -> SSDT-0-CB-01.aml
+9:499  0:003    5. 77FF8000: 'SSDT', 'CB-01', Rev: 2, Len: 75 -> SSDT-1-CB-01.aml
+9:504  0:004    6. 77FF7000: 'TPM2', 'CB-01', Rev: 3, Len: 52 -> TPM2.aml
+9:507  0:003    7. 77FF6000: 'POAT', 'CB-01', Rev: 3, Len: 85 -> POAT.aml
+9:510  0:003    8. 77FF2000: 'SSDT', 'CB-01', Rev: 2, Len: 12457 -> SSDT-2-CB-01.aml
+9:520  0:009    9. 77FF1000: 'DBGP', 'CB-01', Rev: 1, Len: 52 -> DBGP.aml
+9:522  0:002    10. 77FF0000: 'DBG2', 'CB-01', Rev: 0, Len: 84 -> DBG2.aml
+9:524  0:002    11. 77FEF000: 'ASF!', 'CB-01', Rev: 32, Len: 165 -> ASF!.aml
+9:527  0:002    12. 77FEE000: 'ASPT', 'CB-01', Rev: 7, Len: 52 -> ASPT.aml
+9:531  0:004    13. 77FED000: 'BOOT', 'CB-01', Rev: 1, Len: 40 -> BOOT.aml
+9:536  0:004    14. 77FEC000: 'DBGP', 'CB-01', Rev: 1, Len: 52 -> DBGP.aml
+9:542  0:006    15. 77FEA000: 'HPET', 'CB-01', Rev: 1, Len: 56 -> HPET.aml
+9:545  0:003    16. 77FE9000: 'LPIT', 'CB-01', Rev: 1, Len: 148 -> LPIT.aml
+9:548  0:002    17. 77FE8000: 'APIC', 'CB-01', Rev: 3, Len: 188 -> APIC.aml
+9:552  0:003    18. 77FE7000: 'MCFG', 'CB-01', Rev: 1, Len: 60 -> MCFG.aml
+9:556  0:004    19. 77FCF000: 'SSDT', 'CB-01', Rev: 1, Len: 724 -> SSDT-3-CB-01.aml
+9:561  0:004    20. 77FCC000: 'SSDT', 'CB-01', Rev: 2, Len: 11182 -> SSDT-4-CB-01.aml
+9:565  0:004    21. 77FCA000: 'SSDT', 'CB-01', Rev: 2, Len: 2873 -> SSDT-5-CB-01.aml
+9:568  0:003    22. 77FC9000: 'SSDT', 'CB-01', Rev: 2, Len: 3672 -> SSDT-6-CB-01.aml (Found hidden SSDT 7 pcs)
+9:571  0:003        * 75E6D718: 'SSDT', 'Cpu0Ist', Rev: 2, Len: 1632  53 53 44 54 60 06 00 00 02 B9 50 6D 52 65 66 00 Internal length = 1632 -> SSDT-x6_0-Cpu0Ist.aml
+9:574  0:002        * 75E6A618: 'SSDT', 'ApIst', Rev: 2, Len: 1450  53 53 44 54 AA 05 00 00 02 B8 50 6D 52 65 66 00 Internal length = 1450 -> SSDT-x6_1-ApIst.aml
+9:577  0:003        * 75E6AC18: 'SSDT', 'Cpu0Cst', Rev: 2, Len: 895  53 53 44 54 7F 03 00 00 02 4F 50 6D 52 65 66 00 Internal length = 895 -> SSDT-x6_2-Cpu0Cst.aml
+9:580  0:002        * 75E6BC18: 'SSDT', 'ApCst', Rev: 2, Len: 281  53 53 44 54 19 01 00 00 02 D4 50 6D 52 65 66 00 Internal length = 281 -> SSDT-x6_3-ApCst.aml
+9:583  0:002        * 75E6CF18: 'SSDT', 'Cpu0Hwp', Rev: 2, Len: 142  53 53 44 54 8E 00 00 00 02 15 50 6D 52 65 66 00 Internal length = 142 -> SSDT-x6_4-Cpu0Hwp.aml
+9:588  0:004        * 75E6BA98: 'SSDT', 'ApHwp', Rev: 2, Len: 281  53 53 44 54 19 01 00 00 02 E7 50 6D 52 65 66 00 Internal length = 281 -> SSDT-x6_5-ApHwp.aml
+9:591  0:003        * 75E6BD98: 'SSDT', 'HwpLvt', Rev: 2, Len: 304  53 53 44 54 30 01 00 00 02 6F 50 6D 52 65 66 00 Internal length = 304 -> SSDT-x6_6-HwpLvt.aml
+9:595  0:004  
+9:595  0:000    23. 77FC8000: 'DMAR', 'CB-01', Rev: 1, Len: 168 -> DMAR.aml
+9:598  0:002    24. 77FC7000: 'FPDT', 'CB-01', Rev: 1, Len: 68 -> FPDT.aml
+9:600  0:002    25. 77FC6000: 'BGRT', 'CB-01', Rev: 1, Len: 56 -> BGRT.aml
+9:603  0:003    Tables in Rsdt: 26
+9:603  0:000    0. 77FEB000: 'FACP', 'CB-01', Rev: 5, Len: 268
+9:603  0:000        (Dsdt: 77FD0000, Facs: 77F4E000, XDsdt: 77FD0000, XFacs: 0)
+9:603  0:000        77FD0000: 'DSDT', 'CB-01', Rev: 2, Len: 93330
+9:605  0:001        77F4E000: 'FACS', Ver: 2, Len: 64
+9:605  0:000    1. 77FFC000: 'TCPA', 'CB-01', Rev: 2, Len: 50
+9:605  0:000    2. 77FFB000: 'UEFI', 'CB-01', Rev: 1, Len: 566
+9:605  0:000    3. 77FFA000: 'UEFI', 'CB-01', Rev: 1, Len: 66
+9:605  0:000    4. 77FF9000: 'SSDT', 'CB-01', Rev: 2, Len: 1207
+9:605  0:000    5. 77FF8000: 'SSDT', 'CB-01', Rev: 2, Len: 75
+9:605  0:000    6. 77FF7000: 'TPM2', 'CB-01', Rev: 3, Len: 52
+9:605  0:000    7. 77FF6000: 'POAT', 'CB-01', Rev: 3, Len: 85
+9:605  0:000    8. 77FF2000: 'SSDT', 'CB-01', Rev: 2, Len: 12457
+9:605  0:000    9. 77FF1000: 'DBGP', 'CB-01', Rev: 1, Len: 52
+9:605  0:000    10. 77FF0000: 'DBG2', 'CB-01', Rev: 0, Len: 84
+9:605  0:000    11. 77FEF000: 'ASF!', 'CB-01', Rev: 32, Len: 165
+9:605  0:000    12. 77FEE000: 'ASPT', 'CB-01', Rev: 7, Len: 52
+9:605  0:000    13. 77FED000: 'BOOT', 'CB-01', Rev: 1, Len: 40
+9:605  0:000    14. 77FEC000: 'DBGP', 'CB-01', Rev: 1, Len: 52
+9:605  0:000    15. 77FEA000: 'HPET', 'CB-01', Rev: 1, Len: 56
+9:605  0:000    16. 77FE9000: 'LPIT', 'CB-01', Rev: 1, Len: 148
+9:605  0:000    17. 77FE8000: 'APIC', 'CB-01', Rev: 3, Len: 188
+9:605  0:000    18. 77FE7000: 'MCFG', 'CB-01', Rev: 1, Len: 60
+9:605  0:000    19. 77FCF000: 'SSDT', 'CB-01', Rev: 1, Len: 724
+9:605  0:000    20. 77FCC000: 'SSDT', 'CB-01', Rev: 2, Len: 11182
+9:605  0:000    21. 77FCA000: 'SSDT', 'CB-01', Rev: 2, Len: 2873
+9:605  0:000    22. 77FC9000: 'SSDT', 'CB-01', Rev: 2, Len: 3672
+9:605  0:000    23. 77FC8000: 'DMAR', 'CB-01', Rev: 1, Len: 168
+9:605  0:000    24. 77FC7000: 'FPDT', 'CB-01', Rev: 1, Len: 68
+9:605  0:000    25. 77FC6000: 'BGRT', 'CB-01', Rev: 1, Len: 56
