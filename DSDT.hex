@@ -3,13 +3,13 @@
 ; ASL+ Optimizing Compiler/Disassembler version 20180427 (64-bit version)(RM)
 ; Copyright (c) 2000 - 2018 Intel Corporation
 ; 
-; Compilation of "DSDT.dsl" - Fri Feb  1 15:24:35 2019
+; Compilation of "DSDT.dsl" - Fri Feb  1 15:41:28 2019
 ; 
 ; Assembly code source output
 ; AML code block contains 0x17122 bytes
 ;
   db  044h,053h,044h,054h,022h,071h,001h,000h   ; 00000000    "DSDT"q.."
-  db  002h,0E4h,04Ch,045h,04Eh,04Fh,056h,04Fh   ; 00000008    "..LENOVO"
+  db  002h,0E8h,04Ch,045h,04Eh,04Fh,056h,04Fh   ; 00000008    "..LENOVO"
   db  043h,042h,02Dh,030h,031h,020h,020h,020h   ; 00000010    "CB-01   "
   db  001h,000h,000h,000h,049h,04Eh,054h,04Ch   ; 00000018    "....INTL"
   db  027h,004h,018h,020h,0A0h,04Dh,027h,000h   ; 00000020    "'.. .M'."
@@ -7019,7 +7019,7 @@
   db  046h,00Ah,00Bh,000h,070h,00Dh,000h,088h   ; 0000DB00    "F...p..."
   db  050h,042h,049h,046h,00Ah,00Ch,000h,008h   ; 0000DB08    "PBIF...."
   db  042h,044h,04Eh,054h,011h,004h,00Ah,009h   ; 0000DB10    "BDNT...."
-  db  000h,070h,052h,045h,043h,042h,00Ah,099h   ; 0000DB18    ".pRECB.."
+  db  000h,070h,052h,045h,043h,042h,00Ah,098h   ; 0000DB18    ".pRECB.."
   db  00Ah,038h,042h,044h,04Eh,054h,070h,09Ch   ; 0000DB20    ".8BDNTp."
   db  042h,044h,04Eh,054h,0FFh,000h,088h,050h   ; 0000DB28    "BDNT...P"
   db  042h,049h,046h,00Ah,009h,000h,070h,042h   ; 0000DB30    "BIF...pB"
@@ -7044,7 +7044,7 @@
   db  043h,048h,030h,0FFh,000h,088h,050h,042h   ; 0000DBC8    "CH0...PB"
   db  049h,046h,00Ah,00Bh,000h,008h,042h,04Dh   ; 0000DBD0    "IF....BM"
   db  04Eh,054h,011h,004h,00Ah,00Ah,000h,070h   ; 0000DBD8    "NT.....p"
-  db  052h,045h,043h,042h,00Ah,090h,00Ah,038h   ; 0000DBE0    "RECB...8"
+  db  052h,045h,043h,042h,00Ah,08Fh,00Ah,038h   ; 0000DBE0    "RECB...8"
   db  042h,04Dh,04Eh,054h,070h,09Ch,042h,04Dh   ; 0000DBE8    "BMNTp.BM"
   db  04Eh,054h,0FFh,000h,088h,050h,042h,049h   ; 0000DBF0    "NT...PBI"
   db  046h,00Ah,00Ch,000h,0A4h,050h,042h,049h   ; 0000DBF8    "F....PBI"
@@ -7413,11 +7413,11 @@
   db  044h,043h,048h,030h,070h,044h,043h,048h   ; 0000E750    "DCH0pDCH"
   db  030h,044h,043h,048h,045h,008h,042h,044h   ; 0000E758    "0DCHE.BD"
   db  04Eh,054h,011h,004h,00Ah,008h,000h,070h   ; 0000E760    "NT.....p"
-  db  052h,045h,043h,042h,00Ah,099h,00Ah,038h   ; 0000E768    "RECB...8"
+  db  052h,045h,043h,042h,00Ah,098h,00Ah,038h   ; 0000E768    "RECB...8"
   db  042h,044h,04Eh,054h,070h,042h,044h,04Eh   ; 0000E770    "BDNTpBDN"
   db  054h,044h,04Eh,041h,04Dh,008h,042h,04Dh   ; 0000E778    "TDNAM.BM"
   db  04Eh,054h,011h,004h,00Ah,00Ch,000h,070h   ; 0000E780    "NT.....p"
-  db  052h,045h,043h,042h,00Ah,090h,00Ah,048h   ; 0000E788    "RECB...H"
+  db  052h,045h,043h,042h,00Ah,08Fh,00Ah,048h   ; 0000E788    "RECB...H"
   db  042h,04Dh,04Eh,054h,070h,042h,04Dh,04Eh   ; 0000E790    "BMNTpBMN"
   db  054h,04Dh,04Eh,041h,04Dh,008h,042h,052h   ; 0000E798    "TMNAM.BR"
   db  04Eh,030h,011h,004h,00Ah,017h,000h,070h   ; 0000E7A0    "N0.....p"
