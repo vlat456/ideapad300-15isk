@@ -5,7 +5,7 @@
  * 
  * Disassembling to non-symbolic legacy ASL operators
  *
- * Disassembly of SSDT-x6_1-ApIst.aml, Fri Feb  1 15:37:33 2019
+ * Disassembly of SSDT-x6_1-ApIst.aml, Fri Feb  1 18:33:50 2019
  *
  * Original Table Header:
  *     Signature        "SSDT"
@@ -23,15 +23,15 @@ DefinitionBlock ("", "SSDT", 2, "PmRef", "ApIst", 0x00003000)
     External (_PR_.CPU0._PCT, MethodObj)    // 0 Arguments
     External (_PR_.CPU0._PPC, MethodObj)    // 0 Arguments
     External (_PR_.CPU0._PSS, MethodObj)    // 0 Arguments
-    External (_PR_.CPU1, ProcessorObj)
-    External (_PR_.CPU2, ProcessorObj)
-    External (_PR_.CPU3, ProcessorObj)
-    External (_PR_.CPU4, ProcessorObj)
-    External (_PR_.CPU5, ProcessorObj)
-    External (_PR_.CPU6, ProcessorObj)
-    External (_PR_.CPU7, ProcessorObj)
+    External (_PR_.CPU1, DeviceObj)    // Warning: Unknown object
+    External (_PR_.CPU2, DeviceObj)    // Warning: Unknown object
+    External (_PR_.CPU3, DeviceObj)    // Warning: Unknown object
+    External (_PR_.CPU4, DeviceObj)    // Warning: Unknown object
+    External (_PR_.CPU5, DeviceObj)    // Warning: Unknown object
+    External (_PR_.CPU6, DeviceObj)    // Warning: Unknown object
+    External (_PR_.CPU7, DeviceObj)    // Warning: Unknown object
     External (PDC0, IntObj)
-    External (TCNT, FieldUnitObj)
+    External (TCNT, IntObj)    // Warning: Unknown object
 
     Scope (\_PR.CPU1)
     {

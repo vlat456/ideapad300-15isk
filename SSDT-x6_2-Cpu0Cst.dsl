@@ -5,7 +5,7 @@
  * 
  * Disassembling to non-symbolic legacy ASL operators
  *
- * Disassembly of SSDT-x6_2-Cpu0Cst.aml, Fri Feb  1 15:37:33 2019
+ * Disassembly of SSDT-x6_2-Cpu0Cst.aml, Fri Feb  1 18:33:50 2019
  *
  * Original Table Header:
  *     Signature        "SSDT"
@@ -31,7 +31,7 @@ DefinitionBlock ("", "SSDT", 2, "PmRef", "Cpu0Cst", 0x00003001)
     External (_PR_.CDMW, FieldUnitObj)
     External (_PR_.CDPW, FieldUnitObj)
     External (_PR_.CFGD, FieldUnitObj)
-    External (_PR_.CPU0, ProcessorObj)
+    External (_PR_.CPU0, DeviceObj)    // Warning: Unknown object
     External (PDC0, IntObj)
 
     Scope (\_PR.CPU0)

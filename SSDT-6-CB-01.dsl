@@ -5,7 +5,7 @@
  * 
  * Disassembling to non-symbolic legacy ASL operators
  *
- * Disassembly of SSDT-6-CB-01.aml, Fri Feb  1 15:37:33 2019
+ * Disassembly of SSDT-6-CB-01.aml, Fri Feb  1 18:33:50 2019
  *
  * Original Table Header:
  *     Signature        "SSDT"
@@ -20,15 +20,15 @@
  */
 DefinitionBlock ("", "SSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
 {
-    External (_PR_.CPU0, ProcessorObj)
-    External (_PR_.CPU1, ProcessorObj)
-    External (_PR_.CPU2, ProcessorObj)
-    External (_PR_.CPU3, ProcessorObj)
-    External (_PR_.CPU4, ProcessorObj)
-    External (_PR_.CPU5, ProcessorObj)
-    External (_PR_.CPU6, ProcessorObj)
-    External (_PR_.CPU7, ProcessorObj)
-    External (_SB_.OSCP, IntObj)
+    External (_PR_.CPU0, DeviceObj)    // Warning: Unknown object
+    External (_PR_.CPU1, DeviceObj)    // Warning: Unknown object
+    External (_PR_.CPU2, DeviceObj)    // Warning: Unknown object
+    External (_PR_.CPU3, DeviceObj)    // Warning: Unknown object
+    External (_PR_.CPU4, DeviceObj)    // Warning: Unknown object
+    External (_PR_.CPU5, DeviceObj)    // Warning: Unknown object
+    External (_PR_.CPU6, DeviceObj)    // Warning: Unknown object
+    External (_PR_.CPU7, DeviceObj)    // Warning: Unknown object
+    External (_SB_.OSCP, UnknownObj)    // Warning: Unknown object
 
     Scope (\)
     {

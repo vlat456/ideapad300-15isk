@@ -5,7 +5,7 @@
  * 
  * Disassembling to non-symbolic legacy ASL operators
  *
- * Disassembly of SSDT-4-CB-01.aml, Fri Feb  1 15:37:33 2019
+ * Disassembly of SSDT-4-CB-01.aml, Fri Feb  1 18:33:50 2019
  *
  * Original Table Header:
  *     Signature        "SSDT"
@@ -119,8 +119,8 @@ DefinitionBlock ("", "SSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
     External (_SB_.PCI0.LPCB.H_EC.TSR5, UnknownObj)    // Warning: Unknown object
     External (_TZ_.TZ00._TMP, IntObj)    // Warning: Unknown object
     External (_TZ_.TZ01._TMP, IntObj)    // Warning: Unknown object
-    External (BID_, FieldUnitObj)
-    External (PAMT, FieldUnitObj)
+    External (BID_, IntObj)    // Warning: Unknown object
+    External (PAMT, IntObj)    // Warning: Unknown object
 
     Scope (\_SB)
     {

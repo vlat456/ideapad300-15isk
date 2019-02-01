@@ -5,7 +5,7 @@
  * 
  * Disassembling to non-symbolic legacy ASL operators
  *
- * Disassembly of SSDT-3-CB-01.aml, Fri Feb  1 15:37:33 2019
+ * Disassembly of SSDT-3-CB-01.aml, Fri Feb  1 18:33:50 2019
  *
  * Original Table Header:
  *     Signature        "SSDT"
@@ -20,13 +20,33 @@
  */
 DefinitionBlock ("", "SSDT", 1, "LENOVO", "CB-01   ", 0x00000001)
 {
-    External (_SB_.GGOV, MethodObj)    // 1 Arguments
-    External (_SB_.PCI0.GEXP.GEPS, MethodObj)    // 2 Arguments
-    External (_SB_.PCI0.GEXP.SGEP, MethodObj)    // 3 Arguments
-    External (_SB_.SGOV, MethodObj)    // 2 Arguments
-    External (ADBG, MethodObj)    // 1 Arguments
-    External (BID_, FieldUnitObj)
-    External (EIDF, FieldUnitObj)
+    /*
+     * iASL Warning: There were 5 external control methods found during
+     * disassembly, but only 0 were resolved (5 unresolved). Additional
+     * ACPI tables may be required to properly disassemble the code. This
+     * resulting disassembler output file may not compile because the
+     * disassembler did not know how many arguments to assign to the
+     * unresolved methods. Note: SSDTs can be dynamically loaded at
+     * runtime and may or may not be available via the host OS.
+     *
+     * In addition, the -fe option can be used to specify a file containing
+     * control method external declarations with the associated method
+     * argument counts. Each line of the file must be of the form:
+     *     External (<method pathname>, MethodObj, <argument count>)
+     * Invocation:
+     *     iasl -fe refs.txt -d dsdt.aml
+     *
+     * The following methods were unresolved and many not compile properly
+     * because the disassembler had to guess at the number of arguments
+     * required for each:
+     */
+    External (_SB_.GGOV, MethodObj)    // Warning: Unknown method, guessing 0 arguments
+    External (_SB_.PCI0.GEXP.GEPS, MethodObj)    // Warning: Unknown method, guessing 1 arguments
+    External (_SB_.PCI0.GEXP.SGEP, MethodObj)    // Warning: Unknown method, guessing 3 arguments
+    External (_SB_.SGOV, MethodObj)    // Warning: Unknown method, guessing 2 arguments
+    External (ADBG, MethodObj)    // Warning: Unknown method, guessing 1 arguments
+    External (BID_, UnknownObj)    // Warning: Unknown object
+    External (EIDF, UnknownObj)    // Warning: Unknown object
 
     Scope (\)
     {
@@ -79,7 +99,8 @@ DefinitionBlock ("", "SSDT", 1, "LENOVO", "CB-01   ", 0x00000001)
                                 {
                                     Store (DerefOf (Index (Arg3, Zero)), PECE)
                                     Store (DerefOf (Index (Arg3, One)), PECD)
-                                    Store (\_SB.PCI0.GEXP.GEPS (Zero, 0x0C), OLDV)
+                                    Store (\_SB.PCI0.GEXP.GEPS (Zero), 0x0C)
+                                    OLDV
                                     \_SB.PCI0.GEXP.SGEP (Zero, 0x0C, PECE)
                                     If (LGreater (PECD, Zero))
                                     {
@@ -97,12 +118,14 @@ DefinitionBlock ("", "SSDT", 1, "LENOVO", "CB-01   ", 0x00000001)
                                 Store (DerefOf (Index (Arg3, One)), DFUD)
                                 If (LEqual (BID, 0x20))
                                 {
-                                    Store (\_SB.GGOV (0x02000015), OLDV)
+                                    Store (\_SB.GGOV (), 0x02000015)
+                                    OLDV
                                     \_SB.SGOV (0x02000015, DFUE)
                                 }
                                 Else
                                 {
-                                    Store (\_SB.GGOV (0x02040003), OLDV)
+                                    Store (\_SB.GGOV (), 0x02040003)
+                                    OLDV
                                     \_SB.SGOV (0x02040003, DFUE)
                                 }
 
@@ -126,13 +149,16 @@ DefinitionBlock ("", "SSDT", 1, "LENOVO", "CB-01   ", 0x00000001)
                                 ADBG ("EIAD F:3")
                                 If (LEqual (BID, 0x20))
                                 {
-                                    Store (\_SB.GGOV (0x02000015), DFUV)
+                                    Store (\_SB.GGOV (), 0x02000015)
+                                    DFUV
                                     Store (One, PECV)
                                 }
                                 Else
                                 {
-                                    Store (\_SB.GGOV (0x02040003), DFUV)
-                                    Store (\_SB.PCI0.GEXP.GEPS (Zero, 0x0C), PECV)
+                                    Store (\_SB.GGOV (), 0x02040003)
+                                    DFUV
+                                    Store (\_SB.PCI0.GEXP.GEPS (Zero), 0x0C)
+                                    PECV
                                 }
 
                                 Return (Package (0x02)

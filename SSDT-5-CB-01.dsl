@@ -5,7 +5,7 @@
  * 
  * Disassembling to non-symbolic legacy ASL operators
  *
- * Disassembly of SSDT-5-CB-01.aml, Fri Feb  1 15:37:33 2019
+ * Disassembly of SSDT-5-CB-01.aml, Fri Feb  1 18:33:50 2019
  *
  * Original Table Header:
  *     Signature        "SSDT"
@@ -22,7 +22,7 @@ DefinitionBlock ("", "SSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
 {
     /*
      * iASL Warning: There were 3 external control methods found during
-     * disassembly, but only 1 was resolved (2 unresolved). Additional
+     * disassembly, but only 0 were resolved (3 unresolved). Additional
      * ACPI tables may be required to properly disassemble the code. This
      * resulting disassembler output file may not compile because the
      * disassembler did not know how many arguments to assign to the
@@ -52,9 +52,9 @@ DefinitionBlock ("", "SSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
     External (_SB_.PCI0.LPCB.H_EC.CTL5, UnknownObj)    // Warning: Unknown object
     External (_SB_.PCI0.LPCB.H_EC.CTL6, UnknownObj)    // Warning: Unknown object
     External (_SB_.PCI0.LPCB.H_EC.CTL7, UnknownObj)    // Warning: Unknown object
-    External (_SB_.PCI0.LPCB.H_EC.ECMD, MethodObj)    // Warning: Unknown method, guessing 2 arguments
+    External (_SB_.PCI0.LPCB.H_EC.ECMD, MethodObj)    // Warning: Unknown method, guessing 4 arguments
     External (_SB_.PCI0.LPCB.H_EC.ECRD, IntObj)    // Warning: Unknown object
-    External (_SB_.PCI0.LPCB.H_EC.ECWT, MethodObj)    // Warning: Unknown method, guessing 5 arguments
+    External (_SB_.PCI0.LPCB.H_EC.ECWT, MethodObj)    // Warning: Unknown method, guessing 7 arguments
     External (_SB_.PCI0.LPCB.H_EC.MGI0, UnknownObj)    // Warning: Unknown object
     External (_SB_.PCI0.LPCB.H_EC.MGI1, UnknownObj)    // Warning: Unknown object
     External (_SB_.PCI0.LPCB.H_EC.MGI2, UnknownObj)    // Warning: Unknown object
@@ -88,9 +88,9 @@ DefinitionBlock ("", "SSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
     External (_SB_.PCI0.LPCB.H_EC.MGOE, UnknownObj)    // Warning: Unknown object
     External (_SB_.PCI0.LPCB.H_EC.MGOF, UnknownObj)    // Warning: Unknown object
     External (_SB_.PCI0.XHC_.RHUB.TPLD, IntObj)    // Warning: Unknown object
-    External (BID_, FieldUnitObj)
-    External (P8XH, MethodObj)    // 2 Arguments
-    External (UBCB, FieldUnitObj)
+    External (BID_, UnknownObj)    // Warning: Unknown object
+    External (P8XH, MethodObj)    // Warning: Unknown method, guessing 2 arguments
+    External (UBCB, IntObj)    // Warning: Unknown object
 
     Scope (\_SB)
     {
@@ -106,7 +106,7 @@ DefinitionBlock ("", "SSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                 Memory32Fixed (ReadWrite,
                     0x00000000,         // Address Base
                     0x00001000,         // Address Length
-                    _Y2C)
+                    _Y01)
             })
             Device (CR01)
             {
@@ -121,7 +121,7 @@ DefinitionBlock ("", "SSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
 
             Method (_CRS, 0, Serialized)  // _CRS: Current Resource Settings
             {
-                CreateDWordField (CRS, \_SB.UBTC._Y2C._BAS, CBAS)  // _BAS: Base Address
+                CreateDWordField (CRS, \_SB.UBTC._Y01._BAS, CBAS)  // _BAS: Base Address
                 Store (UBCB, CBAS)
                 Return (CRS)
             }
@@ -206,49 +206,49 @@ DefinitionBlock ("", "SSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                         }
                         ElseIf (LEqual (_T_0, One))
                         {
-                            \_SB.PCI0.LPCB.H_EC.ECWT (MGO0, RefOf (\_SB.PCI0.LPCB.H_EC.MGO0), \_SB.PCI0.LPCB.H_EC.ECWT (MGO1, RefOf (\_SB.PCI0.LPCB.H_EC.MGO1), \_SB.PCI0.LPCB.H_EC.ECWT (MGO2, RefOf (\_SB.PCI0.LPCB.H_EC.MGO2), \_SB.PCI0.LPCB.H_EC.ECWT (MGO3, RefOf (\_SB.PCI0.LPCB.H_EC.MGO3), \_SB.PCI0.LPCB.H_EC.ECWT (MGO4, RefOf (\_SB.PCI0.LPCB.H_EC.MGO4), \_SB.PCI0.LPCB.H_EC.ECWT (MGO5, RefOf (\_SB.PCI0.LPCB.H_EC.MGO5), \_SB.PCI0.LPCB.H_EC.ECWT (MGO6, RefOf (\_SB.PCI0.LPCB.H_EC.MGO6), \_SB.PCI0.LPCB.H_EC.ECWT (MGO7, RefOf (\_SB.PCI0.LPCB.H_EC.MGO7), \_SB.PCI0.LPCB.H_EC.ECWT (MGO8, RefOf (\_SB.PCI0.LPCB.H_EC.MGO8), \_SB.PCI0.LPCB.H_EC.ECWT (MGO9, RefOf (\_SB.PCI0.LPCB.H_EC.MGO9), \_SB.PCI0.LPCB.H_EC.ECWT (MGOA, RefOf (\_SB.PCI0.LPCB.H_EC.MGOA), \_SB.PCI0.LPCB.H_EC.ECWT (MGOB, RefOf (\_SB.PCI0.LPCB.H_EC.MGOB), \_SB.PCI0.LPCB.H_EC.ECWT (MGOC, RefOf (\_SB.PCI0.LPCB.H_EC.MGOC), \_SB.PCI0.LPCB.H_EC.ECWT (MGOD, RefOf (\_SB.PCI0.LPCB.H_EC.MGOD), \_SB.PCI0.LPCB.H_EC.ECWT (MGOE, RefOf (\_SB.PCI0.LPCB.H_EC.MGOE), \_SB.PCI0.LPCB.H_EC.ECWT (MGOF, RefOf (\_SB.PCI0.LPCB.H_EC.MGOF), \_SB.PCI0.LPCB.H_EC.ECWT (CTL0, RefOf (\_SB.PCI0.LPCB.H_EC.CTL0), \_SB.PCI0.LPCB.H_EC.ECWT (CTL1, RefOf (\_SB.PCI0.LPCB.H_EC.CTL1), \_SB.PCI0.LPCB.H_EC.ECWT (CTL2, RefOf (\_SB.PCI0.LPCB.H_EC.CTL2), \_SB.PCI0.LPCB.H_EC.ECWT (CTL3, RefOf (\_SB.PCI0.LPCB.H_EC.CTL3), \_SB.PCI0.LPCB.H_EC.ECWT (CTL4, RefOf (\_SB.PCI0.LPCB.H_EC.CTL4), \_SB.PCI0.LPCB.H_EC.ECWT (CTL5, RefOf (\_SB.PCI0.LPCB.H_EC.CTL5), \_SB.PCI0.LPCB.H_EC.ECWT (CTL6, RefOf (\_SB.PCI0.LPCB.H_EC.CTL6), \_SB.PCI0.LPCB.H_EC.ECWT (CTL7, RefOf (\_SB.PCI0.LPCB.H_EC.CTL7), \_SB.PCI0.LPCB.H_EC.ECMD (0xE0, P8XH (Zero, 0xE0)), ElseIf (LEqual (_T_0, 0x02))
-                                                                                                                            {
-                                                                                                                                Store (\_SB.PCI0.LPCB.H_EC.ECRD, RefOf (\_SB.PCI0.LPCB.H_EC.MGI0))
-                                                                                                                                MGI0
-                                                                                                                                Store (\_SB.PCI0.LPCB.H_EC.ECRD, RefOf (\_SB.PCI0.LPCB.H_EC.MGI1))
-                                                                                                                                MGI1
-                                                                                                                                Store (\_SB.PCI0.LPCB.H_EC.ECRD, RefOf (\_SB.PCI0.LPCB.H_EC.MGI2))
-                                                                                                                                MGI2
-                                                                                                                                Store (\_SB.PCI0.LPCB.H_EC.ECRD, RefOf (\_SB.PCI0.LPCB.H_EC.MGI3))
-                                                                                                                                MGI3
-                                                                                                                                Store (\_SB.PCI0.LPCB.H_EC.ECRD, RefOf (\_SB.PCI0.LPCB.H_EC.MGI4))
-                                                                                                                                MGI4
-                                                                                                                                Store (\_SB.PCI0.LPCB.H_EC.ECRD, RefOf (\_SB.PCI0.LPCB.H_EC.MGI5))
-                                                                                                                                MGI5
-                                                                                                                                Store (\_SB.PCI0.LPCB.H_EC.ECRD, RefOf (\_SB.PCI0.LPCB.H_EC.MGI6))
-                                                                                                                                MGI6
-                                                                                                                                Store (\_SB.PCI0.LPCB.H_EC.ECRD, RefOf (\_SB.PCI0.LPCB.H_EC.MGI7))
-                                                                                                                                MGI7
-                                                                                                                                Store (\_SB.PCI0.LPCB.H_EC.ECRD, RefOf (\_SB.PCI0.LPCB.H_EC.MGI8))
-                                                                                                                                MGI8
-                                                                                                                                Store (\_SB.PCI0.LPCB.H_EC.ECRD, RefOf (\_SB.PCI0.LPCB.H_EC.MGI9))
-                                                                                                                                MGI9
-                                                                                                                                Store (\_SB.PCI0.LPCB.H_EC.ECRD, RefOf (\_SB.PCI0.LPCB.H_EC.MGIA))
-                                                                                                                                MGIA
-                                                                                                                                Store (\_SB.PCI0.LPCB.H_EC.ECRD, RefOf (\_SB.PCI0.LPCB.H_EC.MGIB))
-                                                                                                                                MGIB
-                                                                                                                                Store (\_SB.PCI0.LPCB.H_EC.ECRD, RefOf (\_SB.PCI0.LPCB.H_EC.MGIC))
-                                                                                                                                MGIC
-                                                                                                                                Store (\_SB.PCI0.LPCB.H_EC.ECRD, RefOf (\_SB.PCI0.LPCB.H_EC.MGID))
-                                                                                                                                MGID
-                                                                                                                                Store (\_SB.PCI0.LPCB.H_EC.ECRD, RefOf (\_SB.PCI0.LPCB.H_EC.MGIE))
-                                                                                                                                MGIE
-                                                                                                                                Store (\_SB.PCI0.LPCB.H_EC.ECRD, RefOf (\_SB.PCI0.LPCB.H_EC.MGIF))
-                                                                                                                                MGIF
-                                                                                                                                Store (\_SB.PCI0.LPCB.H_EC.ECRD, RefOf (\_SB.PCI0.LPCB.H_EC.CCI0))
-                                                                                                                                CCI0
-                                                                                                                                Store (\_SB.PCI0.LPCB.H_EC.ECRD, RefOf (\_SB.PCI0.LPCB.H_EC.CCI1))
-                                                                                                                                CCI1
-                                                                                                                                Store (\_SB.PCI0.LPCB.H_EC.ECRD, RefOf (\_SB.PCI0.LPCB.H_EC.CCI2))
-                                                                                                                                CCI2
-                                                                                                                                Store (\_SB.PCI0.LPCB.H_EC.ECRD, RefOf (\_SB.PCI0.LPCB.H_EC.CCI3))
-                                                                                                                                CCI3
-                                                                                                                            }, Break), Return (Zero))))))))))))))))))))))))
+                            \_SB.PCI0.LPCB.H_EC.ECWT (MGO0, RefOf (\_SB.PCI0.LPCB.H_EC.MGO0), \_SB.PCI0.LPCB.H_EC.ECWT (MGO1, RefOf (\_SB.PCI0.LPCB.H_EC.MGO1), \_SB.PCI0.LPCB.H_EC.ECWT (MGO2, RefOf (\_SB.PCI0.LPCB.H_EC.MGO2), \_SB.PCI0.LPCB.H_EC.ECWT (MGO3, RefOf (\_SB.PCI0.LPCB.H_EC.MGO3), \_SB.PCI0.LPCB.H_EC.ECWT (MGO4, RefOf (\_SB.PCI0.LPCB.H_EC.MGO4), \_SB.PCI0.LPCB.H_EC.ECWT (MGO5, RefOf (\_SB.PCI0.LPCB.H_EC.MGO5), \_SB.PCI0.LPCB.H_EC.ECWT (MGO6, RefOf (\_SB.PCI0.LPCB.H_EC.MGO6), \_SB.PCI0.LPCB.H_EC.ECWT (MGO7, RefOf (\_SB.PCI0.LPCB.H_EC.MGO7), \_SB.PCI0.LPCB.H_EC.ECWT (MGO8, RefOf (\_SB.PCI0.LPCB.H_EC.MGO8), \_SB.PCI0.LPCB.H_EC.ECWT (MGO9, RefOf (\_SB.PCI0.LPCB.H_EC.MGO9), \_SB.PCI0.LPCB.H_EC.ECWT (MGOA, RefOf (\_SB.PCI0.LPCB.H_EC.MGOA), \_SB.PCI0.LPCB.H_EC.ECWT (MGOB, RefOf (\_SB.PCI0.LPCB.H_EC.MGOB), \_SB.PCI0.LPCB.H_EC.ECWT (MGOC, RefOf (\_SB.PCI0.LPCB.H_EC.MGOC), \_SB.PCI0.LPCB.H_EC.ECWT (MGOD, RefOf (\_SB.PCI0.LPCB.H_EC.MGOD), \_SB.PCI0.LPCB.H_EC.ECWT (MGOE, RefOf (\_SB.PCI0.LPCB.H_EC.MGOE), \_SB.PCI0.LPCB.H_EC.ECWT (MGOF, RefOf (\_SB.PCI0.LPCB.H_EC.MGOF), \_SB.PCI0.LPCB.H_EC.ECWT (CTL0, RefOf (\_SB.PCI0.LPCB.H_EC.CTL0), \_SB.PCI0.LPCB.H_EC.ECWT (CTL1, RefOf (\_SB.PCI0.LPCB.H_EC.CTL1), \_SB.PCI0.LPCB.H_EC.ECWT (CTL2, RefOf (\_SB.PCI0.LPCB.H_EC.CTL2), \_SB.PCI0.LPCB.H_EC.ECWT (CTL3, RefOf (\_SB.PCI0.LPCB.H_EC.CTL3), \_SB.PCI0.LPCB.H_EC.ECWT (CTL4, RefOf (\_SB.PCI0.LPCB.H_EC.CTL4), \_SB.PCI0.LPCB.H_EC.ECWT (CTL5, RefOf (\_SB.PCI0.LPCB.H_EC.CTL5), \_SB.PCI0.LPCB.H_EC.ECWT (CTL6, RefOf (\_SB.PCI0.LPCB.H_EC.CTL6), \_SB.PCI0.LPCB.H_EC.ECWT (CTL7, RefOf (\_SB.PCI0.LPCB.H_EC.CTL7), \_SB.PCI0.LPCB.H_EC.ECMD (0xE0, P8XH (Zero, 0xE0), ElseIf (LEqual (_T_0, 0x02))
+                                                                                                                                {
+                                                                                                                                    Store (\_SB.PCI0.LPCB.H_EC.ECRD, RefOf (\_SB.PCI0.LPCB.H_EC.MGI0))
+                                                                                                                                    MGI0
+                                                                                                                                    Store (\_SB.PCI0.LPCB.H_EC.ECRD, RefOf (\_SB.PCI0.LPCB.H_EC.MGI1))
+                                                                                                                                    MGI1
+                                                                                                                                    Store (\_SB.PCI0.LPCB.H_EC.ECRD, RefOf (\_SB.PCI0.LPCB.H_EC.MGI2))
+                                                                                                                                    MGI2
+                                                                                                                                    Store (\_SB.PCI0.LPCB.H_EC.ECRD, RefOf (\_SB.PCI0.LPCB.H_EC.MGI3))
+                                                                                                                                    MGI3
+                                                                                                                                    Store (\_SB.PCI0.LPCB.H_EC.ECRD, RefOf (\_SB.PCI0.LPCB.H_EC.MGI4))
+                                                                                                                                    MGI4
+                                                                                                                                    Store (\_SB.PCI0.LPCB.H_EC.ECRD, RefOf (\_SB.PCI0.LPCB.H_EC.MGI5))
+                                                                                                                                    MGI5
+                                                                                                                                    Store (\_SB.PCI0.LPCB.H_EC.ECRD, RefOf (\_SB.PCI0.LPCB.H_EC.MGI6))
+                                                                                                                                    MGI6
+                                                                                                                                    Store (\_SB.PCI0.LPCB.H_EC.ECRD, RefOf (\_SB.PCI0.LPCB.H_EC.MGI7))
+                                                                                                                                    MGI7
+                                                                                                                                    Store (\_SB.PCI0.LPCB.H_EC.ECRD, RefOf (\_SB.PCI0.LPCB.H_EC.MGI8))
+                                                                                                                                    MGI8
+                                                                                                                                    Store (\_SB.PCI0.LPCB.H_EC.ECRD, RefOf (\_SB.PCI0.LPCB.H_EC.MGI9))
+                                                                                                                                    MGI9
+                                                                                                                                    Store (\_SB.PCI0.LPCB.H_EC.ECRD, RefOf (\_SB.PCI0.LPCB.H_EC.MGIA))
+                                                                                                                                    MGIA
+                                                                                                                                    Store (\_SB.PCI0.LPCB.H_EC.ECRD, RefOf (\_SB.PCI0.LPCB.H_EC.MGIB))
+                                                                                                                                    MGIB
+                                                                                                                                    Store (\_SB.PCI0.LPCB.H_EC.ECRD, RefOf (\_SB.PCI0.LPCB.H_EC.MGIC))
+                                                                                                                                    MGIC
+                                                                                                                                    Store (\_SB.PCI0.LPCB.H_EC.ECRD, RefOf (\_SB.PCI0.LPCB.H_EC.MGID))
+                                                                                                                                    MGID
+                                                                                                                                    Store (\_SB.PCI0.LPCB.H_EC.ECRD, RefOf (\_SB.PCI0.LPCB.H_EC.MGIE))
+                                                                                                                                    MGIE
+                                                                                                                                    Store (\_SB.PCI0.LPCB.H_EC.ECRD, RefOf (\_SB.PCI0.LPCB.H_EC.MGIF))
+                                                                                                                                    MGIF
+                                                                                                                                    Store (\_SB.PCI0.LPCB.H_EC.ECRD, RefOf (\_SB.PCI0.LPCB.H_EC.CCI0))
+                                                                                                                                    CCI0
+                                                                                                                                    Store (\_SB.PCI0.LPCB.H_EC.ECRD, RefOf (\_SB.PCI0.LPCB.H_EC.CCI1))
+                                                                                                                                    CCI1
+                                                                                                                                    Store (\_SB.PCI0.LPCB.H_EC.ECRD, RefOf (\_SB.PCI0.LPCB.H_EC.CCI2))
+                                                                                                                                    CCI2
+                                                                                                                                    Store (\_SB.PCI0.LPCB.H_EC.ECRD, RefOf (\_SB.PCI0.LPCB.H_EC.CCI3))
+                                                                                                                                    CCI3
+                                                                                                                                }, Break), Return (Zero)))))))))))))))))))))))))
                         }
                     }
                 }

@@ -5,7 +5,7 @@
  * 
  * Disassembling to non-symbolic legacy ASL operators
  *
- * Disassembly of SSDT-2-CB-01.aml, Fri Feb  1 15:37:33 2019
+ * Disassembly of SSDT-2-CB-01.aml, Fri Feb  1 18:33:50 2019
  *
  * Original Table Header:
  *     Signature        "SSDT"
@@ -40,15 +40,15 @@ DefinitionBlock ("", "SSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
      * because the disassembler had to guess at the number of arguments
      * required for each:
      */
-    External (_SB_.PCI0, DeviceObj)
-    External (_SB_.PCI0.GFX0, DeviceObj)
-    External (CPSC, FieldUnitObj)
-    External (DSEN, FieldUnitObj)
+    External (_SB_.PCI0, DeviceObj)    // Warning: Unknown object
+    External (_SB_.PCI0.IGPU, DeviceObj)    // Warning: Unknown object
+    External (CPSC, UnknownObj)    // Warning: Unknown object
+    External (DSEN, UnknownObj)    // Warning: Unknown object
     External (GUAM, MethodObj)    // Warning: Unknown method, guessing 1 arguments
     External (HDOS, MethodObj)    // Warning: Unknown method, guessing 0 arguments
     External (HNOT, MethodObj)    // Warning: Unknown method, guessing 1 arguments
-    External (OSYS, FieldUnitObj)
-    External (S0ID, FieldUnitObj)
+    External (OSYS, UnknownObj)    // Warning: Unknown object
+    External (S0ID, UnknownObj)    // Warning: Unknown object
 
     OperationRegion (SANV, SystemMemory, 0x77F6CC18, 0x0104)
     Field (SANV, AnyAcc, Lock, Preserve)
@@ -175,7 +175,7 @@ DefinitionBlock ("", "SSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
     {
     }
 
-    Scope (\_SB.PCI0.GFX0)
+    Scope (\_SB.PCI0.IGPU)
     {
         Method (_DOS, 1, NotSerialized)  // _DOS: Disable Output Switching
         {
@@ -1738,7 +1738,7 @@ DefinitionBlock ("", "SSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
             {
                 If (LAnd (LGreaterEqual (Arg0, Zero), LLessEqual (Arg0, 0x64)))
                 {
-                    \_SB.PCI0.GFX0.AINT (One, Arg0)
+                    \_SB.PCI0.IGPU.AINT (One, Arg0)
                     Store (Arg0, BRTL)
                 }
             }
@@ -2450,7 +2450,7 @@ DefinitionBlock ("", "SSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
             Store (0x03, CSTS)
             If (LAnd (LEqual (CHPD, Zero), LEqual (Arg1, Zero)))
             {
-                Notify (\_SB.PCI0.GFX0, Arg1)
+                Notify (\_SB.PCI0.IGPU, Arg1)
             }
 
             If (CondRefOf (HNOT))
@@ -2459,7 +2459,7 @@ DefinitionBlock ("", "SSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
             }
             Else
             {
-                Notify (\_SB.PCI0.GFX0, 0x80)
+                Notify (\_SB.PCI0.IGPU, 0x80)
             }
 
             Return (Zero)

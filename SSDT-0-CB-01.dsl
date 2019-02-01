@@ -5,7 +5,7 @@
  * 
  * Disassembling to non-symbolic legacy ASL operators
  *
- * Disassembly of SSDT-0-CB-01.aml, Fri Feb  1 15:37:33 2019
+ * Disassembly of SSDT-0-CB-01.aml, Fri Feb  1 18:33:50 2019
  *
  * Original Table Header:
  *     Signature        "SSDT"
@@ -34,7 +34,7 @@ DefinitionBlock ("", "SSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                 Memory32Fixed (ReadOnly,
                     0x00000000,         // Address Base
                     0x00001000,         // Address Length
-                    _Y2B)
+                    _Y00)
                 Memory32Fixed (ReadOnly,
                     0xFED40000,         // Address Base
                     0x00001000,         // Address Length
@@ -43,7 +43,7 @@ DefinitionBlock ("", "SSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
             Name (PTTA, 0xFED40000)
             Method (_CRS, 0, Serialized)  // _CRS: Current Resource Settings
             {
-                CreateDWordField (CRS, \_SB.TPM._Y2B._BAS, CBAS)  // _BAS: Base Address
+                CreateDWordField (CRS, \_SB.TPM._Y00._BAS, CBAS)  // _BAS: Base Address
                 Store (PTTB, CBAS)
                 Store (PTTB, PTTA)
                 Return (CRS)

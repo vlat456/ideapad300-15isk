@@ -5,22 +5,22 @@
  * 
  * Disassembling to non-symbolic legacy ASL operators
  *
- * Disassembly of SSDT-1-CB-01.aml, Fri Feb  1 15:37:33 2019
+ * Disassembly of SSDT-1-CB-01.aml, Fri Feb  1 18:33:50 2019
  *
  * Original Table Header:
  *     Signature        "SSDT"
- *     Length           0x0000004B (75)
+ *     Length           0x0000004A (74)
  *     Revision         0x02
- *     Checksum         0x31
+ *     Checksum         0xBA
  *     OEM ID           "LENOVO"
  *     OEM Table ID     "CB-01   "
  *     OEM Revision     0x00000001 (1)
- *     Compiler ID      "ACPI"
- *     Compiler Version 0x00040000 (262144)
+ *     Compiler ID      "INTL"
+ *     Compiler Version 0x20180427 (538444839)
  */
 DefinitionBlock ("", "SSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
 {
-    OperationRegion (MENV, SystemMemory, 0x77F63F98, 0x000D)
+    OperationRegion (MENV, SystemMemory, 0x77F63F98, 0x0D)
     Field (MENV, AnyAcc, Lock, Preserve)
     {
         MERV,   32, 

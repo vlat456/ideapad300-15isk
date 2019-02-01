@@ -5,7 +5,7 @@
  * 
  * Disassembling to non-symbolic legacy ASL operators
  *
- * Disassembly of SSDT-x6_6-HwpLvt.aml, Fri Feb  1 15:37:34 2019
+ * Disassembly of SSDT-x6_6-HwpLvt.aml, Fri Feb  1 18:33:50 2019
  *
  * Original Table Header:
  *     Signature        "SSDT"
@@ -20,15 +20,15 @@
  */
 DefinitionBlock ("", "SSDT", 2, "PmRef", "HwpLvt", 0x00003000)
 {
-    External (_PR_.CPU0, ProcessorObj)
-    External (_PR_.CPU1, ProcessorObj)
-    External (_PR_.CPU2, ProcessorObj)
-    External (_PR_.CPU3, ProcessorObj)
-    External (_PR_.CPU4, ProcessorObj)
-    External (_PR_.CPU5, ProcessorObj)
-    External (_PR_.CPU6, ProcessorObj)
-    External (_PR_.CPU7, ProcessorObj)
-    External (TCNT, FieldUnitObj)
+    External (_PR_.CPU0, UnknownObj)    // Warning: Unknown object
+    External (_PR_.CPU1, UnknownObj)    // Warning: Unknown object
+    External (_PR_.CPU2, UnknownObj)    // Warning: Unknown object
+    External (_PR_.CPU3, UnknownObj)    // Warning: Unknown object
+    External (_PR_.CPU4, UnknownObj)    // Warning: Unknown object
+    External (_PR_.CPU5, UnknownObj)    // Warning: Unknown object
+    External (_PR_.CPU6, UnknownObj)    // Warning: Unknown object
+    External (_PR_.CPU7, UnknownObj)    // Warning: Unknown object
+    External (TCNT, UnknownObj)    // Warning: Unknown object
 
     Scope (\_GPE)
     {
