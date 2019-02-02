@@ -16934,7 +16934,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
     }
 
     Name (ECUP, One)
-    Mutex (EHLD, 0x00)
+    Mutex(EHLD, 0)
     Scope (_SB)
     {
         OperationRegion (ITSS, SystemMemory, 0xFDC43100, 0x0208)
@@ -16955,8 +16955,8 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         }
     }
 
-    Mutex (MUTX, 0x00)
-    Mutex (OSUM, 0x00)
+    Mutex(MUTX, 0)
+    Mutex(OSUM, 0)
     Event (WFEV)
     Name (H2OE, One)
     Name (P8XE, Zero)
