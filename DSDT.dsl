@@ -4344,7 +4344,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         Method (_L6D, 0, Serialized)  // _Lxx: Level-Triggered GPE
         {
             \_SB.PCI0.XHC.GPEH ()
-            \_SB.PCI0.HDAS.GPEH ()
+            \_SB.PCI0.HDEF.GPEH ()
             \_SB.PCI0.GLAN.GPEH ()
         }
     }
@@ -6222,7 +6222,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
 
     Scope (_SB.PCI0)
     {
-        Device (HDAS)
+        Device (HDEF)
         {
             Name (_ADR, 0x001F0003)  // _ADR: Address
             OperationRegion (HDAR, PCI_Config, Zero, 0x0100)
@@ -6259,9 +6259,9 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
 
                 If ((PMEE && PMES))
                 {
-                    ADBG ("HDAS GPEH")
+                    ADBG ("HDEF GPEH")
                     PMES = One
-                    Notify (HDAS, 0x02)
+                    Notify (HDEF, 0x02)
                 }
             }
 
@@ -6307,10 +6307,10 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
 
             Method (_INI, 0, NotSerialized)  // _INI: Initialize
             {
-                ADBG ("HDAS _INI")
-                CreateQWordField (NBUF, \_SB.PCI0.HDAS._Y10._MIN, NBAS)  // _MIN: Minimum Base Address
-                CreateQWordField (NBUF, \_SB.PCI0.HDAS._Y10._MAX, NMAS)  // _MAX: Maximum Base Address
-                CreateQWordField (NBUF, \_SB.PCI0.HDAS._Y10._LEN, NLEN)  // _LEN: Length
+                ADBG ("HDEF _INI")
+                CreateQWordField (NBUF, \_SB.PCI0.HDEF._Y10._MIN, NBAS)  // _MIN: Minimum Base Address
+                CreateQWordField (NBUF, \_SB.PCI0.HDEF._Y10._MAX, NMAS)  // _MAX: Maximum Base Address
+                CreateQWordField (NBUF, \_SB.PCI0.HDEF._Y10._LEN, NLEN)  // _LEN: Length
                 NBAS = NHLA
                 NMAS = (NHLA + (NHLL - One))
                 NLEN = NHLL
@@ -6322,7 +6322,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
 
             Method (XDSM, 4, Serialized)
             {
-                ADBG ("HDAS XDSM")
+                ADBG ("HDEF XDSM")
                 If (PCIC (Arg0))
                 {
                     Return (PCID (Arg0, Arg1, Arg2, Arg3))
