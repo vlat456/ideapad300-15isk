@@ -6494,19 +6494,19 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                             {
                                 If (OBFN)
                                 {
-                                    Return (Buffer (0x10)
+                                    Return (Package() { Buffer (0x10)
                                     {
                                         /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
                                         /* 0008 */  0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00, 0x00 
-                                    })
+                                    }})
                                 }
                                 Else
                                 {
-                                    Return (Buffer (0x10)
+                                    Return (Package() { Buffer (0x10)
                                     {
                                         /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
                                         /* 0008 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 
-                                    })
+                                    }})
                                 }
                             }
                         }
@@ -6748,19 +6748,19 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                             {
                                 If (OBFN)
                                 {
-                                    Return (Buffer (0x10)
+                                    Return (Package() { Buffer (0x10)
                                     {
                                         /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
                                         /* 0008 */  0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00, 0x00 
-                                    })
+                                    }})
                                 }
                                 Else
                                 {
-                                    Return (Buffer (0x10)
+                                    Return (Package() { Buffer (0x10)
                                     {
                                         /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
                                         /* 0008 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 
-                                    })
+                                    }})
                                 }
                             }
                         }
@@ -7002,19 +7002,19 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                             {
                                 If (OBFN)
                                 {
-                                    Return (Buffer (0x10)
+                                    Return (Package() { Buffer (0x10)
                                     {
                                         /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
                                         /* 0008 */  0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00, 0x00 
-                                    })
+                                    }})
                                 }
                                 Else
                                 {
-                                    Return (Buffer (0x10)
+                                    Return (Package() { Buffer (0x10)
                                     {
                                         /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
                                         /* 0008 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 
-                                    })
+                                    }})
                                 }
                             }
                         }
@@ -7256,19 +7256,19 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                             {
                                 If (OBFN)
                                 {
-                                    Return (Buffer (0x10)
+                                    Return (Package() { Buffer (0x10)
                                     {
                                         /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
                                         /* 0008 */  0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00, 0x00 
-                                    })
+                                    }})
                                 }
                                 Else
                                 {
-                                    Return (Buffer (0x10)
+                                    Return (Package() { Buffer (0x10)
                                     {
                                         /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
                                         /* 0008 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 
-                                    })
+                                    }})
                                 }
                             }
                         }
@@ -7510,19 +7510,19 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                             {
                                 If (OBFN)
                                 {
-                                    Return (Buffer (0x10)
+                                    Return (Package() { Buffer (0x10)
                                     {
                                         /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
                                         /* 0008 */  0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00, 0x00 
-                                    })
+                                    }})
                                 }
                                 Else
                                 {
-                                    Return (Buffer (0x10)
+                                    Return (Package() { Buffer (0x10)
                                     {
                                         /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
                                         /* 0008 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 
-                                    })
+                                    }})
                                 }
                             }
                         }
@@ -7764,19 +7764,19 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                             {
                                 If (OBFN)
                                 {
-                                    Return (Buffer (0x10)
+                                    Return (Package() { Buffer (0x10)
                                     {
                                         /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
                                         /* 0008 */  0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00, 0x00 
-                                    })
+                                    }})
                                 }
                                 Else
                                 {
-                                    Return (Buffer (0x10)
+                                    Return (Package() { Buffer (0x10)
                                     {
                                         /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
                                         /* 0008 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 
-                                    })
+                                    }})
                                 }
                             }
                         }
@@ -8018,19 +8018,19 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                             {
                                 If (OBFN)
                                 {
-                                    Return (Buffer (0x10)
+                                    Return (Package() { Buffer (0x10)
                                     {
                                         /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
                                         /* 0008 */  0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00, 0x00 
-                                    })
+                                    }})
                                 }
                                 Else
                                 {
-                                    Return (Buffer (0x10)
+                                    Return (Package() { Buffer (0x10)
                                     {
                                         /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
                                         /* 0008 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 
-                                    })
+                                    }})
                                 }
                             }
                         }
@@ -8272,19 +8272,19 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                             {
                                 If (OBFN)
                                 {
-                                    Return (Buffer (0x10)
+                                    Return (Package() { Buffer (0x10)
                                     {
                                         /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
                                         /* 0008 */  0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00, 0x00 
-                                    })
+                                    }})
                                 }
                                 Else
                                 {
-                                    Return (Buffer (0x10)
+                                    Return (Package() { Buffer (0x10)
                                     {
                                         /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
                                         /* 0008 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 
-                                    })
+                                    }})
                                 }
                             }
                         }
@@ -8526,19 +8526,19 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                             {
                                 If (OBFN)
                                 {
-                                    Return (Buffer (0x10)
+                                    Return (Package() { Buffer (0x10)
                                     {
                                         /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
                                         /* 0008 */  0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00, 0x00 
-                                    })
+                                    }})
                                 }
                                 Else
                                 {
-                                    Return (Buffer (0x10)
+                                    Return (Package() { Buffer (0x10)
                                     {
                                         /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
                                         /* 0008 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 
-                                    })
+                                    }})
                                 }
                             }
                         }
@@ -8780,19 +8780,19 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                             {
                                 If (OBFN)
                                 {
-                                    Return (Buffer (0x10)
+                                    Return (Package() { Buffer (0x10)
                                     {
                                         /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
                                         /* 0008 */  0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00, 0x00 
-                                    })
+                                    }})
                                 }
                                 Else
                                 {
-                                    Return (Buffer (0x10)
+                                    Return (Package() { Buffer (0x10)
                                     {
                                         /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
                                         /* 0008 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 
-                                    })
+                                    }})
                                 }
                             }
                         }
@@ -9034,19 +9034,19 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                             {
                                 If (OBFN)
                                 {
-                                    Return (Buffer (0x10)
+                                    Return (Package() { Buffer (0x10)
                                     {
                                         /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
                                         /* 0008 */  0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00, 0x00 
-                                    })
+                                    }})
                                 }
                                 Else
                                 {
-                                    Return (Buffer (0x10)
+                                    Return (Package() { Buffer (0x10)
                                     {
                                         /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
                                         /* 0008 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 
-                                    })
+                                    }})
                                 }
                             }
                         }
@@ -9288,19 +9288,19 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                             {
                                 If (OBFN)
                                 {
-                                    Return (Buffer (0x10)
+                                    Return (Package() { Buffer (0x10)
                                     {
                                         /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
                                         /* 0008 */  0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00, 0x00 
-                                    })
+                                    }})
                                 }
                                 Else
                                 {
-                                    Return (Buffer (0x10)
+                                    Return (Package() { Buffer (0x10)
                                     {
                                         /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
                                         /* 0008 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 
-                                    })
+                                    }})
                                 }
                             }
                         }
@@ -9542,19 +9542,19 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                             {
                                 If (OBFN)
                                 {
-                                    Return (Buffer (0x10)
+                                    Return (Package() { Buffer (0x10)
                                     {
                                         /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
                                         /* 0008 */  0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00, 0x00 
-                                    })
+                                    }})
                                 }
                                 Else
                                 {
-                                    Return (Buffer (0x10)
+                                    Return (Package() { Buffer (0x10)
                                     {
                                         /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
                                         /* 0008 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 
-                                    })
+                                    }})
                                 }
                             }
                         }
@@ -9796,19 +9796,19 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                             {
                                 If (OBFN)
                                 {
-                                    Return (Buffer (0x10)
+                                    Return (Package() { Buffer (0x10)
                                     {
                                         /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
                                         /* 0008 */  0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00, 0x00 
-                                    })
+                                    }})
                                 }
                                 Else
                                 {
-                                    Return (Buffer (0x10)
+                                    Return (Package() { Buffer (0x10)
                                     {
                                         /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
                                         /* 0008 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 
-                                    })
+                                    }})
                                 }
                             }
                         }
@@ -10050,19 +10050,19 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                             {
                                 If (OBFN)
                                 {
-                                    Return (Buffer (0x10)
+                                    Return (Package() { Buffer (0x10)
                                     {
                                         /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
                                         /* 0008 */  0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00, 0x00 
-                                    })
+                                    }})
                                 }
                                 Else
                                 {
-                                    Return (Buffer (0x10)
+                                    Return (Package() { Buffer (0x10)
                                     {
                                         /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
                                         /* 0008 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 
-                                    })
+                                    }})
                                 }
                             }
                         }
@@ -10304,19 +10304,19 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                             {
                                 If (OBFN)
                                 {
-                                    Return (Buffer (0x10)
+                                    Return (Package() { Buffer (0x10)
                                     {
                                         /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
                                         /* 0008 */  0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00, 0x00 
-                                    })
+                                    }})
                                 }
                                 Else
                                 {
-                                    Return (Buffer (0x10)
+                                    Return (Package() { Buffer (0x10)
                                     {
                                         /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
                                         /* 0008 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 
-                                    })
+                                    }})
                                 }
                             }
                         }
@@ -10558,19 +10558,19 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                             {
                                 If (OBFN)
                                 {
-                                    Return (Buffer (0x10)
+                                    Return (Package() { Buffer (0x10)
                                     {
                                         /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
                                         /* 0008 */  0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00, 0x00 
-                                    })
+                                    }})
                                 }
                                 Else
                                 {
-                                    Return (Buffer (0x10)
+                                    Return (Package() { Buffer (0x10)
                                     {
                                         /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
                                         /* 0008 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 
-                                    })
+                                    }})
                                 }
                             }
                         }
@@ -10812,19 +10812,19 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                             {
                                 If (OBFN)
                                 {
-                                    Return (Buffer (0x10)
+                                    Return (Package() { Buffer (0x10)
                                     {
                                         /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
                                         /* 0008 */  0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00, 0x00 
-                                    })
+                                    }})
                                 }
                                 Else
                                 {
-                                    Return (Buffer (0x10)
+                                    Return (Package() { Buffer (0x10)
                                     {
                                         /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
                                         /* 0008 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 
-                                    })
+                                    }})
                                 }
                             }
                         }
@@ -11066,19 +11066,19 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                             {
                                 If (OBFN)
                                 {
-                                    Return (Buffer (0x10)
+                                    Return (Package() { Buffer (0x10)
                                     {
                                         /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
                                         /* 0008 */  0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00, 0x00 
-                                    })
+                                    }})
                                 }
                                 Else
                                 {
-                                    Return (Buffer (0x10)
+                                    Return (Package() { Buffer (0x10)
                                     {
                                         /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
                                         /* 0008 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 
-                                    })
+                                    }})
                                 }
                             }
                         }
@@ -11320,19 +11320,19 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                             {
                                 If (OBFN)
                                 {
-                                    Return (Buffer (0x10)
+                                    Return (Package() { Buffer (0x10)
                                     {
                                         /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
                                         /* 0008 */  0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00, 0x00 
-                                    })
+                                    }})
                                 }
                                 Else
                                 {
-                                    Return (Buffer (0x10)
+                                    Return (Package() { Buffer (0x10)
                                     {
                                         /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
                                         /* 0008 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 
-                                    })
+                                    }})
                                 }
                             }
                         }
