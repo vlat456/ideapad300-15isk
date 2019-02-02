@@ -3164,6 +3164,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
             Name (PCIG, ToUUID ("e5c937d0-3553-4d7a-9117-ea4d19c3434d") /* Device Labeling Interface */)
             Method (PCID, 4, Serialized)
             {
+            	Arg3 = Arg3
                 If ((Arg0 == PCIG))
                 {
                     If ((Arg1 >= 0x03))
@@ -6445,6 +6446,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
             })
             Method (XDSM, 4, Serialized)
             {
+            	Arg3 = Arg3
                 If ((Arg0 == ToUUID ("e5c937d0-3553-4d7a-9117-ea4d19c3434d") /* Device Labeling Interface */))
                 {
                     Switch (ToInteger (Arg2))
@@ -6705,6 +6707,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
             })
             Method (XDSM, 4, Serialized)
             {
+            	Arg3 = Arg3
                 If ((Arg0 == ToUUID ("e5c937d0-3553-4d7a-9117-ea4d19c3434d") /* Device Labeling Interface */))
                 {
                     Switch (ToInteger (Arg2))
@@ -6965,6 +6968,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
             })
             Method (XDSM, 4, Serialized)
             {
+            	Arg3 = Arg3
                 If ((Arg0 == ToUUID ("e5c937d0-3553-4d7a-9117-ea4d19c3434d") /* Device Labeling Interface */))
                 {
                     Switch (ToInteger (Arg2))
@@ -7225,6 +7229,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
             })
             Method (XDSM, 4, Serialized)
             {
+            	Arg3 = Arg3
                 If ((Arg0 == ToUUID ("e5c937d0-3553-4d7a-9117-ea4d19c3434d") /* Device Labeling Interface */))
                 {
                     Switch (ToInteger (Arg2))
@@ -7485,6 +7490,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
             })
             Method (XDSM, 4, Serialized)
             {
+            	Arg3 = Arg3
                 If ((Arg0 == ToUUID ("e5c937d0-3553-4d7a-9117-ea4d19c3434d") /* Device Labeling Interface */))
                 {
                     Switch (ToInteger (Arg2))
@@ -7745,6 +7751,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
             })
             Method (XDSM, 4, Serialized)
             {
+            	Arg3 = Arg3
                 If ((Arg0 == ToUUID ("e5c937d0-3553-4d7a-9117-ea4d19c3434d") /* Device Labeling Interface */))
                 {
                     Switch (ToInteger (Arg2))
@@ -8005,6 +8012,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
             })
             Method (XDSM, 4, Serialized)
             {
+            	Arg3 = Arg3
                 If ((Arg0 == ToUUID ("e5c937d0-3553-4d7a-9117-ea4d19c3434d") /* Device Labeling Interface */))
                 {
                     Switch (ToInteger (Arg2))
@@ -8265,6 +8273,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
             })
             Method (XDSM, 4, Serialized)
             {
+            	Arg3 = Arg3
                 If ((Arg0 == ToUUID ("e5c937d0-3553-4d7a-9117-ea4d19c3434d") /* Device Labeling Interface */))
                 {
                     Switch (ToInteger (Arg2))
@@ -8525,6 +8534,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
             })
             Method (XDSM, 4, Serialized)
             {
+            	Arg3 = Arg3
                 If ((Arg0 == ToUUID ("e5c937d0-3553-4d7a-9117-ea4d19c3434d") /* Device Labeling Interface */))
                 {
                     Switch (ToInteger (Arg2))
@@ -8785,6 +8795,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
             })
             Method (XDSM, 4, Serialized)
             {
+            	Arg3 = Arg3
                 If ((Arg0 == ToUUID ("e5c937d0-3553-4d7a-9117-ea4d19c3434d") /* Device Labeling Interface */))
                 {
                     Switch (ToInteger (Arg2))
@@ -9045,6 +9056,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
             })
             Method (XDSM, 4, Serialized)
             {
+            	Arg3 = Arg3
                 If ((Arg0 == ToUUID ("e5c937d0-3553-4d7a-9117-ea4d19c3434d") /* Device Labeling Interface */))
                 {
                     Switch (ToInteger (Arg2))
@@ -9305,6 +9317,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
             })
             Method (XDSM, 4, Serialized)
             {
+            	Arg3 = Arg3
                 If ((Arg0 == ToUUID ("e5c937d0-3553-4d7a-9117-ea4d19c3434d") /* Device Labeling Interface */))
                 {
                     Switch (ToInteger (Arg2))
@@ -9565,6 +9578,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
             })
             Method (XDSM, 4, Serialized)
             {
+            	Arg3 = Arg3
                 If ((Arg0 == ToUUID ("e5c937d0-3553-4d7a-9117-ea4d19c3434d") /* Device Labeling Interface */))
                 {
                     Switch (ToInteger (Arg2))
@@ -9825,6 +9839,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
             })
             Method (XDSM, 4, Serialized)
             {
+            	Arg3 = Arg3
                 If ((Arg0 == ToUUID ("e5c937d0-3553-4d7a-9117-ea4d19c3434d") /* Device Labeling Interface */))
                 {
                     Switch (ToInteger (Arg2))
@@ -10085,6 +10100,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
             })
             Method (XDSM, 4, Serialized)
             {
+            	Arg3 = Arg3
                 If ((Arg0 == ToUUID ("e5c937d0-3553-4d7a-9117-ea4d19c3434d") /* Device Labeling Interface */))
                 {
                     Switch (ToInteger (Arg2))
@@ -10345,6 +10361,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
             })
             Method (XDSM, 4, Serialized)
             {
+            	Arg3 = Arg3
                 If ((Arg0 == ToUUID ("e5c937d0-3553-4d7a-9117-ea4d19c3434d") /* Device Labeling Interface */))
                 {
                     Switch (ToInteger (Arg2))
@@ -10605,6 +10622,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
             })
             Method (XDSM, 4, Serialized)
             {
+            	Arg3 = Arg3
                 If ((Arg0 == ToUUID ("e5c937d0-3553-4d7a-9117-ea4d19c3434d") /* Device Labeling Interface */))
                 {
                     Switch (ToInteger (Arg2))
@@ -10865,6 +10883,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
             })
             Method (XDSM, 4, Serialized)
             {
+            	Arg3 = Arg3
                 If ((Arg0 == ToUUID ("e5c937d0-3553-4d7a-9117-ea4d19c3434d") /* Device Labeling Interface */))
                 {
                     Switch (ToInteger (Arg2))
@@ -11125,6 +11144,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
             })
             Method (XDSM, 4, Serialized)
             {
+            	Arg3 = Arg3
                 If ((Arg0 == ToUUID ("e5c937d0-3553-4d7a-9117-ea4d19c3434d") /* Device Labeling Interface */))
                 {
                     Switch (ToInteger (Arg2))
@@ -11385,6 +11405,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
             })
             Method (XDSM, 4, Serialized)
             {
+            	Arg3 = Arg3
                 If ((Arg0 == ToUUID ("e5c937d0-3553-4d7a-9117-ea4d19c3434d") /* Device Labeling Interface */))
                 {
                     Switch (ToInteger (Arg2))
@@ -12132,7 +12153,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         {
             Name (_HID, "INT343D")  // _HID: Hardware ID
             Name (_UID, One)  // _UID: Unique ID
-            Method (_CRS, 0, NotSerialized)  // _CRS: Current Resource Settings
+            Method (_CRS, 0, Serialized)  // _CRS: Current Resource Settings
             {
                 Name (RBUF, ResourceTemplate ()
                 {
@@ -13134,6 +13155,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         Name (TP7G, ToUUID ("ef87eb82-f951-46da-84ec-14871ac6f84b"))
         Method (HIDD, 5, Serialized)
         {
+        	Arg3 = Arg3
             If ((Arg0 == HIDG))
             {
                 If ((Arg2 == Zero))
@@ -13161,6 +13183,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
 
         Method (TP7D, 6, Serialized)
         {
+        	Arg3 = Arg3
             If ((Arg0 == TP7G))
             {
                 If ((Arg2 == Zero))
@@ -15947,6 +15970,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
 
                     Method (SODD, 1, Serialized)
                     {
+                    	Arg0 = Arg0
                     }
 
                     Method (GBID, 0, Serialized)
@@ -16045,6 +16069,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
 
                     Method (STHT, 1, Serialized)
                     {
+                    	Arg0 = Arg0
                         Return (Zero)
                     }
                 }
@@ -17865,6 +17890,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
 
             Method (XDSM, 4, Serialized)
             {
+            	Arg3 = Arg3
                 Name (BUFX, Package (0x09)
                 {
                     0x80000000, 
@@ -18747,6 +18773,8 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
             })
             Method (WMTF, 3, NotSerialized)
             {
+            	Arg0 = Arg0
+            	Arg1 = Arg1
                 CreateByteField (Arg2, Zero, FP)
                 If (FP)
                 {
@@ -23248,6 +23276,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
 
     Method (ADBG, 1, Serialized)
     {
+    	Arg0 = Arg0
         Return (Zero)
     }
 
@@ -23510,6 +23539,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
 
     Method (WAK, 1, NotSerialized)
     {
+    	Arg0 = Arg0
     }
 
     Method (B1B2, 2, NotSerialized)
