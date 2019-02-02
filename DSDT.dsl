@@ -12345,7 +12345,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
             }
 
             Name (LINK, "\\_SB.PCI0.GPI0")
-            Method (_CRS, 0, NotSerialized)  // _CRS: Current Resource Settings
+            Method (_CRS, 0, Serialized)  // _CRS: Current Resource Settings
             {
                 Name (RBUF, ResourceTemplate ()
                 {
@@ -13424,7 +13424,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
             CreateDWordField (SBFB, \_SB.PCI0.I2C1.TPL1._Y1D._SPE, SPED)  // _SPE: Speed
             CreateDWordField (SBFI, \_SB.PCI0.I2C1.TPL1._Y1E._INT, INT2)  // _INT: Interrupts
             CreateWordField (SBFG, 0x17, INT1)
-            Method (_INI, 0, NotSerialized)  // _INI: Initialize
+            Method (_INI, 0, Serialized)  // _INI: Initialize
             {
                 If ((OSYS < 0x07DC))
                 {
@@ -13570,7 +13570,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                 Return (Zero)
             }
 
-            Method (_CRS, 0, NotSerialized)  // _CRS: Current Resource Settings
+            Method (_CRS, 0, Serialized)  // _CRS: Current Resource Settings
             {
                 Name (SBUF, ResourceTemplate ()
                 {
@@ -13798,7 +13798,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                 SHPO (GBTK, One)
             }
 
-            Method (_CRS, 0, NotSerialized)  // _CRS: Current Resource Settings
+            Method (_CRS, 0, Serialized)  // _CRS: Current Resource Settings
             {
                 Name (SBFG, ResourceTemplate ()
                 {
@@ -13891,7 +13891,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         Device (GNSS)
         {
             Name (_HID, "INT33A2")  // _HID: Hardware ID
-            Method (_CRS, 0, NotSerialized)  // _CRS: Current Resource Settings
+            Method (_CRS, 0, Serialized)  // _CRS: Current Resource Settings
             {
                 Name (BUF1, ResourceTemplate ()
                 {
@@ -14849,7 +14849,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                 Return (Local0)
             }
 
-            Method (_CRS, 0, NotSerialized)  // _CRS: Current Resource Settings
+            Method (_CRS, 0, Serialized)  // _CRS: Current Resource Settings
             {
                 Name (BFFR, ResourceTemplate ()
                 {
@@ -15222,7 +15222,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                     Return (Zero)
                 }
 
-                Method (_BIF, 0, NotSerialized)  // _BIF: Battery Information
+                Method (_BIF, 0, Serialized)  // _BIF: Battery Information
                 {
                     If ((ECON == One))
                     {
@@ -15749,7 +15749,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                         Return (Local0)
                     }
 
-                    Method (MHPF, 1, NotSerialized)
+                    Method (MHPF, 1, Serialized)
                     {
                         Name (BFWB, Buffer (0x25){})
                         CreateByteField (BFWB, Zero, FB0)
@@ -15807,7 +15807,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                         }
                     }
 
-                    Method (MHIF, 1, NotSerialized)
+                    Method (MHIF, 1, Serialized)
                     {
                         P80H = 0x50
                         If ((Arg0 == Zero))
@@ -15837,7 +15837,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                         }
                     }
 
-                    Method (GSBI, 1, NotSerialized)
+                    Method (GSBI, 1, Serialized)
                     {
                         Name (BIFB, Buffer (0x53)
                         {
@@ -16384,7 +16384,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                 }
             }
 
-            Method (RE1B, 1, NotSerialized)
+            Method (RE1B, 1, Serialized)
             {
                 OperationRegion (ERAM, EmbeddedControl, Arg0, One)
                 Field (ERAM, ByteAcc, NoLock, Preserve)
@@ -16411,7 +16411,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                 Return (TEMP)
             }
 
-            Method (WE1B, 2, NotSerialized)
+            Method (WE1B, 2, Serialized)
             {
                 OperationRegion (ERAM, EmbeddedControl, Arg0, One)
                 Field (ERAM, ByteAcc, NoLock, Preserve)
@@ -18414,7 +18414,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
             Return (Local0)
         }
 
-        Method (CNCT, 0, NotSerialized)
+        Method (CNCT, 0, Serialized)
         {
             ADBG ("CNCT")
             ADBG ("Read")
@@ -18439,7 +18439,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
             Return (Local0)
         }
 
-        Method (CLNE, 0, NotSerialized)
+        Method (CLNE, 0, Serialized)
         {
             ADBG ("CLNE")
             ADBG ("Clear")
@@ -18462,7 +18462,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
             TEMP |= Local6
         }
 
-        Method (DRPM, 0, NotSerialized)
+        Method (DRPM, 0, Serialized)
         {
             ADBG ("DRPM")
             Local7 = \_SB.STDC (\_SB.PCI0.GPCB (), Zero, TBTD (TBSE), TBTF (TBSE), 0x05)
@@ -18477,7 +18477,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
             MSIC = Zero
         }
 
-        Method (FFTB, 0, NotSerialized)
+        Method (FFTB, 0, Serialized)
         {
             ADBG ("FFTB")
             Local0 = (MMTB () + 0x0548)
@@ -18501,7 +18501,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
             }
         }
 
-        Method (DMSI, 0, NotSerialized)
+        Method (DMSI, 0, Serialized)
         {
             ADBG ("DMSI")
             Local0 = (MMTB () + 0x0548)
@@ -18553,7 +18553,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
             Return (Zero)
         }
 
-        Method (RSMI, 0, NotSerialized)
+        Method (RSMI, 0, Serialized)
         {
             ADBG ("RSMI")
             Local0 = TFPS ()
@@ -18631,7 +18631,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
             Return (Zero)
         }
 
-        Method (GNIS, 0, NotSerialized)
+        Method (GNIS, 0, Serialized)
         {
             ADBG ("GNIS")
             If ((GP5F == Zero))
@@ -23412,7 +23412,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         {
             Scope (_SB.PCI0.PSDC)
             {
-                Method (_CRS, 0, NotSerialized)  // _CRS: Current Resource Settings
+                Method (_CRS, 0, Serialized)  // _CRS: Current Resource Settings
                 {
                     If ((OSYS < 0x07DC))
                     {
