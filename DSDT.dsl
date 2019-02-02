@@ -19976,7 +19976,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         {
             If (CondRefOf (VDID))
             {
-                Switch (VDID)
+                Switch (ToInteger(VDID))
                 {
                     Case (0x095A8086)
                     {
@@ -20149,7 +20149,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         {
             If (CondRefOf (VDID))
             {
-                Switch (VDID)
+                Switch (ToInteger(VDID))
                 {
                     Case (0x095A8086)
                     {
@@ -20322,7 +20322,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         {
             If (CondRefOf (VDID))
             {
-                Switch (VDID)
+                Switch (ToInteger(VDID))
                 {
                     Case (0x095A8086)
                     {
@@ -20495,7 +20495,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         {
             If (CondRefOf (VDID))
             {
-                Switch (VDID)
+                Switch (ToInteger(VDID))
                 {
                     Case (0x095A8086)
                     {
@@ -20668,7 +20668,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         {
             If (CondRefOf (VDID))
             {
-                Switch (VDID)
+                Switch (ToInteger(VDID))
                 {
                     Case (0x095A8086)
                     {
@@ -20841,7 +20841,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         {
             If (CondRefOf (VDID))
             {
-                Switch (VDID)
+                Switch (ToInteger(VDID))
                 {
                     Case (0x095A8086)
                     {
@@ -21014,7 +21014,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         {
             If (CondRefOf (VDID))
             {
-                Switch (VDID)
+                Switch (ToInteger(VDID))
                 {
                     Case (0x095A8086)
                     {
@@ -21187,7 +21187,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         {
             If (CondRefOf (VDID))
             {
-                Switch (VDID)
+                Switch (ToInteger(VDID))
                 {
                     Case (0x095A8086)
                     {
@@ -21360,7 +21360,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         {
             If (CondRefOf (VDID))
             {
-                Switch (VDID)
+                Switch (ToInteger(VDID))
                 {
                     Case (0x095A8086)
                     {
@@ -21533,7 +21533,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         {
             If (CondRefOf (VDID))
             {
-                Switch (VDID)
+                Switch (ToInteger(VDID))
                 {
                     Case (0x095A8086)
                     {
@@ -21706,7 +21706,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         {
             If (CondRefOf (VDID))
             {
-                Switch (VDID)
+                Switch (ToInteger(VDID))
                 {
                     Case (0x095A8086)
                     {
@@ -21879,7 +21879,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         {
             If (CondRefOf (VDID))
             {
-                Switch (VDID)
+                Switch (ToInteger(VDID))
                 {
                     Case (0x095A8086)
                     {
@@ -22052,7 +22052,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         {
             If (CondRefOf (VDID))
             {
-                Switch (VDID)
+                Switch (ToInteger(VDID))
                 {
                     Case (0x095A8086)
                     {
@@ -22225,7 +22225,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         {
             If (CondRefOf (VDID))
             {
-                Switch (VDID)
+                Switch (ToInteger(VDID))
                 {
                     Case (0x095A8086)
                     {
@@ -22398,7 +22398,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         {
             If (CondRefOf (VDID))
             {
-                Switch (VDID)
+                Switch (ToInteger(VDID))
                 {
                     Case (0x095A8086)
                     {
@@ -22571,7 +22571,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         {
             If (CondRefOf (VDID))
             {
-                Switch (VDID)
+                Switch (ToInteger(VDID))
                 {
                     Case (0x095A8086)
                     {
@@ -22744,7 +22744,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         {
             If (CondRefOf (VDID))
             {
-                Switch (VDID)
+                Switch (ToInteger(VDID))
                 {
                     Case (0x095A8086)
                     {
@@ -22917,7 +22917,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         {
             If (CondRefOf (VDID))
             {
-                Switch (VDID)
+                Switch (ToInteger(VDID))
                 {
                     Case (0x095A8086)
                     {
@@ -23090,7 +23090,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         {
             If (CondRefOf (VDID))
             {
-                Switch (VDID)
+                Switch (ToInteger(VDID))
                 {
                     Case (0x095A8086)
                     {
