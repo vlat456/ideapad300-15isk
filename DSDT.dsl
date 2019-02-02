@@ -23217,24 +23217,9 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
 
     Method (ADBG, 1, Serialized)
     {
-        If (MDEN)
-        {
-            Store (SizeOf (Arg0), Local0)
-            Name (BUFS, Buffer (Local0){})
-            Store (Arg0, BUFS)
-            MDGC (0x20)
-            While (Local0)
-            {
-                MDGC (DerefOf (Index (BUFS, Subtract (SizeOf (Arg0), Local0))))
-                Decrement (Local0)
-            }
+        
+        Return(0)
 
-            Store (MBUF, MDG0)
-        }
-        Else
-        {
-            Return (Zero)
-        }
     }
 
     Method (SHOW, 1, Serialized)
