@@ -13732,7 +13732,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                     ITRG = One
                 }
 
-                Switch (SDS7)
+                Switch (ToInteger(SDS7))
                 {
                     Case (One)
                     {
@@ -14670,7 +14670,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                     {
                         If ((Arg1 == Zero))
                         {
-                            Switch (Arg2)
+                            Switch (ToInteger(Arg2))
                             {
                                 Case (Zero)
                                 {
@@ -14772,7 +14772,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                     {
                         If ((Arg1 == Zero))
                         {
-                            Switch (Arg2)
+                            Switch (ToInteger(Arg2))
                             {
                                 Case (Zero)
                                 {
@@ -17983,7 +17983,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         Method (TBTD, 1, Serialized)
         {
             ADBG ("TBTD")
-            Switch (Arg0)
+            Switch (ToInteger(Arg0))
             {
                 Case (Package (0x08)
                     {
@@ -18050,7 +18050,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         Method (TBTF, 1, Serialized)
         {
             ADBG ("TBTF")
-            Switch (Arg0)
+            Switch (ToInteger(Arg0))
             {
                 Case (One)
                 {
@@ -23223,11 +23223,12 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
             SHOW (Arg0)
             MDGC (0x20)
             MDG0 = MBUF
-        }
+          //  Return (MDG0)
+           }
         Else
         {
             Return (Zero)
-        }
+        }	
     }
 
     Method (DW2H, 1, Serialized)
@@ -23265,7 +23266,6 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                 MDGC (DerefOf (BUFS [(SizeOf (Arg0) - Local0)]))
                 Local0--
             }
-
             MDG0 = MBUF
         }
         Else
