@@ -11590,7 +11590,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
             }
         }
 
-        Device (SAT0)
+        Device (SATA)
         {
             Name (_ADR, 0x00170000)  // _ADR: Address
             Method (XDSM, 4, Serialized)
@@ -11600,7 +11600,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                     Return (PCID (Arg0, Arg1, Arg2, Arg3))
                 }
 
-                If (CondRefOf (\_SB.PCI0.SAT0.SDSM))
+                If (CondRefOf (\_SB.PCI0.SATA.SDSM))
                 {
                     Return (SDSM)
                 }
