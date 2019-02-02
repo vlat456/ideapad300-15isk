@@ -23403,13 +23403,15 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
             Package (0x03)
             {
                 0x80000000, 
-                0x80000000
+                0x80000000,
+                0x00000000
             }, 
 
             Package (0x03)
             {
                 0x80000000, 
-                0x80000000
+                0x80000000,
+                0x00000000
             }
         })
         Method (DPLC, 0, Serialized)
