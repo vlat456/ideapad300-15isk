@@ -16952,24 +16952,23 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                         Case (0x14)
                         {
                             Return (0x41068416)
-                            Break
+                        //    Break
                         }
                         Case (0x15)
                         {
                             Return (0x42068416)
-                            Break
+                        //    Break
                         }
                         Case (0x17)
                         {
                             Return (0x43068416)
-                            Break
+                        //    Break
                         }
                         Default
                         {
                             Return (0x130FD041)
-                            Break
+                        //    Break
                         }
-
                     }
                 }
 
@@ -16980,22 +16979,22 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                         Case (0x14)
                         {
                             Return (0x582B2E4F)
-                            Break
+                        //    Break
                         }
                         Case (0x15)
                         {
                             Return (0x592B2E4F)
-                            Break
+                        //    Break
                         }
                         Case (0x17)
                         {
                             Return (0x5A2B2E4F)
-                            Break
+                        //    Break
                         }
                         Default
                         {
                             Return (0x130FD041)
-                            Break
+                        //    Break
                         }
 
                     }
