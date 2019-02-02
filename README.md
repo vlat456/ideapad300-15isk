@@ -12,4 +12,5 @@ Notes
 
 TODO
 ====
+* Remove accidental input prevention from SmartTouchpad (buggy)
 * Make screen backlight work full-scale.
