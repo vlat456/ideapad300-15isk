@@ -297,6 +297,10 @@
 				<false/>
 			</dict>
 		</dict>
+		<key>SortedOrder</key>
+		<array>
+			<string>SSDT-2-CB-01.aml</string>
+		</array>
 	</dict>
 	<key>Boot</key>
 	<dict>
@@ -862,6 +866,13 @@
 			<string>0x1006</string>
 			<key>#VideoInputSignal</key>
 			<string>0xA1</string>
+			<key>Custom</key>
+			<data>
+			AP///////wAGEHycAAAAAAoWAQSVIhN4AsPFkVVUlCgkUFQAAAAB
+			AQEBAQEBAQEBAQEBAQEB2h1W4lAAIDBELUcAWMEQAAAYAAAA/gBO
+			MTU2QkdFLUVCMgogAAAA/gBDTU4KICAgICAgICAgAAAA/gBOMTU2
+			QkdFLUVCMgogAL8=
+			</data>
 			<key>Inject</key>
 			<true/>
 		</dict>
