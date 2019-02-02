@@ -5,7 +5,8 @@ At this point only DSDT.dsl and SSDT-2-CB-01.dsl (GFX0->IGPU rename) should be u
 
 Notes
 =====
-Built-in wifi won't work, I use TL-WN725N nano usb dongle, work better than this noteboot built-in wifi.
+* Built-in wifi won't work, I use TL-WN725N nano usb dongle, work better than this noteboot built-in wifi.
+* CPU speed is locked to 2.1GHz in CPU/HWPValue in Clover. Just to avoid loud fan noise. 
 
 TODO
 ====
