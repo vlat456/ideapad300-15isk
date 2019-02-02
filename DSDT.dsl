@@ -3,93 +3,73 @@
  * AML/ASL+ Disassembler version 20180427 (64-bit version)(RM)
  * Copyright (c) 2000 - 2018 Intel Corporation
  * 
- * Disassembling to non-symbolic legacy ASL operators
+ * Disassembling to symbolic ASL+ operators
  *
- * Disassembly of DSDT.aml, Fri Feb  1 15:37:33 2019
+ * Disassembly of DSDT.aml, Sat Feb  2 10:28:42 2019
  *
  * Original Table Header:
  *     Signature        "DSDT"
- *     Length           0x00016C92 (93330)
+ *     Length           0x00017147 (94535)
  *     Revision         0x02
- *     Checksum         0xC3
+ *     Checksum         0x11
  *     OEM ID           "LENOVO"
  *     OEM Table ID     "CB-01   "
  *     OEM Revision     0x00000001 (1)
- *     Compiler ID      "ACPI"
- *     Compiler Version 0x00040000 (262144)
+ *     Compiler ID      "INTL"
+ *     Compiler Version 0x20180427 (538444839)
  */
 DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
 {
-    /*
-     * iASL Warning: There were 12 external control methods found during
-     * disassembly, but only 5 were resolved (7 unresolved). Additional
-     * ACPI tables may be required to properly disassemble the code. This
-     * resulting disassembler output file may not compile because the
-     * disassembler did not know how many arguments to assign to the
-     * unresolved methods. Note: SSDTs can be dynamically loaded at
-     * runtime and may or may not be available via the host OS.
-     *
-     * In addition, the -fe option can be used to specify a file containing
-     * control method external declarations with the associated method
-     * argument counts. Each line of the file must be of the form:
-     *     External (<method pathname>, MethodObj, <argument count>)
-     * Invocation:
-     *     iasl -fe refs.txt -d dsdt.aml
-     *
-     * The following methods were unresolved and many not compile properly
-     * because the disassembler had to guess at the number of arguments
-     * required for each:
-     */
-    External (_GPE.HLVT, MethodObj)    // 0 Arguments
-    External (_PR_.BGIA, FieldUnitObj)
-    External (_PR_.BGMA, FieldUnitObj)
-    External (_PR_.BGMS, FieldUnitObj)
-    External (_PR_.CPU0._PPC, MethodObj)    // 0 Arguments
-    External (_PR_.DSAE, FieldUnitObj)
-    External (_PR_.DTSE, FieldUnitObj)
-    External (_PR_.DTSF, FieldUnitObj)
-    External (_PR_.ELNG, FieldUnitObj)
-    External (_PR_.EMNA, FieldUnitObj)
-    External (_PR_.EPCS, FieldUnitObj)
-    External (_PR_.TRPD, FieldUnitObj)
-    External (_PR_.TRPF, FieldUnitObj)
-    External (_SB_.PCI0.IGPU.CBLV, FieldUnitObj)
-    External (_SB_.PCI0.IGPU.CLID, FieldUnitObj)
-    External (_SB_.PCI0.IGPU.DD1F, UnknownObj)
-    External (_SB_.PCI0.IGPU.GLID, MethodObj)    // 1 Arguments
-    External (_SB_.PCI0.IGPU.GSCI, MethodObj)    // 0 Arguments
-    External (_SB_.PCI0.IGPU.GSSE, FieldUnitObj)
-    External (_SB_.PCI0.PEG0.HPME, MethodObj)    // Warning: Unknown method, guessing 0 arguments
-    External (_SB_.PCI0.PEG1.HPME, MethodObj)    // Warning: Unknown method, guessing 0 arguments
-    External (_SB_.PCI0.PEG2.HPME, MethodObj)    // Warning: Unknown method, guessing 0 arguments
-    External (_SB_.PCI0.XHC_.RHUB.INIR, MethodObj)    // Warning: Unknown method, guessing 0 arguments
-    External (_SB_.TPM_.PTS_, MethodObj)    // 1 Arguments
-    External (_TZ_.TZ00, UnknownObj)    // Warning: Unknown object
-    External (_TZ_.TZ01, UnknownObj)    // Warning: Unknown object
-    External (D1F0, UnknownObj)    // Warning: Unknown object
-    External (D1F1, UnknownObj)    // Warning: Unknown object
-    External (D1F2, UnknownObj)    // Warning: Unknown object
-    External (DIDX, FieldUnitObj)
-    External (GSMI, FieldUnitObj)
-    External (IGDS, FieldUnitObj)
-    External (LIDS, FieldUnitObj)
-    External (M32B, FieldUnitObj)
-    External (M32L, FieldUnitObj)
-    External (M64B, FieldUnitObj)
-    External (M64L, FieldUnitObj)
-    External (PDC0, IntObj)
-    External (PDC1, IntObj)
-    External (PDC2, IntObj)
-    External (PDC3, IntObj)
-    External (PDC4, IntObj)
-    External (PDC5, IntObj)
-    External (PDC6, IntObj)
-    External (PDC7, IntObj)
-    External (PS0X, MethodObj)    // Warning: Unknown method, guessing 0 arguments
-    External (PS2X, MethodObj)    // Warning: Unknown method, guessing 0 arguments
-    External (PS3X, MethodObj)    // Warning: Unknown method, guessing 0 arguments
-    External (SDSM, IntObj)    // Warning: Unknown object
-    External (SGMD, FieldUnitObj)
+    External (_GPE.HLVT, MethodObj)    // 0 Arguments (from opcode)
+    External (_PR_.BGIA, FieldUnitObj)    // (from opcode)
+    External (_PR_.BGMA, FieldUnitObj)    // (from opcode)
+    External (_PR_.BGMS, FieldUnitObj)    // (from opcode)
+    External (_PR_.CPU0._PPC, MethodObj)    // 0 Arguments (from opcode)
+    External (_PR_.DSAE, FieldUnitObj)    // (from opcode)
+    External (_PR_.DTSE, FieldUnitObj)    // (from opcode)
+    External (_PR_.DTSF, FieldUnitObj)    // (from opcode)
+    External (_PR_.ELNG, FieldUnitObj)    // (from opcode)
+    External (_PR_.EMNA, FieldUnitObj)    // (from opcode)
+    External (_PR_.EPCS, FieldUnitObj)    // (from opcode)
+    External (_PR_.TRPD, FieldUnitObj)    // (from opcode)
+    External (_PR_.TRPF, FieldUnitObj)    // (from opcode)
+    External (_SB_.PCI0.IGPU.CBLV, FieldUnitObj)    // (from opcode)
+    External (_SB_.PCI0.IGPU.CLID, FieldUnitObj)    // (from opcode)
+    External (_SB_.PCI0.IGPU.DD1F, UnknownObj)    // (from opcode)
+    External (_SB_.PCI0.IGPU.GLID, MethodObj)    // 1 Arguments (from opcode)
+    External (_SB_.PCI0.IGPU.GSCI, MethodObj)    // 0 Arguments (from opcode)
+    External (_SB_.PCI0.IGPU.GSSE, FieldUnitObj)    // (from opcode)
+    External (_SB_.PCI0.PEG0.HPME, MethodObj)    // 0 Arguments (from opcode)
+    External (_SB_.PCI0.PEG1.HPME, MethodObj)    // 0 Arguments (from opcode)
+    External (_SB_.PCI0.PEG2.HPME, MethodObj)    // 0 Arguments (from opcode)
+    External (_SB_.PCI0.XHC_.RHUB.INIR, MethodObj)    // 0 Arguments (from opcode)
+    External (_SB_.TPM_.PTS_, MethodObj)    // 1 Arguments (from opcode)
+    External (_TZ_.TZ00, UnknownObj)    // (from opcode)
+    External (_TZ_.TZ01, UnknownObj)    // (from opcode)
+    External (D1F0, UnknownObj)    // (from opcode)
+    External (D1F1, UnknownObj)    // (from opcode)
+    External (D1F2, UnknownObj)    // (from opcode)
+    External (DIDX, FieldUnitObj)    // (from opcode)
+    External (GSMI, FieldUnitObj)    // (from opcode)
+    External (IGDS, FieldUnitObj)    // (from opcode)
+    External (LIDS, FieldUnitObj)    // (from opcode)
+    External (M32B, FieldUnitObj)    // (from opcode)
+    External (M32L, FieldUnitObj)    // (from opcode)
+    External (M64B, FieldUnitObj)    // (from opcode)
+    External (M64L, FieldUnitObj)    // (from opcode)
+    External (PDC0, IntObj)    // (from opcode)
+    External (PDC1, IntObj)    // (from opcode)
+    External (PDC2, IntObj)    // (from opcode)
+    External (PDC3, IntObj)    // (from opcode)
+    External (PDC4, IntObj)    // (from opcode)
+    External (PDC5, IntObj)    // (from opcode)
+    External (PDC6, IntObj)    // (from opcode)
+    External (PDC7, IntObj)    // (from opcode)
+    External (PS0X, MethodObj)    // 0 Arguments (from opcode)
+    External (PS2X, MethodObj)    // 0 Arguments (from opcode)
+    External (PS3X, MethodObj)    // 0 Arguments (from opcode)
+    External (SDSM, IntObj)    // (from opcode)
+    External (SGMD, FieldUnitObj)    // (from opcode)
 
     Name (SS1, Zero)
     Name (SS2, Zero)
@@ -1080,7 +1060,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         TBTM,   32
     }
 
-    OperationRegion (OGNS, SystemMemory, 0x77F63F18, 0x0000000C)
+    OperationRegion (OGNS, SystemMemory, 0x77F63F18, 0x0C)
     Field (OGNS, AnyAcc, Lock, Preserve)
     {
         OG00,   8, 
@@ -2739,9 +2719,9 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
             Name (DM_B, Zero)
             Method (GEPB, 0, Serialized)
             {
-                If (LEqual (EP_B, Zero))
+                If ((EP_B == Zero))
                 {
-                    ShiftLeft (EPBR, 0x0C, EP_B)
+                    EP_B = (EPBR << 0x0C)
                 }
 
                 Return (EP_B)
@@ -2749,9 +2729,9 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
 
             Method (GMHB, 0, Serialized)
             {
-                If (LEqual (MH_B, Zero))
+                If ((MH_B == Zero))
                 {
-                    ShiftLeft (MHBR, 0x0F, MH_B)
+                    MH_B = (MHBR << 0x0F)
                 }
 
                 Return (MH_B)
@@ -2759,9 +2739,9 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
 
             Method (GPCB, 0, Serialized)
             {
-                If (LEqual (PC_B, Zero))
+                If ((PC_B == Zero))
                 {
-                    ShiftLeft (PXBR, 0x1A, PC_B)
+                    PC_B = (PXBR << 0x1A)
                 }
 
                 Return (PC_B)
@@ -2769,9 +2749,9 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
 
             Method (GPCL, 0, Serialized)
             {
-                If (LEqual (PC_L, Zero))
+                If ((PC_L == Zero))
                 {
-                    ShiftRight (0x10000000, PXSZ, PC_L)
+                    PC_L = (0x10000000 >> PXSZ)
                 }
 
                 Return (PC_L)
@@ -2779,9 +2759,9 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
 
             Method (GDMB, 0, Serialized)
             {
-                If (LEqual (DM_B, Zero))
+                If ((DM_B == Zero))
                 {
-                    ShiftLeft (DIBR, 0x0C, DM_B)
+                    DM_B = (DIBR << 0x0C)
                 }
 
                 Return (DM_B)
@@ -2789,186 +2769,186 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
 
             Method (_CRS, 0, Serialized)  // _CRS: Current Resource Settings
             {
-                Store (GPCL (), Local0)
+                Local0 = GPCL ()
                 CreateWordField (BUF0, \_SB.PCI0._Y00._MAX, PBMX)  // _MAX: Maximum Base Address
-                Store (Subtract (ShiftRight (Local0, 0x14), 0x02), PBMX)
+                PBMX = ((Local0 >> 0x14) - 0x02)
                 CreateWordField (BUF0, \_SB.PCI0._Y00._LEN, PBLN)  // _LEN: Length
-                Store (Subtract (ShiftRight (Local0, 0x14), One), PBLN)
+                PBLN = ((Local0 >> 0x14) - One)
                 If (PM1L)
                 {
                     CreateDWordField (BUF0, \_SB.PCI0._Y01._LEN, C0LN)  // _LEN: Length
-                    Store (Zero, C0LN)
+                    C0LN = Zero
                 }
 
-                If (LEqual (PM1L, One))
+                If ((PM1L == One))
                 {
                     CreateBitField (BUF0, \_SB.PCI0._Y01._RW, C0RW)  // _RW_: Read-Write Status
-                    Store (Zero, C0RW)
+                    C0RW = Zero
                 }
 
                 If (PM1H)
                 {
                     CreateDWordField (BUF0, \_SB.PCI0._Y02._LEN, C4LN)  // _LEN: Length
-                    Store (Zero, C4LN)
+                    C4LN = Zero
                 }
 
-                If (LEqual (PM1H, One))
+                If ((PM1H == One))
                 {
                     CreateBitField (BUF0, \_SB.PCI0._Y02._RW, C4RW)  // _RW_: Read-Write Status
-                    Store (Zero, C4RW)
+                    C4RW = Zero
                 }
 
                 If (PM2L)
                 {
                     CreateDWordField (BUF0, \_SB.PCI0._Y03._LEN, C8LN)  // _LEN: Length
-                    Store (Zero, C8LN)
+                    C8LN = Zero
                 }
 
-                If (LEqual (PM2L, One))
+                If ((PM2L == One))
                 {
                     CreateBitField (BUF0, \_SB.PCI0._Y03._RW, C8RW)  // _RW_: Read-Write Status
-                    Store (Zero, C8RW)
+                    C8RW = Zero
                 }
 
                 If (PM2H)
                 {
                     CreateDWordField (BUF0, \_SB.PCI0._Y04._LEN, CCLN)  // _LEN: Length
-                    Store (Zero, CCLN)
+                    CCLN = Zero
                 }
 
-                If (LEqual (PM2H, One))
+                If ((PM2H == One))
                 {
                     CreateBitField (BUF0, \_SB.PCI0._Y04._RW, CCRW)  // _RW_: Read-Write Status
-                    Store (Zero, CCRW)
+                    CCRW = Zero
                 }
 
                 If (PM3L)
                 {
                     CreateDWordField (BUF0, \_SB.PCI0._Y05._LEN, D0LN)  // _LEN: Length
-                    Store (Zero, D0LN)
+                    D0LN = Zero
                 }
 
-                If (LEqual (PM3L, One))
+                If ((PM3L == One))
                 {
                     CreateBitField (BUF0, \_SB.PCI0._Y05._RW, D0RW)  // _RW_: Read-Write Status
-                    Store (Zero, D0RW)
+                    D0RW = Zero
                 }
 
                 If (PM3H)
                 {
                     CreateDWordField (BUF0, \_SB.PCI0._Y06._LEN, D4LN)  // _LEN: Length
-                    Store (Zero, D4LN)
+                    D4LN = Zero
                 }
 
-                If (LEqual (PM3H, One))
+                If ((PM3H == One))
                 {
                     CreateBitField (BUF0, \_SB.PCI0._Y06._RW, D4RW)  // _RW_: Read-Write Status
-                    Store (Zero, D4RW)
+                    D4RW = Zero
                 }
 
                 If (PM4L)
                 {
                     CreateDWordField (BUF0, \_SB.PCI0._Y07._LEN, D8LN)  // _LEN: Length
-                    Store (Zero, D8LN)
+                    D8LN = Zero
                 }
 
-                If (LEqual (PM4L, One))
+                If ((PM4L == One))
                 {
                     CreateBitField (BUF0, \_SB.PCI0._Y07._RW, D8RW)  // _RW_: Read-Write Status
-                    Store (Zero, D8RW)
+                    D8RW = Zero
                 }
 
                 If (PM4H)
                 {
                     CreateDWordField (BUF0, \_SB.PCI0._Y08._LEN, DCLN)  // _LEN: Length
-                    Store (Zero, DCLN)
+                    DCLN = Zero
                 }
 
-                If (LEqual (PM4H, One))
+                If ((PM4H == One))
                 {
                     CreateBitField (BUF0, \_SB.PCI0._Y08._RW, DCRW)  // _RW_: Read-Write Status
-                    Store (Zero, DCRW)
+                    DCRW = Zero
                 }
 
                 If (PM5L)
                 {
                     CreateDWordField (BUF0, \_SB.PCI0._Y09._LEN, E0LN)  // _LEN: Length
-                    Store (Zero, E0LN)
+                    E0LN = Zero
                 }
 
-                If (LEqual (PM5L, One))
+                If ((PM5L == One))
                 {
                     CreateBitField (BUF0, \_SB.PCI0._Y09._RW, E0RW)  // _RW_: Read-Write Status
-                    Store (Zero, E0RW)
+                    E0RW = Zero
                 }
 
                 If (PM5H)
                 {
                     CreateDWordField (BUF0, \_SB.PCI0._Y0A._LEN, E4LN)  // _LEN: Length
-                    Store (Zero, E4LN)
+                    E4LN = Zero
                 }
 
-                If (LEqual (PM5H, One))
+                If ((PM5H == One))
                 {
                     CreateBitField (BUF0, \_SB.PCI0._Y0A._RW, E4RW)  // _RW_: Read-Write Status
-                    Store (Zero, E4RW)
+                    E4RW = Zero
                 }
 
                 If (PM6L)
                 {
                     CreateDWordField (BUF0, \_SB.PCI0._Y0B._LEN, E8LN)  // _LEN: Length
-                    Store (Zero, E8LN)
+                    E8LN = Zero
                 }
 
-                If (LEqual (PM6L, One))
+                If ((PM6L == One))
                 {
                     CreateBitField (BUF0, \_SB.PCI0._Y0B._RW, E8RW)  // _RW_: Read-Write Status
-                    Store (Zero, E8RW)
+                    E8RW = Zero
                 }
 
                 If (PM6H)
                 {
                     CreateDWordField (BUF0, \_SB.PCI0._Y0C._LEN, ECLN)  // _LEN: Length
-                    Store (Zero, ECLN)
+                    ECLN = Zero
                 }
 
-                If (LEqual (PM6H, One))
+                If ((PM6H == One))
                 {
                     CreateBitField (BUF0, \_SB.PCI0._Y0C._RW, ECRW)  // _RW_: Read-Write Status
-                    Store (Zero, ECRW)
+                    ECRW = Zero
                 }
 
                 If (PM0H)
                 {
                     CreateDWordField (BUF0, \_SB.PCI0._Y0D._LEN, F0LN)  // _LEN: Length
-                    Store (Zero, F0LN)
+                    F0LN = Zero
                 }
 
-                If (LEqual (PM0H, One))
+                If ((PM0H == One))
                 {
                     CreateBitField (BUF0, \_SB.PCI0._Y0D._RW, F0RW)  // _RW_: Read-Write Status
-                    Store (Zero, F0RW)
+                    F0RW = Zero
                 }
 
                 CreateDWordField (BUF0, \_SB.PCI0._Y0E._MIN, M1MN)  // _MIN: Minimum Base Address
                 CreateDWordField (BUF0, \_SB.PCI0._Y0E._MAX, M1MX)  // _MAX: Maximum Base Address
                 CreateDWordField (BUF0, \_SB.PCI0._Y0E._LEN, M1LN)  // _LEN: Length
-                Store (M32L, M1LN)
-                Store (M32B, M1MN)
-                Subtract (Add (M1MN, M1LN), One, M1MX)
-                If (LEqual (M64L, Zero))
+                M1LN = M32L
+                M1MN = M32B
+                M1MX = ((M1MN + M1LN) - One)
+                If ((M64L == Zero))
                 {
                     CreateQWordField (BUF0, \_SB.PCI0._Y0F._LEN, MSLN)  // _LEN: Length
-                    Store (Zero, MSLN)
+                    MSLN = Zero
                 }
                 Else
                 {
                     CreateQWordField (BUF0, \_SB.PCI0._Y0F._LEN, M2LN)  // _LEN: Length
                     CreateQWordField (BUF0, \_SB.PCI0._Y0F._MIN, M2MN)  // _MIN: Minimum Base Address
                     CreateQWordField (BUF0, \_SB.PCI0._Y0F._MAX, M2MX)  // _MAX: Maximum Base Address
-                    Store (M64L, M2LN)
-                    Store (M64B, M2MN)
-                    Subtract (Add (M2MN, M2LN), One, M2MX)
+                    M2LN = M64L
+                    M2MN = M64B
+                    M2MX = ((M2MN + M2LN) - One)
                 }
 
                 Return (BUF0)
@@ -2980,49 +2960,49 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
             Name (XCNT, Zero)
             Method (_OSC, 4, Serialized)  // _OSC: Operating System Capabilities
             {
-                Store (Arg3, Local0)
+                Local0 = Arg3
                 CreateDWordField (Local0, Zero, CDW1)
                 CreateDWordField (Local0, 0x04, CDW2)
                 CreateDWordField (Local0, 0x08, CDW3)
-                If (LAnd (LEqual (Arg0, GUID), NEXP))
+                If (((Arg0 == GUID) && NEXP))
                 {
-                    Store (CDW2, SUPP)
-                    Store (CDW3, CTRL)
-                    If (LAnd (LEqual (TBTS, One), LEqual (TNAT, One)))
+                    SUPP = CDW2
+                    CTRL = CDW3
+                    If (((TBTS == One) && (TNAT == One)))
                     {
-                        And (CTRL, 0xFFFFFFF7, CTRL)
+                        CTRL &= 0xFFFFFFF7
                     }
 
-                    If (Not (And (CDW1, One)))
+                    If (~(CDW1 & One))
                     {
-                        If (And (CTRL, One))
+                        If ((CTRL & One))
                         {
                             NHPG ()
                         }
 
-                        If (And (CTRL, 0x04))
+                        If ((CTRL & 0x04))
                         {
                             NPME ()
                         }
                     }
 
-                    If (LNotEqual (Arg1, One))
+                    If ((Arg1 != One))
                     {
-                        Or (CDW1, 0x08, CDW1)
+                        CDW1 |= 0x08
                     }
 
-                    If (LNotEqual (CDW3, CTRL))
+                    If ((CDW3 != CTRL))
                     {
-                        Or (CDW1, 0x10, CDW1)
+                        CDW1 |= 0x10
                     }
 
-                    Store (CTRL, CDW3)
-                    Store (CTRL, OSCC)
+                    CDW3 = CTRL
+                    OSCC = CTRL
                     Return (Local0)
                 }
                 Else
                 {
-                    Or (CDW1, 0x04, CDW1)
+                    CDW1 |= 0x04
                     Return (Local0)
                 }
             }
@@ -3163,7 +3143,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
 
                 Device (B0D4)
                 {
-                    Method (XDSM, 4, Serialized)  // _DSM: Device-Specific Method
+                    Method (XDSM, 4, Serialized)
                     {
                         If (PCIC (Arg0))
                         {
@@ -3177,18 +3157,18 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         }
     }
 
-    If (LEqual (ECR1, One))
+    If ((ECR1 == One))
     {
         Scope (_SB.PCI0)
         {
             Name (PCIG, ToUUID ("e5c937d0-3553-4d7a-9117-ea4d19c3434d") /* Device Labeling Interface */)
             Method (PCID, 4, Serialized)
             {
-                If (LEqual (Arg0, PCIG))
+                If ((Arg0 == PCIG))
                 {
-                    If (LGreaterEqual (Arg1, 0x03))
+                    If ((Arg1 >= 0x03))
                     {
-                        If (LEqual (Arg2, Zero))
+                        If ((Arg2 == Zero))
                         {
                             Return (Buffer (0x02)
                             {
@@ -3196,12 +3176,12 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                             })
                         }
 
-                        If (LEqual (Arg2, 0x08))
+                        If ((Arg2 == 0x08))
                         {
                             Return (One)
                         }
 
-                        If (LEqual (Arg2, 0x09))
+                        If ((Arg2 == 0x09))
                         {
                             Return (Package (0x05)
                             {
@@ -3227,9 +3207,9 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
     {
         Method (PCIC, 1, Serialized)
         {
-            If (LEqual (ECR1, One))
+            If ((ECR1 == One))
             {
-                If (LEqual (Arg0, PCIG))
+                If ((Arg0 == PCIG))
                 {
                     Return (One)
                 }
@@ -3635,81 +3615,81 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         })
         Method (GNUM, 1, NotSerialized)
         {
-            Store (GNMB (Arg0), Local1)
-            Store (GGRP (Arg0), Local2)
-            Return (Add (Local1, Multiply (Local2, 0x18)))
+            Local1 = GNMB (Arg0)
+            Local2 = GGRP (Arg0)
+            Return ((Local1 + (Local2 * 0x18)))
         }
 
         Method (INUM, 1, NotSerialized)
         {
-            If (LEqual (PCHS, 0x02))
+            If ((PCHS == 0x02))
             {
-                Store (Zero, Local0)
+                Local0 = Zero
             }
             Else
             {
-                Store (One, Local0)
+                Local0 = One
             }
 
-            Store (GNMB (Arg0), Local1)
-            Store (GGRP (Arg0), Local2)
-            Store (Zero, Local3)
-            While (LLess (Local3, Local2))
+            Local1 = GNMB (Arg0)
+            Local2 = GGRP (Arg0)
+            Local3 = Zero
+            While ((Local3 < Local2))
             {
-                Add (DerefOf (Index (DerefOf (Index (GPPG, Local0)), Local3)), Local1, Local1)
-                Increment (Local3)
+                Local1 += DerefOf (DerefOf (GPPG [Local0]) [Local3])
+                Local3++
             }
 
-            Return (Add (0x18, Mod (Local1, 0x60)))
+            Return ((0x18 + (Local1 % 0x60)))
         }
 
         Method (GGRP, 1, Serialized)
         {
-            ShiftRight (And (Arg0, 0x00FF0000), 0x10, Local0)
+            Local0 = ((Arg0 & 0x00FF0000) >> 0x10)
             Return (Local0)
         }
 
         Method (GNMB, 1, Serialized)
         {
-            Return (And (Arg0, 0xFFFF))
+            Return ((Arg0 & 0xFFFF))
         }
 
         Method (GGPE, 1, NotSerialized)
         {
-            Store (GGRP (Arg0), Local0)
-            Store (GNMB (Arg0), Local1)
-            Store (And (ShiftRight (GPEM, Multiply (Local0, 0x02)), 0x03), Local2)
-            If (LEqual (Local2, Zero))
+            Local0 = GGRP (Arg0)
+            Local1 = GNMB (Arg0)
+            Local2 = ((GPEM >> (Local0 * 0x02)) & 0x03)
+            If ((Local2 == Zero))
             {
                 Return (0x6F)
             }
             Else
             {
-                Return (Add (Multiply (Subtract (Local2, One), 0x20), Local1))
+                Return ((((Local2 - One) * 0x20) + Local1))
             }
         }
 
         Method (GADR, 2, NotSerialized)
         {
-            If (LEqual (PCHS, 0x02))
+            If ((PCHS == 0x02))
             {
-                Store (Zero, Local0)
+                Local0 = Zero
             }
             Else
             {
-                Store (One, Local0)
+                Local0 = One
             }
 
-            Store (Add (DerefOf (Index (DerefOf (Index (GCOM, Local0)), Arg0)), SBRG), Local1)
-            Store (DerefOf (Index (DerefOf (Index (Arg1, Local0)), Arg0)), Local2)
-            Return (Add (Local1, Local2))
+            Local1 = (DerefOf (DerefOf (GCOM [Local0]) [Arg0]) + SBRG)
+            Local2 = DerefOf (DerefOf (Arg1 [Local0]) [Arg0])
+            Return ((Local1 + Local2))
         }
 
         Method (GPC0, 1, Serialized)
         {
-            Store (GGRP (Arg0), Local0)
-            Store (GNMB (Arg0), Local1)
-            Store (Add (GADR (Local0, PCFG), Multiply (Local1, 0x08)), Local2)
+            Local0 = GGRP (Arg0)
+            Local1 = GNMB (Arg0)
+            Local2 = (GADR (Local0, PCFG) + (Local1 * 0x08))
             OperationRegion (PDW0, SystemMemory, Local2, 0x04)
             Field (PDW0, AnyAcc, NoLock, Preserve)
             {
@@ -3721,23 +3701,23 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
 
         Method (SPC0, 2, Serialized)
         {
-            Store (GGRP (Arg0), Local0)
-            Store (GNMB (Arg0), Local1)
-            Store (Add (GADR (Local0, PCFG), Multiply (Local1, 0x08)), Local2)
+            Local0 = GGRP (Arg0)
+            Local1 = GNMB (Arg0)
+            Local2 = (GADR (Local0, PCFG) + (Local1 * 0x08))
             OperationRegion (PDW0, SystemMemory, Local2, 0x04)
             Field (PDW0, AnyAcc, NoLock, Preserve)
             {
                 TEMP,   32
             }
 
-            Store (Arg1, TEMP)
+            TEMP = Arg1
         }
 
         Method (GPC1, 1, Serialized)
         {
-            Store (GGRP (Arg0), Local0)
-            Store (GNMB (Arg0), Local1)
-            Store (Add (Add (GADR (Local0, PCFG), Multiply (Local1, 0x08)), 0x04), Local2)
+            Local0 = GGRP (Arg0)
+            Local1 = GNMB (Arg0)
+            Local2 = ((GADR (Local0, PCFG) + (Local1 * 0x08)) + 0x04)
             OperationRegion (PDW1, SystemMemory, Local2, 0x04)
             Field (PDW1, AnyAcc, NoLock, Preserve)
             {
@@ -3749,23 +3729,23 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
 
         Method (SPC1, 2, Serialized)
         {
-            Store (GGRP (Arg0), Local0)
-            Store (GNMB (Arg0), Local1)
-            Store (Add (Add (GADR (Local0, PCFG), Multiply (Local1, 0x08)), 0x04), Local2)
+            Local0 = GGRP (Arg0)
+            Local1 = GNMB (Arg0)
+            Local2 = ((GADR (Local0, PCFG) + (Local1 * 0x08)) + 0x04)
             OperationRegion (PDW1, SystemMemory, Local2, 0x04)
             Field (PDW1, AnyAcc, NoLock, Preserve)
             {
                 TEMP,   32
             }
 
-            Store (Arg1, TEMP)
+            TEMP = Arg1
         }
 
         Method (SRXO, 2, Serialized)
         {
-            Store (GGRP (Arg0), Local0)
-            Store (GNMB (Arg0), Local1)
-            Store (Add (GADR (Local0, PCFG), Multiply (Local1, 0x08)), Local2)
+            Local0 = GGRP (Arg0)
+            Local1 = GNMB (Arg0)
+            Local2 = (GADR (Local0, PCFG) + (Local1 * 0x08))
             OperationRegion (PDW0, SystemMemory, Local2, 0x04)
             Field (PDW0, AnyAcc, NoLock, Preserve)
             {
@@ -3774,14 +3754,14 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                 Offset (0x04)
             }
 
-            Store (Arg1, TEMP)
+            TEMP = Arg1
         }
 
         Method (GGIV, 1, Serialized)
         {
-            Store (GGRP (Arg0), Local0)
-            Store (GNMB (Arg0), Local1)
-            Store (Add (GADR (Local0, PCFG), Multiply (Local1, 0x08)), Local2)
+            Local0 = GGRP (Arg0)
+            Local1 = GNMB (Arg0)
+            Local2 = (GADR (Local0, PCFG) + (Local1 * 0x08))
             OperationRegion (PDW0, SystemMemory, Local2, 0x04)
             Field (PDW0, AnyAcc, NoLock, Preserve)
             {
@@ -3795,9 +3775,9 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
 
         Method (GGOV, 1, Serialized)
         {
-            Store (GGRP (Arg0), Local0)
-            Store (GNMB (Arg0), Local1)
-            Store (Add (GADR (Local0, PCFG), Multiply (Local1, 0x08)), Local2)
+            Local0 = GGRP (Arg0)
+            Local1 = GNMB (Arg0)
+            Local2 = (GADR (Local0, PCFG) + (Local1 * 0x08))
             OperationRegion (PDW0, SystemMemory, Local2, 0x04)
             Field (PDW0, AnyAcc, NoLock, Preserve)
             {
@@ -3810,9 +3790,9 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
 
         Method (SGOV, 2, Serialized)
         {
-            Store (GGRP (Arg0), Local0)
-            Store (GNMB (Arg0), Local1)
-            Store (Add (GADR (Local0, PCFG), Multiply (Local1, 0x08)), Local2)
+            Local0 = GGRP (Arg0)
+            Local1 = GNMB (Arg0)
+            Local2 = (GADR (Local0, PCFG) + (Local1 * 0x08))
             OperationRegion (PDW0, SystemMemory, Local2, 0x04)
             Field (PDW0, AnyAcc, NoLock, Preserve)
             {
@@ -3820,14 +3800,14 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                 Offset (0x04)
             }
 
-            Store (Arg1, TEMP)
+            TEMP = Arg1
         }
 
         Method (GGII, 1, Serialized)
         {
-            Store (GGRP (Arg0), Local0)
-            Store (GNMB (Arg0), Local1)
-            Store (Add (GADR (Local0, PCFG), Multiply (Local1, 0x08)), Local2)
+            Local0 = GGRP (Arg0)
+            Local1 = GNMB (Arg0)
+            Local2 = (GADR (Local0, PCFG) + (Local1 * 0x08))
             OperationRegion (PDW0, SystemMemory, Local2, 0x04)
             Field (PDW0, AnyAcc, NoLock, Preserve)
             {
@@ -3841,9 +3821,9 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
 
         Method (SGII, 2, Serialized)
         {
-            Store (GGRP (Arg0), Local0)
-            Store (GNMB (Arg0), Local1)
-            Store (Add (GADR (Local0, PCFG), Multiply (Local1, 0x08)), Local2)
+            Local0 = GGRP (Arg0)
+            Local1 = GNMB (Arg0)
+            Local2 = (GADR (Local0, PCFG) + (Local1 * 0x08))
             OperationRegion (PDW0, SystemMemory, Local2, 0x04)
             Field (PDW0, AnyAcc, NoLock, Preserve)
             {
@@ -3852,14 +3832,14 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                 Offset (0x04)
             }
 
-            Store (Arg1, TEMP)
+            TEMP = Arg1
         }
 
         Method (GPMV, 1, Serialized)
         {
-            Store (GGRP (Arg0), Local0)
-            Store (GNMB (Arg0), Local1)
-            Store (Add (GADR (Local0, PCFG), Multiply (Local1, 0x08)), Local2)
+            Local0 = GGRP (Arg0)
+            Local1 = GNMB (Arg0)
+            Local2 = (GADR (Local0, PCFG) + (Local1 * 0x08))
             OperationRegion (PDW0, SystemMemory, Local2, 0x04)
             Field (PDW0, AnyAcc, NoLock, Preserve)
             {
@@ -3873,9 +3853,9 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
 
         Method (SPMV, 2, Serialized)
         {
-            Store (GGRP (Arg0), Local0)
-            Store (GNMB (Arg0), Local1)
-            Store (Add (GADR (Local0, PCFG), Multiply (Local1, 0x08)), Local2)
+            Local0 = GGRP (Arg0)
+            Local1 = GNMB (Arg0)
+            Local2 = (GADR (Local0, PCFG) + (Local1 * 0x08))
             OperationRegion (PDW0, SystemMemory, Local2, 0x04)
             Field (PDW0, AnyAcc, NoLock, Preserve)
             {
@@ -3884,54 +3864,54 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                 Offset (0x04)
             }
 
-            Store (Arg1, TEMP)
+            TEMP = Arg1
         }
 
         Method (GHPO, 1, Serialized)
         {
-            Store (GGRP (Arg0), Local0)
-            Store (GNMB (Arg0), Local1)
+            Local0 = GGRP (Arg0)
+            Local1 = GNMB (Arg0)
             OperationRegion (PREG, SystemMemory, GADR (Local0, HOWN), 0x04)
             Field (PREG, AnyAcc, NoLock, Preserve)
             {
                 TEMP,   32
             }
 
-            Return (And (ShiftRight (TEMP, Local1), One))
+            Return (((TEMP >> Local1) & One))
         }
 
         Method (SHPO, 2, Serialized)
         {
-            Store (GGRP (Arg0), Local0)
-            Store (GNMB (Arg0), Local1)
+            Local0 = GGRP (Arg0)
+            Local1 = GNMB (Arg0)
             OperationRegion (PREG, SystemMemory, GADR (Local0, HOWN), 0x04)
             Field (PREG, AnyAcc, NoLock, Preserve)
             {
                 TEMP,   32
             }
 
-            Or (And (TEMP, Not (ShiftLeft (One, Local1))), ShiftLeft (Arg1, Local1), TEMP)
+            TEMP = ((TEMP & ~(One << Local1)) | (Arg1 << Local1))
         }
 
         Method (GGPO, 1, Serialized)
         {
-            Store (GGRP (Arg0), Local0)
-            Store (GNMB (Arg0), Local1)
-            Store (Add (GADR (Local0, POWN), Multiply (ShiftRight (Local1, 0x03), 0x04)), Local2)
+            Local0 = GGRP (Arg0)
+            Local1 = GNMB (Arg0)
+            Local2 = (GADR (Local0, POWN) + ((Local1 >> 0x03) * 0x04))
             OperationRegion (PREG, SystemMemory, Local2, 0x04)
             Field (PREG, AnyAcc, NoLock, Preserve)
             {
                 TEMP,   32
             }
 
-            Return (And (ShiftRight (TEMP, Multiply (And (Local1, 0x07), 0x04)), 0x03))
+            Return (((TEMP >> ((Local1 & 0x07) * 0x04)) & 0x03))
         }
 
         Method (SGRA, 2, Serialized)
         {
-            Store (GGRP (Arg0), Local0)
-            Store (GNMB (Arg0), Local1)
-            Store (Add (GADR (Local0, PCFG), Multiply (Local1, 0x08)), Local2)
+            Local0 = GGRP (Arg0)
+            Local1 = GNMB (Arg0)
+            Local2 = (GADR (Local0, PCFG) + (Local1 * 0x08))
             OperationRegion (PDW0, SystemMemory, Local2, 0x04)
             Field (PDW0, AnyAcc, NoLock, Preserve)
             {
@@ -3940,14 +3920,14 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                 Offset (0x04)
             }
 
-            Store (Arg1, TEMP)
+            TEMP = Arg1
         }
 
         Method (SGWP, 2, Serialized)
         {
-            Store (GGRP (Arg0), Local0)
-            Store (GNMB (Arg0), Local1)
-            Store (Add (Add (GADR (Local0, PCFG), Multiply (Local1, 0x08)), 0x04), Local2)
+            Local0 = GGRP (Arg0)
+            Local1 = GNMB (Arg0)
+            Local2 = ((GADR (Local0, PCFG) + (Local1 * 0x08)) + 0x04)
             OperationRegion (PDW0, SystemMemory, Local2, 0x04)
             Field (PDW0, AnyAcc, NoLock, Preserve)
             {
@@ -3956,7 +3936,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                 Offset (0x04)
             }
 
-            Store (Arg1, TEMP)
+            TEMP = Arg1
         }
 
         Method (UGP1, 1, Serialized)
@@ -3969,37 +3949,37 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                 GENX,   32
             }
 
-            If (LEqual (And (ShiftRight (GPEM, Multiply (Arg0, 0x02)), 0x03), Zero))
+            If ((((GPEM >> (Arg0 * 0x02)) & 0x03) == Zero))
             {
-                Store (And (STSX, GENX), Index (GPES, Arg0))
+                GPES [Arg0] = (STSX & GENX)
             }
             Else
             {
-                Store (Zero, Index (GPES, Arg0))
+                GPES [Arg0] = Zero
             }
         }
 
         Method (UGPS, 0, Serialized)
         {
-            If (LEqual (PCHS, One))
+            If ((PCHS == One))
             {
-                Store (0x0A, Local0)
+                Local0 = 0x0A
             }
             Else
             {
-                Store (0x08, Local0)
+                Local0 = 0x08
             }
 
             While (Local0)
             {
-                Decrement (Local0)
+                Local0--
                 UGP1 (Local0)
             }
         }
 
         Method (CGP1, 2, Serialized)
         {
-            If (LEqual (And (ShiftRight (GPEM, Multiply (Arg0, 0x02)), 0x03), Zero))
+            If ((((GPEM >> (Arg0 * 0x02)) & 0x03) == Zero))
             {
                 OperationRegion (GPPX, SystemMemory, GADR (Arg0, GPEO), 0x04)
                 Field (GPPX, AnyAcc, NoLock, Preserve)
@@ -4007,81 +3987,81 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                     STSX,   32
                 }
 
-                Store (Arg1, STSX)
+                STSX = Arg1
             }
         }
 
         Method (CGPS, 0, Serialized)
         {
-            If (LEqual (PCHS, One))
+            If ((PCHS == One))
             {
-                Store (0x0A, Local0)
+                Local0 = 0x0A
             }
             Else
             {
-                Store (0x08, Local0)
+                Local0 = 0x08
             }
 
             While (Local0)
             {
-                Decrement (Local0)
+                Local0--
                 CGP1 (Local0, 0xFFFFFFFF)
             }
         }
 
         Method (CGLS, 0, Serialized)
         {
-            If (LEqual (PCHS, One))
+            If ((PCHS == One))
             {
-                Store (0x0A, Local0)
+                Local0 = 0x0A
             }
             Else
             {
-                Store (0x08, Local0)
+                Local0 = 0x08
             }
 
             While (Local0)
             {
-                Decrement (Local0)
-                If (LEqual (Local0, 0x09))
+                Local0--
+                If ((Local0 == 0x09))
                 {
-                    Store (G2L9, Local1)
+                    Local1 = G2L9
                 }
-                ElseIf (LEqual (Local0, 0x08))
+                ElseIf ((Local0 == 0x08))
                 {
-                    Store (G2L8, Local1)
+                    Local1 = G2L8
                 }
-                ElseIf (LEqual (Local0, 0x07))
+                ElseIf ((Local0 == 0x07))
                 {
-                    Store (G2L7, Local1)
+                    Local1 = G2L7
                 }
-                ElseIf (LEqual (Local0, 0x06))
+                ElseIf ((Local0 == 0x06))
                 {
-                    Store (G2L6, Local1)
+                    Local1 = G2L6
                 }
-                ElseIf (LEqual (Local0, 0x05))
+                ElseIf ((Local0 == 0x05))
                 {
-                    Store (G2L5, Local1)
+                    Local1 = G2L5
                 }
-                ElseIf (LEqual (Local0, 0x04))
+                ElseIf ((Local0 == 0x04))
                 {
-                    Store (G2L4, Local1)
+                    Local1 = G2L4
                 }
-                ElseIf (LEqual (Local0, 0x03))
+                ElseIf ((Local0 == 0x03))
                 {
-                    Store (G2L3, Local1)
+                    Local1 = G2L3
                 }
-                ElseIf (LEqual (Local0, 0x02))
+                ElseIf ((Local0 == 0x02))
                 {
-                    Store (G2L2, Local1)
+                    Local1 = G2L2
                 }
-                ElseIf (LEqual (Local0, One))
+                ElseIf ((Local0 == One))
                 {
-                    Store (G2L1, Local1)
+                    Local1 = G2L1
                 }
-                ElseIf (LEqual (Local0, Zero))
+                ElseIf ((Local0 == Zero))
                 {
-                    Store (G2L0, Local1)
+                    Local1 = G2L0
                 }
                 Else
                 {
@@ -4094,9 +4074,9 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
 
         Method (CAGS, 1, Serialized)
         {
-            Store (GGRP (Arg0), Local0)
-            Store (GNMB (Arg0), Local1)
-            If (LEqual (And (ShiftRight (GPEM, Multiply (Local0, 0x02)), 0x03), Zero))
+            Local0 = GGRP (Arg0)
+            Local1 = GNMB (Arg0)
+            If ((((GPEM >> (Local0 * 0x02)) & 0x03) == Zero))
             {
                 OperationRegion (GPPX, SystemMemory, GADR (Local0, GPEO), 0x04)
                 Field (GPPX, AnyAcc, NoLock, Preserve)
@@ -4104,24 +4084,24 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                     STSX,   32
                 }
 
-                Store (STSX, Local3)
-                ShiftLeft (One, Local1, Local2)
-                Or (STSX, Local2, STSX)
+                Local3 = STSX
+                Local2 = (One << Local1)
+                STSX |= Local2
             }
         }
 
         Method (ISME, 1, NotSerialized)
         {
-            Store (GGRP (Arg0), Local0)
-            Store (GNMB (Arg0), Local1)
-            Return (And (ShiftRight (DerefOf (Index (GPES, Local0)), Local1), One))
+            Local0 = GGRP (Arg0)
+            Local1 = GNMB (Arg0)
+            Return (((DerefOf (GPES [Local0]) >> Local1) & One))
         }
 
         Method (DIPI, 1, Serialized)
         {
-            Store (GGRP (Arg0), Local0)
-            Store (GNMB (Arg0), Local1)
-            Store (Add (GADR (Local0, PCFG), Multiply (Local1, 0x08)), Local2)
+            Local0 = GGRP (Arg0)
+            Local1 = GNMB (Arg0)
+            Local2 = (GADR (Local0, PCFG) + (Local1 * 0x08))
             OperationRegion (PDW0, SystemMemory, Local2, 0x04)
             Field (PDW0, AnyAcc, NoLock, Preserve)
             {
@@ -4132,21 +4112,21 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                 Offset (0x04)
             }
 
-            If (LNotEqual (RCFG, 0x02))
+            If ((RCFG != 0x02))
             {
-                Store (DerefOf (Index (RXEV, Local0)), Local3)
-                And (Local3, Not (ShiftLeft (0x03, Multiply (Local1, 0x02))), Local3)
-                Or (Local3, ShiftLeft (RCFG, Multiply (Local1, 0x02)), Index (RXEV, Local0))
-                Store (0x02, RCFG)
-                Store (One, RDIS)
+                Local3 = DerefOf (RXEV [Local0])
+                Local3 &= ~(0x03 << (Local1 * 0x02))
+                RXEV [Local0] = (Local3 | (RCFG << (Local1 * 0x02)))
+                RCFG = 0x02
+                RDIS = One
             }
         }
 
         Method (UIPI, 1, Serialized)
         {
-            Store (GGRP (Arg0), Local0)
-            Store (GNMB (Arg0), Local1)
-            Store (Add (GADR (Local0, PCFG), Multiply (Local1, 0x08)), Local2)
+            Local0 = GGRP (Arg0)
+            Local1 = GNMB (Arg0)
+            Local2 = (GADR (Local0, PCFG) + (Local1 * 0x08))
             OperationRegion (PDW0, SystemMemory, Local2, 0x04)
             Field (PDW0, AnyAcc, NoLock, Preserve)
             {
@@ -4157,11 +4137,11 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                 Offset (0x04)
             }
 
-            Store (And (ShiftRight (DerefOf (Index (RXEV, Local0)), Multiply (Local1, 0x02)), 0x03), Local3)
-            If (LNotEqual (Local3, 0x02))
+            Local3 = ((DerefOf (RXEV [Local0]) >> (Local1 * 0x02)) & 0x03)
+            If ((Local3 != 0x02))
             {
-                Store (Zero, RDIS)
-                Store (Local3, RCFG)
+                RDIS = Zero
+                RCFG = Local3
             }
         }
     }
@@ -4175,7 +4155,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
             Offset (0x04)
         }
 
-        Store (Arg0, TEMP)
+        TEMP = Arg0
     }
 
     Method (DPRG, 1, Serialized)
@@ -4187,7 +4167,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
             Offset (0x04)
         }
 
-        Store (Arg0, TEMP)
+        TEMP = Arg0
     }
 
     Method (DPGP, 0, Serialized)
@@ -4217,7 +4197,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
             Offset (0x0C)
         }
 
-        Return (LAnd (LEqual (GPD9, One), LEqual (GPDA, Zero)))
+        Return (((GPD9 == One) && (GPDA == Zero)))
     }
 
     Scope (\)
@@ -4230,32 +4210,32 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                 DO00,   32
             }
 
-            Return (LNotEqual (DO00, 0xFFFFFFFF))
+            Return ((DO00 != 0xFFFFFFFF))
         }
 
         Method (THDA, 2, Serialized)
         {
-            Store (0xFE200000, Local0)
-            Add (Local0, Multiply (0x40, Multiply (0x80, Subtract (Arg0, 0x20))), Local0)
-            Add (Local0, Multiply (0x40, Arg1), Local0)
+            Local0 = 0xFE200000
+            Local0 += (0x40 * (0x80 * (Arg0 - 0x20)))
+            Local0 += (0x40 * Arg1)
             Return (Local0)
         }
 
         Method (STRD, 3, Serialized)
         {
-            If (LGreater (Add (Arg1, Arg2), SizeOf (Arg0)))
+            If (((Arg1 + Arg2) > SizeOf (Arg0)))
             {
                 Return (Zero)
             }
 
             ToBuffer (Arg0, Local3)
-            Store (Zero, Local0)
-            Store (Zero, Local1)
-            While (LLess (Local1, Arg2))
+            Local0 = Zero
+            Local1 = Zero
+            While ((Local1 < Arg2))
             {
-                Store (DerefOf (Index (Local3, Add (Arg1, Local1))), Local2)
-                Add (Local0, ShiftLeft (Local2, Multiply (0x08, Local1)), Local0)
-                Increment (Local1)
+                Local2 = DerefOf (Local3 [(Arg1 + Local1)])
+                Local0 += (Local2 << (0x08 * Local1))
+                Local1++
             }
 
             Return (Local0)
@@ -4263,13 +4243,13 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
 
         Method (THDS, 1, Serialized)
         {
-            If (LNot (THEN ()))
+            If (!THEN ())
             {
                 Return (Zero)
             }
 
-            Store (SizeOf (Arg0), Local0)
-            Store (THDA (0x20, 0x16), Local1)
+            Local0 = SizeOf (Arg0)
+            Local1 = THDA (0x20, 0x16)
             OperationRegion (THBA, SystemMemory, Local1, 0x40)
             Field (THBA, QWordAcc, NoLock, Preserve)
             {
@@ -4295,39 +4275,39 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                 BO00,   8
             }
 
-            Store (0x01000242, DO10)
-            Store (Local0, WO00)
-            Store (Zero, Local6)
-            Store (Local0, Local7)
-            While (LGreaterEqual (Local7, 0x08))
+            DO10 = 0x01000242
+            WO00 = Local0
+            Local6 = Zero
+            Local7 = Local0
+            While ((Local7 >= 0x08))
             {
-                Store (STRD (Arg0, Local6, 0x08), QO00)
-                Add (Local6, 0x08, Local6)
-                Subtract (Local7, 0x08, Local7)
+                QO00 = STRD (Arg0, Local6, 0x08)
+                Local6 += 0x08
+                Local7 -= 0x08
             }
 
-            If (LGreaterEqual (Local7, 0x04))
+            If ((Local7 >= 0x04))
             {
-                Store (STRD (Arg0, Local6, 0x04), DO00)
-                Add (Local6, 0x04, Local6)
-                Subtract (Local7, 0x04, Local7)
+                DO00 = STRD (Arg0, Local6, 0x04)
+                Local6 += 0x04
+                Local7 -= 0x04
             }
 
-            If (LGreaterEqual (Local7, 0x02))
+            If ((Local7 >= 0x02))
             {
-                Store (STRD (Arg0, Local6, 0x02), WO00)
-                Add (Local6, 0x02, Local6)
-                Subtract (Local7, 0x02, Local7)
+                WO00 = STRD (Arg0, Local6, 0x02)
+                Local6 += 0x02
+                Local7 -= 0x02
             }
 
-            If (LGreaterEqual (Local7, One))
+            If ((Local7 >= One))
             {
-                Store (STRD (Arg0, Local6, One), BO00)
-                Add (Local6, One, Local6)
-                Subtract (Local7, One, Local7)
+                BO00 = STRD (Arg0, Local6, One)
+                Local6 += One
+                Local7 -= One
             }
 
-            Store (Zero, DO30)
+            DO30 = Zero
         }
 
         Method (THDH, 1, Serialized)
@@ -4345,12 +4325,12 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
     Name (SPTL, 0x02)
     Method (PCHV, 0, NotSerialized)
     {
-        If (LEqual (PCHS, One))
+        If ((PCHS == One))
         {
             Return (SPTH)
         }
 
-        If (LEqual (PCHS, 0x02))
+        If ((PCHS == 0x02))
         {
             Return (SPTL)
         }
@@ -4415,7 +4395,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         Device (LPCB)
         {
             Name (_ADR, 0x001F0000)  // _ADR: Address
-            Method (XDSM, 4, Serialized)  // _DSM: Device-Specific Method
+            Method (XDSM, 4, Serialized)
             {
                 If (PCIC (Arg0))
                 {
@@ -4453,12 +4433,21 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                     ,   2, 
                 ESPI,   1
             }
-            Method (_DSM, 4, NotSerialized)
+
+            Method (_DSM, 4, NotSerialized)  // _DSM: Device-Specific Method
             {
-                If (LEqual (Arg2, Zero)) { Return (Buffer() { 0x03 } ) }
-                Return (Package()
+                If ((Arg2 == Zero))
                 {
-                    "compatible", "pci8086,9cc1",
+                    Return (Buffer (One)
+                    {
+                         0x03                                           
+                    })
+                }
+
+                Return (Package (0x02)
+                {
+                    "compatible", 
+                    "pci8086,9cc1"
                 })
             }
         }
@@ -4466,7 +4455,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         Device (PPMC)
         {
             Name (_ADR, 0x001F0002)  // _ADR: Address
-            Method (XDSM, 4, Serialized)  // _DSM: Device-Specific Method
+            Method (XDSM, 4, Serialized)
             {
                 If (PCIC (Arg0))
                 {
@@ -4492,7 +4481,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         Device (SBUS)
         {
             Name (_ADR, 0x001F0004)  // _ADR: Address
-            Method (XDSM, 4, Serialized)  // _DSM: Device-Specific Method
+            Method (XDSM, 4, Serialized)
             {
                 If (PCIC (Arg0))
                 {
@@ -4516,7 +4505,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                 TCOB,   11
             }
 
-            OperationRegion (SMBI, SystemIO, ShiftLeft (SBAR, 0x05), 0x10)
+            OperationRegion (SMBI, SystemIO, (SBAR << 0x05), 0x10)
             Field (SMBI, ByteAcc, NoLock, Preserve)
             {
                 HSTS,   8, 
@@ -4539,14 +4528,14 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                     Return (Zero)
                 }
 
-                Store (Zero, I2CE)
-                Store (0xBF, HSTS)
-                Store (Arg0, TXSA)
-                Store (Arg1, HCOM)
-                Store (0x48, HCON)
+                I2CE = Zero
+                HSTS = 0xBF
+                TXSA = Arg0
+                HCOM = Arg1
+                HCON = 0x48
                 If (COMP ())
                 {
-                    Or (HSTS, 0xFF, HSTS)
+                    HSTS |= 0xFF
                     Return (One)
                 }
 
@@ -4560,13 +4549,13 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                     Return (0xFFFF)
                 }
 
-                Store (Zero, I2CE)
-                Store (0xBF, HSTS)
-                Store (Or (Arg0, One), TXSA)
-                Store (0x44, HCON)
+                I2CE = Zero
+                HSTS = 0xBF
+                TXSA = (Arg0 | One)
+                HCON = 0x44
                 If (COMP ())
                 {
-                    Or (HSTS, 0xFF, HSTS)
+                    HSTS |= 0xFF
                     Return (DAT0)
                 }
 
@@ -4580,15 +4569,15 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                     Return (Zero)
                 }
 
-                Store (Zero, I2CE)
-                Store (0xBF, HSTS)
-                Store (Arg0, TXSA)
-                Store (Arg1, HCOM)
-                Store (Arg2, DAT0)
-                Store (0x48, HCON)
+                I2CE = Zero
+                HSTS = 0xBF
+                TXSA = Arg0
+                HCOM = Arg1
+                DAT0 = Arg2
+                HCON = 0x48
                 If (COMP ())
                 {
-                    Or (HSTS, 0xFF, HSTS)
+                    HSTS |= 0xFF
                     Return (One)
                 }
 
@@ -4602,14 +4591,14 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                     Return (0xFFFF)
                 }
 
-                Store (Zero, I2CE)
-                Store (0xBF, HSTS)
-                Store (Or (Arg0, One), TXSA)
-                Store (Arg1, HCOM)
-                Store (0x48, HCON)
+                I2CE = Zero
+                HSTS = 0xBF
+                TXSA = (Arg0 | One)
+                HCOM = Arg1
+                HCON = 0x48
                 If (COMP ())
                 {
-                    Or (HSTS, 0xFF, HSTS)
+                    HSTS |= 0xFF
                     Return (DAT0)
                 }
 
@@ -4623,16 +4612,16 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                     Return (Zero)
                 }
 
-                Store (Zero, I2CE)
-                Store (0xBF, HSTS)
-                Store (Arg0, TXSA)
-                Store (Arg1, HCOM)
-                And (Arg2, 0xFF, DAT1)
-                And (ShiftRight (Arg2, 0x08), 0xFF, DAT0)
-                Store (0x4C, HCON)
+                I2CE = Zero
+                HSTS = 0xBF
+                TXSA = Arg0
+                HCOM = Arg1
+                DAT1 = (Arg2 & 0xFF)
+                DAT0 = ((Arg2 >> 0x08) & 0xFF)
+                HCON = 0x4C
                 If (COMP ())
                 {
-                    Or (HSTS, 0xFF, HSTS)
+                    HSTS |= 0xFF
                     Return (One)
                 }
 
@@ -4646,15 +4635,15 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                     Return (0xFFFF)
                 }
 
-                Store (Zero, I2CE)
-                Store (0xBF, HSTS)
-                Store (Or (Arg0, One), TXSA)
-                Store (Arg1, HCOM)
-                Store (0x4C, HCON)
+                I2CE = Zero
+                HSTS = 0xBF
+                TXSA = (Arg0 | One)
+                HCOM = Arg1
+                HCON = 0x4C
                 If (COMP ())
                 {
-                    Or (HSTS, 0xFF, HSTS)
-                    Return (Or (ShiftLeft (DAT0, 0x08), DAT1))
+                    HSTS |= 0xFF
+                    Return (((DAT0 << 0x08) | DAT1))
                 }
 
                 Return (0xFFFFFFFF)
@@ -4667,40 +4656,40 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                     Return (Zero)
                 }
 
-                Store (Arg3, I2CE)
-                Store (0xBF, HSTS)
-                Store (Arg0, TXSA)
-                Store (Arg1, HCOM)
-                Store (SizeOf (Arg2), DAT0)
-                Store (Zero, Local1)
-                Store (DerefOf (Index (Arg2, Zero)), HBDR)
-                Store (0x54, HCON)
-                While (LGreater (SizeOf (Arg2), Local1))
+                I2CE = Arg3
+                HSTS = 0xBF
+                TXSA = Arg0
+                HCOM = Arg1
+                DAT0 = SizeOf (Arg2)
+                Local1 = Zero
+                HBDR = DerefOf (Arg2 [Zero])
+                HCON = 0x54
+                While ((SizeOf (Arg2) > Local1))
                 {
-                    Store (0x0FA0, Local0)
-                    While (LAnd (LNot (And (HSTS, 0x80)), Local0))
+                    Local0 = 0x0FA0
+                    While ((!(HSTS & 0x80) && Local0))
                     {
-                        Decrement (Local0)
+                        Local0--
                         Stall (0x32)
                     }
 
-                    If (LNot (Local0))
+                    If (!Local0)
                     {
                         KILL ()
                         Return (Zero)
                     }
 
-                    Store (0x80, HSTS)
-                    Increment (Local1)
-                    If (LGreater (SizeOf (Arg2), Local1))
+                    HSTS = 0x80
+                    Local1++
+                    If ((SizeOf (Arg2) > Local1))
                     {
-                        Store (DerefOf (Index (Arg2, Local1)), HBDR)
+                        HBDR = DerefOf (Arg2 [Local1])
                     }
                 }
 
                 If (COMP ())
                 {
-                    Or (HSTS, 0xFF, HSTS)
+                    HSTS |= 0xFF
                     Return (One)
                 }
 
@@ -4715,50 +4704,50 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                     Return (Zero)
                 }
 
-                Store (Arg2, I2CE)
-                Store (0xBF, HSTS)
-                Store (Or (Arg0, One), TXSA)
-                Store (Arg1, HCOM)
-                Store (0x54, HCON)
-                Store (0x0FA0, Local0)
-                While (LAnd (LNot (And (HSTS, 0x80)), Local0))
+                I2CE = Arg2
+                HSTS = 0xBF
+                TXSA = (Arg0 | One)
+                HCOM = Arg1
+                HCON = 0x54
+                Local0 = 0x0FA0
+                While ((!(HSTS & 0x80) && Local0))
                 {
-                    Decrement (Local0)
+                    Local0--
                     Stall (0x32)
                 }
 
-                If (LNot (Local0))
+                If (!Local0)
                 {
                     KILL ()
                     Return (Zero)
                 }
 
-                Store (DAT0, Index (TBUF, Zero))
-                Store (0x80, HSTS)
-                Store (One, Local1)
-                While (LLess (Local1, DerefOf (Index (TBUF, Zero))))
+                TBUF [Zero] = DAT0
+                HSTS = 0x80
+                Local1 = One
+                While ((Local1 < DerefOf (TBUF [Zero])))
                 {
-                    Store (0x0FA0, Local0)
-                    While (LAnd (LNot (And (HSTS, 0x80)), Local0))
+                    Local0 = 0x0FA0
+                    While ((!(HSTS & 0x80) && Local0))
                     {
-                        Decrement (Local0)
+                        Local0--
                         Stall (0x32)
                     }
 
-                    If (LNot (Local0))
+                    If (!Local0)
                     {
                         KILL ()
                         Return (Zero)
                     }
 
-                    Store (HBDR, Index (TBUF, Local1))
-                    Store (0x80, HSTS)
-                    Increment (Local1)
+                    TBUF [Local1] = HBDR
+                    HSTS = 0x80
+                    Local1++
                 }
 
                 If (COMP ())
                 {
-                    Or (HSTS, 0xFF, HSTS)
+                    HSTS |= 0xFF
                     Return (TBUF)
                 }
 
@@ -4767,32 +4756,32 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
 
             Method (STRT, 0, Serialized)
             {
-                Store (0xC8, Local0)
+                Local0 = 0xC8
                 While (Local0)
                 {
-                    If (And (HSTS, 0x40))
+                    If ((HSTS & 0x40))
                     {
-                        Decrement (Local0)
+                        Local0--
                         Sleep (One)
-                        If (LEqual (Local0, Zero))
+                        If ((Local0 == Zero))
                         {
                             Return (One)
                         }
                     }
                     Else
                     {
-                        Store (Zero, Local0)
+                        Local0 = Zero
                     }
                 }
 
-                Store (0x0FA0, Local0)
+                Local0 = 0x0FA0
                 While (Local0)
                 {
-                    If (And (HSTS, One))
+                    If ((HSTS & One))
                     {
-                        Decrement (Local0)
+                        Local0--
                         Stall (0x32)
-                        If (LEqual (Local0, Zero))
+                        If ((Local0 == Zero))
                         {
                             KILL ()
                         }
@@ -4808,18 +4797,18 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
 
             Method (COMP, 0, Serialized)
             {
-                Store (0x0FA0, Local0)
+                Local0 = 0x0FA0
                 While (Local0)
                 {
-                    If (And (HSTS, 0x02))
+                    If ((HSTS & 0x02))
                     {
                         Return (One)
                     }
                     Else
                     {
-                        Decrement (Local0)
+                        Local0--
                         Stall (0x32)
-                        If (LEqual (Local0, Zero))
+                        If ((Local0 == Zero))
                         {
                             KILL ()
                         }
@@ -4831,8 +4820,8 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
 
             Method (KILL, 0, Serialized)
             {
-                Or (HCON, 0x02, HCON)
-                Or (HSTS, 0xFF, HSTS)
+                HCON |= 0x02
+                HSTS |= 0xFF
             }
         }
     }
@@ -4845,7 +4834,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
             Name (_UID, One)  // _UID: Unique ID
             Method (_DIS, 0, Serialized)  // _DIS: Disable Device
             {
-                Or (PARC, 0x80, PARC)
+                PARC |= 0x80
             }
 
             Method (_PRS, 0, Serialized)  // _PRS: Possible Resource Settings
@@ -4861,8 +4850,8 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                         {}
                 })
                 CreateWordField (RTLA, One, IRQ0)
-                Store (Zero, IRQ0)
-                ShiftLeft (One, And (PARC, 0x0F), IRQ0)
+                IRQ0 = Zero
+                IRQ0 = (One << (PARC & 0x0F))
                 Return (RTLA)
             }
 
@@ -4870,13 +4859,13 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
             {
                 CreateWordField (Arg0, One, IRQ0)
                 FindSetRightBit (IRQ0, Local0)
-                Decrement (Local0)
-                Store (Local0, PARC)
+                Local0--
+                PARC = Local0
             }
 
             Method (_STA, 0, Serialized)  // _STA: Status
             {
-                If (And (PARC, 0x80))
+                If ((PARC & 0x80))
                 {
                     Return (0x09)
                 }
@@ -4893,7 +4882,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
             Name (_UID, 0x02)  // _UID: Unique ID
             Method (_DIS, 0, Serialized)  // _DIS: Disable Device
             {
-                Or (PBRC, 0x80, PBRC)
+                PBRC |= 0x80
             }
 
             Method (_PRS, 0, Serialized)  // _PRS: Possible Resource Settings
@@ -4909,8 +4898,8 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                         {}
                 })
                 CreateWordField (RTLB, One, IRQ0)
-                Store (Zero, IRQ0)
-                ShiftLeft (One, And (PBRC, 0x0F), IRQ0)
+                IRQ0 = Zero
+                IRQ0 = (One << (PBRC & 0x0F))
                 Return (RTLB)
             }
 
@@ -4918,13 +4907,13 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
             {
                 CreateWordField (Arg0, One, IRQ0)
                 FindSetRightBit (IRQ0, Local0)
-                Decrement (Local0)
-                Store (Local0, PBRC)
+                Local0--
+                PBRC = Local0
             }
 
             Method (_STA, 0, Serialized)  // _STA: Status
             {
-                If (And (PBRC, 0x80))
+                If ((PBRC & 0x80))
                 {
                     Return (0x09)
                 }
@@ -4941,7 +4930,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
             Name (_UID, 0x03)  // _UID: Unique ID
             Method (_DIS, 0, Serialized)  // _DIS: Disable Device
             {
-                Or (PCRC, 0x80, PCRC)
+                PCRC |= 0x80
             }
 
             Method (_PRS, 0, Serialized)  // _PRS: Possible Resource Settings
@@ -4957,8 +4946,8 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                         {}
                 })
                 CreateWordField (RTLC, One, IRQ0)
-                Store (Zero, IRQ0)
-                ShiftLeft (One, And (PCRC, 0x0F), IRQ0)
+                IRQ0 = Zero
+                IRQ0 = (One << (PCRC & 0x0F))
                 Return (RTLC)
             }
 
@@ -4966,13 +4955,13 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
             {
                 CreateWordField (Arg0, One, IRQ0)
                 FindSetRightBit (IRQ0, Local0)
-                Decrement (Local0)
-                Store (Local0, PCRC)
+                Local0--
+                PCRC = Local0
             }
 
             Method (_STA, 0, Serialized)  // _STA: Status
             {
-                If (And (PCRC, 0x80))
+                If ((PCRC & 0x80))
                 {
                     Return (0x09)
                 }
@@ -4989,7 +4978,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
             Name (_UID, 0x04)  // _UID: Unique ID
             Method (_DIS, 0, Serialized)  // _DIS: Disable Device
             {
-                Or (PDRC, 0x80, PDRC)
+                PDRC |= 0x80
             }
 
             Method (_PRS, 0, Serialized)  // _PRS: Possible Resource Settings
@@ -5005,8 +4994,8 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                         {}
                 })
                 CreateWordField (RTLD, One, IRQ0)
-                Store (Zero, IRQ0)
-                ShiftLeft (One, And (PDRC, 0x0F), IRQ0)
+                IRQ0 = Zero
+                IRQ0 = (One << (PDRC & 0x0F))
                 Return (RTLD)
             }
 
@@ -5014,13 +5003,13 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
             {
                 CreateWordField (Arg0, One, IRQ0)
                 FindSetRightBit (IRQ0, Local0)
-                Decrement (Local0)
-                Store (Local0, PDRC)
+                Local0--
+                PDRC = Local0
             }
 
             Method (_STA, 0, Serialized)  // _STA: Status
             {
-                If (And (PDRC, 0x80))
+                If ((PDRC & 0x80))
                 {
                     Return (0x09)
                 }
@@ -5037,7 +5026,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
             Name (_UID, 0x05)  // _UID: Unique ID
             Method (_DIS, 0, Serialized)  // _DIS: Disable Device
             {
-                Or (PERC, 0x80, PERC)
+                PERC |= 0x80
             }
 
             Method (_PRS, 0, Serialized)  // _PRS: Possible Resource Settings
@@ -5053,8 +5042,8 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                         {}
                 })
                 CreateWordField (RTLE, One, IRQ0)
-                Store (Zero, IRQ0)
-                ShiftLeft (One, And (PERC, 0x0F), IRQ0)
+                IRQ0 = Zero
+                IRQ0 = (One << (PERC & 0x0F))
                 Return (RTLE)
             }
 
@@ -5062,13 +5051,13 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
             {
                 CreateWordField (Arg0, One, IRQ0)
                 FindSetRightBit (IRQ0, Local0)
-                Decrement (Local0)
-                Store (Local0, PERC)
+                Local0--
+                PERC = Local0
             }
 
             Method (_STA, 0, Serialized)  // _STA: Status
             {
-                If (And (PERC, 0x80))
+                If ((PERC & 0x80))
                 {
                     Return (0x09)
                 }
@@ -5085,7 +5074,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
             Name (_UID, 0x06)  // _UID: Unique ID
             Method (_DIS, 0, Serialized)  // _DIS: Disable Device
             {
-                Or (PFRC, 0x80, PFRC)
+                PFRC |= 0x80
             }
 
             Method (_PRS, 0, Serialized)  // _PRS: Possible Resource Settings
@@ -5101,8 +5090,8 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                         {}
                 })
                 CreateWordField (RTLF, One, IRQ0)
-                Store (Zero, IRQ0)
-                ShiftLeft (One, And (PFRC, 0x0F), IRQ0)
+                IRQ0 = Zero
+                IRQ0 = (One << (PFRC & 0x0F))
                 Return (RTLF)
             }
 
@@ -5110,13 +5099,13 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
             {
                 CreateWordField (Arg0, One, IRQ0)
                 FindSetRightBit (IRQ0, Local0)
-                Decrement (Local0)
-                Store (Local0, PFRC)
+                Local0--
+                PFRC = Local0
             }
 
             Method (_STA, 0, Serialized)  // _STA: Status
             {
-                If (And (PFRC, 0x80))
+                If ((PFRC & 0x80))
                 {
                     Return (0x09)
                 }
@@ -5133,7 +5122,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
             Name (_UID, 0x07)  // _UID: Unique ID
             Method (_DIS, 0, Serialized)  // _DIS: Disable Device
             {
-                Or (PGRC, 0x80, PGRC)
+                PGRC |= 0x80
             }
 
             Method (_PRS, 0, Serialized)  // _PRS: Possible Resource Settings
@@ -5149,8 +5138,8 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                         {}
                 })
                 CreateWordField (RTLG, One, IRQ0)
-                Store (Zero, IRQ0)
-                ShiftLeft (One, And (PGRC, 0x0F), IRQ0)
+                IRQ0 = Zero
+                IRQ0 = (One << (PGRC & 0x0F))
                 Return (RTLG)
             }
 
@@ -5158,13 +5147,13 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
             {
                 CreateWordField (Arg0, One, IRQ0)
                 FindSetRightBit (IRQ0, Local0)
-                Decrement (Local0)
-                Store (Local0, PGRC)
+                Local0--
+                PGRC = Local0
             }
 
             Method (_STA, 0, Serialized)  // _STA: Status
             {
-                If (And (PGRC, 0x80))
+                If ((PGRC & 0x80))
                 {
                     Return (0x09)
                 }
@@ -5181,7 +5170,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
             Name (_UID, 0x08)  // _UID: Unique ID
             Method (_DIS, 0, Serialized)  // _DIS: Disable Device
             {
-                Or (PHRC, 0x80, PHRC)
+                PHRC |= 0x80
             }
 
             Method (_PRS, 0, Serialized)  // _PRS: Possible Resource Settings
@@ -5197,8 +5186,8 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                         {}
                 })
                 CreateWordField (RTLH, One, IRQ0)
-                Store (Zero, IRQ0)
-                ShiftLeft (One, And (PHRC, 0x0F), IRQ0)
+                IRQ0 = Zero
+                IRQ0 = (One << (PHRC & 0x0F))
                 Return (RTLH)
             }
 
@@ -5206,13 +5195,13 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
             {
                 CreateWordField (Arg0, One, IRQ0)
                 FindSetRightBit (IRQ0, Local0)
-                Decrement (Local0)
-                Store (Local0, PHRC)
+                Local0--
+                PHRC = Local0
             }
 
             Method (_STA, 0, Serialized)  // _STA: Status
             {
-                If (And (PHRC, 0x80))
+                If ((PHRC & 0x80))
                 {
                     Return (0x09)
                 }
@@ -5229,9 +5218,9 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         Name (PMBV, Zero)
         Method (PMBS, 0, NotSerialized)
         {
-            If (LEqual (PMBV, Zero))
+            If ((PMBV == Zero))
             {
-                Store (ShiftLeft (\_SB.PCI0.PPMC.ACBA, 0x08), PMBV)
+                PMBV = (\_SB.PCI0.PPMC.ACBA << 0x08)
             }
 
             Return (PMBV)
@@ -5240,9 +5229,9 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         Name (PWRV, Zero)
         Method (PWRM, 0, NotSerialized)
         {
-            If (LEqual (PWRV, Zero))
+            If ((PWRV == Zero))
             {
-                Store (ShiftLeft (\_SB.PCI0.PPMC.PWBA, 0x0C), PWRV)
+                PWRV = (\_SB.PCI0.PPMC.PWBA << 0x0C)
             }
 
             Return (PWRV)
@@ -5251,9 +5240,9 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         Name (TCBV, Zero)
         Method (TCBS, 0, NotSerialized)
         {
-            If (LEqual (TCBV, Zero))
+            If ((TCBV == Zero))
             {
-                Store (ShiftLeft (\_SB.PCI0.SBUS.TCOB, 0x05), TCBV)
+                TCBV = (\_SB.PCI0.SBUS.TCOB << 0x05)
             }
 
             Return (TCBV)
@@ -5269,7 +5258,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
             GPEC,   1
         }
 
-        OperationRegion (PMLP, SystemIO, Add (PMBS (), 0x80), 0x20)
+        OperationRegion (PMLP, SystemIO, (PMBS () + 0x80), 0x20)
         Field (PMLP, ByteAcc, NoLock, Preserve)
         {
             Offset (0x10), 
@@ -5342,8 +5331,8 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
 
         Method (PCRR, 2, Serialized)
         {
-            Add (ShiftLeft (Arg0, 0x10), Arg1, Local0)
-            Add (SBRG, Local0, Local0)
+            Local0 = ((Arg0 << 0x10) + Arg1)
+            Local0 += SBRG
             OperationRegion (PCR0, SystemMemory, Local0, 0x04)
             Field (PCR0, DWordAcc, Lock, Preserve)
             {
@@ -5355,42 +5344,42 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
 
         Method (PCRW, 3, Serialized)
         {
-            Add (ShiftLeft (Arg0, 0x10), Arg1, Local0)
-            Add (SBRG, Local0, Local0)
+            Local0 = ((Arg0 << 0x10) + Arg1)
+            Local0 += SBRG
             OperationRegion (PCR0, SystemMemory, Local0, 0x04)
             Field (PCR0, DWordAcc, Lock, Preserve)
             {
                 DAT0,   32
             }
 
-            Store (Arg2, DAT0)
-            OperationRegion (PCR1, SystemMemory, Add (SBRG, 0x00C73418), 0x04)
+            DAT0 = Arg2
+            OperationRegion (PCR1, SystemMemory, (SBRG + 0x00C73418), 0x04)
             Field (PCR1, DWordAcc, Lock, Preserve)
             {
                 DAT1,   32
             }
 
-            Store (DAT1, Local1)
+            Local1 = DAT1
         }
 
         Method (PCRO, 3, Serialized)
         {
-            Store (PCRR (Arg0, Arg1), Local0)
-            Store (Or (Local0, Arg2), Local1)
+            Local0 = PCRR (Arg0, Arg1)
+            Local1 = (Local0 | Arg2)
             PCRW (Arg0, Arg1, Local1)
         }
 
         Method (PCRA, 3, Serialized)
         {
-            Store (PCRR (Arg0, Arg1), Local0)
-            Store (And (Local0, Arg2), Local1)
+            Local0 = PCRR (Arg0, Arg1)
+            Local1 = (Local0 & Arg2)
             PCRW (Arg0, Arg1, Local1)
         }
 
         Method (PCAO, 4, Serialized)
         {
-            Store (PCRR (Arg0, Arg1), Local0)
-            Store (Or (And (Local0, Arg2), Arg3), Local1)
+            Local0 = PCRR (Arg0, Arg1)
+            Local1 = ((Local0 & Arg2) | Arg3)
             PCRW (Arg0, Arg1, Local1)
         }
 
@@ -5414,7 +5403,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         Device (GLAN)
         {
             Name (_ADR, 0x001F0006)  // _ADR: Address
-            Method (XDSM, 4, Serialized)  // _DSM: Device-Specific Method
+            Method (XDSM, 4, Serialized)
             {
                 If (PCIC (Arg0))
                 {
@@ -5442,19 +5431,19 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
 
             Method (_DSW, 3, NotSerialized)  // _DSW: Device Sleep Wake
             {
-                Store (Arg0, PMEE)
+                PMEE = Arg0
             }
 
             Method (GPEH, 0, NotSerialized)
             {
-                If (LEqual (DVID, 0xFFFF))
+                If ((DVID == 0xFFFF))
                 {
                     Return (Zero)
                 }
 
-                If (LAnd (PMEE, PMES))
+                If ((PMEE && PMES))
                 {
-                    Store (One, PMES)
+                    PMES = One
                     Notify (GLAN, 0x02)
                 }
             }
@@ -5494,18 +5483,18 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
             }
 
             Name (XFLT, Zero)
-            Method (XDSM, 4, Serialized)  // _DSM: Device-Specific Method
+            Method (XDSM, 4, Serialized)
             {
                 If (PCIC (Arg0))
                 {
                     Return (PCID (Arg0, Arg1, Arg2, Arg3))
                 }
 
-                If (LEqual (Arg0, ToUUID ("ac340cb7-e901-45bf-b7e6-2b34ec931e23")))
+                If ((Arg0 == ToUUID ("ac340cb7-e901-45bf-b7e6-2b34ec931e23")))
                 {
-                    If (LEqual (Arg1, 0x03))
+                    If ((Arg1 == 0x03))
                     {
-                        Store (Arg1, XFLT)
+                        XFLT = Arg1
                     }
                 }
 
@@ -5534,7 +5523,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
 
             Method (_S0W, 0, NotSerialized)  // _S0W: S0 Device Wake State
             {
-                If (LEqual (XFLT, Zero))
+                If ((XFLT == Zero))
                 {
                     Return (Zero)
                 }
@@ -5551,7 +5540,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
 
             Method (_DSW, 3, NotSerialized)  // _DSW: Device Sleep Wake
             {
-                Store (Arg0, PMEE)
+                PMEE = Arg0
             }
 
             Method (_INI, 0, NotSerialized)  // _INI: Initialize
@@ -5564,20 +5553,20 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
 
             Method (GPEH, 0, NotSerialized)
             {
-                If (LEqual (DVID, 0xFFFF))
+                If ((DVID == 0xFFFF))
                 {
                     Return (Zero)
                 }
 
-                Store (PMES, Local0)
-                Store (One, PMES)
-                If (LAnd (PMEE, Local0))
+                Local0 = PMES
+                PMES = One
+                If ((PMEE && Local0))
                 {
                     Notify (XHC, 0x02)
                 }
             }
 
-            OperationRegion (XHCP, SystemMemory, Add (GPCB (), 0x000A0000), 0x0100)
+            OperationRegion (XHCP, SystemMemory, (GPCB () + 0x000A0000), 0x0100)
             Field (XHCP, AnyAcc, Lock, Preserve)
             {
                 Offset (0x04), 
@@ -5588,7 +5577,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
 
             Method (USRA, 0, Serialized)
             {
-                If (LEqual (PCHV (), SPTH))
+                If ((PCHV () == SPTH))
                 {
                     Return (0x0F)
                 }
@@ -5606,18 +5595,18 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
             Name (XRST, Zero)
             Method (_PS0, 0, Serialized)  // _PS0: Power State 0
             {
-                If (LEqual (DVID, 0xFFFF))
+                If ((DVID == 0xFFFF))
                 {
                     Return (Zero)
                 }
 
-                Store (MEMB, Local2)
-                Store (PDBM, Local1)
-                And (PDBM, 0xFFFFFFFFFFFFFFF9, PDBM)
-                Store (D0D3, Local3)
-                Store (Zero, D0D3)
-                Store (XWMB, MEMB)
-                Or (Local1, 0x02, PDBM)
+                Local2 = MEMB
+                Local1 = PDBM
+                PDBM &= 0xFFFFFFFFFFFFFFF9
+                Local3 = D0D3
+                D0D3 = Zero
+                MEMB = XWMB
+                PDBM = (Local1 | 0x02)
                 OperationRegion (MC11, SystemMemory, XWMB, 0x9000)
                 Field (MC11, DWordAcc, Lock, Preserve)
                 {
@@ -5626,18 +5615,18 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                     UPSW,   2
                 }
 
-                Store (Zero, UPSW)
-                And (PDBM, 0xFFFFFFFFFFFFFFFD, PDBM)
-                Store (Local2, MEMB)
-                Store (Local1, PDBM)
+                UPSW = Zero
+                PDBM &= 0xFFFFFFFFFFFFFFFD
+                MEMB = Local2
+                PDBM = Local1
                 If (CondRefOf (\_SB.PCI0.XHC.PS0X))
                 {
                     PS0X ()
                 }
 
-                If (LAnd (UWAB, LOr (LEqual (D0D3, Zero), LEqual (^^XDCI.D0I3, Zero))))
+                If ((UWAB && ((D0D3 == Zero) || (^^XDCI.D0I3 == Zero))))
                 {
-                    Store (One, MPMC)
+                    MPMC = One
                     While (PMFS)
                     {
                         Sleep (0x0A)
@@ -5647,17 +5636,17 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
 
             Method (_PS3, 0, Serialized)  // _PS3: Power State 3
             {
-                If (LEqual (DVID, 0xFFFF))
+                If ((DVID == 0xFFFF))
                 {
                     Return (Zero)
                 }
 
-                Store (MEMB, Local2)
-                Store (PDBM, Local1)
-                And (PDBM, 0xFFFFFFFFFFFFFFF9, PDBM)
-                Store (Zero, D0D3)
-                Store (XWMB, MEMB)
-                Or (Local1, 0x02, PDBM)
+                Local2 = MEMB
+                Local1 = PDBM
+                PDBM &= 0xFFFFFFFFFFFFFFF9
+                D0D3 = Zero
+                MEMB = XWMB
+                PDBM = (Local1 | 0x02)
                 OperationRegion (MC11, SystemMemory, XWMB, 0x9000)
                 Field (MC11, DWordAcc, Lock, Preserve)
                 {
@@ -5666,19 +5655,19 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                     UPSW,   2
                 }
 
-                Store (0x03, UPSW)
-                And (PDBM, 0xFFFFFFFFFFFFFFFD, PDBM)
-                Store (0x03, D0D3)
-                Store (Local2, MEMB)
-                Store (Local1, PDBM)
+                UPSW = 0x03
+                PDBM &= 0xFFFFFFFFFFFFFFFD
+                D0D3 = 0x03
+                MEMB = Local2
+                PDBM = Local1
                 If (CondRefOf (\_SB.PCI0.XHC.PS3X))
                 {
                     PS3X ()
                 }
 
-                If (LAnd (UWAB, LAnd (LEqual (D0D3, 0x03), LOr (LEqual (^^XDCI.D0I3, 0x03), LEqual (^^XDCI.DVID, 0xFFFF)))))
+                If ((UWAB && ((D0D3 == 0x03) && ((^^XDCI.D0I3 == 0x03) || (^^XDCI.DVID == 0xFFFF)))))
                 {
-                    Store (0x03, MPMC)
+                    MPMC = 0x03
                     While (PMFS)
                     {
                         Sleep (0x0A)
@@ -5688,7 +5677,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
 
             Method (CUID, 1, Serialized)
             {
-                If (LEqual (Arg0, ToUUID ("7c9512a9-1705-4cb4-af7d-506a2423ab71")))
+                If ((Arg0 == ToUUID ("7c9512a9-1705-4cb4-af7d-506a2423ab71")))
                 {
                     Return (One)
                 }
@@ -5716,7 +5705,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                 })
                 Method (_PS0, 0, Serialized)  // _PS0: Power State 0
                 {
-                    If (LEqual (DVID, 0xFFFF))
+                    If ((DVID == 0xFFFF))
                     {
                         Return (Zero)
                     }
@@ -5729,7 +5718,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
 
                 Method (_PS2, 0, Serialized)  // _PS2: Power State 2
                 {
-                    If (LEqual (DVID, 0xFFFF))
+                    If ((DVID == 0xFFFF))
                     {
                         Return (Zero)
                     }
@@ -5742,7 +5731,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
 
                 Method (_PS3, 0, Serialized)  // _PS3: Power State 3
                 {
-                    If (LEqual (DVID, 0xFFFF))
+                    If ((DVID == 0xFFFF))
                     {
                         Return (Zero)
                     }
@@ -5974,7 +5963,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                 {
                     Method (_ADR, 0, NotSerialized)  // _ADR: Address
                     {
-                        Return (Add (USRA (), Zero))
+                        Return ((USRA () + Zero))
                     }
 
                     Method (_UPC, 0, Serialized)  // _UPC: USB Port Capabilities
@@ -5992,7 +5981,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                 {
                     Method (_ADR, 0, NotSerialized)  // _ADR: Address
                     {
-                        Return (Add (USRA (), One))
+                        Return ((USRA () + One))
                     }
 
                     Method (_UPC, 0, Serialized)  // _UPC: USB Port Capabilities
@@ -6010,7 +5999,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                 {
                     Method (_ADR, 0, NotSerialized)  // _ADR: Address
                     {
-                        Return (Add (SSPA (), Zero))
+                        Return ((SSPA () + Zero))
                     }
 
                     Name (_UPC, Package (0x04)  // _UPC: USB Port Capabilities
@@ -6034,7 +6023,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                 {
                     Method (_ADR, 0, NotSerialized)  // _ADR: Address
                     {
-                        Return (Add (SSPA (), One))
+                        Return ((SSPA () + One))
                     }
 
                     Method (_UPC, 0, Serialized)  // _UPC: USB Port Capabilities
@@ -6052,7 +6041,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                 {
                     Method (_ADR, 0, NotSerialized)  // _ADR: Address
                     {
-                        Return (Add (SSPA (), 0x02))
+                        Return ((SSPA () + 0x02))
                     }
 
                     Method (_UPC, 0, Serialized)  // _UPC: USB Port Capabilities
@@ -6070,7 +6059,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                 {
                     Method (_ADR, 0, NotSerialized)  // _ADR: Address
                     {
-                        Return (Add (SSPA (), 0x03))
+                        Return ((SSPA () + 0x03))
                     }
 
                     Method (_UPC, 0, Serialized)  // _UPC: USB Port Capabilities
@@ -6088,7 +6077,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                 {
                     Method (_ADR, 0, NotSerialized)  // _ADR: Address
                     {
-                        Return (Add (SSPA (), 0x04))
+                        Return ((SSPA () + 0x04))
                     }
 
                     Method (_UPC, 0, Serialized)  // _UPC: USB Port Capabilities
@@ -6106,7 +6095,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                 {
                     Method (_ADR, 0, NotSerialized)  // _ADR: Address
                     {
-                        Return (Add (SSPA (), 0x05))
+                        Return ((SSPA () + 0x05))
                     }
 
                     Method (_UPC, 0, Serialized)  // _UPC: USB Port Capabilities
@@ -6123,7 +6112,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         }
     }
 
-    If (LEqual (PCHV (), SPTH))
+    If ((PCHV () == SPTH))
     {
         Scope (_SB.PCI0.XHC.RHUB)
         {
@@ -6151,7 +6140,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
             {
                 Method (_ADR, 0, NotSerialized)  // _ADR: Address
                 {
-                    Return (Add (SSPA (), 0x06))
+                    Return ((SSPA () + 0x06))
                 }
             }
 
@@ -6159,7 +6148,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
             {
                 Method (_ADR, 0, NotSerialized)  // _ADR: Address
                 {
-                    Return (Add (SSPA (), 0x07))
+                    Return ((SSPA () + 0x07))
                 }
             }
 
@@ -6167,7 +6156,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
             {
                 Method (_ADR, 0, NotSerialized)  // _ADR: Address
                 {
-                    Return (Add (SSPA (), 0x08))
+                    Return ((SSPA () + 0x08))
                 }
             }
 
@@ -6175,7 +6164,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
             {
                 Method (_ADR, 0, NotSerialized)  // _ADR: Address
                 {
-                    Return (Add (SSPA (), 0x09))
+                    Return ((SSPA () + 0x09))
                 }
             }
         }
@@ -6186,7 +6175,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         Device (XDCI)
         {
             Name (_ADR, 0x00140001)  // _ADR: Address
-            Method (XDSM, 4, Serialized)  // _DSM: Device-Specific Method
+            Method (XDSM, 4, Serialized)
             {
                 If (PCIC (Arg0))
                 {
@@ -6218,7 +6207,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
 
             Method (_STA, 0, NotSerialized)  // _STA: Status
             {
-                If (LNotEqual (DVID, 0xFFFFFFFF))
+                If ((DVID != 0xFFFFFFFF))
                 {
                     Return (0x0F)
                 }
@@ -6252,7 +6241,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
             Name (_S0W, 0x03)  // _S0W: S0 Device Wake State
             Method (_DSW, 3, NotSerialized)  // _DSW: Device Sleep Wake
             {
-                Store (Arg0, PMEE)
+                PMEE = Arg0
             }
 
             Method (_PRW, 0, NotSerialized)  // _PRW: Power Resources for Wake
@@ -6262,15 +6251,15 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
 
             Method (GPEH, 0, NotSerialized)
             {
-                If (LEqual (VDID, 0xFFFFFFFF))
+                If ((VDID == 0xFFFFFFFF))
                 {
                     Return (Zero)
                 }
 
-                If (LAnd (PMEE, PMES))
+                If ((PMEE && PMES))
                 {
                     ADBG ("HDAS GPEH")
-                    Store (One, PMES)
+                    PMES = One
                     Notify (HDAS, 0x02)
                 }
             }
@@ -6287,26 +6276,26 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
             })
             Method (AUWA, 0, Serialized)
             {
-                If (LEqual (PCHS, One))
+                If ((PCHS == One))
                 {
-                    If (LEqual (^^LPCB.CRID, Zero))
+                    If ((^^LPCB.CRID == Zero))
                     {
                         Return (One)
                     }
                 }
                 Else
                 {
-                    If (LEqual (^^LPCB.CRID, Zero))
+                    If ((^^LPCB.CRID == Zero))
                     {
                         Return (One)
                     }
 
-                    If (LEqual (^^LPCB.CRID, One))
+                    If ((^^LPCB.CRID == One))
                     {
                         Return (One)
                     }
 
-                    If (LEqual (^^LPCB.CRID, 0x09))
+                    If ((^^LPCB.CRID == 0x09))
                     {
                         Return (One)
                     }
@@ -6321,16 +6310,16 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                 CreateQWordField (NBUF, \_SB.PCI0.HDAS._Y10._MIN, NBAS)  // _MIN: Minimum Base Address
                 CreateQWordField (NBUF, \_SB.PCI0.HDAS._Y10._MAX, NMAS)  // _MAX: Maximum Base Address
                 CreateQWordField (NBUF, \_SB.PCI0.HDAS._Y10._LEN, NLEN)  // _LEN: Length
-                Store (NHLA, NBAS)
-                Add (NHLA, Subtract (NHLL, One), NMAS)
-                Store (NHLL, NLEN)
-                If (LEqual (AUWA (), One))
+                NBAS = NHLA
+                NMAS = (NHLA + (NHLL - One))
+                NLEN = NHLL
+                If ((AUWA () == One))
                 {
-                    Store (Zero, MBCG)
+                    MBCG = Zero
                 }
             }
 
-            Method (XDSM, 4, Serialized)  // _DSM: Device-Specific Method
+            Method (XDSM, 4, Serialized)
             {
                 ADBG ("HDAS XDSM")
                 If (PCIC (Arg0))
@@ -6338,7 +6327,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                     Return (PCID (Arg0, Arg1, Arg2, Arg3))
                 }
 
-                If (LEqual (Arg0, ToUUID ("a69f886e-6ceb-4594-a41f-7b5dce24c553")))
+                If ((Arg0 == ToUUID ("a69f886e-6ceb-4594-a41f-7b5dce24c553")))
                 {
                     Switch (Arg2)
                     {
@@ -6378,28 +6367,13 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
 
                 ADBG ("XDSM UUID NOK")
             }
-            Device (BUS0)
-            {
-                Name (_CID, "smbus")
-                Name (_ADR, Zero)
-                Device (DVL0)
-                {
-                    Name (_ADR, 0x57)
-                    Name (_CID, "diagsvault")
-                    Method (_DSM, 4, NotSerialized)
-                    {
-                        If (LEqual (Arg2, Zero)) { Return (Buffer() { 0x03 } ) }
-                        Return (Package() { "address", 0x57 })
-                    }
-                }
-            }
         }
 
         Device (RP01)
         {
             Method (_ADR, 0, NotSerialized)  // _ADR: Address
             {
-                If (LNotEqual (RPA1, Zero))
+                If ((RPA1 != Zero))
                 {
                     Return (RPA1)
                 }
@@ -6411,10 +6385,10 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
 
             Method (_INI, 0, NotSerialized)  // _INI: Initialize
             {
-                Store (LTR1, LTRN)
-                Store (PML1, LMSL)
-                Store (PNL1, LNSL)
-                Store (OBF1, OBFN)
+                LTRN = LTR1
+                LMSL = PML1
+                LNSL = PNL1
+                OBFN = OBF1
             }
 
             OperationRegion (PXCS, PCI_Config, Zero, 0x0380)
@@ -6469,9 +6443,9 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                 Zero, 
                 Zero
             })
-            Method (XDSM, 4, Serialized)  // _DSM: Device-Specific Method
+            Method (XDSM, 4, Serialized)
             {
-                If (LEqual (Arg0, ToUUID ("e5c937d0-3553-4d7a-9117-ea4d19c3434d") /* Device Labeling Interface */))
+                If ((Arg0 == ToUUID ("e5c937d0-3553-4d7a-9117-ea4d19c3434d") /* Device Labeling Interface */))
                 {
                     Switch (ToInteger (Arg2))
                     {
@@ -6486,25 +6460,25 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                             CreateBitField (OPTS, 0x06, FUN6)
                             CreateBitField (OPTS, 0x08, FUN8)
                             CreateBitField (OPTS, 0x09, FUN9)
-                            If (LGreaterEqual (Arg1, 0x02))
+                            If ((Arg1 >= 0x02))
                             {
-                                Store (One, FUN0)
+                                FUN0 = One
                                 If (LTRE)
                                 {
-                                    Store (One, FUN6)
+                                    FUN6 = One
                                 }
 
                                 If (OBFF)
                                 {
-                                    Store (One, FUN4)
+                                    FUN4 = One
                                 }
 
-                                If (LEqual (ECR1, One))
+                                If ((ECR1 == One))
                                 {
-                                    If (LGreaterEqual (Arg1, 0x03))
+                                    If ((Arg1 >= 0x03))
                                     {
-                                        Store (One, FUN8)
-                                        Store (One, FUN9)
+                                        FUN8 = One
+                                        FUN9 = One
                                     }
                                 }
                             }
@@ -6513,50 +6487,56 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                         }
                         Case (0x04)
                         {
-                            If (LGreaterEqual (Arg1, 0x02))
+                            If ((Arg1 >= 0x02))
                             {
                                 If (OBFN)
                                 {
-                                    Return (Package() { Buffer (0x10)
+                                    Return (Package (0x01)
                                     {
-                                        /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-                                        /* 0008 */  0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00, 0x00 
-                                    }})
+                                        Buffer (0x10)
+                                        {
+                                            /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+                                            /* 0008 */  0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00, 0x00 
+                                        }
+                                    })
                                 }
                                 Else
                                 {
-                                    Return (Package() { Buffer (0x10)
+                                    Return (Package (0x01)
                                     {
-                                        /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-                                        /* 0008 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 
-                                    }})
+                                        Buffer (0x10)
+                                        {
+                                            /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+                                            /* 0008 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 
+                                        }
+                                    })
                                 }
                             }
                         }
                         Case (0x06)
                         {
-                            If (LGreaterEqual (Arg1, 0x02))
+                            If ((Arg1 >= 0x02))
                             {
                                 If (LTRN)
                                 {
-                                    If (LOr (LEqual (LMSL, Zero), LEqual (LNSL, Zero)))
+                                    If (((LMSL == Zero) || (LNSL == Zero)))
                                     {
-                                        If (LEqual (PCHS, SPTH))
+                                        If ((PCHS == SPTH))
                                         {
-                                            Store (0x0846, LMSL)
-                                            Store (0x0846, LNSL)
+                                            LMSL = 0x0846
+                                            LNSL = 0x0846
                                         }
-                                        ElseIf (LEqual (PCHS, SPTL))
+                                        ElseIf ((PCHS == SPTL))
                                         {
-                                            Store (0x1003, LMSL)
-                                            Store (0x1003, LNSL)
+                                            LMSL = 0x1003
+                                            LNSL = 0x1003
                                         }
                                     }
 
-                                    Store (And (ShiftRight (LMSL, 0x0A), 0x07), Index (LTRV, Zero))
-                                    Store (And (LMSL, 0x03FF), Index (LTRV, One))
-                                    Store (And (ShiftRight (LNSL, 0x0A), 0x07), Index (LTRV, 0x02))
-                                    Store (And (LNSL, 0x03FF), Index (LTRV, 0x03))
+                                    LTRV [Zero] = ((LMSL >> 0x0A) & 0x07)
+                                    LTRV [One] = (LMSL & 0x03FF)
+                                    LTRV [0x02] = ((LNSL >> 0x0A) & 0x07)
+                                    LTRV [0x03] = (LNSL & 0x03FF)
                                     Return (LTRV)
                                 }
                                 Else
@@ -6567,9 +6547,9 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                         }
                         Case (0x08)
                         {
-                            If (LEqual (ECR1, One))
+                            If ((ECR1 == One))
                             {
-                                If (LGreaterEqual (Arg1, 0x03))
+                                If ((Arg1 >= 0x03))
                                 {
                                     Return (One)
                                 }
@@ -6577,9 +6557,9 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                         }
                         Case (0x09)
                         {
-                            If (LEqual (ECR1, One))
+                            If ((ECR1 == One))
                             {
-                                If (LGreaterEqual (Arg1, 0x03))
+                                If ((Arg1 >= 0x03))
                                 {
                                     Return (Package (0x05)
                                     {
@@ -6615,17 +6595,17 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
             {
                 If (PMSX)
                 {
-                    Store (0xC8, Local0)
+                    Local0 = 0xC8
                     While (Local0)
                     {
-                        Store (One, PMSX)
+                        PMSX = One
                         If (PMSX)
                         {
-                            Decrement (Local0)
+                            Local0--
                         }
                         Else
                         {
-                            Store (Zero, Local0)
+                            Local0 = Zero
                         }
                     }
 
@@ -6653,7 +6633,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         {
             Method (_ADR, 0, NotSerialized)  // _ADR: Address
             {
-                If (LNotEqual (RPA2, Zero))
+                If ((RPA2 != Zero))
                 {
                     Return (RPA2)
                 }
@@ -6665,10 +6645,10 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
 
             Method (_INI, 0, NotSerialized)  // _INI: Initialize
             {
-                Store (LTR2, LTRN)
-                Store (PML2, LMSL)
-                Store (PNL2, LNSL)
-                Store (OBF2, OBFN)
+                LTRN = LTR2
+                LMSL = PML2
+                LNSL = PNL2
+                OBFN = OBF2
             }
 
             OperationRegion (PXCS, PCI_Config, Zero, 0x0380)
@@ -6723,9 +6703,9 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                 Zero, 
                 Zero
             })
-            Method (XDSM, 4, Serialized)  // _DSM: Device-Specific Method
+            Method (XDSM, 4, Serialized)
             {
-                If (LEqual (Arg0, ToUUID ("e5c937d0-3553-4d7a-9117-ea4d19c3434d") /* Device Labeling Interface */))
+                If ((Arg0 == ToUUID ("e5c937d0-3553-4d7a-9117-ea4d19c3434d") /* Device Labeling Interface */))
                 {
                     Switch (ToInteger (Arg2))
                     {
@@ -6740,25 +6720,25 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                             CreateBitField (OPTS, 0x06, FUN6)
                             CreateBitField (OPTS, 0x08, FUN8)
                             CreateBitField (OPTS, 0x09, FUN9)
-                            If (LGreaterEqual (Arg1, 0x02))
+                            If ((Arg1 >= 0x02))
                             {
-                                Store (One, FUN0)
+                                FUN0 = One
                                 If (LTRE)
                                 {
-                                    Store (One, FUN6)
+                                    FUN6 = One
                                 }
 
                                 If (OBFF)
                                 {
-                                    Store (One, FUN4)
+                                    FUN4 = One
                                 }
 
-                                If (LEqual (ECR1, One))
+                                If ((ECR1 == One))
                                 {
-                                    If (LGreaterEqual (Arg1, 0x03))
+                                    If ((Arg1 >= 0x03))
                                     {
-                                        Store (One, FUN8)
-                                        Store (One, FUN9)
+                                        FUN8 = One
+                                        FUN9 = One
                                     }
                                 }
                             }
@@ -6767,50 +6747,56 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                         }
                         Case (0x04)
                         {
-                            If (LGreaterEqual (Arg1, 0x02))
+                            If ((Arg1 >= 0x02))
                             {
                                 If (OBFN)
                                 {
-                                    Return (Package() { Buffer (0x10)
+                                    Return (Package (0x01)
                                     {
-                                        /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-                                        /* 0008 */  0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00, 0x00 
-                                    }})
+                                        Buffer (0x10)
+                                        {
+                                            /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+                                            /* 0008 */  0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00, 0x00 
+                                        }
+                                    })
                                 }
                                 Else
                                 {
-                                    Return (Package() { Buffer (0x10)
+                                    Return (Package (0x01)
                                     {
-                                        /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-                                        /* 0008 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 
-                                    }})
+                                        Buffer (0x10)
+                                        {
+                                            /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+                                            /* 0008 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 
+                                        }
+                                    })
                                 }
                             }
                         }
                         Case (0x06)
                         {
-                            If (LGreaterEqual (Arg1, 0x02))
+                            If ((Arg1 >= 0x02))
                             {
                                 If (LTRN)
                                 {
-                                    If (LOr (LEqual (LMSL, Zero), LEqual (LNSL, Zero)))
+                                    If (((LMSL == Zero) || (LNSL == Zero)))
                                     {
-                                        If (LEqual (PCHS, SPTH))
+                                        If ((PCHS == SPTH))
                                         {
-                                            Store (0x0846, LMSL)
-                                            Store (0x0846, LNSL)
+                                            LMSL = 0x0846
+                                            LNSL = 0x0846
                                         }
-                                        ElseIf (LEqual (PCHS, SPTL))
+                                        ElseIf ((PCHS == SPTL))
                                         {
-                                            Store (0x1003, LMSL)
-                                            Store (0x1003, LNSL)
+                                            LMSL = 0x1003
+                                            LNSL = 0x1003
                                         }
                                     }
 
-                                    Store (And (ShiftRight (LMSL, 0x0A), 0x07), Index (LTRV, Zero))
-                                    Store (And (LMSL, 0x03FF), Index (LTRV, One))
-                                    Store (And (ShiftRight (LNSL, 0x0A), 0x07), Index (LTRV, 0x02))
-                                    Store (And (LNSL, 0x03FF), Index (LTRV, 0x03))
+                                    LTRV [Zero] = ((LMSL >> 0x0A) & 0x07)
+                                    LTRV [One] = (LMSL & 0x03FF)
+                                    LTRV [0x02] = ((LNSL >> 0x0A) & 0x07)
+                                    LTRV [0x03] = (LNSL & 0x03FF)
                                     Return (LTRV)
                                 }
                                 Else
@@ -6821,9 +6807,9 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                         }
                         Case (0x08)
                         {
-                            If (LEqual (ECR1, One))
+                            If ((ECR1 == One))
                             {
-                                If (LGreaterEqual (Arg1, 0x03))
+                                If ((Arg1 >= 0x03))
                                 {
                                     Return (One)
                                 }
@@ -6831,9 +6817,9 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                         }
                         Case (0x09)
                         {
-                            If (LEqual (ECR1, One))
+                            If ((ECR1 == One))
                             {
-                                If (LGreaterEqual (Arg1, 0x03))
+                                If ((Arg1 >= 0x03))
                                 {
                                     Return (Package (0x05)
                                     {
@@ -6869,17 +6855,17 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
             {
                 If (PMSX)
                 {
-                    Store (0xC8, Local0)
+                    Local0 = 0xC8
                     While (Local0)
                     {
-                        Store (One, PMSX)
+                        PMSX = One
                         If (PMSX)
                         {
-                            Decrement (Local0)
+                            Local0--
                         }
                         Else
                         {
-                            Store (Zero, Local0)
+                            Local0 = Zero
                         }
                     }
 
@@ -6907,7 +6893,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         {
             Method (_ADR, 0, NotSerialized)  // _ADR: Address
             {
-                If (LNotEqual (RPA3, Zero))
+                If ((RPA3 != Zero))
                 {
                     Return (RPA3)
                 }
@@ -6919,10 +6905,10 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
 
             Method (_INI, 0, NotSerialized)  // _INI: Initialize
             {
-                Store (LTR3, LTRN)
-                Store (PML3, LMSL)
-                Store (PNL3, LNSL)
-                Store (OBF3, OBFN)
+                LTRN = LTR3
+                LMSL = PML3
+                LNSL = PNL3
+                OBFN = OBF3
             }
 
             OperationRegion (PXCS, PCI_Config, Zero, 0x0380)
@@ -6977,9 +6963,9 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                 Zero, 
                 Zero
             })
-            Method (XDSM, 4, Serialized)  // _DSM: Device-Specific Method
+            Method (XDSM, 4, Serialized)
             {
-                If (LEqual (Arg0, ToUUID ("e5c937d0-3553-4d7a-9117-ea4d19c3434d") /* Device Labeling Interface */))
+                If ((Arg0 == ToUUID ("e5c937d0-3553-4d7a-9117-ea4d19c3434d") /* Device Labeling Interface */))
                 {
                     Switch (ToInteger (Arg2))
                     {
@@ -6994,25 +6980,25 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                             CreateBitField (OPTS, 0x06, FUN6)
                             CreateBitField (OPTS, 0x08, FUN8)
                             CreateBitField (OPTS, 0x09, FUN9)
-                            If (LGreaterEqual (Arg1, 0x02))
+                            If ((Arg1 >= 0x02))
                             {
-                                Store (One, FUN0)
+                                FUN0 = One
                                 If (LTRE)
                                 {
-                                    Store (One, FUN6)
+                                    FUN6 = One
                                 }
 
                                 If (OBFF)
                                 {
-                                    Store (One, FUN4)
+                                    FUN4 = One
                                 }
 
-                                If (LEqual (ECR1, One))
+                                If ((ECR1 == One))
                                 {
-                                    If (LGreaterEqual (Arg1, 0x03))
+                                    If ((Arg1 >= 0x03))
                                     {
-                                        Store (One, FUN8)
-                                        Store (One, FUN9)
+                                        FUN8 = One
+                                        FUN9 = One
                                     }
                                 }
                             }
@@ -7021,50 +7007,56 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                         }
                         Case (0x04)
                         {
-                            If (LGreaterEqual (Arg1, 0x02))
+                            If ((Arg1 >= 0x02))
                             {
                                 If (OBFN)
                                 {
-                                    Return (Package() { Buffer (0x10)
+                                    Return (Package (0x01)
                                     {
-                                        /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-                                        /* 0008 */  0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00, 0x00 
-                                    }})
+                                        Buffer (0x10)
+                                        {
+                                            /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+                                            /* 0008 */  0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00, 0x00 
+                                        }
+                                    })
                                 }
                                 Else
                                 {
-                                    Return (Package() { Buffer (0x10)
+                                    Return (Package (0x01)
                                     {
-                                        /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-                                        /* 0008 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 
-                                    }})
+                                        Buffer (0x10)
+                                        {
+                                            /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+                                            /* 0008 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 
+                                        }
+                                    })
                                 }
                             }
                         }
                         Case (0x06)
                         {
-                            If (LGreaterEqual (Arg1, 0x02))
+                            If ((Arg1 >= 0x02))
                             {
                                 If (LTRN)
                                 {
-                                    If (LOr (LEqual (LMSL, Zero), LEqual (LNSL, Zero)))
+                                    If (((LMSL == Zero) || (LNSL == Zero)))
                                     {
-                                        If (LEqual (PCHS, SPTH))
+                                        If ((PCHS == SPTH))
                                         {
-                                            Store (0x0846, LMSL)
-                                            Store (0x0846, LNSL)
+                                            LMSL = 0x0846
+                                            LNSL = 0x0846
                                         }
-                                        ElseIf (LEqual (PCHS, SPTL))
+                                        ElseIf ((PCHS == SPTL))
                                         {
-                                            Store (0x1003, LMSL)
-                                            Store (0x1003, LNSL)
+                                            LMSL = 0x1003
+                                            LNSL = 0x1003
                                         }
                                     }
 
-                                    Store (And (ShiftRight (LMSL, 0x0A), 0x07), Index (LTRV, Zero))
-                                    Store (And (LMSL, 0x03FF), Index (LTRV, One))
-                                    Store (And (ShiftRight (LNSL, 0x0A), 0x07), Index (LTRV, 0x02))
-                                    Store (And (LNSL, 0x03FF), Index (LTRV, 0x03))
+                                    LTRV [Zero] = ((LMSL >> 0x0A) & 0x07)
+                                    LTRV [One] = (LMSL & 0x03FF)
+                                    LTRV [0x02] = ((LNSL >> 0x0A) & 0x07)
+                                    LTRV [0x03] = (LNSL & 0x03FF)
                                     Return (LTRV)
                                 }
                                 Else
@@ -7075,9 +7067,9 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                         }
                         Case (0x08)
                         {
-                            If (LEqual (ECR1, One))
+                            If ((ECR1 == One))
                             {
-                                If (LGreaterEqual (Arg1, 0x03))
+                                If ((Arg1 >= 0x03))
                                 {
                                     Return (One)
                                 }
@@ -7085,9 +7077,9 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                         }
                         Case (0x09)
                         {
-                            If (LEqual (ECR1, One))
+                            If ((ECR1 == One))
                             {
-                                If (LGreaterEqual (Arg1, 0x03))
+                                If ((Arg1 >= 0x03))
                                 {
                                     Return (Package (0x05)
                                     {
@@ -7123,17 +7115,17 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
             {
                 If (PMSX)
                 {
-                    Store (0xC8, Local0)
+                    Local0 = 0xC8
                     While (Local0)
                     {
-                        Store (One, PMSX)
+                        PMSX = One
                         If (PMSX)
                         {
-                            Decrement (Local0)
+                            Local0--
                         }
                         Else
                         {
-                            Store (Zero, Local0)
+                            Local0 = Zero
                         }
                     }
 
@@ -7161,7 +7153,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         {
             Method (_ADR, 0, NotSerialized)  // _ADR: Address
             {
-                If (LNotEqual (RPA4, Zero))
+                If ((RPA4 != Zero))
                 {
                     Return (RPA4)
                 }
@@ -7173,10 +7165,10 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
 
             Method (_INI, 0, NotSerialized)  // _INI: Initialize
             {
-                Store (LTR4, LTRN)
-                Store (PML4, LMSL)
-                Store (PNL4, LNSL)
-                Store (OBF4, OBFN)
+                LTRN = LTR4
+                LMSL = PML4
+                LNSL = PNL4
+                OBFN = OBF4
             }
 
             OperationRegion (PXCS, PCI_Config, Zero, 0x0380)
@@ -7231,9 +7223,9 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                 Zero, 
                 Zero
             })
-            Method (XDSM, 4, Serialized)  // _DSM: Device-Specific Method
+            Method (XDSM, 4, Serialized)
             {
-                If (LEqual (Arg0, ToUUID ("e5c937d0-3553-4d7a-9117-ea4d19c3434d") /* Device Labeling Interface */))
+                If ((Arg0 == ToUUID ("e5c937d0-3553-4d7a-9117-ea4d19c3434d") /* Device Labeling Interface */))
                 {
                     Switch (ToInteger (Arg2))
                     {
@@ -7248,25 +7240,25 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                             CreateBitField (OPTS, 0x06, FUN6)
                             CreateBitField (OPTS, 0x08, FUN8)
                             CreateBitField (OPTS, 0x09, FUN9)
-                            If (LGreaterEqual (Arg1, 0x02))
+                            If ((Arg1 >= 0x02))
                             {
-                                Store (One, FUN0)
+                                FUN0 = One
                                 If (LTRE)
                                 {
-                                    Store (One, FUN6)
+                                    FUN6 = One
                                 }
 
                                 If (OBFF)
                                 {
-                                    Store (One, FUN4)
+                                    FUN4 = One
                                 }
 
-                                If (LEqual (ECR1, One))
+                                If ((ECR1 == One))
                                 {
-                                    If (LGreaterEqual (Arg1, 0x03))
+                                    If ((Arg1 >= 0x03))
                                     {
-                                        Store (One, FUN8)
-                                        Store (One, FUN9)
+                                        FUN8 = One
+                                        FUN9 = One
                                     }
                                 }
                             }
@@ -7275,50 +7267,56 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                         }
                         Case (0x04)
                         {
-                            If (LGreaterEqual (Arg1, 0x02))
+                            If ((Arg1 >= 0x02))
                             {
                                 If (OBFN)
                                 {
-                                    Return (Package() { Buffer (0x10)
+                                    Return (Package (0x01)
                                     {
-                                        /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-                                        /* 0008 */  0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00, 0x00 
-                                    }})
+                                        Buffer (0x10)
+                                        {
+                                            /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+                                            /* 0008 */  0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00, 0x00 
+                                        }
+                                    })
                                 }
                                 Else
                                 {
-                                    Return (Package() { Buffer (0x10)
+                                    Return (Package (0x01)
                                     {
-                                        /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-                                        /* 0008 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 
-                                    }})
+                                        Buffer (0x10)
+                                        {
+                                            /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+                                            /* 0008 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 
+                                        }
+                                    })
                                 }
                             }
                         }
                         Case (0x06)
                         {
-                            If (LGreaterEqual (Arg1, 0x02))
+                            If ((Arg1 >= 0x02))
                             {
                                 If (LTRN)
                                 {
-                                    If (LOr (LEqual (LMSL, Zero), LEqual (LNSL, Zero)))
+                                    If (((LMSL == Zero) || (LNSL == Zero)))
                                     {
-                                        If (LEqual (PCHS, SPTH))
+                                        If ((PCHS == SPTH))
                                         {
-                                            Store (0x0846, LMSL)
-                                            Store (0x0846, LNSL)
+                                            LMSL = 0x0846
+                                            LNSL = 0x0846
                                         }
-                                        ElseIf (LEqual (PCHS, SPTL))
+                                        ElseIf ((PCHS == SPTL))
                                         {
-                                            Store (0x1003, LMSL)
-                                            Store (0x1003, LNSL)
+                                            LMSL = 0x1003
+                                            LNSL = 0x1003
                                         }
                                     }
 
-                                    Store (And (ShiftRight (LMSL, 0x0A), 0x07), Index (LTRV, Zero))
-                                    Store (And (LMSL, 0x03FF), Index (LTRV, One))
-                                    Store (And (ShiftRight (LNSL, 0x0A), 0x07), Index (LTRV, 0x02))
-                                    Store (And (LNSL, 0x03FF), Index (LTRV, 0x03))
+                                    LTRV [Zero] = ((LMSL >> 0x0A) & 0x07)
+                                    LTRV [One] = (LMSL & 0x03FF)
+                                    LTRV [0x02] = ((LNSL >> 0x0A) & 0x07)
+                                    LTRV [0x03] = (LNSL & 0x03FF)
                                     Return (LTRV)
                                 }
                                 Else
@@ -7329,9 +7327,9 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                         }
                         Case (0x08)
                         {
-                            If (LEqual (ECR1, One))
+                            If ((ECR1 == One))
                             {
-                                If (LGreaterEqual (Arg1, 0x03))
+                                If ((Arg1 >= 0x03))
                                 {
                                     Return (One)
                                 }
@@ -7339,9 +7337,9 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                         }
                         Case (0x09)
                         {
-                            If (LEqual (ECR1, One))
+                            If ((ECR1 == One))
                             {
-                                If (LGreaterEqual (Arg1, 0x03))
+                                If ((Arg1 >= 0x03))
                                 {
                                     Return (Package (0x05)
                                     {
@@ -7377,17 +7375,17 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
             {
                 If (PMSX)
                 {
-                    Store (0xC8, Local0)
+                    Local0 = 0xC8
                     While (Local0)
                     {
-                        Store (One, PMSX)
+                        PMSX = One
                         If (PMSX)
                         {
-                            Decrement (Local0)
+                            Local0--
                         }
                         Else
                         {
-                            Store (Zero, Local0)
+                            Local0 = Zero
                         }
                     }
 
@@ -7415,7 +7413,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         {
             Method (_ADR, 0, NotSerialized)  // _ADR: Address
             {
-                If (LNotEqual (RPA5, Zero))
+                If ((RPA5 != Zero))
                 {
                     Return (RPA5)
                 }
@@ -7427,10 +7425,10 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
 
             Method (_INI, 0, NotSerialized)  // _INI: Initialize
             {
-                Store (LTR5, LTRN)
-                Store (PML5, LMSL)
-                Store (PNL5, LNSL)
-                Store (OBF5, OBFN)
+                LTRN = LTR5
+                LMSL = PML5
+                LNSL = PNL5
+                OBFN = OBF5
             }
 
             OperationRegion (PXCS, PCI_Config, Zero, 0x0380)
@@ -7485,9 +7483,9 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                 Zero, 
                 Zero
             })
-            Method (XDSM, 4, Serialized)  // _DSM: Device-Specific Method
+            Method (XDSM, 4, Serialized)
             {
-                If (LEqual (Arg0, ToUUID ("e5c937d0-3553-4d7a-9117-ea4d19c3434d") /* Device Labeling Interface */))
+                If ((Arg0 == ToUUID ("e5c937d0-3553-4d7a-9117-ea4d19c3434d") /* Device Labeling Interface */))
                 {
                     Switch (ToInteger (Arg2))
                     {
@@ -7502,25 +7500,25 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                             CreateBitField (OPTS, 0x06, FUN6)
                             CreateBitField (OPTS, 0x08, FUN8)
                             CreateBitField (OPTS, 0x09, FUN9)
-                            If (LGreaterEqual (Arg1, 0x02))
+                            If ((Arg1 >= 0x02))
                             {
-                                Store (One, FUN0)
+                                FUN0 = One
                                 If (LTRE)
                                 {
-                                    Store (One, FUN6)
+                                    FUN6 = One
                                 }
 
                                 If (OBFF)
                                 {
-                                    Store (One, FUN4)
+                                    FUN4 = One
                                 }
 
-                                If (LEqual (ECR1, One))
+                                If ((ECR1 == One))
                                 {
-                                    If (LGreaterEqual (Arg1, 0x03))
+                                    If ((Arg1 >= 0x03))
                                     {
-                                        Store (One, FUN8)
-                                        Store (One, FUN9)
+                                        FUN8 = One
+                                        FUN9 = One
                                     }
                                 }
                             }
@@ -7529,50 +7527,56 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                         }
                         Case (0x04)
                         {
-                            If (LGreaterEqual (Arg1, 0x02))
+                            If ((Arg1 >= 0x02))
                             {
                                 If (OBFN)
                                 {
-                                    Return (Package() { Buffer (0x10)
+                                    Return (Package (0x01)
                                     {
-                                        /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-                                        /* 0008 */  0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00, 0x00 
-                                    }})
+                                        Buffer (0x10)
+                                        {
+                                            /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+                                            /* 0008 */  0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00, 0x00 
+                                        }
+                                    })
                                 }
                                 Else
                                 {
-                                    Return (Package() { Buffer (0x10)
+                                    Return (Package (0x01)
                                     {
-                                        /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-                                        /* 0008 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 
-                                    }})
+                                        Buffer (0x10)
+                                        {
+                                            /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+                                            /* 0008 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 
+                                        }
+                                    })
                                 }
                             }
                         }
                         Case (0x06)
                         {
-                            If (LGreaterEqual (Arg1, 0x02))
+                            If ((Arg1 >= 0x02))
                             {
                                 If (LTRN)
                                 {
-                                    If (LOr (LEqual (LMSL, Zero), LEqual (LNSL, Zero)))
+                                    If (((LMSL == Zero) || (LNSL == Zero)))
                                     {
-                                        If (LEqual (PCHS, SPTH))
+                                        If ((PCHS == SPTH))
                                         {
-                                            Store (0x0846, LMSL)
-                                            Store (0x0846, LNSL)
+                                            LMSL = 0x0846
+                                            LNSL = 0x0846
                                         }
-                                        ElseIf (LEqual (PCHS, SPTL))
+                                        ElseIf ((PCHS == SPTL))
                                         {
-                                            Store (0x1003, LMSL)
-                                            Store (0x1003, LNSL)
+                                            LMSL = 0x1003
+                                            LNSL = 0x1003
                                         }
                                     }
 
-                                    Store (And (ShiftRight (LMSL, 0x0A), 0x07), Index (LTRV, Zero))
-                                    Store (And (LMSL, 0x03FF), Index (LTRV, One))
-                                    Store (And (ShiftRight (LNSL, 0x0A), 0x07), Index (LTRV, 0x02))
-                                    Store (And (LNSL, 0x03FF), Index (LTRV, 0x03))
+                                    LTRV [Zero] = ((LMSL >> 0x0A) & 0x07)
+                                    LTRV [One] = (LMSL & 0x03FF)
+                                    LTRV [0x02] = ((LNSL >> 0x0A) & 0x07)
+                                    LTRV [0x03] = (LNSL & 0x03FF)
                                     Return (LTRV)
                                 }
                                 Else
@@ -7583,9 +7587,9 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                         }
                         Case (0x08)
                         {
-                            If (LEqual (ECR1, One))
+                            If ((ECR1 == One))
                             {
-                                If (LGreaterEqual (Arg1, 0x03))
+                                If ((Arg1 >= 0x03))
                                 {
                                     Return (One)
                                 }
@@ -7593,9 +7597,9 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                         }
                         Case (0x09)
                         {
-                            If (LEqual (ECR1, One))
+                            If ((ECR1 == One))
                             {
-                                If (LGreaterEqual (Arg1, 0x03))
+                                If ((Arg1 >= 0x03))
                                 {
                                     Return (Package (0x05)
                                     {
@@ -7631,17 +7635,17 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
             {
                 If (PMSX)
                 {
-                    Store (0xC8, Local0)
+                    Local0 = 0xC8
                     While (Local0)
                     {
-                        Store (One, PMSX)
+                        PMSX = One
                         If (PMSX)
                         {
-                            Decrement (Local0)
+                            Local0--
                         }
                         Else
                         {
-                            Store (Zero, Local0)
+                            Local0 = Zero
                         }
                     }
 
@@ -7669,7 +7673,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         {
             Method (_ADR, 0, NotSerialized)  // _ADR: Address
             {
-                If (LNotEqual (RPA6, Zero))
+                If ((RPA6 != Zero))
                 {
                     Return (RPA6)
                 }
@@ -7681,10 +7685,10 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
 
             Method (_INI, 0, NotSerialized)  // _INI: Initialize
             {
-                Store (LTR6, LTRN)
-                Store (PML6, LMSL)
-                Store (PNL6, LNSL)
-                Store (OBF6, OBFN)
+                LTRN = LTR6
+                LMSL = PML6
+                LNSL = PNL6
+                OBFN = OBF6
             }
 
             OperationRegion (PXCS, PCI_Config, Zero, 0x0380)
@@ -7739,9 +7743,9 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                 Zero, 
                 Zero
             })
-            Method (XDSM, 4, Serialized)  // _DSM: Device-Specific Method
+            Method (XDSM, 4, Serialized)
             {
-                If (LEqual (Arg0, ToUUID ("e5c937d0-3553-4d7a-9117-ea4d19c3434d") /* Device Labeling Interface */))
+                If ((Arg0 == ToUUID ("e5c937d0-3553-4d7a-9117-ea4d19c3434d") /* Device Labeling Interface */))
                 {
                     Switch (ToInteger (Arg2))
                     {
@@ -7756,25 +7760,25 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                             CreateBitField (OPTS, 0x06, FUN6)
                             CreateBitField (OPTS, 0x08, FUN8)
                             CreateBitField (OPTS, 0x09, FUN9)
-                            If (LGreaterEqual (Arg1, 0x02))
+                            If ((Arg1 >= 0x02))
                             {
-                                Store (One, FUN0)
+                                FUN0 = One
                                 If (LTRE)
                                 {
-                                    Store (One, FUN6)
+                                    FUN6 = One
                                 }
 
                                 If (OBFF)
                                 {
-                                    Store (One, FUN4)
+                                    FUN4 = One
                                 }
 
-                                If (LEqual (ECR1, One))
+                                If ((ECR1 == One))
                                 {
-                                    If (LGreaterEqual (Arg1, 0x03))
+                                    If ((Arg1 >= 0x03))
                                     {
-                                        Store (One, FUN8)
-                                        Store (One, FUN9)
+                                        FUN8 = One
+                                        FUN9 = One
                                     }
                                 }
                             }
@@ -7783,50 +7787,56 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                         }
                         Case (0x04)
                         {
-                            If (LGreaterEqual (Arg1, 0x02))
+                            If ((Arg1 >= 0x02))
                             {
                                 If (OBFN)
                                 {
-                                    Return (Package() { Buffer (0x10)
+                                    Return (Package (0x01)
                                     {
-                                        /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-                                        /* 0008 */  0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00, 0x00 
-                                    }})
+                                        Buffer (0x10)
+                                        {
+                                            /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+                                            /* 0008 */  0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00, 0x00 
+                                        }
+                                    })
                                 }
                                 Else
                                 {
-                                    Return (Package() { Buffer (0x10)
+                                    Return (Package (0x01)
                                     {
-                                        /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-                                        /* 0008 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 
-                                    }})
+                                        Buffer (0x10)
+                                        {
+                                            /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+                                            /* 0008 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 
+                                        }
+                                    })
                                 }
                             }
                         }
                         Case (0x06)
                         {
-                            If (LGreaterEqual (Arg1, 0x02))
+                            If ((Arg1 >= 0x02))
                             {
                                 If (LTRN)
                                 {
-                                    If (LOr (LEqual (LMSL, Zero), LEqual (LNSL, Zero)))
+                                    If (((LMSL == Zero) || (LNSL == Zero)))
                                     {
-                                        If (LEqual (PCHS, SPTH))
+                                        If ((PCHS == SPTH))
                                         {
-                                            Store (0x0846, LMSL)
-                                            Store (0x0846, LNSL)
+                                            LMSL = 0x0846
+                                            LNSL = 0x0846
                                         }
-                                        ElseIf (LEqual (PCHS, SPTL))
+                                        ElseIf ((PCHS == SPTL))
                                         {
-                                            Store (0x1003, LMSL)
-                                            Store (0x1003, LNSL)
+                                            LMSL = 0x1003
+                                            LNSL = 0x1003
                                         }
                                     }
 
-                                    Store (And (ShiftRight (LMSL, 0x0A), 0x07), Index (LTRV, Zero))
-                                    Store (And (LMSL, 0x03FF), Index (LTRV, One))
-                                    Store (And (ShiftRight (LNSL, 0x0A), 0x07), Index (LTRV, 0x02))
-                                    Store (And (LNSL, 0x03FF), Index (LTRV, 0x03))
+                                    LTRV [Zero] = ((LMSL >> 0x0A) & 0x07)
+                                    LTRV [One] = (LMSL & 0x03FF)
+                                    LTRV [0x02] = ((LNSL >> 0x0A) & 0x07)
+                                    LTRV [0x03] = (LNSL & 0x03FF)
                                     Return (LTRV)
                                 }
                                 Else
@@ -7837,9 +7847,9 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                         }
                         Case (0x08)
                         {
-                            If (LEqual (ECR1, One))
+                            If ((ECR1 == One))
                             {
-                                If (LGreaterEqual (Arg1, 0x03))
+                                If ((Arg1 >= 0x03))
                                 {
                                     Return (One)
                                 }
@@ -7847,9 +7857,9 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                         }
                         Case (0x09)
                         {
-                            If (LEqual (ECR1, One))
+                            If ((ECR1 == One))
                             {
-                                If (LGreaterEqual (Arg1, 0x03))
+                                If ((Arg1 >= 0x03))
                                 {
                                     Return (Package (0x05)
                                     {
@@ -7885,17 +7895,17 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
             {
                 If (PMSX)
                 {
-                    Store (0xC8, Local0)
+                    Local0 = 0xC8
                     While (Local0)
                     {
-                        Store (One, PMSX)
+                        PMSX = One
                         If (PMSX)
                         {
-                            Decrement (Local0)
+                            Local0--
                         }
                         Else
                         {
-                            Store (Zero, Local0)
+                            Local0 = Zero
                         }
                     }
 
@@ -7923,7 +7933,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         {
             Method (_ADR, 0, NotSerialized)  // _ADR: Address
             {
-                If (LNotEqual (RPA7, Zero))
+                If ((RPA7 != Zero))
                 {
                     Return (RPA7)
                 }
@@ -7935,10 +7945,10 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
 
             Method (_INI, 0, NotSerialized)  // _INI: Initialize
             {
-                Store (LTR7, LTRN)
-                Store (PML7, LMSL)
-                Store (PNL7, LNSL)
-                Store (OBF7, OBFN)
+                LTRN = LTR7
+                LMSL = PML7
+                LNSL = PNL7
+                OBFN = OBF7
             }
 
             OperationRegion (PXCS, PCI_Config, Zero, 0x0380)
@@ -7993,9 +8003,9 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                 Zero, 
                 Zero
             })
-            Method (XDSM, 4, Serialized)  // _DSM: Device-Specific Method
+            Method (XDSM, 4, Serialized)
             {
-                If (LEqual (Arg0, ToUUID ("e5c937d0-3553-4d7a-9117-ea4d19c3434d") /* Device Labeling Interface */))
+                If ((Arg0 == ToUUID ("e5c937d0-3553-4d7a-9117-ea4d19c3434d") /* Device Labeling Interface */))
                 {
                     Switch (ToInteger (Arg2))
                     {
@@ -8010,25 +8020,25 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                             CreateBitField (OPTS, 0x06, FUN6)
                             CreateBitField (OPTS, 0x08, FUN8)
                             CreateBitField (OPTS, 0x09, FUN9)
-                            If (LGreaterEqual (Arg1, 0x02))
+                            If ((Arg1 >= 0x02))
                             {
-                                Store (One, FUN0)
+                                FUN0 = One
                                 If (LTRE)
                                 {
-                                    Store (One, FUN6)
+                                    FUN6 = One
                                 }
 
                                 If (OBFF)
                                 {
-                                    Store (One, FUN4)
+                                    FUN4 = One
                                 }
 
-                                If (LEqual (ECR1, One))
+                                If ((ECR1 == One))
                                 {
-                                    If (LGreaterEqual (Arg1, 0x03))
+                                    If ((Arg1 >= 0x03))
                                     {
-                                        Store (One, FUN8)
-                                        Store (One, FUN9)
+                                        FUN8 = One
+                                        FUN9 = One
                                     }
                                 }
                             }
@@ -8037,50 +8047,56 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                         }
                         Case (0x04)
                         {
-                            If (LGreaterEqual (Arg1, 0x02))
+                            If ((Arg1 >= 0x02))
                             {
                                 If (OBFN)
                                 {
-                                    Return (Package() { Buffer (0x10)
+                                    Return (Package (0x01)
                                     {
-                                        /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-                                        /* 0008 */  0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00, 0x00 
-                                    }})
+                                        Buffer (0x10)
+                                        {
+                                            /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+                                            /* 0008 */  0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00, 0x00 
+                                        }
+                                    })
                                 }
                                 Else
                                 {
-                                    Return (Package() { Buffer (0x10)
+                                    Return (Package (0x01)
                                     {
-                                        /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-                                        /* 0008 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 
-                                    }})
+                                        Buffer (0x10)
+                                        {
+                                            /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+                                            /* 0008 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 
+                                        }
+                                    })
                                 }
                             }
                         }
                         Case (0x06)
                         {
-                            If (LGreaterEqual (Arg1, 0x02))
+                            If ((Arg1 >= 0x02))
                             {
                                 If (LTRN)
                                 {
-                                    If (LOr (LEqual (LMSL, Zero), LEqual (LNSL, Zero)))
+                                    If (((LMSL == Zero) || (LNSL == Zero)))
                                     {
-                                        If (LEqual (PCHS, SPTH))
+                                        If ((PCHS == SPTH))
                                         {
-                                            Store (0x0846, LMSL)
-                                            Store (0x0846, LNSL)
+                                            LMSL = 0x0846
+                                            LNSL = 0x0846
                                         }
-                                        ElseIf (LEqual (PCHS, SPTL))
+                                        ElseIf ((PCHS == SPTL))
                                         {
-                                            Store (0x1003, LMSL)
-                                            Store (0x1003, LNSL)
+                                            LMSL = 0x1003
+                                            LNSL = 0x1003
                                         }
                                     }
 
-                                    Store (And (ShiftRight (LMSL, 0x0A), 0x07), Index (LTRV, Zero))
-                                    Store (And (LMSL, 0x03FF), Index (LTRV, One))
-                                    Store (And (ShiftRight (LNSL, 0x0A), 0x07), Index (LTRV, 0x02))
-                                    Store (And (LNSL, 0x03FF), Index (LTRV, 0x03))
+                                    LTRV [Zero] = ((LMSL >> 0x0A) & 0x07)
+                                    LTRV [One] = (LMSL & 0x03FF)
+                                    LTRV [0x02] = ((LNSL >> 0x0A) & 0x07)
+                                    LTRV [0x03] = (LNSL & 0x03FF)
                                     Return (LTRV)
                                 }
                                 Else
@@ -8091,9 +8107,9 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                         }
                         Case (0x08)
                         {
-                            If (LEqual (ECR1, One))
+                            If ((ECR1 == One))
                             {
-                                If (LGreaterEqual (Arg1, 0x03))
+                                If ((Arg1 >= 0x03))
                                 {
                                     Return (One)
                                 }
@@ -8101,9 +8117,9 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                         }
                         Case (0x09)
                         {
-                            If (LEqual (ECR1, One))
+                            If ((ECR1 == One))
                             {
-                                If (LGreaterEqual (Arg1, 0x03))
+                                If ((Arg1 >= 0x03))
                                 {
                                     Return (Package (0x05)
                                     {
@@ -8139,17 +8155,17 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
             {
                 If (PMSX)
                 {
-                    Store (0xC8, Local0)
+                    Local0 = 0xC8
                     While (Local0)
                     {
-                        Store (One, PMSX)
+                        PMSX = One
                         If (PMSX)
                         {
-                            Decrement (Local0)
+                            Local0--
                         }
                         Else
                         {
-                            Store (Zero, Local0)
+                            Local0 = Zero
                         }
                     }
 
@@ -8177,7 +8193,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         {
             Method (_ADR, 0, NotSerialized)  // _ADR: Address
             {
-                If (LNotEqual (RPA8, Zero))
+                If ((RPA8 != Zero))
                 {
                     Return (RPA8)
                 }
@@ -8189,10 +8205,10 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
 
             Method (_INI, 0, NotSerialized)  // _INI: Initialize
             {
-                Store (LTR8, LTRN)
-                Store (PML8, LMSL)
-                Store (PNL8, LNSL)
-                Store (OBF8, OBFN)
+                LTRN = LTR8
+                LMSL = PML8
+                LNSL = PNL8
+                OBFN = OBF8
             }
 
             OperationRegion (PXCS, PCI_Config, Zero, 0x0380)
@@ -8247,9 +8263,9 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                 Zero, 
                 Zero
             })
-            Method (XDSM, 4, Serialized)  // _DSM: Device-Specific Method
+            Method (XDSM, 4, Serialized)
             {
-                If (LEqual (Arg0, ToUUID ("e5c937d0-3553-4d7a-9117-ea4d19c3434d") /* Device Labeling Interface */))
+                If ((Arg0 == ToUUID ("e5c937d0-3553-4d7a-9117-ea4d19c3434d") /* Device Labeling Interface */))
                 {
                     Switch (ToInteger (Arg2))
                     {
@@ -8264,25 +8280,25 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                             CreateBitField (OPTS, 0x06, FUN6)
                             CreateBitField (OPTS, 0x08, FUN8)
                             CreateBitField (OPTS, 0x09, FUN9)
-                            If (LGreaterEqual (Arg1, 0x02))
+                            If ((Arg1 >= 0x02))
                             {
-                                Store (One, FUN0)
+                                FUN0 = One
                                 If (LTRE)
                                 {
-                                    Store (One, FUN6)
+                                    FUN6 = One
                                 }
 
                                 If (OBFF)
                                 {
-                                    Store (One, FUN4)
+                                    FUN4 = One
                                 }
 
-                                If (LEqual (ECR1, One))
+                                If ((ECR1 == One))
                                 {
-                                    If (LGreaterEqual (Arg1, 0x03))
+                                    If ((Arg1 >= 0x03))
                                     {
-                                        Store (One, FUN8)
-                                        Store (One, FUN9)
+                                        FUN8 = One
+                                        FUN9 = One
                                     }
                                 }
                             }
@@ -8291,50 +8307,56 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                         }
                         Case (0x04)
                         {
-                            If (LGreaterEqual (Arg1, 0x02))
+                            If ((Arg1 >= 0x02))
                             {
                                 If (OBFN)
                                 {
-                                    Return (Package() { Buffer (0x10)
+                                    Return (Package (0x01)
                                     {
-                                        /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-                                        /* 0008 */  0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00, 0x00 
-                                    }})
+                                        Buffer (0x10)
+                                        {
+                                            /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+                                            /* 0008 */  0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00, 0x00 
+                                        }
+                                    })
                                 }
                                 Else
                                 {
-                                    Return (Package() { Buffer (0x10)
+                                    Return (Package (0x01)
                                     {
-                                        /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-                                        /* 0008 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 
-                                    }})
+                                        Buffer (0x10)
+                                        {
+                                            /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+                                            /* 0008 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 
+                                        }
+                                    })
                                 }
                             }
                         }
                         Case (0x06)
                         {
-                            If (LGreaterEqual (Arg1, 0x02))
+                            If ((Arg1 >= 0x02))
                             {
                                 If (LTRN)
                                 {
-                                    If (LOr (LEqual (LMSL, Zero), LEqual (LNSL, Zero)))
+                                    If (((LMSL == Zero) || (LNSL == Zero)))
                                     {
-                                        If (LEqual (PCHS, SPTH))
+                                        If ((PCHS == SPTH))
                                         {
-                                            Store (0x0846, LMSL)
-                                            Store (0x0846, LNSL)
+                                            LMSL = 0x0846
+                                            LNSL = 0x0846
                                         }
-                                        ElseIf (LEqual (PCHS, SPTL))
+                                        ElseIf ((PCHS == SPTL))
                                         {
-                                            Store (0x1003, LMSL)
-                                            Store (0x1003, LNSL)
+                                            LMSL = 0x1003
+                                            LNSL = 0x1003
                                         }
                                     }
 
-                                    Store (And (ShiftRight (LMSL, 0x0A), 0x07), Index (LTRV, Zero))
-                                    Store (And (LMSL, 0x03FF), Index (LTRV, One))
-                                    Store (And (ShiftRight (LNSL, 0x0A), 0x07), Index (LTRV, 0x02))
-                                    Store (And (LNSL, 0x03FF), Index (LTRV, 0x03))
+                                    LTRV [Zero] = ((LMSL >> 0x0A) & 0x07)
+                                    LTRV [One] = (LMSL & 0x03FF)
+                                    LTRV [0x02] = ((LNSL >> 0x0A) & 0x07)
+                                    LTRV [0x03] = (LNSL & 0x03FF)
                                     Return (LTRV)
                                 }
                                 Else
@@ -8345,9 +8367,9 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                         }
                         Case (0x08)
                         {
-                            If (LEqual (ECR1, One))
+                            If ((ECR1 == One))
                             {
-                                If (LGreaterEqual (Arg1, 0x03))
+                                If ((Arg1 >= 0x03))
                                 {
                                     Return (One)
                                 }
@@ -8355,9 +8377,9 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                         }
                         Case (0x09)
                         {
-                            If (LEqual (ECR1, One))
+                            If ((ECR1 == One))
                             {
-                                If (LGreaterEqual (Arg1, 0x03))
+                                If ((Arg1 >= 0x03))
                                 {
                                     Return (Package (0x05)
                                     {
@@ -8393,17 +8415,17 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
             {
                 If (PMSX)
                 {
-                    Store (0xC8, Local0)
+                    Local0 = 0xC8
                     While (Local0)
                     {
-                        Store (One, PMSX)
+                        PMSX = One
                         If (PMSX)
                         {
-                            Decrement (Local0)
+                            Local0--
                         }
                         Else
                         {
-                            Store (Zero, Local0)
+                            Local0 = Zero
                         }
                     }
 
@@ -8431,7 +8453,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         {
             Method (_ADR, 0, NotSerialized)  // _ADR: Address
             {
-                If (LNotEqual (RPA9, Zero))
+                If ((RPA9 != Zero))
                 {
                     Return (RPA9)
                 }
@@ -8443,10 +8465,10 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
 
             Method (_INI, 0, NotSerialized)  // _INI: Initialize
             {
-                Store (LTR9, LTRN)
-                Store (PML9, LMSL)
-                Store (PNL9, LNSL)
-                Store (OBF9, OBFN)
+                LTRN = LTR9
+                LMSL = PML9
+                LNSL = PNL9
+                OBFN = OBF9
             }
 
             OperationRegion (PXCS, PCI_Config, Zero, 0x0380)
@@ -8501,9 +8523,9 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                 Zero, 
                 Zero
             })
-            Method (XDSM, 4, Serialized)  // _DSM: Device-Specific Method
+            Method (XDSM, 4, Serialized)
             {
-                If (LEqual (Arg0, ToUUID ("e5c937d0-3553-4d7a-9117-ea4d19c3434d") /* Device Labeling Interface */))
+                If ((Arg0 == ToUUID ("e5c937d0-3553-4d7a-9117-ea4d19c3434d") /* Device Labeling Interface */))
                 {
                     Switch (ToInteger (Arg2))
                     {
@@ -8518,25 +8540,25 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                             CreateBitField (OPTS, 0x06, FUN6)
                             CreateBitField (OPTS, 0x08, FUN8)
                             CreateBitField (OPTS, 0x09, FUN9)
-                            If (LGreaterEqual (Arg1, 0x02))
+                            If ((Arg1 >= 0x02))
                             {
-                                Store (One, FUN0)
+                                FUN0 = One
                                 If (LTRE)
                                 {
-                                    Store (One, FUN6)
+                                    FUN6 = One
                                 }
 
                                 If (OBFF)
                                 {
-                                    Store (One, FUN4)
+                                    FUN4 = One
                                 }
 
-                                If (LEqual (ECR1, One))
+                                If ((ECR1 == One))
                                 {
-                                    If (LGreaterEqual (Arg1, 0x03))
+                                    If ((Arg1 >= 0x03))
                                     {
-                                        Store (One, FUN8)
-                                        Store (One, FUN9)
+                                        FUN8 = One
+                                        FUN9 = One
                                     }
                                 }
                             }
@@ -8545,50 +8567,56 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                         }
                         Case (0x04)
                         {
-                            If (LGreaterEqual (Arg1, 0x02))
+                            If ((Arg1 >= 0x02))
                             {
                                 If (OBFN)
                                 {
-                                    Return (Package() { Buffer (0x10)
+                                    Return (Package (0x01)
                                     {
-                                        /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-                                        /* 0008 */  0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00, 0x00 
-                                    }})
+                                        Buffer (0x10)
+                                        {
+                                            /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+                                            /* 0008 */  0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00, 0x00 
+                                        }
+                                    })
                                 }
                                 Else
                                 {
-                                    Return (Package() { Buffer (0x10)
+                                    Return (Package (0x01)
                                     {
-                                        /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-                                        /* 0008 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 
-                                    }})
+                                        Buffer (0x10)
+                                        {
+                                            /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+                                            /* 0008 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 
+                                        }
+                                    })
                                 }
                             }
                         }
                         Case (0x06)
                         {
-                            If (LGreaterEqual (Arg1, 0x02))
+                            If ((Arg1 >= 0x02))
                             {
                                 If (LTRN)
                                 {
-                                    If (LOr (LEqual (LMSL, Zero), LEqual (LNSL, Zero)))
+                                    If (((LMSL == Zero) || (LNSL == Zero)))
                                     {
-                                        If (LEqual (PCHS, SPTH))
+                                        If ((PCHS == SPTH))
                                         {
-                                            Store (0x0846, LMSL)
-                                            Store (0x0846, LNSL)
+                                            LMSL = 0x0846
+                                            LNSL = 0x0846
                                         }
-                                        ElseIf (LEqual (PCHS, SPTL))
+                                        ElseIf ((PCHS == SPTL))
                                         {
-                                            Store (0x1003, LMSL)
-                                            Store (0x1003, LNSL)
+                                            LMSL = 0x1003
+                                            LNSL = 0x1003
                                         }
                                     }
 
-                                    Store (And (ShiftRight (LMSL, 0x0A), 0x07), Index (LTRV, Zero))
-                                    Store (And (LMSL, 0x03FF), Index (LTRV, One))
-                                    Store (And (ShiftRight (LNSL, 0x0A), 0x07), Index (LTRV, 0x02))
-                                    Store (And (LNSL, 0x03FF), Index (LTRV, 0x03))
+                                    LTRV [Zero] = ((LMSL >> 0x0A) & 0x07)
+                                    LTRV [One] = (LMSL & 0x03FF)
+                                    LTRV [0x02] = ((LNSL >> 0x0A) & 0x07)
+                                    LTRV [0x03] = (LNSL & 0x03FF)
                                     Return (LTRV)
                                 }
                                 Else
@@ -8599,9 +8627,9 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                         }
                         Case (0x08)
                         {
-                            If (LEqual (ECR1, One))
+                            If ((ECR1 == One))
                             {
-                                If (LGreaterEqual (Arg1, 0x03))
+                                If ((Arg1 >= 0x03))
                                 {
                                     Return (One)
                                 }
@@ -8609,9 +8637,9 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                         }
                         Case (0x09)
                         {
-                            If (LEqual (ECR1, One))
+                            If ((ECR1 == One))
                             {
-                                If (LGreaterEqual (Arg1, 0x03))
+                                If ((Arg1 >= 0x03))
                                 {
                                     Return (Package (0x05)
                                     {
@@ -8647,17 +8675,17 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
             {
                 If (PMSX)
                 {
-                    Store (0xC8, Local0)
+                    Local0 = 0xC8
                     While (Local0)
                     {
-                        Store (One, PMSX)
+                        PMSX = One
                         If (PMSX)
                         {
-                            Decrement (Local0)
+                            Local0--
                         }
                         Else
                         {
-                            Store (Zero, Local0)
+                            Local0 = Zero
                         }
                     }
 
@@ -8685,7 +8713,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         {
             Method (_ADR, 0, NotSerialized)  // _ADR: Address
             {
-                If (LNotEqual (RPAA, Zero))
+                If ((RPAA != Zero))
                 {
                     Return (RPAA)
                 }
@@ -8697,10 +8725,10 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
 
             Method (_INI, 0, NotSerialized)  // _INI: Initialize
             {
-                Store (LTRA, LTRN)
-                Store (PMLA, LMSL)
-                Store (PNLA, LNSL)
-                Store (OBFA, OBFN)
+                LTRN = LTRA
+                LMSL = PMLA
+                LNSL = PNLA
+                OBFN = OBFA
             }
 
             OperationRegion (PXCS, PCI_Config, Zero, 0x0380)
@@ -8755,9 +8783,9 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                 Zero, 
                 Zero
             })
-            Method (XDSM, 4, Serialized)  // _DSM: Device-Specific Method
+            Method (XDSM, 4, Serialized)
             {
-                If (LEqual (Arg0, ToUUID ("e5c937d0-3553-4d7a-9117-ea4d19c3434d") /* Device Labeling Interface */))
+                If ((Arg0 == ToUUID ("e5c937d0-3553-4d7a-9117-ea4d19c3434d") /* Device Labeling Interface */))
                 {
                     Switch (ToInteger (Arg2))
                     {
@@ -8772,25 +8800,25 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                             CreateBitField (OPTS, 0x06, FUN6)
                             CreateBitField (OPTS, 0x08, FUN8)
                             CreateBitField (OPTS, 0x09, FUN9)
-                            If (LGreaterEqual (Arg1, 0x02))
+                            If ((Arg1 >= 0x02))
                             {
-                                Store (One, FUN0)
+                                FUN0 = One
                                 If (LTRE)
                                 {
-                                    Store (One, FUN6)
+                                    FUN6 = One
                                 }
 
                                 If (OBFF)
                                 {
-                                    Store (One, FUN4)
+                                    FUN4 = One
                                 }
 
-                                If (LEqual (ECR1, One))
+                                If ((ECR1 == One))
                                 {
-                                    If (LGreaterEqual (Arg1, 0x03))
+                                    If ((Arg1 >= 0x03))
                                     {
-                                        Store (One, FUN8)
-                                        Store (One, FUN9)
+                                        FUN8 = One
+                                        FUN9 = One
                                     }
                                 }
                             }
@@ -8799,50 +8827,56 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                         }
                         Case (0x04)
                         {
-                            If (LGreaterEqual (Arg1, 0x02))
+                            If ((Arg1 >= 0x02))
                             {
                                 If (OBFN)
                                 {
-                                    Return (Package() { Buffer (0x10)
+                                    Return (Package (0x01)
                                     {
-                                        /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-                                        /* 0008 */  0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00, 0x00 
-                                    }})
+                                        Buffer (0x10)
+                                        {
+                                            /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+                                            /* 0008 */  0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00, 0x00 
+                                        }
+                                    })
                                 }
                                 Else
                                 {
-                                    Return (Package() { Buffer (0x10)
+                                    Return (Package (0x01)
                                     {
-                                        /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-                                        /* 0008 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 
-                                    }})
+                                        Buffer (0x10)
+                                        {
+                                            /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+                                            /* 0008 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 
+                                        }
+                                    })
                                 }
                             }
                         }
                         Case (0x06)
                         {
-                            If (LGreaterEqual (Arg1, 0x02))
+                            If ((Arg1 >= 0x02))
                             {
                                 If (LTRN)
                                 {
-                                    If (LOr (LEqual (LMSL, Zero), LEqual (LNSL, Zero)))
+                                    If (((LMSL == Zero) || (LNSL == Zero)))
                                     {
-                                        If (LEqual (PCHS, SPTH))
+                                        If ((PCHS == SPTH))
                                         {
-                                            Store (0x0846, LMSL)
-                                            Store (0x0846, LNSL)
+                                            LMSL = 0x0846
+                                            LNSL = 0x0846
                                         }
-                                        ElseIf (LEqual (PCHS, SPTL))
+                                        ElseIf ((PCHS == SPTL))
                                         {
-                                            Store (0x1003, LMSL)
-                                            Store (0x1003, LNSL)
+                                            LMSL = 0x1003
+                                            LNSL = 0x1003
                                         }
                                     }
 
-                                    Store (And (ShiftRight (LMSL, 0x0A), 0x07), Index (LTRV, Zero))
-                                    Store (And (LMSL, 0x03FF), Index (LTRV, One))
-                                    Store (And (ShiftRight (LNSL, 0x0A), 0x07), Index (LTRV, 0x02))
-                                    Store (And (LNSL, 0x03FF), Index (LTRV, 0x03))
+                                    LTRV [Zero] = ((LMSL >> 0x0A) & 0x07)
+                                    LTRV [One] = (LMSL & 0x03FF)
+                                    LTRV [0x02] = ((LNSL >> 0x0A) & 0x07)
+                                    LTRV [0x03] = (LNSL & 0x03FF)
                                     Return (LTRV)
                                 }
                                 Else
@@ -8853,9 +8887,9 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                         }
                         Case (0x08)
                         {
-                            If (LEqual (ECR1, One))
+                            If ((ECR1 == One))
                             {
-                                If (LGreaterEqual (Arg1, 0x03))
+                                If ((Arg1 >= 0x03))
                                 {
                                     Return (One)
                                 }
@@ -8863,9 +8897,9 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                         }
                         Case (0x09)
                         {
-                            If (LEqual (ECR1, One))
+                            If ((ECR1 == One))
                             {
-                                If (LGreaterEqual (Arg1, 0x03))
+                                If ((Arg1 >= 0x03))
                                 {
                                     Return (Package (0x05)
                                     {
@@ -8901,17 +8935,17 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
             {
                 If (PMSX)
                 {
-                    Store (0xC8, Local0)
+                    Local0 = 0xC8
                     While (Local0)
                     {
-                        Store (One, PMSX)
+                        PMSX = One
                         If (PMSX)
                         {
-                            Decrement (Local0)
+                            Local0--
                         }
                         Else
                         {
-                            Store (Zero, Local0)
+                            Local0 = Zero
                         }
                     }
 
@@ -8939,7 +8973,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         {
             Method (_ADR, 0, NotSerialized)  // _ADR: Address
             {
-                If (LNotEqual (RPAB, Zero))
+                If ((RPAB != Zero))
                 {
                     Return (RPAB)
                 }
@@ -8951,10 +8985,10 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
 
             Method (_INI, 0, NotSerialized)  // _INI: Initialize
             {
-                Store (LTRB, LTRN)
-                Store (PMLB, LMSL)
-                Store (PNLB, LNSL)
-                Store (OBFB, OBFN)
+                LTRN = LTRB
+                LMSL = PMLB
+                LNSL = PNLB
+                OBFN = OBFB
             }
 
             OperationRegion (PXCS, PCI_Config, Zero, 0x0380)
@@ -9009,9 +9043,9 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                 Zero, 
                 Zero
             })
-            Method (XDSM, 4, Serialized)  // _DSM: Device-Specific Method
+            Method (XDSM, 4, Serialized)
             {
-                If (LEqual (Arg0, ToUUID ("e5c937d0-3553-4d7a-9117-ea4d19c3434d") /* Device Labeling Interface */))
+                If ((Arg0 == ToUUID ("e5c937d0-3553-4d7a-9117-ea4d19c3434d") /* Device Labeling Interface */))
                 {
                     Switch (ToInteger (Arg2))
                     {
@@ -9026,25 +9060,25 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                             CreateBitField (OPTS, 0x06, FUN6)
                             CreateBitField (OPTS, 0x08, FUN8)
                             CreateBitField (OPTS, 0x09, FUN9)
-                            If (LGreaterEqual (Arg1, 0x02))
+                            If ((Arg1 >= 0x02))
                             {
-                                Store (One, FUN0)
+                                FUN0 = One
                                 If (LTRE)
                                 {
-                                    Store (One, FUN6)
+                                    FUN6 = One
                                 }
 
                                 If (OBFF)
                                 {
-                                    Store (One, FUN4)
+                                    FUN4 = One
                                 }
 
-                                If (LEqual (ECR1, One))
+                                If ((ECR1 == One))
                                 {
-                                    If (LGreaterEqual (Arg1, 0x03))
+                                    If ((Arg1 >= 0x03))
                                     {
-                                        Store (One, FUN8)
-                                        Store (One, FUN9)
+                                        FUN8 = One
+                                        FUN9 = One
                                     }
                                 }
                             }
@@ -9053,50 +9087,56 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                         }
                         Case (0x04)
                         {
-                            If (LGreaterEqual (Arg1, 0x02))
+                            If ((Arg1 >= 0x02))
                             {
                                 If (OBFN)
                                 {
-                                    Return (Package() { Buffer (0x10)
+                                    Return (Package (0x01)
                                     {
-                                        /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-                                        /* 0008 */  0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00, 0x00 
-                                    }})
+                                        Buffer (0x10)
+                                        {
+                                            /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+                                            /* 0008 */  0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00, 0x00 
+                                        }
+                                    })
                                 }
                                 Else
                                 {
-                                    Return (Package() { Buffer (0x10)
+                                    Return (Package (0x01)
                                     {
-                                        /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-                                        /* 0008 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 
-                                    }})
+                                        Buffer (0x10)
+                                        {
+                                            /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+                                            /* 0008 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 
+                                        }
+                                    })
                                 }
                             }
                         }
                         Case (0x06)
                         {
-                            If (LGreaterEqual (Arg1, 0x02))
+                            If ((Arg1 >= 0x02))
                             {
                                 If (LTRN)
                                 {
-                                    If (LOr (LEqual (LMSL, Zero), LEqual (LNSL, Zero)))
+                                    If (((LMSL == Zero) || (LNSL == Zero)))
                                     {
-                                        If (LEqual (PCHS, SPTH))
+                                        If ((PCHS == SPTH))
                                         {
-                                            Store (0x0846, LMSL)
-                                            Store (0x0846, LNSL)
+                                            LMSL = 0x0846
+                                            LNSL = 0x0846
                                         }
-                                        ElseIf (LEqual (PCHS, SPTL))
+                                        ElseIf ((PCHS == SPTL))
                                         {
-                                            Store (0x1003, LMSL)
-                                            Store (0x1003, LNSL)
+                                            LMSL = 0x1003
+                                            LNSL = 0x1003
                                         }
                                     }
 
-                                    Store (And (ShiftRight (LMSL, 0x0A), 0x07), Index (LTRV, Zero))
-                                    Store (And (LMSL, 0x03FF), Index (LTRV, One))
-                                    Store (And (ShiftRight (LNSL, 0x0A), 0x07), Index (LTRV, 0x02))
-                                    Store (And (LNSL, 0x03FF), Index (LTRV, 0x03))
+                                    LTRV [Zero] = ((LMSL >> 0x0A) & 0x07)
+                                    LTRV [One] = (LMSL & 0x03FF)
+                                    LTRV [0x02] = ((LNSL >> 0x0A) & 0x07)
+                                    LTRV [0x03] = (LNSL & 0x03FF)
                                     Return (LTRV)
                                 }
                                 Else
@@ -9107,9 +9147,9 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                         }
                         Case (0x08)
                         {
-                            If (LEqual (ECR1, One))
+                            If ((ECR1 == One))
                             {
-                                If (LGreaterEqual (Arg1, 0x03))
+                                If ((Arg1 >= 0x03))
                                 {
                                     Return (One)
                                 }
@@ -9117,9 +9157,9 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                         }
                         Case (0x09)
                         {
-                            If (LEqual (ECR1, One))
+                            If ((ECR1 == One))
                             {
-                                If (LGreaterEqual (Arg1, 0x03))
+                                If ((Arg1 >= 0x03))
                                 {
                                     Return (Package (0x05)
                                     {
@@ -9155,17 +9195,17 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
             {
                 If (PMSX)
                 {
-                    Store (0xC8, Local0)
+                    Local0 = 0xC8
                     While (Local0)
                     {
-                        Store (One, PMSX)
+                        PMSX = One
                         If (PMSX)
                         {
-                            Decrement (Local0)
+                            Local0--
                         }
                         Else
                         {
-                            Store (Zero, Local0)
+                            Local0 = Zero
                         }
                     }
 
@@ -9193,7 +9233,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         {
             Method (_ADR, 0, NotSerialized)  // _ADR: Address
             {
-                If (LNotEqual (RPAC, Zero))
+                If ((RPAC != Zero))
                 {
                     Return (RPAC)
                 }
@@ -9205,10 +9245,10 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
 
             Method (_INI, 0, NotSerialized)  // _INI: Initialize
             {
-                Store (LTRC, LTRN)
-                Store (PMLC, LMSL)
-                Store (PNLC, LNSL)
-                Store (OBFC, OBFN)
+                LTRN = LTRC
+                LMSL = PMLC
+                LNSL = PNLC
+                OBFN = OBFC
             }
 
             OperationRegion (PXCS, PCI_Config, Zero, 0x0380)
@@ -9263,9 +9303,9 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                 Zero, 
                 Zero
             })
-            Method (XDSM, 4, Serialized)  // _DSM: Device-Specific Method
+            Method (XDSM, 4, Serialized)
             {
-                If (LEqual (Arg0, ToUUID ("e5c937d0-3553-4d7a-9117-ea4d19c3434d") /* Device Labeling Interface */))
+                If ((Arg0 == ToUUID ("e5c937d0-3553-4d7a-9117-ea4d19c3434d") /* Device Labeling Interface */))
                 {
                     Switch (ToInteger (Arg2))
                     {
@@ -9280,25 +9320,25 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                             CreateBitField (OPTS, 0x06, FUN6)
                             CreateBitField (OPTS, 0x08, FUN8)
                             CreateBitField (OPTS, 0x09, FUN9)
-                            If (LGreaterEqual (Arg1, 0x02))
+                            If ((Arg1 >= 0x02))
                             {
-                                Store (One, FUN0)
+                                FUN0 = One
                                 If (LTRE)
                                 {
-                                    Store (One, FUN6)
+                                    FUN6 = One
                                 }
 
                                 If (OBFF)
                                 {
-                                    Store (One, FUN4)
+                                    FUN4 = One
                                 }
 
-                                If (LEqual (ECR1, One))
+                                If ((ECR1 == One))
                                 {
-                                    If (LGreaterEqual (Arg1, 0x03))
+                                    If ((Arg1 >= 0x03))
                                     {
-                                        Store (One, FUN8)
-                                        Store (One, FUN9)
+                                        FUN8 = One
+                                        FUN9 = One
                                     }
                                 }
                             }
@@ -9307,50 +9347,56 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                         }
                         Case (0x04)
                         {
-                            If (LGreaterEqual (Arg1, 0x02))
+                            If ((Arg1 >= 0x02))
                             {
                                 If (OBFN)
                                 {
-                                    Return (Package() { Buffer (0x10)
+                                    Return (Package (0x01)
                                     {
-                                        /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-                                        /* 0008 */  0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00, 0x00 
-                                    }})
+                                        Buffer (0x10)
+                                        {
+                                            /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+                                            /* 0008 */  0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00, 0x00 
+                                        }
+                                    })
                                 }
                                 Else
                                 {
-                                    Return (Package() { Buffer (0x10)
+                                    Return (Package (0x01)
                                     {
-                                        /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-                                        /* 0008 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 
-                                    }})
+                                        Buffer (0x10)
+                                        {
+                                            /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+                                            /* 0008 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 
+                                        }
+                                    })
                                 }
                             }
                         }
                         Case (0x06)
                         {
-                            If (LGreaterEqual (Arg1, 0x02))
+                            If ((Arg1 >= 0x02))
                             {
                                 If (LTRN)
                                 {
-                                    If (LOr (LEqual (LMSL, Zero), LEqual (LNSL, Zero)))
+                                    If (((LMSL == Zero) || (LNSL == Zero)))
                                     {
-                                        If (LEqual (PCHS, SPTH))
+                                        If ((PCHS == SPTH))
                                         {
-                                            Store (0x0846, LMSL)
-                                            Store (0x0846, LNSL)
+                                            LMSL = 0x0846
+                                            LNSL = 0x0846
                                         }
-                                        ElseIf (LEqual (PCHS, SPTL))
+                                        ElseIf ((PCHS == SPTL))
                                         {
-                                            Store (0x1003, LMSL)
-                                            Store (0x1003, LNSL)
+                                            LMSL = 0x1003
+                                            LNSL = 0x1003
                                         }
                                     }
 
-                                    Store (And (ShiftRight (LMSL, 0x0A), 0x07), Index (LTRV, Zero))
-                                    Store (And (LMSL, 0x03FF), Index (LTRV, One))
-                                    Store (And (ShiftRight (LNSL, 0x0A), 0x07), Index (LTRV, 0x02))
-                                    Store (And (LNSL, 0x03FF), Index (LTRV, 0x03))
+                                    LTRV [Zero] = ((LMSL >> 0x0A) & 0x07)
+                                    LTRV [One] = (LMSL & 0x03FF)
+                                    LTRV [0x02] = ((LNSL >> 0x0A) & 0x07)
+                                    LTRV [0x03] = (LNSL & 0x03FF)
                                     Return (LTRV)
                                 }
                                 Else
@@ -9361,9 +9407,9 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                         }
                         Case (0x08)
                         {
-                            If (LEqual (ECR1, One))
+                            If ((ECR1 == One))
                             {
-                                If (LGreaterEqual (Arg1, 0x03))
+                                If ((Arg1 >= 0x03))
                                 {
                                     Return (One)
                                 }
@@ -9371,9 +9417,9 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                         }
                         Case (0x09)
                         {
-                            If (LEqual (ECR1, One))
+                            If ((ECR1 == One))
                             {
-                                If (LGreaterEqual (Arg1, 0x03))
+                                If ((Arg1 >= 0x03))
                                 {
                                     Return (Package (0x05)
                                     {
@@ -9409,17 +9455,17 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
             {
                 If (PMSX)
                 {
-                    Store (0xC8, Local0)
+                    Local0 = 0xC8
                     While (Local0)
                     {
-                        Store (One, PMSX)
+                        PMSX = One
                         If (PMSX)
                         {
-                            Decrement (Local0)
+                            Local0--
                         }
                         Else
                         {
-                            Store (Zero, Local0)
+                            Local0 = Zero
                         }
                     }
 
@@ -9447,7 +9493,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         {
             Method (_ADR, 0, NotSerialized)  // _ADR: Address
             {
-                If (LNotEqual (RPAD, Zero))
+                If ((RPAD != Zero))
                 {
                     Return (RPAD)
                 }
@@ -9459,10 +9505,10 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
 
             Method (_INI, 0, NotSerialized)  // _INI: Initialize
             {
-                Store (LTRD, LTRN)
-                Store (PMLD, LMSL)
-                Store (PNLD, LNSL)
-                Store (OBFD, OBFN)
+                LTRN = LTRD
+                LMSL = PMLD
+                LNSL = PNLD
+                OBFN = OBFD
             }
 
             OperationRegion (PXCS, PCI_Config, Zero, 0x0380)
@@ -9517,9 +9563,9 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                 Zero, 
                 Zero
             })
-            Method (XDSM, 4, Serialized)  // _DSM: Device-Specific Method
+            Method (XDSM, 4, Serialized)
             {
-                If (LEqual (Arg0, ToUUID ("e5c937d0-3553-4d7a-9117-ea4d19c3434d") /* Device Labeling Interface */))
+                If ((Arg0 == ToUUID ("e5c937d0-3553-4d7a-9117-ea4d19c3434d") /* Device Labeling Interface */))
                 {
                     Switch (ToInteger (Arg2))
                     {
@@ -9534,25 +9580,25 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                             CreateBitField (OPTS, 0x06, FUN6)
                             CreateBitField (OPTS, 0x08, FUN8)
                             CreateBitField (OPTS, 0x09, FUN9)
-                            If (LGreaterEqual (Arg1, 0x02))
+                            If ((Arg1 >= 0x02))
                             {
-                                Store (One, FUN0)
+                                FUN0 = One
                                 If (LTRE)
                                 {
-                                    Store (One, FUN6)
+                                    FUN6 = One
                                 }
 
                                 If (OBFF)
                                 {
-                                    Store (One, FUN4)
+                                    FUN4 = One
                                 }
 
-                                If (LEqual (ECR1, One))
+                                If ((ECR1 == One))
                                 {
-                                    If (LGreaterEqual (Arg1, 0x03))
+                                    If ((Arg1 >= 0x03))
                                     {
-                                        Store (One, FUN8)
-                                        Store (One, FUN9)
+                                        FUN8 = One
+                                        FUN9 = One
                                     }
                                 }
                             }
@@ -9561,50 +9607,56 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                         }
                         Case (0x04)
                         {
-                            If (LGreaterEqual (Arg1, 0x02))
+                            If ((Arg1 >= 0x02))
                             {
                                 If (OBFN)
                                 {
-                                    Return (Package() { Buffer (0x10)
+                                    Return (Package (0x01)
                                     {
-                                        /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-                                        /* 0008 */  0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00, 0x00 
-                                    }})
+                                        Buffer (0x10)
+                                        {
+                                            /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+                                            /* 0008 */  0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00, 0x00 
+                                        }
+                                    })
                                 }
                                 Else
                                 {
-                                    Return (Package() { Buffer (0x10)
+                                    Return (Package (0x01)
                                     {
-                                        /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-                                        /* 0008 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 
-                                    }})
+                                        Buffer (0x10)
+                                        {
+                                            /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+                                            /* 0008 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 
+                                        }
+                                    })
                                 }
                             }
                         }
                         Case (0x06)
                         {
-                            If (LGreaterEqual (Arg1, 0x02))
+                            If ((Arg1 >= 0x02))
                             {
                                 If (LTRN)
                                 {
-                                    If (LOr (LEqual (LMSL, Zero), LEqual (LNSL, Zero)))
+                                    If (((LMSL == Zero) || (LNSL == Zero)))
                                     {
-                                        If (LEqual (PCHS, SPTH))
+                                        If ((PCHS == SPTH))
                                         {
-                                            Store (0x0846, LMSL)
-                                            Store (0x0846, LNSL)
+                                            LMSL = 0x0846
+                                            LNSL = 0x0846
                                         }
-                                        ElseIf (LEqual (PCHS, SPTL))
+                                        ElseIf ((PCHS == SPTL))
                                         {
-                                            Store (0x1003, LMSL)
-                                            Store (0x1003, LNSL)
+                                            LMSL = 0x1003
+                                            LNSL = 0x1003
                                         }
                                     }
 
-                                    Store (And (ShiftRight (LMSL, 0x0A), 0x07), Index (LTRV, Zero))
-                                    Store (And (LMSL, 0x03FF), Index (LTRV, One))
-                                    Store (And (ShiftRight (LNSL, 0x0A), 0x07), Index (LTRV, 0x02))
-                                    Store (And (LNSL, 0x03FF), Index (LTRV, 0x03))
+                                    LTRV [Zero] = ((LMSL >> 0x0A) & 0x07)
+                                    LTRV [One] = (LMSL & 0x03FF)
+                                    LTRV [0x02] = ((LNSL >> 0x0A) & 0x07)
+                                    LTRV [0x03] = (LNSL & 0x03FF)
                                     Return (LTRV)
                                 }
                                 Else
@@ -9615,9 +9667,9 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                         }
                         Case (0x08)
                         {
-                            If (LEqual (ECR1, One))
+                            If ((ECR1 == One))
                             {
-                                If (LGreaterEqual (Arg1, 0x03))
+                                If ((Arg1 >= 0x03))
                                 {
                                     Return (One)
                                 }
@@ -9625,9 +9677,9 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                         }
                         Case (0x09)
                         {
-                            If (LEqual (ECR1, One))
+                            If ((ECR1 == One))
                             {
-                                If (LGreaterEqual (Arg1, 0x03))
+                                If ((Arg1 >= 0x03))
                                 {
                                     Return (Package (0x05)
                                     {
@@ -9663,17 +9715,17 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
             {
                 If (PMSX)
                 {
-                    Store (0xC8, Local0)
+                    Local0 = 0xC8
                     While (Local0)
                     {
-                        Store (One, PMSX)
+                        PMSX = One
                         If (PMSX)
                         {
-                            Decrement (Local0)
+                            Local0--
                         }
                         Else
                         {
-                            Store (Zero, Local0)
+                            Local0 = Zero
                         }
                     }
 
@@ -9701,7 +9753,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         {
             Method (_ADR, 0, NotSerialized)  // _ADR: Address
             {
-                If (LNotEqual (RPAE, Zero))
+                If ((RPAE != Zero))
                 {
                     Return (RPAE)
                 }
@@ -9713,10 +9765,10 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
 
             Method (_INI, 0, NotSerialized)  // _INI: Initialize
             {
-                Store (LTRE, LTRN)
-                Store (PMLE, LMSL)
-                Store (PNLE, LNSL)
-                Store (OBFE, OBFN)
+                LTRN = LTRE
+                LMSL = PMLE
+                LNSL = PNLE
+                OBFN = OBFE
             }
 
             OperationRegion (PXCS, PCI_Config, Zero, 0x0380)
@@ -9771,9 +9823,9 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                 Zero, 
                 Zero
             })
-            Method (XDSM, 4, Serialized)  // _DSM: Device-Specific Method
+            Method (XDSM, 4, Serialized)
             {
-                If (LEqual (Arg0, ToUUID ("e5c937d0-3553-4d7a-9117-ea4d19c3434d") /* Device Labeling Interface */))
+                If ((Arg0 == ToUUID ("e5c937d0-3553-4d7a-9117-ea4d19c3434d") /* Device Labeling Interface */))
                 {
                     Switch (ToInteger (Arg2))
                     {
@@ -9788,25 +9840,25 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                             CreateBitField (OPTS, 0x06, FUN6)
                             CreateBitField (OPTS, 0x08, FUN8)
                             CreateBitField (OPTS, 0x09, FUN9)
-                            If (LGreaterEqual (Arg1, 0x02))
+                            If ((Arg1 >= 0x02))
                             {
-                                Store (One, FUN0)
+                                FUN0 = One
                                 If (LTRE)
                                 {
-                                    Store (One, FUN6)
+                                    FUN6 = One
                                 }
 
                                 If (OBFF)
                                 {
-                                    Store (One, FUN4)
+                                    FUN4 = One
                                 }
 
-                                If (LEqual (ECR1, One))
+                                If ((ECR1 == One))
                                 {
-                                    If (LGreaterEqual (Arg1, 0x03))
+                                    If ((Arg1 >= 0x03))
                                     {
-                                        Store (One, FUN8)
-                                        Store (One, FUN9)
+                                        FUN8 = One
+                                        FUN9 = One
                                     }
                                 }
                             }
@@ -9815,50 +9867,56 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                         }
                         Case (0x04)
                         {
-                            If (LGreaterEqual (Arg1, 0x02))
+                            If ((Arg1 >= 0x02))
                             {
                                 If (OBFN)
                                 {
-                                    Return (Package() { Buffer (0x10)
+                                    Return (Package (0x01)
                                     {
-                                        /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-                                        /* 0008 */  0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00, 0x00 
-                                    }})
+                                        Buffer (0x10)
+                                        {
+                                            /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+                                            /* 0008 */  0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00, 0x00 
+                                        }
+                                    })
                                 }
                                 Else
                                 {
-                                    Return (Package() { Buffer (0x10)
+                                    Return (Package (0x01)
                                     {
-                                        /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-                                        /* 0008 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 
-                                    }})
+                                        Buffer (0x10)
+                                        {
+                                            /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+                                            /* 0008 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 
+                                        }
+                                    })
                                 }
                             }
                         }
                         Case (0x06)
                         {
-                            If (LGreaterEqual (Arg1, 0x02))
+                            If ((Arg1 >= 0x02))
                             {
                                 If (LTRN)
                                 {
-                                    If (LOr (LEqual (LMSL, Zero), LEqual (LNSL, Zero)))
+                                    If (((LMSL == Zero) || (LNSL == Zero)))
                                     {
-                                        If (LEqual (PCHS, SPTH))
+                                        If ((PCHS == SPTH))
                                         {
-                                            Store (0x0846, LMSL)
-                                            Store (0x0846, LNSL)
+                                            LMSL = 0x0846
+                                            LNSL = 0x0846
                                         }
-                                        ElseIf (LEqual (PCHS, SPTL))
+                                        ElseIf ((PCHS == SPTL))
                                         {
-                                            Store (0x1003, LMSL)
-                                            Store (0x1003, LNSL)
+                                            LMSL = 0x1003
+                                            LNSL = 0x1003
                                         }
                                     }
 
-                                    Store (And (ShiftRight (LMSL, 0x0A), 0x07), Index (LTRV, Zero))
-                                    Store (And (LMSL, 0x03FF), Index (LTRV, One))
-                                    Store (And (ShiftRight (LNSL, 0x0A), 0x07), Index (LTRV, 0x02))
-                                    Store (And (LNSL, 0x03FF), Index (LTRV, 0x03))
+                                    LTRV [Zero] = ((LMSL >> 0x0A) & 0x07)
+                                    LTRV [One] = (LMSL & 0x03FF)
+                                    LTRV [0x02] = ((LNSL >> 0x0A) & 0x07)
+                                    LTRV [0x03] = (LNSL & 0x03FF)
                                     Return (LTRV)
                                 }
                                 Else
@@ -9869,9 +9927,9 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                         }
                         Case (0x08)
                         {
-                            If (LEqual (ECR1, One))
+                            If ((ECR1 == One))
                             {
-                                If (LGreaterEqual (Arg1, 0x03))
+                                If ((Arg1 >= 0x03))
                                 {
                                     Return (One)
                                 }
@@ -9879,9 +9937,9 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                         }
                         Case (0x09)
                         {
-                            If (LEqual (ECR1, One))
+                            If ((ECR1 == One))
                             {
-                                If (LGreaterEqual (Arg1, 0x03))
+                                If ((Arg1 >= 0x03))
                                 {
                                     Return (Package (0x05)
                                     {
@@ -9917,17 +9975,17 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
             {
                 If (PMSX)
                 {
-                    Store (0xC8, Local0)
+                    Local0 = 0xC8
                     While (Local0)
                     {
-                        Store (One, PMSX)
+                        PMSX = One
                         If (PMSX)
                         {
-                            Decrement (Local0)
+                            Local0--
                         }
                         Else
                         {
-                            Store (Zero, Local0)
+                            Local0 = Zero
                         }
                     }
 
@@ -9955,7 +10013,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         {
             Method (_ADR, 0, NotSerialized)  // _ADR: Address
             {
-                If (LNotEqual (RPAF, Zero))
+                If ((RPAF != Zero))
                 {
                     Return (RPAF)
                 }
@@ -9967,10 +10025,10 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
 
             Method (_INI, 0, NotSerialized)  // _INI: Initialize
             {
-                Store (LTRF, LTRN)
-                Store (PMLF, LMSL)
-                Store (PNLF, LNSL)
-                Store (OBFF, OBFN)
+                LTRN = LTRF
+                LMSL = PMLF
+                LNSL = PNLF
+                OBFN = OBFF
             }
 
             OperationRegion (PXCS, PCI_Config, Zero, 0x0380)
@@ -10025,9 +10083,9 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                 Zero, 
                 Zero
             })
-            Method (XDSM, 4, Serialized)  // _DSM: Device-Specific Method
+            Method (XDSM, 4, Serialized)
             {
-                If (LEqual (Arg0, ToUUID ("e5c937d0-3553-4d7a-9117-ea4d19c3434d") /* Device Labeling Interface */))
+                If ((Arg0 == ToUUID ("e5c937d0-3553-4d7a-9117-ea4d19c3434d") /* Device Labeling Interface */))
                 {
                     Switch (ToInteger (Arg2))
                     {
@@ -10042,25 +10100,25 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                             CreateBitField (OPTS, 0x06, FUN6)
                             CreateBitField (OPTS, 0x08, FUN8)
                             CreateBitField (OPTS, 0x09, FUN9)
-                            If (LGreaterEqual (Arg1, 0x02))
+                            If ((Arg1 >= 0x02))
                             {
-                                Store (One, FUN0)
+                                FUN0 = One
                                 If (LTRE)
                                 {
-                                    Store (One, FUN6)
+                                    FUN6 = One
                                 }
 
                                 If (OBFF)
                                 {
-                                    Store (One, FUN4)
+                                    FUN4 = One
                                 }
 
-                                If (LEqual (ECR1, One))
+                                If ((ECR1 == One))
                                 {
-                                    If (LGreaterEqual (Arg1, 0x03))
+                                    If ((Arg1 >= 0x03))
                                     {
-                                        Store (One, FUN8)
-                                        Store (One, FUN9)
+                                        FUN8 = One
+                                        FUN9 = One
                                     }
                                 }
                             }
@@ -10069,50 +10127,56 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                         }
                         Case (0x04)
                         {
-                            If (LGreaterEqual (Arg1, 0x02))
+                            If ((Arg1 >= 0x02))
                             {
                                 If (OBFN)
                                 {
-                                    Return (Package() { Buffer (0x10)
+                                    Return (Package (0x01)
                                     {
-                                        /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-                                        /* 0008 */  0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00, 0x00 
-                                    }})
+                                        Buffer (0x10)
+                                        {
+                                            /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+                                            /* 0008 */  0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00, 0x00 
+                                        }
+                                    })
                                 }
                                 Else
                                 {
-                                    Return (Package() { Buffer (0x10)
+                                    Return (Package (0x01)
                                     {
-                                        /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-                                        /* 0008 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 
-                                    }})
+                                        Buffer (0x10)
+                                        {
+                                            /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+                                            /* 0008 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 
+                                        }
+                                    })
                                 }
                             }
                         }
                         Case (0x06)
                         {
-                            If (LGreaterEqual (Arg1, 0x02))
+                            If ((Arg1 >= 0x02))
                             {
                                 If (LTRN)
                                 {
-                                    If (LOr (LEqual (LMSL, Zero), LEqual (LNSL, Zero)))
+                                    If (((LMSL == Zero) || (LNSL == Zero)))
                                     {
-                                        If (LEqual (PCHS, SPTH))
+                                        If ((PCHS == SPTH))
                                         {
-                                            Store (0x0846, LMSL)
-                                            Store (0x0846, LNSL)
+                                            LMSL = 0x0846
+                                            LNSL = 0x0846
                                         }
-                                        ElseIf (LEqual (PCHS, SPTL))
+                                        ElseIf ((PCHS == SPTL))
                                         {
-                                            Store (0x1003, LMSL)
-                                            Store (0x1003, LNSL)
+                                            LMSL = 0x1003
+                                            LNSL = 0x1003
                                         }
                                     }
 
-                                    Store (And (ShiftRight (LMSL, 0x0A), 0x07), Index (LTRV, Zero))
-                                    Store (And (LMSL, 0x03FF), Index (LTRV, One))
-                                    Store (And (ShiftRight (LNSL, 0x0A), 0x07), Index (LTRV, 0x02))
-                                    Store (And (LNSL, 0x03FF), Index (LTRV, 0x03))
+                                    LTRV [Zero] = ((LMSL >> 0x0A) & 0x07)
+                                    LTRV [One] = (LMSL & 0x03FF)
+                                    LTRV [0x02] = ((LNSL >> 0x0A) & 0x07)
+                                    LTRV [0x03] = (LNSL & 0x03FF)
                                     Return (LTRV)
                                 }
                                 Else
@@ -10123,9 +10187,9 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                         }
                         Case (0x08)
                         {
-                            If (LEqual (ECR1, One))
+                            If ((ECR1 == One))
                             {
-                                If (LGreaterEqual (Arg1, 0x03))
+                                If ((Arg1 >= 0x03))
                                 {
                                     Return (One)
                                 }
@@ -10133,9 +10197,9 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                         }
                         Case (0x09)
                         {
-                            If (LEqual (ECR1, One))
+                            If ((ECR1 == One))
                             {
-                                If (LGreaterEqual (Arg1, 0x03))
+                                If ((Arg1 >= 0x03))
                                 {
                                     Return (Package (0x05)
                                     {
@@ -10171,17 +10235,17 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
             {
                 If (PMSX)
                 {
-                    Store (0xC8, Local0)
+                    Local0 = 0xC8
                     While (Local0)
                     {
-                        Store (One, PMSX)
+                        PMSX = One
                         If (PMSX)
                         {
-                            Decrement (Local0)
+                            Local0--
                         }
                         Else
                         {
-                            Store (Zero, Local0)
+                            Local0 = Zero
                         }
                     }
 
@@ -10209,7 +10273,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         {
             Method (_ADR, 0, NotSerialized)  // _ADR: Address
             {
-                If (LNotEqual (RPAG, Zero))
+                If ((RPAG != Zero))
                 {
                     Return (RPAG)
                 }
@@ -10221,10 +10285,10 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
 
             Method (_INI, 0, NotSerialized)  // _INI: Initialize
             {
-                Store (LTRG, LTRN)
-                Store (PMLG, LMSL)
-                Store (PNLG, LNSL)
-                Store (OBFG, OBFN)
+                LTRN = LTRG
+                LMSL = PMLG
+                LNSL = PNLG
+                OBFN = OBFG
             }
 
             OperationRegion (PXCS, PCI_Config, Zero, 0x0380)
@@ -10279,9 +10343,9 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                 Zero, 
                 Zero
             })
-            Method (XDSM, 4, Serialized)  // _DSM: Device-Specific Method
+            Method (XDSM, 4, Serialized)
             {
-                If (LEqual (Arg0, ToUUID ("e5c937d0-3553-4d7a-9117-ea4d19c3434d") /* Device Labeling Interface */))
+                If ((Arg0 == ToUUID ("e5c937d0-3553-4d7a-9117-ea4d19c3434d") /* Device Labeling Interface */))
                 {
                     Switch (ToInteger (Arg2))
                     {
@@ -10296,25 +10360,25 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                             CreateBitField (OPTS, 0x06, FUN6)
                             CreateBitField (OPTS, 0x08, FUN8)
                             CreateBitField (OPTS, 0x09, FUN9)
-                            If (LGreaterEqual (Arg1, 0x02))
+                            If ((Arg1 >= 0x02))
                             {
-                                Store (One, FUN0)
+                                FUN0 = One
                                 If (LTRE)
                                 {
-                                    Store (One, FUN6)
+                                    FUN6 = One
                                 }
 
                                 If (OBFF)
                                 {
-                                    Store (One, FUN4)
+                                    FUN4 = One
                                 }
 
-                                If (LEqual (ECR1, One))
+                                If ((ECR1 == One))
                                 {
-                                    If (LGreaterEqual (Arg1, 0x03))
+                                    If ((Arg1 >= 0x03))
                                     {
-                                        Store (One, FUN8)
-                                        Store (One, FUN9)
+                                        FUN8 = One
+                                        FUN9 = One
                                     }
                                 }
                             }
@@ -10323,50 +10387,56 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                         }
                         Case (0x04)
                         {
-                            If (LGreaterEqual (Arg1, 0x02))
+                            If ((Arg1 >= 0x02))
                             {
                                 If (OBFN)
                                 {
-                                    Return (Package() { Buffer (0x10)
+                                    Return (Package (0x01)
                                     {
-                                        /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-                                        /* 0008 */  0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00, 0x00 
-                                    }})
+                                        Buffer (0x10)
+                                        {
+                                            /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+                                            /* 0008 */  0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00, 0x00 
+                                        }
+                                    })
                                 }
                                 Else
                                 {
-                                    Return (Package() { Buffer (0x10)
+                                    Return (Package (0x01)
                                     {
-                                        /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-                                        /* 0008 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 
-                                    }})
+                                        Buffer (0x10)
+                                        {
+                                            /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+                                            /* 0008 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 
+                                        }
+                                    })
                                 }
                             }
                         }
                         Case (0x06)
                         {
-                            If (LGreaterEqual (Arg1, 0x02))
+                            If ((Arg1 >= 0x02))
                             {
                                 If (LTRN)
                                 {
-                                    If (LOr (LEqual (LMSL, Zero), LEqual (LNSL, Zero)))
+                                    If (((LMSL == Zero) || (LNSL == Zero)))
                                     {
-                                        If (LEqual (PCHS, SPTH))
+                                        If ((PCHS == SPTH))
                                         {
-                                            Store (0x0846, LMSL)
-                                            Store (0x0846, LNSL)
+                                            LMSL = 0x0846
+                                            LNSL = 0x0846
                                         }
-                                        ElseIf (LEqual (PCHS, SPTL))
+                                        ElseIf ((PCHS == SPTL))
                                         {
-                                            Store (0x1003, LMSL)
-                                            Store (0x1003, LNSL)
+                                            LMSL = 0x1003
+                                            LNSL = 0x1003
                                         }
                                     }
 
-                                    Store (And (ShiftRight (LMSL, 0x0A), 0x07), Index (LTRV, Zero))
-                                    Store (And (LMSL, 0x03FF), Index (LTRV, One))
-                                    Store (And (ShiftRight (LNSL, 0x0A), 0x07), Index (LTRV, 0x02))
-                                    Store (And (LNSL, 0x03FF), Index (LTRV, 0x03))
+                                    LTRV [Zero] = ((LMSL >> 0x0A) & 0x07)
+                                    LTRV [One] = (LMSL & 0x03FF)
+                                    LTRV [0x02] = ((LNSL >> 0x0A) & 0x07)
+                                    LTRV [0x03] = (LNSL & 0x03FF)
                                     Return (LTRV)
                                 }
                                 Else
@@ -10377,9 +10447,9 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                         }
                         Case (0x08)
                         {
-                            If (LEqual (ECR1, One))
+                            If ((ECR1 == One))
                             {
-                                If (LGreaterEqual (Arg1, 0x03))
+                                If ((Arg1 >= 0x03))
                                 {
                                     Return (One)
                                 }
@@ -10387,9 +10457,9 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                         }
                         Case (0x09)
                         {
-                            If (LEqual (ECR1, One))
+                            If ((ECR1 == One))
                             {
-                                If (LGreaterEqual (Arg1, 0x03))
+                                If ((Arg1 >= 0x03))
                                 {
                                     Return (Package (0x05)
                                     {
@@ -10425,17 +10495,17 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
             {
                 If (PMSX)
                 {
-                    Store (0xC8, Local0)
+                    Local0 = 0xC8
                     While (Local0)
                     {
-                        Store (One, PMSX)
+                        PMSX = One
                         If (PMSX)
                         {
-                            Decrement (Local0)
+                            Local0--
                         }
                         Else
                         {
-                            Store (Zero, Local0)
+                            Local0 = Zero
                         }
                     }
 
@@ -10463,7 +10533,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         {
             Method (_ADR, 0, NotSerialized)  // _ADR: Address
             {
-                If (LNotEqual (RPAH, Zero))
+                If ((RPAH != Zero))
                 {
                     Return (RPAH)
                 }
@@ -10475,10 +10545,10 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
 
             Method (_INI, 0, NotSerialized)  // _INI: Initialize
             {
-                Store (LTRH, LTRN)
-                Store (PMLH, LMSL)
-                Store (PNLH, LNSL)
-                Store (OBFH, OBFN)
+                LTRN = LTRH
+                LMSL = PMLH
+                LNSL = PNLH
+                OBFN = OBFH
             }
 
             OperationRegion (PXCS, PCI_Config, Zero, 0x0380)
@@ -10533,9 +10603,9 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                 Zero, 
                 Zero
             })
-            Method (XDSM, 4, Serialized)  // _DSM: Device-Specific Method
+            Method (XDSM, 4, Serialized)
             {
-                If (LEqual (Arg0, ToUUID ("e5c937d0-3553-4d7a-9117-ea4d19c3434d") /* Device Labeling Interface */))
+                If ((Arg0 == ToUUID ("e5c937d0-3553-4d7a-9117-ea4d19c3434d") /* Device Labeling Interface */))
                 {
                     Switch (ToInteger (Arg2))
                     {
@@ -10550,25 +10620,25 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                             CreateBitField (OPTS, 0x06, FUN6)
                             CreateBitField (OPTS, 0x08, FUN8)
                             CreateBitField (OPTS, 0x09, FUN9)
-                            If (LGreaterEqual (Arg1, 0x02))
+                            If ((Arg1 >= 0x02))
                             {
-                                Store (One, FUN0)
+                                FUN0 = One
                                 If (LTRE)
                                 {
-                                    Store (One, FUN6)
+                                    FUN6 = One
                                 }
 
                                 If (OBFF)
                                 {
-                                    Store (One, FUN4)
+                                    FUN4 = One
                                 }
 
-                                If (LEqual (ECR1, One))
+                                If ((ECR1 == One))
                                 {
-                                    If (LGreaterEqual (Arg1, 0x03))
+                                    If ((Arg1 >= 0x03))
                                     {
-                                        Store (One, FUN8)
-                                        Store (One, FUN9)
+                                        FUN8 = One
+                                        FUN9 = One
                                     }
                                 }
                             }
@@ -10577,50 +10647,56 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                         }
                         Case (0x04)
                         {
-                            If (LGreaterEqual (Arg1, 0x02))
+                            If ((Arg1 >= 0x02))
                             {
                                 If (OBFN)
                                 {
-                                    Return (Package() { Buffer (0x10)
+                                    Return (Package (0x01)
                                     {
-                                        /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-                                        /* 0008 */  0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00, 0x00 
-                                    }})
+                                        Buffer (0x10)
+                                        {
+                                            /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+                                            /* 0008 */  0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00, 0x00 
+                                        }
+                                    })
                                 }
                                 Else
                                 {
-                                    Return (Package() { Buffer (0x10)
+                                    Return (Package (0x01)
                                     {
-                                        /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-                                        /* 0008 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 
-                                    }})
+                                        Buffer (0x10)
+                                        {
+                                            /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+                                            /* 0008 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 
+                                        }
+                                    })
                                 }
                             }
                         }
                         Case (0x06)
                         {
-                            If (LGreaterEqual (Arg1, 0x02))
+                            If ((Arg1 >= 0x02))
                             {
                                 If (LTRN)
                                 {
-                                    If (LOr (LEqual (LMSL, Zero), LEqual (LNSL, Zero)))
+                                    If (((LMSL == Zero) || (LNSL == Zero)))
                                     {
-                                        If (LEqual (PCHS, SPTH))
+                                        If ((PCHS == SPTH))
                                         {
-                                            Store (0x0846, LMSL)
-                                            Store (0x0846, LNSL)
+                                            LMSL = 0x0846
+                                            LNSL = 0x0846
                                         }
-                                        ElseIf (LEqual (PCHS, SPTL))
+                                        ElseIf ((PCHS == SPTL))
                                         {
-                                            Store (0x1003, LMSL)
-                                            Store (0x1003, LNSL)
+                                            LMSL = 0x1003
+                                            LNSL = 0x1003
                                         }
                                     }
 
-                                    Store (And (ShiftRight (LMSL, 0x0A), 0x07), Index (LTRV, Zero))
-                                    Store (And (LMSL, 0x03FF), Index (LTRV, One))
-                                    Store (And (ShiftRight (LNSL, 0x0A), 0x07), Index (LTRV, 0x02))
-                                    Store (And (LNSL, 0x03FF), Index (LTRV, 0x03))
+                                    LTRV [Zero] = ((LMSL >> 0x0A) & 0x07)
+                                    LTRV [One] = (LMSL & 0x03FF)
+                                    LTRV [0x02] = ((LNSL >> 0x0A) & 0x07)
+                                    LTRV [0x03] = (LNSL & 0x03FF)
                                     Return (LTRV)
                                 }
                                 Else
@@ -10631,9 +10707,9 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                         }
                         Case (0x08)
                         {
-                            If (LEqual (ECR1, One))
+                            If ((ECR1 == One))
                             {
-                                If (LGreaterEqual (Arg1, 0x03))
+                                If ((Arg1 >= 0x03))
                                 {
                                     Return (One)
                                 }
@@ -10641,9 +10717,9 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                         }
                         Case (0x09)
                         {
-                            If (LEqual (ECR1, One))
+                            If ((ECR1 == One))
                             {
-                                If (LGreaterEqual (Arg1, 0x03))
+                                If ((Arg1 >= 0x03))
                                 {
                                     Return (Package (0x05)
                                     {
@@ -10679,17 +10755,17 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
             {
                 If (PMSX)
                 {
-                    Store (0xC8, Local0)
+                    Local0 = 0xC8
                     While (Local0)
                     {
-                        Store (One, PMSX)
+                        PMSX = One
                         If (PMSX)
                         {
-                            Decrement (Local0)
+                            Local0--
                         }
                         Else
                         {
-                            Store (Zero, Local0)
+                            Local0 = Zero
                         }
                     }
 
@@ -10717,7 +10793,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         {
             Method (_ADR, 0, NotSerialized)  // _ADR: Address
             {
-                If (LNotEqual (RPAI, Zero))
+                If ((RPAI != Zero))
                 {
                     Return (RPAI)
                 }
@@ -10729,10 +10805,10 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
 
             Method (_INI, 0, NotSerialized)  // _INI: Initialize
             {
-                Store (LTRI, LTRN)
-                Store (PMLI, LMSL)
-                Store (PNLI, LNSL)
-                Store (OBFI, OBFN)
+                LTRN = LTRI
+                LMSL = PMLI
+                LNSL = PNLI
+                OBFN = OBFI
             }
 
             OperationRegion (PXCS, PCI_Config, Zero, 0x0380)
@@ -10787,9 +10863,9 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                 Zero, 
                 Zero
             })
-            Method (XDSM, 4, Serialized)  // _DSM: Device-Specific Method
+            Method (XDSM, 4, Serialized)
             {
-                If (LEqual (Arg0, ToUUID ("e5c937d0-3553-4d7a-9117-ea4d19c3434d") /* Device Labeling Interface */))
+                If ((Arg0 == ToUUID ("e5c937d0-3553-4d7a-9117-ea4d19c3434d") /* Device Labeling Interface */))
                 {
                     Switch (ToInteger (Arg2))
                     {
@@ -10804,25 +10880,25 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                             CreateBitField (OPTS, 0x06, FUN6)
                             CreateBitField (OPTS, 0x08, FUN8)
                             CreateBitField (OPTS, 0x09, FUN9)
-                            If (LGreaterEqual (Arg1, 0x02))
+                            If ((Arg1 >= 0x02))
                             {
-                                Store (One, FUN0)
+                                FUN0 = One
                                 If (LTRE)
                                 {
-                                    Store (One, FUN6)
+                                    FUN6 = One
                                 }
 
                                 If (OBFF)
                                 {
-                                    Store (One, FUN4)
+                                    FUN4 = One
                                 }
 
-                                If (LEqual (ECR1, One))
+                                If ((ECR1 == One))
                                 {
-                                    If (LGreaterEqual (Arg1, 0x03))
+                                    If ((Arg1 >= 0x03))
                                     {
-                                        Store (One, FUN8)
-                                        Store (One, FUN9)
+                                        FUN8 = One
+                                        FUN9 = One
                                     }
                                 }
                             }
@@ -10831,50 +10907,56 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                         }
                         Case (0x04)
                         {
-                            If (LGreaterEqual (Arg1, 0x02))
+                            If ((Arg1 >= 0x02))
                             {
                                 If (OBFN)
                                 {
-                                    Return (Package() { Buffer (0x10)
+                                    Return (Package (0x01)
                                     {
-                                        /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-                                        /* 0008 */  0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00, 0x00 
-                                    }})
+                                        Buffer (0x10)
+                                        {
+                                            /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+                                            /* 0008 */  0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00, 0x00 
+                                        }
+                                    })
                                 }
                                 Else
                                 {
-                                    Return (Package() { Buffer (0x10)
+                                    Return (Package (0x01)
                                     {
-                                        /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-                                        /* 0008 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 
-                                    }})
+                                        Buffer (0x10)
+                                        {
+                                            /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+                                            /* 0008 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 
+                                        }
+                                    })
                                 }
                             }
                         }
                         Case (0x06)
                         {
-                            If (LGreaterEqual (Arg1, 0x02))
+                            If ((Arg1 >= 0x02))
                             {
                                 If (LTRN)
                                 {
-                                    If (LOr (LEqual (LMSL, Zero), LEqual (LNSL, Zero)))
+                                    If (((LMSL == Zero) || (LNSL == Zero)))
                                     {
-                                        If (LEqual (PCHS, SPTH))
+                                        If ((PCHS == SPTH))
                                         {
-                                            Store (0x0846, LMSL)
-                                            Store (0x0846, LNSL)
+                                            LMSL = 0x0846
+                                            LNSL = 0x0846
                                         }
-                                        ElseIf (LEqual (PCHS, SPTL))
+                                        ElseIf ((PCHS == SPTL))
                                         {
-                                            Store (0x1003, LMSL)
-                                            Store (0x1003, LNSL)
+                                            LMSL = 0x1003
+                                            LNSL = 0x1003
                                         }
                                     }
 
-                                    Store (And (ShiftRight (LMSL, 0x0A), 0x07), Index (LTRV, Zero))
-                                    Store (And (LMSL, 0x03FF), Index (LTRV, One))
-                                    Store (And (ShiftRight (LNSL, 0x0A), 0x07), Index (LTRV, 0x02))
-                                    Store (And (LNSL, 0x03FF), Index (LTRV, 0x03))
+                                    LTRV [Zero] = ((LMSL >> 0x0A) & 0x07)
+                                    LTRV [One] = (LMSL & 0x03FF)
+                                    LTRV [0x02] = ((LNSL >> 0x0A) & 0x07)
+                                    LTRV [0x03] = (LNSL & 0x03FF)
                                     Return (LTRV)
                                 }
                                 Else
@@ -10885,9 +10967,9 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                         }
                         Case (0x08)
                         {
-                            If (LEqual (ECR1, One))
+                            If ((ECR1 == One))
                             {
-                                If (LGreaterEqual (Arg1, 0x03))
+                                If ((Arg1 >= 0x03))
                                 {
                                     Return (One)
                                 }
@@ -10895,9 +10977,9 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                         }
                         Case (0x09)
                         {
-                            If (LEqual (ECR1, One))
+                            If ((ECR1 == One))
                             {
-                                If (LGreaterEqual (Arg1, 0x03))
+                                If ((Arg1 >= 0x03))
                                 {
                                     Return (Package (0x05)
                                     {
@@ -10933,17 +11015,17 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
             {
                 If (PMSX)
                 {
-                    Store (0xC8, Local0)
+                    Local0 = 0xC8
                     While (Local0)
                     {
-                        Store (One, PMSX)
+                        PMSX = One
                         If (PMSX)
                         {
-                            Decrement (Local0)
+                            Local0--
                         }
                         Else
                         {
-                            Store (Zero, Local0)
+                            Local0 = Zero
                         }
                     }
 
@@ -10971,7 +11053,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         {
             Method (_ADR, 0, NotSerialized)  // _ADR: Address
             {
-                If (LNotEqual (RPAJ, Zero))
+                If ((RPAJ != Zero))
                 {
                     Return (RPAJ)
                 }
@@ -10983,10 +11065,10 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
 
             Method (_INI, 0, NotSerialized)  // _INI: Initialize
             {
-                Store (LTRJ, LTRN)
-                Store (PMLJ, LMSL)
-                Store (PNLJ, LNSL)
-                Store (OBFJ, OBFN)
+                LTRN = LTRJ
+                LMSL = PMLJ
+                LNSL = PNLJ
+                OBFN = OBFJ
             }
 
             OperationRegion (PXCS, PCI_Config, Zero, 0x0380)
@@ -11041,9 +11123,9 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                 Zero, 
                 Zero
             })
-            Method (XDSM, 4, Serialized)  // _DSM: Device-Specific Method
+            Method (XDSM, 4, Serialized)
             {
-                If (LEqual (Arg0, ToUUID ("e5c937d0-3553-4d7a-9117-ea4d19c3434d") /* Device Labeling Interface */))
+                If ((Arg0 == ToUUID ("e5c937d0-3553-4d7a-9117-ea4d19c3434d") /* Device Labeling Interface */))
                 {
                     Switch (ToInteger (Arg2))
                     {
@@ -11058,25 +11140,25 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                             CreateBitField (OPTS, 0x06, FUN6)
                             CreateBitField (OPTS, 0x08, FUN8)
                             CreateBitField (OPTS, 0x09, FUN9)
-                            If (LGreaterEqual (Arg1, 0x02))
+                            If ((Arg1 >= 0x02))
                             {
-                                Store (One, FUN0)
+                                FUN0 = One
                                 If (LTRE)
                                 {
-                                    Store (One, FUN6)
+                                    FUN6 = One
                                 }
 
                                 If (OBFF)
                                 {
-                                    Store (One, FUN4)
+                                    FUN4 = One
                                 }
 
-                                If (LEqual (ECR1, One))
+                                If ((ECR1 == One))
                                 {
-                                    If (LGreaterEqual (Arg1, 0x03))
+                                    If ((Arg1 >= 0x03))
                                     {
-                                        Store (One, FUN8)
-                                        Store (One, FUN9)
+                                        FUN8 = One
+                                        FUN9 = One
                                     }
                                 }
                             }
@@ -11085,50 +11167,56 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                         }
                         Case (0x04)
                         {
-                            If (LGreaterEqual (Arg1, 0x02))
+                            If ((Arg1 >= 0x02))
                             {
                                 If (OBFN)
                                 {
-                                    Return (Package() { Buffer (0x10)
+                                    Return (Package (0x01)
                                     {
-                                        /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-                                        /* 0008 */  0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00, 0x00 
-                                    }})
+                                        Buffer (0x10)
+                                        {
+                                            /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+                                            /* 0008 */  0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00, 0x00 
+                                        }
+                                    })
                                 }
                                 Else
                                 {
-                                    Return (Package() { Buffer (0x10)
+                                    Return (Package (0x01)
                                     {
-                                        /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-                                        /* 0008 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 
-                                    }})
+                                        Buffer (0x10)
+                                        {
+                                            /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+                                            /* 0008 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 
+                                        }
+                                    })
                                 }
                             }
                         }
                         Case (0x06)
                         {
-                            If (LGreaterEqual (Arg1, 0x02))
+                            If ((Arg1 >= 0x02))
                             {
                                 If (LTRN)
                                 {
-                                    If (LOr (LEqual (LMSL, Zero), LEqual (LNSL, Zero)))
+                                    If (((LMSL == Zero) || (LNSL == Zero)))
                                     {
-                                        If (LEqual (PCHS, SPTH))
+                                        If ((PCHS == SPTH))
                                         {
-                                            Store (0x0846, LMSL)
-                                            Store (0x0846, LNSL)
+                                            LMSL = 0x0846
+                                            LNSL = 0x0846
                                         }
-                                        ElseIf (LEqual (PCHS, SPTL))
+                                        ElseIf ((PCHS == SPTL))
                                         {
-                                            Store (0x1003, LMSL)
-                                            Store (0x1003, LNSL)
+                                            LMSL = 0x1003
+                                            LNSL = 0x1003
                                         }
                                     }
 
-                                    Store (And (ShiftRight (LMSL, 0x0A), 0x07), Index (LTRV, Zero))
-                                    Store (And (LMSL, 0x03FF), Index (LTRV, One))
-                                    Store (And (ShiftRight (LNSL, 0x0A), 0x07), Index (LTRV, 0x02))
-                                    Store (And (LNSL, 0x03FF), Index (LTRV, 0x03))
+                                    LTRV [Zero] = ((LMSL >> 0x0A) & 0x07)
+                                    LTRV [One] = (LMSL & 0x03FF)
+                                    LTRV [0x02] = ((LNSL >> 0x0A) & 0x07)
+                                    LTRV [0x03] = (LNSL & 0x03FF)
                                     Return (LTRV)
                                 }
                                 Else
@@ -11139,9 +11227,9 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                         }
                         Case (0x08)
                         {
-                            If (LEqual (ECR1, One))
+                            If ((ECR1 == One))
                             {
-                                If (LGreaterEqual (Arg1, 0x03))
+                                If ((Arg1 >= 0x03))
                                 {
                                     Return (One)
                                 }
@@ -11149,9 +11237,9 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                         }
                         Case (0x09)
                         {
-                            If (LEqual (ECR1, One))
+                            If ((ECR1 == One))
                             {
-                                If (LGreaterEqual (Arg1, 0x03))
+                                If ((Arg1 >= 0x03))
                                 {
                                     Return (Package (0x05)
                                     {
@@ -11187,17 +11275,17 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
             {
                 If (PMSX)
                 {
-                    Store (0xC8, Local0)
+                    Local0 = 0xC8
                     While (Local0)
                     {
-                        Store (One, PMSX)
+                        PMSX = One
                         If (PMSX)
                         {
-                            Decrement (Local0)
+                            Local0--
                         }
                         Else
                         {
-                            Store (Zero, Local0)
+                            Local0 = Zero
                         }
                     }
 
@@ -11225,7 +11313,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         {
             Method (_ADR, 0, NotSerialized)  // _ADR: Address
             {
-                If (LNotEqual (RPAK, Zero))
+                If ((RPAK != Zero))
                 {
                     Return (RPAK)
                 }
@@ -11237,10 +11325,10 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
 
             Method (_INI, 0, NotSerialized)  // _INI: Initialize
             {
-                Store (LTRK, LTRN)
-                Store (PMLK, LMSL)
-                Store (PNLK, LNSL)
-                Store (OBFK, OBFN)
+                LTRN = LTRK
+                LMSL = PMLK
+                LNSL = PNLK
+                OBFN = OBFK
             }
 
             OperationRegion (PXCS, PCI_Config, Zero, 0x0380)
@@ -11295,9 +11383,9 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                 Zero, 
                 Zero
             })
-            Method (XDSM, 4, Serialized)  // _DSM: Device-Specific Method
+            Method (XDSM, 4, Serialized)
             {
-                If (LEqual (Arg0, ToUUID ("e5c937d0-3553-4d7a-9117-ea4d19c3434d") /* Device Labeling Interface */))
+                If ((Arg0 == ToUUID ("e5c937d0-3553-4d7a-9117-ea4d19c3434d") /* Device Labeling Interface */))
                 {
                     Switch (ToInteger (Arg2))
                     {
@@ -11312,25 +11400,25 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                             CreateBitField (OPTS, 0x06, FUN6)
                             CreateBitField (OPTS, 0x08, FUN8)
                             CreateBitField (OPTS, 0x09, FUN9)
-                            If (LGreaterEqual (Arg1, 0x02))
+                            If ((Arg1 >= 0x02))
                             {
-                                Store (One, FUN0)
+                                FUN0 = One
                                 If (LTRE)
                                 {
-                                    Store (One, FUN6)
+                                    FUN6 = One
                                 }
 
                                 If (OBFF)
                                 {
-                                    Store (One, FUN4)
+                                    FUN4 = One
                                 }
 
-                                If (LEqual (ECR1, One))
+                                If ((ECR1 == One))
                                 {
-                                    If (LGreaterEqual (Arg1, 0x03))
+                                    If ((Arg1 >= 0x03))
                                     {
-                                        Store (One, FUN8)
-                                        Store (One, FUN9)
+                                        FUN8 = One
+                                        FUN9 = One
                                     }
                                 }
                             }
@@ -11339,50 +11427,56 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                         }
                         Case (0x04)
                         {
-                            If (LGreaterEqual (Arg1, 0x02))
+                            If ((Arg1 >= 0x02))
                             {
                                 If (OBFN)
                                 {
-                                    Return (Package() { Buffer (0x10)
+                                    Return (Package (0x01)
                                     {
-                                        /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-                                        /* 0008 */  0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00, 0x00 
-                                    }})
+                                        Buffer (0x10)
+                                        {
+                                            /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+                                            /* 0008 */  0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00, 0x00 
+                                        }
+                                    })
                                 }
                                 Else
                                 {
-                                    Return (Package() { Buffer (0x10)
+                                    Return (Package (0x01)
                                     {
-                                        /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-                                        /* 0008 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 
-                                    }})
+                                        Buffer (0x10)
+                                        {
+                                            /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+                                            /* 0008 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 
+                                        }
+                                    })
                                 }
                             }
                         }
                         Case (0x06)
                         {
-                            If (LGreaterEqual (Arg1, 0x02))
+                            If ((Arg1 >= 0x02))
                             {
                                 If (LTRN)
                                 {
-                                    If (LOr (LEqual (LMSL, Zero), LEqual (LNSL, Zero)))
+                                    If (((LMSL == Zero) || (LNSL == Zero)))
                                     {
-                                        If (LEqual (PCHS, SPTH))
+                                        If ((PCHS == SPTH))
                                         {
-                                            Store (0x0846, LMSL)
-                                            Store (0x0846, LNSL)
+                                            LMSL = 0x0846
+                                            LNSL = 0x0846
                                         }
-                                        ElseIf (LEqual (PCHS, SPTL))
+                                        ElseIf ((PCHS == SPTL))
                                         {
-                                            Store (0x1003, LMSL)
-                                            Store (0x1003, LNSL)
+                                            LMSL = 0x1003
+                                            LNSL = 0x1003
                                         }
                                     }
 
-                                    Store (And (ShiftRight (LMSL, 0x0A), 0x07), Index (LTRV, Zero))
-                                    Store (And (LMSL, 0x03FF), Index (LTRV, One))
-                                    Store (And (ShiftRight (LNSL, 0x0A), 0x07), Index (LTRV, 0x02))
-                                    Store (And (LNSL, 0x03FF), Index (LTRV, 0x03))
+                                    LTRV [Zero] = ((LMSL >> 0x0A) & 0x07)
+                                    LTRV [One] = (LMSL & 0x03FF)
+                                    LTRV [0x02] = ((LNSL >> 0x0A) & 0x07)
+                                    LTRV [0x03] = (LNSL & 0x03FF)
                                     Return (LTRV)
                                 }
                                 Else
@@ -11393,9 +11487,9 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                         }
                         Case (0x08)
                         {
-                            If (LEqual (ECR1, One))
+                            If ((ECR1 == One))
                             {
-                                If (LGreaterEqual (Arg1, 0x03))
+                                If ((Arg1 >= 0x03))
                                 {
                                     Return (One)
                                 }
@@ -11403,9 +11497,9 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                         }
                         Case (0x09)
                         {
-                            If (LEqual (ECR1, One))
+                            If ((ECR1 == One))
                             {
-                                If (LGreaterEqual (Arg1, 0x03))
+                                If ((Arg1 >= 0x03))
                                 {
                                     Return (Package (0x05)
                                     {
@@ -11441,17 +11535,17 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
             {
                 If (PMSX)
                 {
-                    Store (0xC8, Local0)
+                    Local0 = 0xC8
                     While (Local0)
                     {
-                        Store (One, PMSX)
+                        PMSX = One
                         If (PMSX)
                         {
-                            Decrement (Local0)
+                            Local0--
                         }
                         Else
                         {
-                            Store (Zero, Local0)
+                            Local0 = Zero
                         }
                     }
 
@@ -11478,7 +11572,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         Device (SAT0)
         {
             Name (_ADR, 0x00170000)  // _ADR: Address
-            Method (XDSM, 4, Serialized)  // _DSM: Device-Specific Method
+            Method (XDSM, 4, Serialized)
             {
                 If (PCIC (Arg0))
                 {
@@ -11488,10 +11582,6 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                 If (CondRefOf (\_SB.PCI0.SAT0.SDSM))
                 {
                     Return (SDSM)
-                  //  Arg0
-                  //  Arg1
-                  //  Arg2
-                  //  Arg3
                 }
 
                 Return (Zero)
@@ -11529,32 +11619,32 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
 
             Method (RDCA, 5, Serialized)
             {
-                OperationRegion (RPAL, SystemMemory, Add (GPCB (), Add (0x000B8100, Arg1)), 0x04)
+                OperationRegion (RPAL, SystemMemory, (GPCB () + (0x000B8100 + Arg1)), 0x04)
                 Field (RPAL, DWordAcc, Lock, Preserve)
                 {
                     RPCD,   32
                 }
 
-                OperationRegion (EPAC, SystemMemory, Add (GPCB (), 0x000B8308), 0x08)
+                OperationRegion (EPAC, SystemMemory, (GPCB () + 0x000B8308), 0x08)
                 Field (EPAC, DWordAcc, Lock, Preserve)
                 {
                     CAIR,   32, 
                     CADR,   32
                 }
 
-                OperationRegion (NCRG, SystemMemory, Add (GPCB (), 0x000B8FC0), 0x04)
+                OperationRegion (NCRG, SystemMemory, (GPCB () + 0x000B8FC0), 0x04)
                 Field (NCRG, DWordAcc, Lock, Preserve)
                 {
                     CRGC,   32
                 }
 
-                If (LGreater (Arg0, 0x02))
+                If ((Arg0 > 0x02))
                 {
                     Return (Zero)
                 }
                 Else
                 {
-                    Store (Arg0, CRGC)
+                    CRGC = Arg0
                 }
 
                 Switch (ToInteger (Arg4))
@@ -11565,21 +11655,21 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                     }
                     Case (0x02)
                     {
-                        Store (Arg1, CAIR)
+                        CAIR = Arg1
                         Return (CADR)
                     }
                     Case (One)
                     {
-                        And (Arg2, RPCD, Local0)
-                        Or (Arg3, Local0, Local0)
-                        Store (Local0, RPCD)
+                        Local0 = (Arg2 & RPCD)
+                        Local0 |= Arg3
+                        RPCD = Local0
                     }
                     Case (0x03)
                     {
-                        Store (Arg1, CAIR)
-                        And (Arg2, CADR, Local0)
-                        Or (Arg3, Local0, Local0)
-                        Store (Local0, CADR)
+                        CAIR = Arg1
+                        Local0 = (Arg2 & CADR)
+                        Local0 |= Arg3
+                        CADR = Local0
                     }
                     Default
                     {
@@ -11624,17 +11714,17 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                 Name (NPVV, Zero)
                 Method (EPD0, 0, Serialized)
                 {
-                    RDCA (NCRN, Add (NPMV, 0x04), 0xFFFFFFFC, Zero, 0x03)
+                    RDCA (NCRN, (NPMV + 0x04), 0xFFFFFFFC, Zero, 0x03)
                 }
 
                 Method (EPD3, 0, Serialized)
                 {
-                    RDCA (NCRN, Add (NPMV, 0x04), 0xFFFFFFFC, 0x03, 0x03)
+                    RDCA (NCRN, (NPMV + 0x04), 0xFFFFFFFC, 0x03, 0x03)
                 }
 
                 Method (CNRS, 0, Serialized)
                 {
-                    If (LEqual (NITV, Zero))
+                    If ((NITV == Zero))
                     {
                         Return (Zero)
                     }
@@ -11647,38 +11737,38 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                     RDCA (NCRN, 0x24, Zero, Zero, 0x03)
                     RDCA (NCRN, 0x04, 0xFFFFFFF8, PCMD, 0x03)
                     RDCA (NCRN, PRBI, Zero, PRBD, 0x03)
-                    If (LNotEqual (NL1V, Zero))
+                    If ((NL1V != Zero))
                     {
-                        RDCA (NCRN, Add (NL1V, 0x0C), 0xFFFFFF00, ND2V, 0x03)
-                        RDCA (NCRN, Add (NL1V, 0x08), 0x0F, And (ND1V, 0xFFFFFFF0), 0x03)
-                        RDCA (NCRN, Add (NL1V, 0x08), 0xFFFFFFFF, ND1V, 0x03)
+                        RDCA (NCRN, (NL1V + 0x0C), 0xFFFFFF00, ND2V, 0x03)
+                        RDCA (NCRN, (NL1V + 0x08), 0x0F, (ND1V & 0xFFFFFFF0), 0x03)
+                        RDCA (NCRN, (NL1V + 0x08), 0xFFFFFFFF, ND1V, 0x03)
                     }
 
-                    If (LNotEqual (NLRV, Zero))
+                    If ((NLRV != Zero))
                     {
-                        RDCA (NCRN, Add (NLRV, 0x04), 0xFFFFFFFF, NLDV, 0x03)
+                        RDCA (NCRN, (NLRV + 0x04), 0xFFFFFFFF, NLDV, 0x03)
                     }
 
-                    RDCA (NCRN, Add (NPCV, 0x10), 0xFFFFFEBF, And (NEAV, 0xFFFC), 0x03)
-                    RDCA (NCRN, Add (NPCV, 0x28), 0xFFFFFBFF, NECV, 0x03)
-                    RDCA (NCRN, Add (NPCV, 0x08), 0xFFFFFF1F, NEBV, 0x03)
+                    RDCA (NCRN, (NPCV + 0x10), 0xFFFFFEBF, (NEAV & 0xFFFC), 0x03)
+                    RDCA (NCRN, (NPCV + 0x28), 0xFFFFFBFF, NECV, 0x03)
+                    RDCA (NCRN, (NPCV + 0x08), 0xFFFFFF1F, NEBV, 0x03)
                     RDCA (NCRN, 0x68, 0xFFFFFBFF, NRAV, One)
-                    If (LEqual (And (NEAV, 0x40), 0x40))
+                    If (((NEAV & 0x40) == 0x40))
                     {
                         RDCA (NCRN, 0x50, 0xFFFFFFDF, 0x20, One)
-                        While (LEqual (And (RDCA (NCRN, 0x52, Zero, Zero, Zero), 0x2000), Zero))
+                        While (((RDCA (NCRN, 0x52, Zero, Zero, Zero) & 0x2000) == Zero))
                         {
                             Stall (0x0A)
                         }
                     }
 
-                    RDCA (NCRN, Add (NPCV, 0x10), 0xFFFFFFFC, And (NEAV, 0x03), 0x03)
-                    If (LNotEqual (NMVV, Zero))
+                    RDCA (NCRN, (NPCV + 0x10), 0xFFFFFFFC, (NEAV & 0x03), 0x03)
+                    If ((NMVV != Zero))
                     {
                         RDCA (NCRN, NMBV, Zero, NMVV, 0x03)
                     }
 
-                    If (LNotEqual (NPVV, Zero))
+                    If ((NPVV != Zero))
                     {
                         RDCA (NCRN, NPBV, Zero, NPVV, 0x03)
                     }
@@ -11686,21 +11776,21 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
 
                 Method (_PS3, 0, Serialized)  // _PS3: Power State 3
                 {
-                    If (LEqual (NITV, Zero))
+                    If ((NITV == Zero))
                     {
                         Return (Zero)
                     }
 
-                    Store (RDCA (NCRN, 0x04, Zero, Zero, 0x02), PCMD)
-                    If (LEqual (NITV, One))
+                    PCMD = RDCA (NCRN, 0x04, Zero, Zero, 0x02)
+                    If ((NITV == One))
                     {
-                        Store (0x24, PRBI)
-                        Store (RDCA (NCRN, 0x24, Zero, Zero, 0x02), PRBD)
+                        PRBI = 0x24
+                        PRBD = RDCA (NCRN, 0x24, Zero, Zero, 0x02)
                     }
-                    ElseIf (LEqual (NITV, 0x02))
+                    ElseIf ((NITV == 0x02))
                     {
-                        Store (0x10, PRBI)
-                        Store (RDCA (NCRN, 0x10, Zero, Zero, 0x02), PRBD)
+                        PRBI = 0x10
+                        PRBD = RDCA (NCRN, 0x10, Zero, Zero, 0x02)
                     }
 
                     EPD3 ()
@@ -11709,15 +11799,15 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
 
                 Method (_PS0, 0, Serialized)  // _PS0: Power State 0
                 {
-                    If (LEqual (NITV, Zero))
+                    If ((NITV == Zero))
                     {
                         Return (Zero)
                     }
 
                     RPD0 (NCRN)
                     EPD0 ()
-                    Store (RDCA (NCRN, Add (NPMV, 0x04), Zero, Zero, 0x02), Local0)
-                    If (LEqual (And (Local0, 0x08), Zero))
+                    Local0 = RDCA (NCRN, (NPMV + 0x04), Zero, Zero, 0x02)
+                    If (((Local0 & 0x08) == Zero))
                     {
                         CNRS ()
                     }
@@ -11725,23 +11815,23 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
 
                 Method (_INI, 0, NotSerialized)  // _INI: Initialize
                 {
-                    Store (NIT1, NITV)
-                    Store (NPM1, NPMV)
-                    Store (NPC1, NPCV)
-                    Store (NL11, NL1V)
-                    Store (ND21, ND2V)
-                    Store (ND11, ND1V)
-                    Store (NLR1, NLRV)
-                    Store (NLD1, NLDV)
-                    Store (NEA1, NEAV)
-                    Store (NEB1, NEBV)
-                    Store (NEC1, NECV)
-                    Store (NRA1, NRAV)
-                    Store (NMB1, NMBV)
-                    Store (NMV1, NMVV)
-                    Store (NPB1, NPBV)
-                    Store (NPV1, NPVV)
-                    Store (Zero, NCRN)
+                    NITV = NIT1
+                    NPMV = NPM1
+                    NPCV = NPC1
+                    NL1V = NL11
+                    ND2V = ND21
+                    ND1V = ND11
+                    NLRV = NLR1
+                    NLDV = NLD1
+                    NEAV = NEA1
+                    NEBV = NEB1
+                    NECV = NEC1
+                    NRAV = NRA1
+                    NMBV = NMB1
+                    NMVV = NMV1
+                    NPBV = NPB1
+                    NPVV = NPV1
+                    NCRN = Zero
                 }
             }
 
@@ -11770,17 +11860,17 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                 Name (NPVV, Zero)
                 Method (EPD0, 0, Serialized)
                 {
-                    RDCA (NCRN, Add (NPMV, 0x04), 0xFFFFFFFC, Zero, 0x03)
+                    RDCA (NCRN, (NPMV + 0x04), 0xFFFFFFFC, Zero, 0x03)
                 }
 
                 Method (EPD3, 0, Serialized)
                 {
-                    RDCA (NCRN, Add (NPMV, 0x04), 0xFFFFFFFC, 0x03, 0x03)
+                    RDCA (NCRN, (NPMV + 0x04), 0xFFFFFFFC, 0x03, 0x03)
                 }
 
                 Method (CNRS, 0, Serialized)
                 {
-                    If (LEqual (NITV, Zero))
+                    If ((NITV == Zero))
                     {
                         Return (Zero)
                     }
@@ -11793,38 +11883,38 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                     RDCA (NCRN, 0x24, Zero, Zero, 0x03)
                     RDCA (NCRN, 0x04, 0xFFFFFFF8, PCMD, 0x03)
                     RDCA (NCRN, PRBI, Zero, PRBD, 0x03)
-                    If (LNotEqual (NL1V, Zero))
+                    If ((NL1V != Zero))
                     {
-                        RDCA (NCRN, Add (NL1V, 0x0C), 0xFFFFFF00, ND2V, 0x03)
-                        RDCA (NCRN, Add (NL1V, 0x08), 0x0F, And (ND1V, 0xFFFFFFF0), 0x03)
-                        RDCA (NCRN, Add (NL1V, 0x08), 0xFFFFFFFF, ND1V, 0x03)
+                        RDCA (NCRN, (NL1V + 0x0C), 0xFFFFFF00, ND2V, 0x03)
+                        RDCA (NCRN, (NL1V + 0x08), 0x0F, (ND1V & 0xFFFFFFF0), 0x03)
+                        RDCA (NCRN, (NL1V + 0x08), 0xFFFFFFFF, ND1V, 0x03)
                     }
 
-                    If (LNotEqual (NLRV, Zero))
+                    If ((NLRV != Zero))
                     {
-                        RDCA (NCRN, Add (NLRV, 0x04), 0xFFFFFFFF, NLDV, 0x03)
+                        RDCA (NCRN, (NLRV + 0x04), 0xFFFFFFFF, NLDV, 0x03)
                     }
 
-                    RDCA (NCRN, Add (NPCV, 0x10), 0xFFFFFEBF, And (NEAV, 0xFFFC), 0x03)
-                    RDCA (NCRN, Add (NPCV, 0x28), 0xFFFFFBFF, NECV, 0x03)
-                    RDCA (NCRN, Add (NPCV, 0x08), 0xFFFFFF1F, NEBV, 0x03)
+                    RDCA (NCRN, (NPCV + 0x10), 0xFFFFFEBF, (NEAV & 0xFFFC), 0x03)
+                    RDCA (NCRN, (NPCV + 0x28), 0xFFFFFBFF, NECV, 0x03)
+                    RDCA (NCRN, (NPCV + 0x08), 0xFFFFFF1F, NEBV, 0x03)
                     RDCA (NCRN, 0x68, 0xFFFFFBFF, NRAV, One)
-                    If (LEqual (And (NEAV, 0x40), 0x40))
+                    If (((NEAV & 0x40) == 0x40))
                     {
                         RDCA (NCRN, 0x50, 0xFFFFFFDF, 0x20, One)
-                        While (LEqual (And (RDCA (NCRN, 0x52, Zero, Zero, Zero), 0x2000), Zero))
+                        While (((RDCA (NCRN, 0x52, Zero, Zero, Zero) & 0x2000) == Zero))
                         {
                             Stall (0x0A)
                         }
                     }
 
-                    RDCA (NCRN, Add (NPCV, 0x10), 0xFFFFFFFC, And (NEAV, 0x03), 0x03)
-                    If (LNotEqual (NMVV, Zero))
+                    RDCA (NCRN, (NPCV + 0x10), 0xFFFFFFFC, (NEAV & 0x03), 0x03)
+                    If ((NMVV != Zero))
                     {
                         RDCA (NCRN, NMBV, Zero, NMVV, 0x03)
                     }
 
-                    If (LNotEqual (NPVV, Zero))
+                    If ((NPVV != Zero))
                     {
                         RDCA (NCRN, NPBV, Zero, NPVV, 0x03)
                     }
@@ -11832,21 +11922,21 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
 
                 Method (_PS3, 0, Serialized)  // _PS3: Power State 3
                 {
-                    If (LEqual (NITV, Zero))
+                    If ((NITV == Zero))
                     {
                         Return (Zero)
                     }
 
-                    Store (RDCA (NCRN, 0x04, Zero, Zero, 0x02), PCMD)
-                    If (LEqual (NITV, One))
+                    PCMD = RDCA (NCRN, 0x04, Zero, Zero, 0x02)
+                    If ((NITV == One))
                     {
-                        Store (0x24, PRBI)
-                        Store (RDCA (NCRN, 0x24, Zero, Zero, 0x02), PRBD)
+                        PRBI = 0x24
+                        PRBD = RDCA (NCRN, 0x24, Zero, Zero, 0x02)
                     }
-                    ElseIf (LEqual (NITV, 0x02))
+                    ElseIf ((NITV == 0x02))
                     {
-                        Store (0x10, PRBI)
-                        Store (RDCA (NCRN, 0x10, Zero, Zero, 0x02), PRBD)
+                        PRBI = 0x10
+                        PRBD = RDCA (NCRN, 0x10, Zero, Zero, 0x02)
                     }
 
                     EPD3 ()
@@ -11855,15 +11945,15 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
 
                 Method (_PS0, 0, Serialized)  // _PS0: Power State 0
                 {
-                    If (LEqual (NITV, Zero))
+                    If ((NITV == Zero))
                     {
                         Return (Zero)
                     }
 
                     RPD0 (NCRN)
                     EPD0 ()
-                    Store (RDCA (NCRN, Add (NPMV, 0x04), Zero, Zero, 0x02), Local0)
-                    If (LEqual (And (Local0, 0x08), Zero))
+                    Local0 = RDCA (NCRN, (NPMV + 0x04), Zero, Zero, 0x02)
+                    If (((Local0 & 0x08) == Zero))
                     {
                         CNRS ()
                     }
@@ -11871,23 +11961,23 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
 
                 Method (_INI, 0, NotSerialized)  // _INI: Initialize
                 {
-                    Store (NIT2, NITV)
-                    Store (NPM2, NPMV)
-                    Store (NPC2, NPCV)
-                    Store (NL12, NL1V)
-                    Store (ND22, ND2V)
-                    Store (ND12, ND1V)
-                    Store (NLR2, NLRV)
-                    Store (NLD2, NLDV)
-                    Store (NEA2, NEAV)
-                    Store (NEB2, NEBV)
-                    Store (NEC2, NECV)
-                    Store (NRA2, NRAV)
-                    Store (NMB2, NMBV)
-                    Store (NMV2, NMVV)
-                    Store (NPB2, NPBV)
-                    Store (NPV2, NPVV)
-                    Store (One, NCRN)
+                    NITV = NIT2
+                    NPMV = NPM2
+                    NPCV = NPC2
+                    NL1V = NL12
+                    ND2V = ND22
+                    ND1V = ND12
+                    NLRV = NLR2
+                    NLDV = NLD2
+                    NEAV = NEA2
+                    NEBV = NEB2
+                    NECV = NEC2
+                    NRAV = NRA2
+                    NMBV = NMB2
+                    NMVV = NMV2
+                    NPBV = NPB2
+                    NPVV = NPV2
+                    NCRN = One
                 }
             }
 
@@ -11916,17 +12006,17 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                 Name (NPVV, Zero)
                 Method (EPD0, 0, Serialized)
                 {
-                    RDCA (NCRN, Add (NPMV, 0x04), 0xFFFFFFFC, Zero, 0x03)
+                    RDCA (NCRN, (NPMV + 0x04), 0xFFFFFFFC, Zero, 0x03)
                 }
 
                 Method (EPD3, 0, Serialized)
                 {
-                    RDCA (NCRN, Add (NPMV, 0x04), 0xFFFFFFFC, 0x03, 0x03)
+                    RDCA (NCRN, (NPMV + 0x04), 0xFFFFFFFC, 0x03, 0x03)
                 }
 
                 Method (CNRS, 0, Serialized)
                 {
-                    If (LEqual (NITV, Zero))
+                    If ((NITV == Zero))
                     {
                         Return (Zero)
                     }
@@ -11939,38 +12029,38 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                     RDCA (NCRN, 0x24, Zero, Zero, 0x03)
                     RDCA (NCRN, 0x04, 0xFFFFFFF8, PCMD, 0x03)
                     RDCA (NCRN, PRBI, Zero, PRBD, 0x03)
-                    If (LNotEqual (NL1V, Zero))
+                    If ((NL1V != Zero))
                     {
-                        RDCA (NCRN, Add (NL1V, 0x0C), 0xFFFFFF00, ND2V, 0x03)
-                        RDCA (NCRN, Add (NL1V, 0x08), 0x0F, And (ND1V, 0xFFFFFFF0), 0x03)
-                        RDCA (NCRN, Add (NL1V, 0x08), 0xFFFFFFFF, ND1V, 0x03)
+                        RDCA (NCRN, (NL1V + 0x0C), 0xFFFFFF00, ND2V, 0x03)
+                        RDCA (NCRN, (NL1V + 0x08), 0x0F, (ND1V & 0xFFFFFFF0), 0x03)
+                        RDCA (NCRN, (NL1V + 0x08), 0xFFFFFFFF, ND1V, 0x03)
                     }
 
-                    If (LNotEqual (NLRV, Zero))
+                    If ((NLRV != Zero))
                     {
-                        RDCA (NCRN, Add (NLRV, 0x04), 0xFFFFFFFF, NLDV, 0x03)
+                        RDCA (NCRN, (NLRV + 0x04), 0xFFFFFFFF, NLDV, 0x03)
                     }
 
-                    RDCA (NCRN, Add (NPCV, 0x10), 0xFFFFFEBF, And (NEAV, 0xFFFC), 0x03)
-                    RDCA (NCRN, Add (NPCV, 0x28), 0xFFFFFBFF, NECV, 0x03)
-                    RDCA (NCRN, Add (NPCV, 0x08), 0xFFFFFF1F, NEBV, 0x03)
+                    RDCA (NCRN, (NPCV + 0x10), 0xFFFFFEBF, (NEAV & 0xFFFC), 0x03)
+                    RDCA (NCRN, (NPCV + 0x28), 0xFFFFFBFF, NECV, 0x03)
+                    RDCA (NCRN, (NPCV + 0x08), 0xFFFFFF1F, NEBV, 0x03)
                     RDCA (NCRN, 0x68, 0xFFFFFBFF, NRAV, One)
-                    If (LEqual (And (NEAV, 0x40), 0x40))
+                    If (((NEAV & 0x40) == 0x40))
                     {
                         RDCA (NCRN, 0x50, 0xFFFFFFDF, 0x20, One)
-                        While (LEqual (And (RDCA (NCRN, 0x52, Zero, Zero, Zero), 0x2000), Zero))
+                        While (((RDCA (NCRN, 0x52, Zero, Zero, Zero) & 0x2000) == Zero))
                         {
                             Stall (0x0A)
                         }
                     }
 
-                    RDCA (NCRN, Add (NPCV, 0x10), 0xFFFFFFFC, And (NEAV, 0x03), 0x03)
-                    If (LNotEqual (NMVV, Zero))
+                    RDCA (NCRN, (NPCV + 0x10), 0xFFFFFFFC, (NEAV & 0x03), 0x03)
+                    If ((NMVV != Zero))
                     {
                         RDCA (NCRN, NMBV, Zero, NMVV, 0x03)
                     }
 
-                    If (LNotEqual (NPVV, Zero))
+                    If ((NPVV != Zero))
                     {
                         RDCA (NCRN, NPBV, Zero, NPVV, 0x03)
                     }
@@ -11978,21 +12068,21 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
 
                 Method (_PS3, 0, Serialized)  // _PS3: Power State 3
                 {
-                    If (LEqual (NITV, Zero))
+                    If ((NITV == Zero))
                     {
                         Return (Zero)
                     }
 
-                    Store (RDCA (NCRN, 0x04, Zero, Zero, 0x02), PCMD)
-                    If (LEqual (NITV, One))
+                    PCMD = RDCA (NCRN, 0x04, Zero, Zero, 0x02)
+                    If ((NITV == One))
                     {
-                        Store (0x24, PRBI)
-                        Store (RDCA (NCRN, 0x24, Zero, Zero, 0x02), PRBD)
+                        PRBI = 0x24
+                        PRBD = RDCA (NCRN, 0x24, Zero, Zero, 0x02)
                     }
-                    ElseIf (LEqual (NITV, 0x02))
+                    ElseIf ((NITV == 0x02))
                     {
-                        Store (0x10, PRBI)
-                        Store (RDCA (NCRN, 0x10, Zero, Zero, 0x02), PRBD)
+                        PRBI = 0x10
+                        PRBD = RDCA (NCRN, 0x10, Zero, Zero, 0x02)
                     }
 
                     EPD3 ()
@@ -12001,15 +12091,15 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
 
                 Method (_PS0, 0, Serialized)  // _PS0: Power State 0
                 {
-                    If (LEqual (NITV, Zero))
+                    If ((NITV == Zero))
                     {
                         Return (Zero)
                     }
 
                     RPD0 (NCRN)
                     EPD0 ()
-                    Store (RDCA (NCRN, Add (NPMV, 0x04), Zero, Zero, 0x02), Local0)
-                    If (LEqual (And (Local0, 0x08), Zero))
+                    Local0 = RDCA (NCRN, (NPMV + 0x04), Zero, Zero, 0x02)
+                    If (((Local0 & 0x08) == Zero))
                     {
                         CNRS ()
                     }
@@ -12017,23 +12107,23 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
 
                 Method (_INI, 0, NotSerialized)  // _INI: Initialize
                 {
-                    Store (NIT3, NITV)
-                    Store (NPM3, NPMV)
-                    Store (NPC3, NPCV)
-                    Store (NL13, NL1V)
-                    Store (ND23, ND2V)
-                    Store (ND13, ND1V)
-                    Store (NLR3, NLRV)
-                    Store (NLD3, NLDV)
-                    Store (NEA3, NEAV)
-                    Store (NEB3, NEBV)
-                    Store (NEC3, NECV)
-                    Store (NRA3, NRAV)
-                    Store (NMB3, NMBV)
-                    Store (NMV3, NMVV)
-                    Store (NPB3, NPBV)
-                    Store (NPV3, NPVV)
-                    Store (0x02, NCRN)
+                    NITV = NIT3
+                    NPMV = NPM3
+                    NPCV = NPC3
+                    NL1V = NL13
+                    ND2V = ND23
+                    ND1V = ND13
+                    NLRV = NLR3
+                    NLDV = NLD3
+                    NEAV = NEA3
+                    NEBV = NEB3
+                    NECV = NEC3
+                    NRAV = NRA3
+                    NMBV = NMB3
+                    NMVV = NMV3
+                    NPBV = NPB3
+                    NPVV = NPV3
+                    NCRN = 0x02
                 }
             }
         }
@@ -12056,18 +12146,18 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                     }
                 })
                 CreateDWordField (RBUF, \_SB.PCI0.TERM._CRS._Y11._INT, IRQN)  // _INT: Interrupts
-                Store (TIRQ, IRQN)
+                IRQN = TIRQ
                 Return (RBUF)
             }
 
             Method (_STA, 0, NotSerialized)  // _STA: Status
             {
-                If (LEqual (TAEN, Zero))
+                If ((TAEN == Zero))
                 {
                     Return (Zero)
                 }
 
-                If (LEqual (TIRQ, Zero))
+                If ((TIRQ == Zero))
                 {
                     Return (Zero)
                 }
@@ -12081,19 +12171,19 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
     {
         Method (LPD3, 1, Serialized)
         {
-            OperationRegion (ICB1, SystemMemory, Add (Arg0, 0x84), 0x04)
+            OperationRegion (ICB1, SystemMemory, (Arg0 + 0x84), 0x04)
             Field (ICB1, DWordAcc, NoLock, Preserve)
             {
                 TEMP,   32
             }
 
-            Or (TEMP, 0x03, TEMP)
-            Store (TEMP, Local0)
+            TEMP |= 0x03
+            Local0 = TEMP
         }
 
         Method (LHRV, 1, Serialized)
         {
-            OperationRegion (ICB1, SystemMemory, Add (Arg0, 0x08), 0x04)
+            OperationRegion (ICB1, SystemMemory, (Arg0 + 0x08), 0x04)
             Field (ICB1, DWordAcc, NoLock, Preserve)
             {
                 HRV,    8
@@ -12104,25 +12194,25 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
 
         Method (LPD0, 1, Serialized)
         {
-            OperationRegion (ICB1, SystemMemory, Add (Arg0, 0x84), 0x04)
+            OperationRegion (ICB1, SystemMemory, (Arg0 + 0x84), 0x04)
             Field (ICB1, DWordAcc, NoLock, Preserve)
             {
                 TEMP,   32
             }
 
-            And (TEMP, 0xFFFFFFFC, TEMP)
-            Store (TEMP, Local0)
+            TEMP &= 0xFFFFFFFC
+            Local0 = TEMP
         }
 
         Method (GETD, 1, Serialized)
         {
-            OperationRegion (ICB1, SystemMemory, Add (Arg0, 0x84), 0x04)
+            OperationRegion (ICB1, SystemMemory, (Arg0 + 0x84), 0x04)
             Field (ICB1, DWordAcc, NoLock, Preserve)
             {
                 TEMP,   32
             }
 
-            Return (And (TEMP, 0x03))
+            Return ((TEMP & 0x03))
         }
 
         Method (LCRS, 3, Serialized)
@@ -12141,11 +12231,11 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
             CreateDWordField (RBUF, \_SB.PCI0.LCRS._Y12._BAS, BVAL)  // _BAS: Base Address
             CreateDWordField (RBUF, \_SB.PCI0.LCRS._Y12._LEN, BLEN)  // _LEN: Length
             CreateDWordField (RBUF, \_SB.PCI0.LCRS._Y13._INT, IRQN)  // _INT: Interrupts
-            Store (Arg1, BVAL)
-            Store (Arg2, IRQN)
-            If (LEqual (Arg0, 0x04))
+            BVAL = Arg1
+            IRQN = Arg2
+            If ((Arg0 == 0x04))
             {
-                Store (0x08, BLEN)
+                BLEN = 0x08
             }
 
             Return (RBUF)
@@ -12153,12 +12243,12 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
 
         Method (LSTA, 1, Serialized)
         {
-            If (LOr (LEqual (Arg0, Zero), LEqual (Arg0, 0x03)))
+            If (((Arg0 == Zero) || (Arg0 == 0x03)))
             {
                 Return (Zero)
             }
 
-            If (LLess (OSYS, 0x07DC))
+            If ((OSYS < 0x07DC))
             {
                 Return (Zero)
             }
@@ -12168,7 +12258,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
 
         Method (GIRQ, 1, Serialized)
         {
-            Return (Add (0x18, Mod (Arg0, 0x60)))
+            Return ((0x18 + (Arg0 % 0x60)))
         }
     }
 
@@ -12190,26 +12280,26 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                 })
                 CreateDWordField (BUFF, \_SB.PCI0.SIRC.ADDB._Y14._BAS, ADDR)  // _BAS: Base Address
                 CreateDWordField (BUFF, \_SB.PCI0.SIRC.ADDB._Y14._LEN, LENG)  // _LEN: Length
-                Store (Buffer (0x02)
+                Local0 = Buffer (0x02)
                     {
                          0x79, 0x00                                     
-                    }, Local0)
-                If (LOr (LOr (LEqual (Arg0, One), LEqual (Arg0, 0x03)), LEqual (Arg0, 0x04)))
+                    }
+                If ((((Arg0 == One) || (Arg0 == 0x03)) || (Arg0 == 0x04)))
                 {
-                    Store (Arg2, ADDR)
+                    ADDR = Arg2
                     ConcatenateResTemplate (Local0, BUFF, Local0)
                 }
 
-                If (LEqual (Arg0, 0x03))
+                If ((Arg0 == 0x03))
                 {
-                    Store (Arg1, ADDR)
+                    ADDR = Arg1
                     ConcatenateResTemplate (Local0, BUFF, Local0)
                 }
 
-                If (LEqual (Arg0, 0x04))
+                If ((Arg0 == 0x04))
                 {
-                    Store (Add (0x08, Arg1), ADDR)
-                    Store (0x0FF8, LENG)
+                    ADDR = (0x08 + Arg1)
+                    LENG = 0x0FF8
                     ConcatenateResTemplate (Local0, BUFF, Local0)
                 }
 
@@ -12218,10 +12308,10 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
 
             Method (_CRS, 0, Serialized)  // _CRS: Current Resource Settings
             {
-                Store (Buffer (0x02)
+                Local0 = Buffer (0x02)
                     {
                          0x79, 0x00                                     
-                    }, Local0)
+                    }
                 ConcatenateResTemplate (Local0, ADDB (SMD0, SB00, SB10), Local0)
                 ConcatenateResTemplate (Local0, ADDB (SMD1, SB01, SB11), Local0)
                 ConcatenateResTemplate (Local0, ADDB (SMD2, SB02, SB12), Local0)
@@ -12233,7 +12323,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                 ConcatenateResTemplate (Local0, ADDB (SMD8, SB08, SB18), Local0)
                 ConcatenateResTemplate (Local0, ADDB (SMD9, SB09, SB19), Local0)
                 ConcatenateResTemplate (Local0, ADDB (SMDA, SB0A, SB1A), Local0)
-                If (LEqual (^^GPI0._STA (), Zero))
+                If ((^^GPI0._STA () == Zero))
                 {
                     ConcatenateResTemplate (Local0, ^^GPI0._CRS (), Local0)
                 }
@@ -12246,7 +12336,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         {
             Method (_HID, 0, NotSerialized)  // _HID: Hardware ID
             {
-                If (LEqual (PCHV (), SPTH))
+                If ((PCHV () == SPTH))
                 {
                     Return ("INT345D")
                 }
@@ -12280,21 +12370,21 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                 CreateDWordField (RBUF, \_SB.PCI0.GPI0._CRS._Y16._BAS, COM1)  // _BAS: Base Address
                 CreateDWordField (RBUF, \_SB.PCI0.GPI0._CRS._Y17._BAS, COM3)  // _BAS: Base Address
                 CreateDWordField (RBUF, \_SB.PCI0.GPI0._CRS._Y18._INT, IRQN)  // _INT: Interrupts
-                Store (Add (SBRG, 0x00AF0000), COM0)
-                Store (Add (SBRG, 0x00AE0000), COM1)
-                Store (Add (SBRG, 0x00AC0000), COM3)
-                Store (SGIR, IRQN)
+                COM0 = (SBRG + 0x00AF0000)
+                COM1 = (SBRG + 0x00AE0000)
+                COM3 = (SBRG + 0x00AC0000)
+                IRQN = SGIR
                 Return (RBUF)
             }
 
             Method (_STA, 0, NotSerialized)  // _STA: Status
             {
-                If (LEqual (SBRG, Zero))
+                If ((SBRG == Zero))
                 {
                     Return (Zero)
                 }
 
-                If (LEqual (GPEN, Zero))
+                If ((GPEN == Zero))
                 {
                     Return (Zero)
                 }
@@ -12312,7 +12402,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         }
     }
 
-    If (LNotEqual (SMD0, 0x02))
+    If ((SMD0 != 0x02))
     {
         Scope (_SB.PCI0.I2C0)
         {
@@ -12349,12 +12439,12 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         }
     }
 
-    If (LEqual (SMD0, 0x02))
+    If ((SMD0 == 0x02))
     {
         Scope (_SB.PCI0.I2C0)
         {
             Name (_ADR, 0x00150000)  // _ADR: Address
-            Method (XDSM, 4, Serialized)  // _DSM: Device-Specific Method
+            Method (XDSM, 4, Serialized)
             {
                 If (PCIC (Arg0))
                 {
@@ -12374,7 +12464,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         }
     }
 
-    If (LNotEqual (SMD1, 0x02))
+    If ((SMD1 != 0x02))
     {
         Scope (_SB.PCI0.I2C1)
         {
@@ -12411,12 +12501,12 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         }
     }
 
-    If (LEqual (SMD1, 0x02))
+    If ((SMD1 == 0x02))
     {
         Scope (_SB.PCI0.I2C1)
         {
             Name (_ADR, 0x00150001)  // _ADR: Address
-            Method (XDSM, 4, Serialized)  // _DSM: Device-Specific Method
+            Method (XDSM, 4, Serialized)
             {
                 If (PCIC (Arg0))
                 {
@@ -12436,7 +12526,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         }
     }
 
-    If (LNotEqual (SMD2, 0x02))
+    If ((SMD2 != 0x02))
     {
         Scope (_SB.PCI0.I2C2)
         {
@@ -12473,12 +12563,12 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         }
     }
 
-    If (LEqual (SMD2, 0x02))
+    If ((SMD2 == 0x02))
     {
         Scope (_SB.PCI0.I2C2)
         {
             Name (_ADR, 0x00150002)  // _ADR: Address
-            Method (XDSM, 4, Serialized)  // _DSM: Device-Specific Method
+            Method (XDSM, 4, Serialized)
             {
                 If (PCIC (Arg0))
                 {
@@ -12498,7 +12588,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         }
     }
 
-    If (LNotEqual (SMD3, 0x02))
+    If ((SMD3 != 0x02))
     {
         Scope (_SB.PCI0.I2C3)
         {
@@ -12535,12 +12625,12 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         }
     }
 
-    If (LEqual (SMD3, 0x02))
+    If ((SMD3 == 0x02))
     {
         Scope (_SB.PCI0.I2C3)
         {
             Name (_ADR, 0x00150003)  // _ADR: Address
-            Method (XDSM, 4, Serialized)  // _DSM: Device-Specific Method
+            Method (XDSM, 4, Serialized)
             {
                 If (PCIC (Arg0))
                 {
@@ -12560,7 +12650,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         }
     }
 
-    If (LNotEqual (SMD4, 0x02))
+    If ((SMD4 != 0x02))
     {
         Scope (_SB.PCI0.I2C4)
         {
@@ -12597,12 +12687,12 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         }
     }
 
-    If (LEqual (SMD4, 0x02))
+    If ((SMD4 == 0x02))
     {
         Scope (_SB.PCI0.I2C4)
         {
             Name (_ADR, 0x00190002)  // _ADR: Address
-            Method (XDSM, 4, Serialized)  // _DSM: Device-Specific Method
+            Method (XDSM, 4, Serialized)
             {
                 If (PCIC (Arg0))
                 {
@@ -12622,7 +12712,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         }
     }
 
-    If (LNotEqual (SMD5, 0x02))
+    If ((SMD5 != 0x02))
     {
         Scope (_SB.PCI0.I2C5)
         {
@@ -12659,12 +12749,12 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         }
     }
 
-    If (LEqual (SMD5, 0x02))
+    If ((SMD5 == 0x02))
     {
         Scope (_SB.PCI0.I2C5)
         {
             Name (_ADR, 0x00190001)  // _ADR: Address
-            Method (XDSM, 4, Serialized)  // _DSM: Device-Specific Method
+            Method (XDSM, 4, Serialized)
             {
                 If (PCIC (Arg0))
                 {
@@ -12683,7 +12773,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         }
     }
 
-    If (LNotEqual (SMD6, 0x02))
+    If ((SMD6 != 0x02))
     {
         Scope (_SB.PCI0.SPI0)
         {
@@ -12720,12 +12810,12 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         }
     }
 
-    If (LEqual (SMD6, 0x02))
+    If ((SMD6 == 0x02))
     {
         Scope (_SB.PCI0.SPI0)
         {
             Name (_ADR, 0x001E0002)  // _ADR: Address
-            Method (XDSM, 4, Serialized)  // _DSM: Device-Specific Method
+            Method (XDSM, 4, Serialized)
             {
                 If (PCIC (Arg0))
                 {
@@ -12744,7 +12834,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         }
     }
 
-    If (LNotEqual (SMD7, 0x02))
+    If ((SMD7 != 0x02))
     {
         Scope (_SB.PCI0.SPI1)
         {
@@ -12781,12 +12871,12 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         }
     }
 
-    If (LEqual (SMD7, 0x02))
+    If ((SMD7 == 0x02))
     {
         Scope (_SB.PCI0.SPI1)
         {
             Name (_ADR, 0x001E0003)  // _ADR: Address
-            Method (XDSM, 4, Serialized)  // _DSM: Device-Specific Method
+            Method (XDSM, 4, Serialized)
             {
                 If (PCIC (Arg0))
                 {
@@ -12805,13 +12895,13 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         }
     }
 
-    If (LNotEqual (SMD8, 0x02))
+    If ((SMD8 != 0x02))
     {
         Scope (_SB.PCI0.UA00)
         {
             Method (_HID, 0, NotSerialized)  // _HID: Hardware ID
             {
-                If (LNotEqual (SMD9, 0x04))
+                If ((SMD9 != 0x04))
                 {
                     Return ("INT3448")
                 }
@@ -12840,7 +12930,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
 
             Method (_PS0, 0, NotSerialized)  // _PS0: Power State 0
             {
-                If (LNotEqual (SMD8, 0x04))
+                If ((SMD8 != 0x04))
                 {
                     LPD0 (SB18)
                 }
@@ -12848,7 +12938,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
 
             Method (_PS3, 0, NotSerialized)  // _PS3: Power State 3
             {
-                If (LNotEqual (SMD8, 0x04))
+                If ((SMD8 != 0x04))
                 {
                     LPD3 (SB18)
                 }
@@ -12861,12 +12951,12 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         }
     }
 
-    If (LEqual (SMD8, 0x02))
+    If ((SMD8 == 0x02))
     {
         Scope (_SB.PCI0.UA00)
         {
             Name (_ADR, 0x001E0000)  // _ADR: Address
-            Method (XDSM, 4, Serialized)  // _DSM: Device-Specific Method
+            Method (XDSM, 4, Serialized)
             {
                 If (PCIC (Arg0))
                 {
@@ -12885,13 +12975,13 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         }
     }
 
-    If (LNotEqual (SMD9, 0x02))
+    If ((SMD9 != 0x02))
     {
         Scope (_SB.PCI0.UA01)
         {
             Method (_HID, 0, NotSerialized)  // _HID: Hardware ID
             {
-                If (LNotEqual (SMD9, 0x04))
+                If ((SMD9 != 0x04))
                 {
                     Return ("INT3449")
                 }
@@ -12920,7 +13010,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
 
             Method (_PS0, 0, NotSerialized)  // _PS0: Power State 0
             {
-                If (LNotEqual (SMD9, 0x04))
+                If ((SMD9 != 0x04))
                 {
                     LPD0 (SB19)
                 }
@@ -12928,7 +13018,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
 
             Method (_PS3, 0, NotSerialized)  // _PS3: Power State 3
             {
-                If (LNotEqual (SMD9, 0x04))
+                If ((SMD9 != 0x04))
                 {
                     LPD3 (SB19)
                 }
@@ -12941,12 +13031,12 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         }
     }
 
-    If (LEqual (SMD9, 0x02))
+    If ((SMD9 == 0x02))
     {
         Scope (_SB.PCI0.UA01)
         {
             Name (_ADR, 0x001E0001)  // _ADR: Address
-            Method (XDSM, 4, Serialized)  // _DSM: Device-Specific Method
+            Method (XDSM, 4, Serialized)
             {
                 If (PCIC (Arg0))
                 {
@@ -12965,13 +13055,13 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         }
     }
 
-    If (LNotEqual (SMDA, 0x02))
+    If ((SMDA != 0x02))
     {
         Scope (_SB.PCI0.UA02)
         {
             Method (_HID, 0, NotSerialized)  // _HID: Hardware ID
             {
-                If (LNotEqual (SMDA, 0x04))
+                If ((SMDA != 0x04))
                 {
                     Return ("INT344A")
                 }
@@ -13000,7 +13090,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
 
             Method (_PS0, 0, NotSerialized)  // _PS0: Power State 0
             {
-                If (LNotEqual (SMDA, 0x04))
+                If ((SMDA != 0x04))
                 {
                     LPD0 (SB1A)
                 }
@@ -13008,7 +13098,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
 
             Method (_PS3, 0, NotSerialized)  // _PS3: Power State 3
             {
-                If (LNotEqual (SMDA, 0x04))
+                If ((SMDA != 0x04))
                 {
                     LPD3 (SB1A)
                 }
@@ -13021,12 +13111,12 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         }
     }
 
-    If (LEqual (SMDA, 0x02))
+    If ((SMDA == 0x02))
     {
         Scope (_SB.PCI0.UA02)
         {
             Name (_ADR, 0x00190000)  // _ADR: Address
-            Method (XDSM, 4, Serialized)  // _DSM: Device-Specific Method
+            Method (XDSM, 4, Serialized)
             {
                 If (PCIC (Arg0))
                 {
@@ -13044,11 +13134,11 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         Name (TP7G, ToUUID ("ef87eb82-f951-46da-84ec-14871ac6f84b"))
         Method (HIDD, 5, Serialized)
         {
-            If (LEqual (Arg0, HIDG))
+            If ((Arg0 == HIDG))
             {
-                If (LEqual (Arg2, Zero))
+                If ((Arg2 == Zero))
                 {
-                    If (LEqual (Arg1, One))
+                    If ((Arg1 == One))
                     {
                         Return (Buffer (One)
                         {
@@ -13057,7 +13147,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                     }
                 }
 
-                If (LEqual (Arg2, One))
+                If ((Arg2 == One))
                 {
                     Return (Arg4)
                 }
@@ -13071,11 +13161,11 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
 
         Method (TP7D, 6, Serialized)
         {
-            If (LEqual (Arg0, TP7G))
+            If ((Arg0 == TP7G))
             {
-                If (LEqual (Arg2, Zero))
+                If ((Arg2 == Zero))
                 {
-                    If (LEqual (Arg1, One))
+                    If ((Arg1 == One))
                     {
                         Return (Buffer (One)
                         {
@@ -13084,7 +13174,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                     }
                 }
 
-                If (LEqual (Arg2, One))
+                If ((Arg2 == One))
                 {
                     Return (ConcatenateResTemplate (Arg4, Arg5))
                 }
@@ -13131,50 +13221,50 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
             CreateDWordField (SBFI, \_SB.PCI0.I2C0.TPD0._Y1A._INT, INT2)  // _INT: Interrupts
             Method (_INI, 0, NotSerialized)  // _INI: Initialize
             {
-                If (LLess (OSYS, 0x07DC))
+                If ((OSYS < 0x07DC))
                 {
                     SRXO (GPDI, One)
                 }
 
-                Store (GNUM (GPDI), INT1)
-                Store (INUM (GPDI), INT2)
-                If (LEqual (SDM0, Zero))
+                INT1 = GNUM (GPDI)
+                INT2 = INUM (GPDI)
+                If ((SDM0 == Zero))
                 {
                     SHPO (GPDI, One)
                 }
 
-                If (LEqual (SDS0, One))
+                If ((SDS0 == One))
                 {
-                    Store ("SYNA2393", _HID)
-                    Store (0x20, HID2)
+                    _HID = "SYNA2393"
+                    HID2 = 0x20
                     Return (Zero)
                 }
 
-                If (LEqual (SDS0, 0x02))
+                If ((SDS0 == 0x02))
                 {
-                    Store ("06CB2846", _HID)
-                    Store (0x20, HID2)
+                    _HID = "06CB2846"
+                    HID2 = 0x20
                     Return (Zero)
                 }
 
-                If (LEqual (SDS0, 0x05))
+                If ((SDS0 == 0x05))
                 {
-                    Store ("CUST0001", _HID)
-                    Store (TPDH, HID2)
-                    Store (TPDB, BADR)
-                    If (LEqual (TPDS, Zero))
+                    _HID = "CUST0001"
+                    HID2 = TPDH
+                    BADR = TPDB
+                    If ((TPDS == Zero))
                     {
-                        Store (0x000186A0, SPED)
+                        SPED = 0x000186A0
                     }
 
-                    If (LEqual (TPDS, One))
+                    If ((TPDS == One))
                     {
-                        Store (0x00061A80, SPED)
+                        SPED = 0x00061A80
                     }
 
-                    If (LEqual (TPDS, 0x02))
+                    If ((TPDS == 0x02))
                     {
-                        Store (0x000F4240, SPED)
+                        SPED = 0x000F4240
                     }
 
                     Return (Zero)
@@ -13184,14 +13274,14 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
             Name (_HID, "XXXX0000")  // _HID: Hardware ID
             Name (_CID, "PNP0C50")  // _CID: Compatible ID
             Name (_S0W, 0x03)  // _S0W: S0 Device Wake State
-            Method (XDSM, 4, Serialized)  // _DSM: Device-Specific Method
+            Method (XDSM, 4, Serialized)
             {
-                If (LEqual (Arg0, HIDG))
+                If ((Arg0 == HIDG))
                 {
                     Return (HIDD (Arg0, Arg1, Arg2, Arg3, HID2))
                 }
 
-                If (LEqual (Arg0, TP7G))
+                If ((Arg0 == TP7G))
                 {
                     Return (TP7D (Arg0, Arg1, Arg2, Arg3, SBFB, SBFG))
                 }
@@ -13204,7 +13294,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
 
             Method (_STA, 0, NotSerialized)  // _STA: Status
             {
-                If (LOr (LEqual (SDS0, 0x05), LOr (LEqual (SDS0, One), LEqual (SDS0, 0x02))))
+                If (((SDS0 == 0x05) || ((SDS0 == One) || (SDS0 == 0x02))))
                 {
                     Return (0x0F)
                 }
@@ -13214,12 +13304,12 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
 
             Method (_CRS, 0, NotSerialized)  // _CRS: Current Resource Settings
             {
-                If (LLess (OSYS, 0x07DC))
+                If ((OSYS < 0x07DC))
                 {
                     Return (SBFI)
                 }
 
-                If (LEqual (SDM0, Zero))
+                If ((SDM0 == Zero))
                 {
                     Return (ConcatenateResTemplate (SBFB, SBFG))
                 }
@@ -13237,27 +13327,27 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
             Name (CADR, Zero)
             Method (_INI, 0, NotSerialized)  // _INI: Initialize
             {
-                If (LEqual (I2SC, One))
+                If ((I2SC == One))
                 {
-                    Store ("INT3439", _HID)
-                    Store ("INT3439", _CID)
-                    Store (0x1A, CADR)
+                    _HID = "INT3439"
+                    _CID = "INT3439"
+                    CADR = 0x1A
                     Return (Zero)
                 }
 
-                If (LEqual (I2SC, 0x02))
+                If ((I2SC == 0x02))
                 {
-                    Store ("INT343A", _HID)
-                    Store ("INT343A", _CID)
-                    Store (0x1C, CADR)
+                    _HID = "INT343A"
+                    _CID = "INT343A"
+                    CADR = 0x1C
                     Return (Zero)
                 }
 
-                If (LEqual (I2SC, 0x03))
+                If ((I2SC == 0x03))
                 {
-                    Store ("INT343B", _HID)
-                    Store ("INT343B", _CID)
-                    Store (0x34, CADR)
+                    _HID = "INT343B"
+                    _CID = "INT343B"
+                    CADR = 0x34
                     Return (Zero)
                 }
             }
@@ -13279,10 +13369,10 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                     }
                 })
                 CreateWordField (SBFB, \_SB.PCI0.I2C0.HDAC._CRS._Y1B._ADR, ADR)  // _ADR: Address
-                Store (CADR, ADR)
+                ADR = CADR
                 CreateDWordField (SBFI, \_SB.PCI0.I2C0.HDAC._CRS._Y1C._INT, AINT)  // _INT: Interrupts
-                Store (INUM (0x02040016), AINT)
-                If (LEqual (BID, 0x20))
+                AINT = INUM (0x02040016)
+                If ((BID == 0x20))
                 {
                     Return (SBFB)
                 }
@@ -13292,7 +13382,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
 
             Method (_STA, 0, NotSerialized)  // _STA: Status
             {
-                If (LNotEqual (I2SC, Zero))
+                If ((I2SC != Zero))
                 {
                     Return (0x0F)
                 }
@@ -13336,81 +13426,81 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
             CreateWordField (SBFG, 0x17, INT1)
             Method (_INI, 0, NotSerialized)  // _INI: Initialize
             {
-                If (LLess (OSYS, 0x07DC))
+                If ((OSYS < 0x07DC))
                 {
                     SRXO (GPLI, One)
                 }
 
-                Store (GNUM (GPLI), INT1)
-                Store (INUM (GPLI), INT2)
-                If (LEqual (SDM1, Zero))
+                INT1 = GNUM (GPLI)
+                INT2 = INUM (GPLI)
+                If ((SDM1 == Zero))
                 {
                     SHPO (GPLI, One)
                 }
 
-                If (LEqual (SDS1, One))
+                If ((SDS1 == One))
                 {
-                    Store ("ATML3432", _HID)
-                    Store (Zero, HID2)
-                    Store (0x4C, BADR)
-                    Store (0x00061A80, SPED)
+                    _HID = "ATML3432"
+                    HID2 = Zero
+                    BADR = 0x4C
+                    SPED = 0x00061A80
                     Return (Zero)
                 }
 
-                If (LEqual (SDS1, 0x02))
+                If ((SDS1 == 0x02))
                 {
-                    Store ("ATML2952", _HID)
-                    Store (Zero, HID2)
-                    Store (0x4A, BADR)
-                    Store (0x00061A80, SPED)
+                    _HID = "ATML2952"
+                    HID2 = Zero
+                    BADR = 0x4A
+                    SPED = 0x00061A80
                     Return (Zero)
                 }
 
-                If (LEqual (SDS1, 0x03))
+                If ((SDS1 == 0x03))
                 {
-                    Store ("ELAN2097", _HID)
-                    Store (One, HID2)
-                    Store (0x10, BADR)
-                    Store (0x00061A80, SPED)
+                    _HID = "ELAN2097"
+                    HID2 = One
+                    BADR = 0x10
+                    SPED = 0x00061A80
                     Return (Zero)
                 }
 
-                If (LEqual (SDS1, 0x04))
+                If ((SDS1 == 0x04))
                 {
-                    Store ("NTRG0001", _HID)
-                    Store (One, HID2)
-                    Store (0x07, BADR)
-                    Store (0x00061A80, SPED)
+                    _HID = "NTRG0001"
+                    HID2 = One
+                    BADR = 0x07
+                    SPED = 0x00061A80
                     Return (Zero)
                 }
 
-                If (LEqual (SDS1, 0x05))
+                If ((SDS1 == 0x05))
                 {
-                    Store ("NTRG0002", _HID)
-                    Store (One, HID2)
-                    Store (0x64, BADR)
-                    Store (0x00061A80, SPED)
+                    _HID = "NTRG0002"
+                    HID2 = One
+                    BADR = 0x64
+                    SPED = 0x00061A80
                     Return (Zero)
                 }
 
-                If (LEqual (SDS1, 0x06))
+                If ((SDS1 == 0x06))
                 {
-                    Store ("CUST0000", _HID)
-                    Store (TPLH, HID2)
-                    Store (TPLB, BADR)
-                    If (LEqual (TPLS, Zero))
+                    _HID = "CUST0000"
+                    HID2 = TPLH
+                    BADR = TPLB
+                    If ((TPLS == Zero))
                     {
-                        Store (0x000186A0, SPED)
+                        SPED = 0x000186A0
                     }
 
-                    If (LEqual (TPLS, One))
+                    If ((TPLS == One))
                     {
-                        Store (0x00061A80, SPED)
+                        SPED = 0x00061A80
                     }
 
-                    If (LEqual (TPLS, 0x02))
+                    If ((TPLS == 0x02))
                     {
-                        Store (0x000F4240, SPED)
+                        SPED = 0x000F4240
                     }
 
                     Return (Zero)
@@ -13420,14 +13510,14 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
             Name (_HID, "XXXX0000")  // _HID: Hardware ID
             Name (_CID, "PNP0C50")  // _CID: Compatible ID
             Name (_S0W, 0x04)  // _S0W: S0 Device Wake State
-            Method (XDSM, 4, Serialized)  // _DSM: Device-Specific Method
+            Method (XDSM, 4, Serialized)
             {
-                If (LEqual (Arg0, HIDG))
+                If ((Arg0 == HIDG))
                 {
                     Return (HIDD (Arg0, Arg1, Arg2, Arg3, HID2))
                 }
 
-                If (LEqual (Arg0, TP7G))
+                If ((Arg0 == TP7G))
                 {
                     Return (TP7D (Arg0, Arg1, Arg2, Arg3, SBFB, SBFG))
                 }
@@ -13440,7 +13530,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
 
             Method (_STA, 0, NotSerialized)  // _STA: Status
             {
-                If (LNotEqual (SDS1, Zero))
+                If ((SDS1 != Zero))
                 {
                     Return (0x0F)
                 }
@@ -13450,12 +13540,12 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
 
             Method (_CRS, 0, NotSerialized)  // _CRS: Current Resource Settings
             {
-                If (LLess (OSYS, 0x07DC))
+                If ((OSYS < 0x07DC))
                 {
                     Return (SBFI)
                 }
 
-                If (LEqual (SDM1, Zero))
+                If ((SDM1 == Zero))
                 {
                     Return (ConcatenateResTemplate (SBFB, SBFG))
                 }
@@ -13472,7 +13562,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
             Name (_UID, One)  // _UID: Unique ID
             Method (_STA, 0, NotSerialized)  // _STA: Status
             {
-                If (LEqual (BID, 0x20))
+                If ((BID == 0x20))
                 {
                     Return (0x0F)
                 }
@@ -13500,32 +13590,32 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         {
             Method (_HID, 0, NotSerialized)  // _HID: Hardware ID
             {
-                If (LEqual (SDS7, One))
+                If ((SDS7 == One))
                 {
                     Return ("FPC1011")
                 }
 
-                If (LEqual (SDS7, 0x02))
+                If ((SDS7 == 0x02))
                 {
                     Return ("FPC1020")
                 }
 
-                If (LEqual (SDS7, 0x03))
+                If ((SDS7 == 0x03))
                 {
                     Return ("VFSI6101")
                 }
 
-                If (LEqual (SDS7, 0x04))
+                If ((SDS7 == 0x04))
                 {
                     Return ("VFSI7500")
                 }
 
-                If (LEqual (SDS7, 0x05))
+                If ((SDS7 == 0x05))
                 {
                     Return ("EGIS0300")
                 }
 
-                If (LEqual (SDS7, 0x06))
+                If ((SDS7 == 0x06))
                 {
                     Return ("FPC1021")
                 }
@@ -13541,7 +13631,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
 
             Method (_STA, 0, NotSerialized)  // _STA: Status
             {
-                If (LNotEqual (SDS7, Zero))
+                If ((SDS7 != Zero))
                 {
                     Return (0x0F)
                 }
@@ -13601,55 +13691,55 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                 CreateBitField (GBUF, \_SB.PCI0.SPI1.FPNT._CRS._Y21._MOD, GTRG)  // _MOD: Mode
                 CreateBitField (BBUF, \_SB.PCI0.SPI1.FPNT._CRS._Y1F._DPL, SCSP)  // _DPL: Device Selection Polarity
                 CreateWordField (UBUF, 0x17, UPIN)
-                Store (GNUM (GFPS), SPIN)
-                Store (GNUM (GFPI), GPIN)
-                Store (INUM (GFPI), IPIN)
-                Store (GNUM (GFPI), UPIN)
-                If (LOr (LEqual (SDS7, 0x02), LEqual (SDS7, 0x06)))
+                SPIN = GNUM (GFPS)
+                GPIN = GNUM (GFPI)
+                IPIN = INUM (GFPI)
+                UPIN = GNUM (GFPI)
+                If (((SDS7 == 0x02) || (SDS7 == 0x06)))
                 {
-                    Store (Zero, ILVL)
-                    Store (One, ITRG)
-                    Store (Zero, GLVL)
-                    Store (One, GTRG)
+                    ILVL = Zero
+                    ITRG = One
+                    GLVL = Zero
+                    GTRG = One
                 }
 
-                If (LEqual (SDS7, 0x04))
+                If ((SDS7 == 0x04))
                 {
-                    Store (Zero, ILVL)
-                    Store (One, ITRG)
+                    ILVL = Zero
+                    ITRG = One
                 }
 
                 Switch (SDS7)
                 {
                     Case (One)
                     {
-                        Store (0x00989680, SPEX)
-                        Store (Zero, PHAX)
+                        SPEX = 0x00989680
+                        PHAX = Zero
                     }
                     Case (0x02)
                     {
-                        Store (0x002DC6C0, SPEX)
-                        Store (Zero, PHAX)
+                        SPEX = 0x002DC6C0
+                        PHAX = Zero
                     }
                     Case (0x03)
                     {
-                        Store (0x007A1200, SPEX)
-                        Store (One, PHAX)
+                        SPEX = 0x007A1200
+                        PHAX = One
                     }
                     Case (0x04)
                     {
-                        Store (0x007A1200, SPEX)
-                        Store (Zero, PHAX)
+                        SPEX = 0x007A1200
+                        PHAX = Zero
                     }
                     Case (0x05)
                     {
-                        Store (0x00F42400, SPEX)
-                        Store (Zero, PHAX)
+                        SPEX = 0x00F42400
+                        PHAX = Zero
                     }
                     Case (0x06)
                     {
-                        Store (0x002DC6C0, SPEX)
-                        Store (Zero, PHAX)
+                        SPEX = 0x002DC6C0
+                        PHAX = Zero
                     }
                     Default
                     {
@@ -13657,22 +13747,22 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
 
                 }
 
-                If (LEqual (SDS7, One))
+                If ((SDS7 == One))
                 {
                     Return (BBUF)
                 }
 
-                If (LAnd (LEqual (SDS7, 0x04), LEqual (SDM7, Zero)))
+                If (((SDS7 == 0x04) && (SDM7 == Zero)))
                 {
                     Return (ConcatenateResTemplate (BBUF, ConcatenateResTemplate (UBUF, GBUF)))
                 }
 
-                If (LAnd (LEqual (SDS7, 0x04), LNotEqual (SDM7, Zero)))
+                If (((SDS7 == 0x04) && (SDM7 != Zero)))
                 {
                     Return (ConcatenateResTemplate (BBUF, ConcatenateResTemplate (UBUF, IBUF)))
                 }
 
-                If (LEqual (SDM7, Zero))
+                If ((SDM7 == Zero))
                 {
                     Return (ConcatenateResTemplate (BBUF, GBUF))
                 }
@@ -13688,12 +13778,12 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         {
             Method (_HID, 0, NotSerialized)  // _HID: Hardware ID
             {
-                If (LEqual (SDS8, One))
+                If ((SDS8 == One))
                 {
                     Return ("INT33E1")
                 }
 
-                If (LEqual (SDS8, 0x02))
+                If ((SDS8 == 0x02))
                 {
                     Return ("BCM2E40")
                 }
@@ -13739,9 +13829,9 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                 CreateWordField (SBFG, 0x8C, INT3)
                 CreateWordField (SBFG, 0x3C, WAK3)
                 CreateWordField (SBFG, 0x64, KIL3)
-                Store (GNUM (GBTI), INT3)
-                Store (GNUM (GBTW), WAK3)
-                Store (GNUM (GBTK), KIL3)
+                INT3 = GNUM (GBTI)
+                WAK3 = GNUM (GBTW)
+                KIL3 = GNUM (GBTK)
                 Name (SBFI, ResourceTemplate ()
                 {
                     UartSerialBusV2 (0x0001C200, DataBitsEight, StopBitsOne,
@@ -13769,10 +13859,10 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                 CreateDWordField (SBFI, \_SB.PCI0.UA00.BTH0._CRS._Y22._INT, INT4)  // _INT: Interrupts
                 CreateWordField (SBFI, 0x3C, WAK4)
                 CreateWordField (SBFI, 0x64, KIL4)
-                Store (INUM (GBTI), INT4)
-                Store (GNUM (GBTW), WAK4)
-                Store (GNUM (GBTK), KIL4)
-                If (LEqual (SDM8, Zero))
+                INT4 = INUM (GBTI)
+                WAK4 = GNUM (GBTW)
+                KIL4 = GNUM (GBTK)
+                If ((SDM8 == Zero))
                 {
                     Return (SBFG)
                 }
@@ -13784,7 +13874,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
 
             Method (_STA, 0, NotSerialized)  // _STA: Status
             {
-                If (LNotEqual (SDS8, Zero))
+                If ((SDS8 != Zero))
                 {
                     Return (0x0F)
                 }
@@ -13821,8 +13911,8 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                         }
                 })
                 CreateWordField (BUF2, 0x17, RPIN)
-                Store (GNUM (GGNR), RPIN)
-                If (LEqual (GNSC, One))
+                RPIN = GNUM (GGNR)
+                If ((GNSC == One))
                 {
                     Return (ConcatenateResTemplate (BUF1, BUF2))
                 }
@@ -13834,7 +13924,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
 
             Method (_STA, 0, NotSerialized)  // _STA: Status
             {
-                If (LEqual (GNSC, Zero))
+                If ((GNSC == Zero))
                 {
                     Return (Zero)
                 }
@@ -14101,12 +14191,12 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
             })
             Method (W3DC, 4, Serialized)
             {
-                Store (Arg3, Index (DerefOf (Index (DerefOf (Index (CACH, Arg0)), Arg1)), Arg2))
+                DerefOf (DerefOf (CACH [Arg0]) [Arg1]) [Arg2] = Arg3
             }
 
             Method (R3DC, 3, Serialized)
             {
-                Return (DerefOf (Index (DerefOf (Index (DerefOf (Index (CACH, Arg0)), Arg1)), Arg2)))
+                Return (DerefOf (DerefOf (DerefOf (CACH [Arg0]) [Arg1]) [Arg2]))
             }
 
             Method (WREG, 4, Serialized)
@@ -14142,46 +14232,46 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                     RST,    32
                 }
 
-                Store (Add (Timer, 0xC350), Local1)
-                Store (0x07, RST)
-                Store (Zero, ENB)
-                Store (RBCK, Local0)
-                Store (CLR, Local0)
-                Store (0x001C001C, HOLD)
-                Store (0x0210, HCNT)
-                Store (0x0280, LCNT)
-                Store (Add (EXPA, Arg1), TAR)
-                Store (0x65, ICON)
-                Store (One, ENB)
-                While (LNotEqual (ENSB, One))
+                Local1 = (Timer + 0xC350)
+                RST = 0x07
+                ENB = Zero
+                Local0 = RBCK
+                Local0 = CLR
+                HOLD = 0x001C001C
+                HCNT = 0x0210
+                LCNT = 0x0280
+                TAR = (EXPA + Arg1)
+                ICON = 0x65
+                ENB = One
+                While ((ENSB != One))
                 {
-                    If (LGreater (Timer, Local1))
+                    If ((Timer > Local1))
                     {
                         Return (Zero)
                     }
                 }
 
-                Store (Arg2, DATA)
-                Store (Add (END, Arg3), DATA)
-                While (LNotEqual (ACTV, Zero))
+                DATA = Arg2
+                DATA = (END + Arg3)
+                While ((ACTV != Zero))
                 {
-                    If (LGreater (Timer, Local1))
+                    If ((Timer > Local1))
                     {
                         Return (Zero)
                     }
                 }
 
-                Store (Zero, ENB)
-                While (LNotEqual (ENSB, Zero))
+                ENB = Zero
+                While ((ENSB != Zero))
                 {
-                    If (LGreater (Timer, Local1))
+                    If ((Timer > Local1))
                     {
                         Return (Zero)
                     }
                 }
 
                 W3DC (Arg1, Arg2, One, Arg3)
-                If (LEqual (R3DC (Arg1, Arg2, Zero), One))
+                If ((R3DC (Arg1, Arg2, Zero) == One))
                 {
                     W3DC (Arg1, Arg2, Zero, 0x02)
                 }
@@ -14191,9 +14281,9 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
 
             Method (RREG, 3, Serialized)
             {
-                If (LEqual (UCCH, One))
+                If ((UCCH == One))
                 {
-                    If (LEqual (R3DC (Arg1, Arg2, Zero), 0x02))
+                    If ((R3DC (Arg1, Arg2, Zero) == 0x02))
                     {
                         Return (R3DC (Arg1, Arg2, One))
                     }
@@ -14230,40 +14320,40 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                     RST,    32
                 }
 
-                Store (Add (Timer, 0xC350), Local1)
-                Store (0x07, RST)
-                Store (Zero, ENB)
-                Store (RBCK, Local0)
-                Store (CLR, Local0)
-                Store (0x001C001C, HOLD)
-                Store (0x0210, HCNT)
-                Store (0x0280, LCNT)
-                Store (Add (EXPA, Arg1), TAR)
-                Store (0x65, ICON)
-                Store (One, ENB)
-                While (LNotEqual (ENSB, One))
+                Local1 = (Timer + 0xC350)
+                RST = 0x07
+                ENB = Zero
+                Local0 = RBCK
+                Local0 = CLR
+                HOLD = 0x001C001C
+                HCNT = 0x0210
+                LCNT = 0x0280
+                TAR = (EXPA + Arg1)
+                ICON = 0x65
+                ENB = One
+                While ((ENSB != One))
                 {
-                    If (LGreater (Timer, Local1))
+                    If ((Timer > Local1))
                     {
                         Return (Zero)
                     }
                 }
 
-                Store (Arg2, DATA)
-                Store (Add (END, READ), DATA)
-                While (LNotEqual (ACTV, Zero))
+                DATA = Arg2
+                DATA = (END + READ)
+                While ((ACTV != Zero))
                 {
-                    If (LGreater (Timer, Local1))
+                    If ((Timer > Local1))
                     {
                         Return (Zero)
                     }
                 }
 
-                Store (DATA, Local0)
-                Store (Zero, ENB)
-                While (LNotEqual (ENSB, Zero))
+                Local0 = DATA
+                ENB = Zero
+                While ((ENSB != Zero))
                 {
-                    If (LGreater (Timer, Local1))
+                    If ((Timer > Local1))
                     {
                         Return (Zero)
                     }
@@ -14281,8 +14371,8 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                     D0D3,   2
                 }
 
-                Store (Zero, D0D3)
-                Store (D0D3, Local0)
+                D0D3 = Zero
+                Local0 = D0D3
             }
 
             Method (PS3, 1, Serialized)
@@ -14294,8 +14384,8 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                     D0D3,   2
                 }
 
-                Store (0x03, D0D3)
-                Store (D0D3, Local0)
+                D0D3 = 0x03
+                Local0 = D0D3
             }
 
             Method (CSER, 5, Serialized)
@@ -14309,116 +14399,116 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                 Name (OLDV, Zero)
                 Name (NEWV, Zero)
                 Name (RETV, Zero)
-                If (LGreater (Arg0, 0x05))
+                If ((Arg0 > 0x05))
                 {
                     Return (Zero)
                 }
 
-                If (LEqual (Arg0, Zero))
+                If ((Arg0 == Zero))
                 {
-                    Store (SB10, SB1X)
-                    Store (SB00, SB0X)
-                    Store (SMD0, SMDX)
+                    SB1X = SB10
+                    SB0X = SB00
+                    SMDX = SMD0
                 }
 
-                If (LEqual (Arg0, One))
+                If ((Arg0 == One))
                 {
-                    Store (SB11, SB1X)
-                    Store (SB01, SB0X)
-                    Store (SMD1, SMDX)
+                    SB1X = SB11
+                    SB0X = SB01
+                    SMDX = SMD1
                 }
 
-                If (LEqual (Arg0, 0x02))
+                If ((Arg0 == 0x02))
                 {
-                    Store (SB12, SB1X)
-                    Store (SB02, SB0X)
-                    Store (SMD2, SMDX)
+                    SB1X = SB12
+                    SB0X = SB02
+                    SMDX = SMD2
                 }
 
-                If (LEqual (Arg0, 0x03))
+                If ((Arg0 == 0x03))
                 {
-                    Store (SB13, SB1X)
-                    Store (SB03, SB0X)
-                    Store (SMD3, SMDX)
+                    SB1X = SB13
+                    SB0X = SB03
+                    SMDX = SMD3
                 }
 
-                If (LEqual (Arg0, 0x04))
+                If ((Arg0 == 0x04))
                 {
-                    Store (SB14, SB1X)
-                    Store (SB04, SB0X)
-                    Store (SMD4, SMDX)
+                    SB1X = SB14
+                    SB0X = SB04
+                    SMDX = SMD4
                 }
 
-                If (LEqual (Arg0, 0x05))
+                If ((Arg0 == 0x05))
                 {
-                    Store (SB15, SB1X)
-                    Store (SB05, SB0X)
-                    Store (SMD5, SMDX)
+                    SB1X = SB15
+                    SB0X = SB05
+                    SMDX = SMD5
                 }
 
-                If (LGreater (Arg0, 0x05))
+                If ((Arg0 > 0x05))
                 {
                     Return (Zero)
                 }
 
-                If (LGreater (Arg1, One))
+                If ((Arg1 > One))
                 {
                     Return (Zero)
                 }
 
-                If (LGreater (Arg2, 0x17))
+                If ((Arg2 > 0x17))
                 {
                     Return (Zero)
                 }
 
-                If (LGreater (Arg3, One))
+                If ((Arg3 > One))
                 {
                     Return (Zero)
                 }
 
-                If (LGreater (Arg4, 0x02))
+                If ((Arg4 > 0x02))
                 {
                     Return (Zero)
                 }
 
-                If (LNotEqual (SMDX, 0x03))
+                If ((SMDX != 0x03))
                 {
                     Return (Zero)
                 }
 
-                If (LEqual (Arg4, Zero))
+                If ((Arg4 == Zero))
                 {
-                    Store (OUTR, Local0)
+                    Local0 = OUTR
                 }
 
-                If (LEqual (Arg4, One))
+                If ((Arg4 == One))
                 {
-                    Store (CFGR, Local0)
+                    Local0 = CFGR
                 }
 
-                If (LEqual (Arg4, 0x02))
+                If ((Arg4 == 0x02))
                 {
-                    Store (INR, Local0)
+                    Local0 = INR
                 }
 
-                If (LEqual (Arg4, 0x03))
+                If ((Arg4 == 0x03))
                 {
-                    Store (POLR, Local0)
+                    Local0 = POLR
                 }
 
                 PS0 (SB1X)
                 Divide (Arg2, PPR, PINN, REGN)
-                Store (DerefOf (Index (Local0, REGN)), REGA)
-                Store (RREG (SB0X, Arg1, REGA), OLDV)
-                If (LEqual (Arg4, 0x02))
+                REGA = DerefOf (Local0 [REGN])
+                OLDV = RREG (SB0X, Arg1, REGA)
+                If ((Arg4 == 0x02))
                 {
-                    Store (And (One, ShiftRight (OLDV, PINN)), RETV)
+                    RETV = (One & (OLDV >> PINN))
                 }
                 Else
                 {
-                    And (OLDV, Not (ShiftLeft (One, PINN)), NEWV)
-                    Or (ShiftLeft (Arg3, PINN), NEWV, NEWV)
-                    If (LNotEqual (NEWV, OLDV))
+                    NEWV = (OLDV & ~(One << PINN))
+                    NEWV |= (Arg3 << PINN)
+                    If ((NEWV != OLDV))
                     {
                         WREG (SB0X, Arg1, REGA, NEWV)
                     }
@@ -14436,7 +14526,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         {
             Zero
         })
-        Store (Arg0, Index (PKG, Zero))
+        PKG [Zero] = Arg0
         Return (PKG)
     }
 
@@ -14448,9 +14538,9 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
             Zero, 
             Zero
         })
-        Store (Arg0, Index (PKG, Zero))
-        Store (Arg1, Index (PKG, One))
-        Store (Arg2, Index (PKG, 0x02))
+        PKG [Zero] = Arg0
+        PKG [One] = Arg1
+        PKG [0x02] = Arg2
         Return (PKG)
     }
 
@@ -14511,7 +14601,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         }
     }
 
-    If (LEqual (PCHV (), SPTL))
+    If ((PCHV () == SPTL))
     {
         Scope (_SB.PCI0)
         {
@@ -14530,22 +14620,22 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
 
                 Method (_PS0, 0, Serialized)  // _PS0: Power State 0
                 {
-                    Store (Zero, PGEN)
+                    PGEN = Zero
                     PCRA (0xC0, 0x0600, 0x7FFFFFBA)
                     Sleep (0x02)
                     PCRO (0xC0, 0x0600, 0x80000045)
-                    And (PSTA, 0xFFFFFFFC, PSTA)
-                    Store (PSTA, Local0)
+                    PSTA &= 0xFFFFFFFC
+                    Local0 = PSTA
                 }
 
                 Method (_PS3, 0, Serialized)  // _PS3: Power State 3
                 {
-                    Store (One, PGEN)
-                    Or (PSTA, 0x03, PSTA)
-                    Store (PSTA, Local0)
+                    PGEN = One
+                    PSTA |= 0x03
+                    Local0 = PSTA
                 }
 
-                Method (XDSM, 4, Serialized)  // _DSM: Device-Specific Method
+                Method (XDSM, 4, Serialized)
                 {
                     If (PCIC (Arg0))
                     {
@@ -14553,15 +14643,15 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                     }
 
                     ADBG (Concatenate ("EMH4=", ToDecimalString (EMH4)))
-                    If (LEqual (Arg0, ToUUID ("f6c13ea5-65cd-461f-ab7a-29f7e8d5bd61")))
+                    If ((Arg0 == ToUUID ("f6c13ea5-65cd-461f-ab7a-29f7e8d5bd61")))
                     {
-                        If (LEqual (Arg1, Zero))
+                        If ((Arg1 == Zero))
                         {
                             Switch (Arg2)
                             {
                                 Case (Zero)
                                 {
-                                    If (LEqual (EMH4, One))
+                                    If ((EMH4 == One))
                                     {
                                         Return (Buffer (One)
                                         {
@@ -14633,31 +14723,31 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
 
                 Method (_PS0, 0, Serialized)  // _PS0: Power State 0
                 {
-                    Store (Zero, PGEN)
+                    PGEN = Zero
                     PCRA (0xC0, 0x0600, 0xFFFFFE7A)
                     Sleep (0x02)
                     PCRO (0xC0, 0x0600, 0x0185)
-                    And (PSTA, 0xFFFFFFFC, PSTA)
-                    Store (PSTA, Local0)
+                    PSTA &= 0xFFFFFFFC
+                    Local0 = PSTA
                 }
 
                 Method (_PS3, 0, Serialized)  // _PS3: Power State 3
                 {
-                    Store (One, PGEN)
-                    Or (PSTA, 0x03, PSTA)
-                    Store (PSTA, Local0)
+                    PGEN = One
+                    PSTA |= 0x03
+                    Local0 = PSTA
                 }
 
-                Method (XDSM, 4, Serialized)  // _DSM: Device-Specific Method
+                Method (XDSM, 4, Serialized)
                 {
                     If (PCIC (Arg0))
                     {
                         Return (PCID (Arg0, Arg1, Arg2, Arg3))
                     }
 
-                    If (LEqual (Arg0, ToUUID ("f6c13ea5-65cd-461f-ab7a-29f7e8d5bd61")))
+                    If ((Arg0 == ToUUID ("f6c13ea5-65cd-461f-ab7a-29f7e8d5bd61")))
                     {
-                        If (LEqual (Arg1, Zero))
+                        If ((Arg1 == Zero))
                         {
                             Switch (Arg2)
                             {
@@ -14721,7 +14811,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         Device (ISHD)
         {
             Name (_ADR, 0x00130000)  // _ADR: Address
-            Method (XDSM, 4, NotSerialized)  // _DSM: Device-Specific Method
+            Method (XDSM, 4, NotSerialized)
             {
                 If (PCIC (Arg0))
                 {
@@ -14736,7 +14826,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         Device (HECI)
         {
             Name (_ADR, 0x00160000)  // _ADR: Address
-            Method (XDSM, 4, NotSerialized)  // _DSM: Device-Specific Method
+            Method (XDSM, 4, NotSerialized)
             {
                 If (PCIC (Arg0))
                 {
@@ -14755,7 +14845,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
             Name (ECAV, Zero)
             Method (_GPE, 0, NotSerialized)  // _GPE: General Purpose Events
             {
-                Store (GGPE (0x0204000F), Local0)
+                Local0 = GGPE (0x0204000F)
                 Return (Local0)
             }
 
@@ -14856,11 +14946,12 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                 Offset (0x12), 
                 FUSL,   8, 
                 FUSH,   8, 
-                FWBX,64,//FWBT,64, 
+                FWBX,   64, 
                 Offset (0x4A), 
                 ESMC,   1, 
                 Offset (0x4C), 
-                B2UD,8,B3UD,8, 
+                B2UD,   8, 
+                B3UD,   8, 
                 Offset (0x5D), 
                 EXSI,   8, 
                 EXSB,   8, 
@@ -14869,7 +14960,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                 SMST,   8, 
                 SMAD,   8, 
                 SMCM,   8, 
-                SMDX,256,//SMDA,256, 
+                SMDX,   256, 
                 BCNT,   8, 
                 SMAA,   8, 
                 SAD0,   8, 
@@ -14886,7 +14977,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                 TPDV,   3, 
                 Offset (0x8C), 
                 Offset (0x8F), 
-                BMNX,72,//BMN0,72, 
+                BMNX,   72, 
                 BDN0,   64, 
                 IBTL,   1, 
                 IBCL,   1, 
@@ -15007,16 +15098,23 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                 B1MF,   3, 
                 Offset (0xC1), 
                 B1ST,   8, 
-                B2RC,8,B3RC,8, 
-                B2SN,8,B3SN,8, 
-                B2FV,8,B3FV,8, 
-                B2DV,8,B3DV,8, 
-                B2DC,8,B3DC,8, 
-                B2FC,8,B3FC,8, 
+                B2RC,   8, 
+                B3RC,   8, 
+                B2SN,   8, 
+                B3SN,   8, 
+                B2FV,   8, 
+                B3FV,   8, 
+                B2DV,   8, 
+                B3DV,   8, 
+                B2DC,   8, 
+                B3DC,   8, 
+                B2FC,   8, 
+                B3FC,   8, 
                 B1GS,   8, 
                 B1CT,   8, 
                 B1CR,   16, 
-                B2AC,8,B3AC,8, 
+                B2AC,   8, 
+                B3AC,   8, 
                 B1PC,   8, 
                 B1VL,   8, 
                 B1TM,   8, 
@@ -15064,7 +15162,8 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                 B1SF,   1, 
                 B1WN,   1, 
                 Offset (0xF4), 
-                B2DA,8,B3DA,8, 
+                B2DA,   8, 
+                B3DA,   8, 
                 Offset (0xF8), 
                 B1CN,   8, 
                 Offset (0xFB)
@@ -15103,10 +15202,10 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                 })
                 Method (_STA, 0, NotSerialized)  // _STA: Status
                 {
-                    If (LEqual (ECON, One))
+                    If ((ECON == One))
                     {
-                        Store (BA1P, Local0)
-                        If (And (Local0, One))
+                        Local0 = BA1P
+                        If ((Local0 & One))
                         {
                             Return (0x1F)
                         }
@@ -15125,69 +15224,69 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
 
                 Method (_BIF, 0, NotSerialized)  // _BIF: Battery Information
                 {
-                    If (LEqual (ECON, One))
+                    If ((ECON == One))
                     {
-                        Store (B1B2(B2DC,B3DC), Local0)
-                        Multiply (Local0, 0x0A, Local0)
-                        Store (Local0, Index (PBIF, One))
-                        Store (B1B2(B2FC,B3FC), Local0)
-                        Multiply (Local0, 0x0A, Local0)
-                        Store (Local0, Index (PBIF, 0x02))
-                        Store (B1B2(B2DV,B3DV), Index (PBIF, 0x04))
-                        If (B1B2(B2FC,B3FC))
+                        Local0 = B1B2 (B2DC, B3DC)
+                        Local0 *= 0x0A
+                        PBIF [One] = Local0
+                        Local0 = B1B2 (B2FC, B3FC)
+                        Local0 *= 0x0A
+                        PBIF [0x02] = Local0
+                        PBIF [0x04] = B1B2 (B2DV, B3DV)
+                        If (B1B2 (B2FC, B3FC))
                         {
-                            Store (Divide (Multiply (B1B2(B2FC,B3FC), 0x0A), 0x0A, ), Index (PBIF, 0x05))
-                            Store (Divide (Multiply (B1B2(B2FC,B3FC), 0x0A), 0x19, ), Index (PBIF, 0x06))
-                            Store (Divide (Multiply (B1B2(B2DC,B3DC), 0x0A), 0x64, ), Index (PBIF, 0x07))
+                            PBIF [0x05] = ((B1B2 (B2FC, B3FC) * 0x0A) / 0x0A)
+                            PBIF [0x06] = ((B1B2 (B2FC, B3FC) * 0x0A) / 0x19)
+                            PBIF [0x07] = ((B1B2 (B2DC, B3DC) * 0x0A) / 0x64)
                         }
 
-                        Store ("", Index (PBIF, 0x09))
-                        Store ("", Index (PBIF, 0x0A))
-                        Store ("", Index (PBIF, 0x0B))
-                        Store ("", Index (PBIF, 0x0C))
+                        PBIF [0x09] = ""
+                        PBIF [0x0A] = ""
+                        PBIF [0x0B] = ""
+                        PBIF [0x0C] = ""
                         Name (BDNT, Buffer (0x09)
                         {
                              0x00                                           
                         })
-                        Store (RECB(0x98,56), BDNT)
-                        Store (ToString (BDNT, Ones), Index (PBIF, 0x09))
-                        Store (B1B2(B2SN,B3SN), Local0)
+                        BDNT = RECB (0x98, 0x38)
+                        PBIF [0x09] = ToString (BDNT, Ones)
+                        Local0 = B1B2 (B2SN, B3SN)
                         Name (SERN, Buffer (0x06)
                         {
                             "     "
                         })
-                        Store (0x04, Local2)
+                        Local2 = 0x04
                         While (Local0)
                         {
                             Divide (Local0, 0x0A, Local1, Local0)
-                            Add (Local1, 0x30, Index (SERN, Local2))
-                            Decrement (Local2)
+                            SERN [Local2] = (Local1 + 0x30)
+                            Local2--
                         }
 
-                        Store (SERN, Index (PBIF, 0x0A))
+                        PBIF [0x0A] = SERN
                         Name (DCH0, Buffer (0x0A)
                         {
                              0x00                                           
                         })
                         Name (DCH1, "LION")
                         Name (DCH2, "LiP")
-                        If (LEqual (B1TY, One))
+                        If ((B1TY == One))
                         {
-                            Store (DCH1, DCH0)
-                            Store (ToString (DCH0, Ones), Index (PBIF, 0x0B))
+                            DCH0 = DCH1
+                            PBIF [0x0B] = ToString (DCH0, Ones)
                         }
                         Else
                         {
-                            Store (DCH2, DCH0)
-                            Store (ToString (DCH0, Ones), Index (PBIF, 0x0B))
+                            DCH0 = DCH2
+                            PBIF [0x0B] = ToString (DCH0, Ones)
                         }
 
                         Name (BMNT, Buffer (0x0A)
                         {
                              0x00                                           
                         })
-                        Store (RECB(0x8f,56), BMNT)
-                        Store (ToString (BMNT, Ones), Index (PBIF, 0x0C))
+                        BMNT = RECB (0x8F, 0x38)
+                        PBIF [0x0C] = ToString (BMNT, Ones)
                     }
 
                     Return (PBIF)
@@ -15200,53 +15299,53 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                 Name (OBPV, Zero)
                 Method (_BST, 0, Serialized)  // _BST: Battery Status
                 {
-                    If (LEqual (ECON, One))
+                    If ((ECON == One))
                     {
                         Sleep (0x10)
-                        Store (B1ST, Local0)
-                        Store (DerefOf (Index (PBST, Zero)), Local1)
-                        Switch (And (Local0, 0x07))
+                        Local0 = B1ST
+                        Local1 = DerefOf (PBST [Zero])
+                        Switch ((Local0 & 0x07))
                         {
                             Case (Zero)
                             {
-                                Store (And (Local1, 0xF8), OBST)
+                                OBST = (Local1 & 0xF8)
                             }
                             Case (One)
                             {
-                                Store (Or (One, And (Local1, 0xF8)), OBST)
+                                OBST = (One | (Local1 & 0xF8))
                             }
                             Case (0x02)
                             {
-                                Store (Or (0x02, And (Local1, 0xF8)), OBST)
+                                OBST = (0x02 | (Local1 & 0xF8))
                             }
                             Case (0x04)
                             {
-                                Store (Or (0x04, And (Local1, 0xF8)), OBST)
+                                OBST = (0x04 | (Local1 & 0xF8))
                             }
 
                         }
 
                         Sleep (0x10)
-                        Store (B1B2(B2AC,B3AC), OBAC)
-                        If (And (OBST, One))
+                        OBAC = B1B2 (B2AC, B3AC)
+                        If ((OBST & One))
                         {
-                            If (LNotEqual (OBAC, Zero))
+                            If ((OBAC != Zero))
                             {
-                                Store (And (Not (OBAC), 0x7FFF), OBAC)
+                                OBAC = (~OBAC & 0x7FFF)
                             }
                         }
 
-                        Store (OBAC, OBPR)
+                        OBPR = OBAC
                         Sleep (0x10)
-                        Store (B1B2(B2RC,B3RC), OBRC)
+                        OBRC = B1B2 (B2RC, B3RC)
                         Sleep (0x10)
-                        Store (B1B2(B2FV,B3FV), OBPV)
-                        Multiply (OBRC, 0x0A, OBRC)
-                        Store (Divide (Multiply (OBAC, OBPV), 0x03E8, ), OBPR)
-                        Store (OBST, Index (PBST, Zero))
-                        Store (OBPR, Index (PBST, One))
-                        Store (OBRC, Index (PBST, 0x02))
-                        Store (OBPV, Index (PBST, 0x03))
+                        OBPV = B1B2 (B2FV, B3FV)
+                        OBRC *= 0x0A
+                        OBPR = ((OBAC * OBPV) / 0x03E8)
+                        PBST [Zero] = OBST
+                        PBST [One] = OBPR
+                        PBST [0x02] = OBRC
+                        PBST [0x03] = OBPV
                     }
 
                     Return (PBST)
@@ -15273,66 +15372,66 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
 
                     Method (_CFG, 0, NotSerialized)
                     {
-                        If (LEqual (OSYS, 0x07D9))
+                        If ((OSYS == 0x07D9))
                         {
-                            Store (_VPC, Local0)
-                            If (LEqual (ECON, One))
+                            Local0 = _VPC
+                            If ((ECON == One))
                             {
-                                If (LEqual (PB1D, Zero))
+                                If ((PB1D == Zero))
                                 {
-                                    Or (Local0, 0x00050000, Local0)
-                                    Store (One, WEXT)
-                                    Store (One, BEXT)
+                                    Local0 |= 0x00050000
+                                    WEXT = One
+                                    BEXT = One
                                 }
                                 Else
                                 {
-                                    And (Local0, 0xFFFAFFFF, Local0)
-                                    Store (Zero, WEXT)
-                                    Store (Zero, BEXT)
+                                    Local0 &= 0xFFFAFFFF
+                                    WEXT = Zero
+                                    BEXT = Zero
                                 }
 
-                                If (LEqual (PB1D, Zero))
+                                If ((PB1D == Zero))
                                 {
-                                    If (LEqual (CMWL, Zero))
+                                    If ((CMWL == Zero))
                                     {
-                                        Store (One, WLAN)
+                                        WLAN = One
                                         SGOV (0x02020012, One)
                                     }
                                     Else
                                     {
-                                        Store (Zero, WLAN)
+                                        WLAN = Zero
                                         SGOV (0x02020012, Zero)
                                     }
 
-                                    If (LEqual (CMBL, Zero))
+                                    If ((CMBL == Zero))
                                     {
-                                        Store (One, BLUE)
+                                        BLUE = One
                                         SGOV (0x02020013, One)
                                     }
                                     Else
                                     {
-                                        Store (Zero, BLUE)
+                                        BLUE = Zero
                                         SGOV (0x02020013, Zero)
                                     }
                                 }
                             }
 
-                            Store (Local0, _VPC)
+                            _VPC = Local0
                         }
 
-                        Store (One, APFG)
+                        APFG = One
                         Return (_VPC)
                     }
 
                     Method (VPCR, 1, Serialized)
                     {
-                        If (LEqual (Arg0, One))
+                        If ((Arg0 == One))
                         {
-                            Store (VCMD, VPCD)
+                            VPCD = VCMD
                         }
                         Else
                         {
-                            Store (VDAT, VPCD)
+                            VPCD = VDAT
                         }
 
                         Return (VPCD)
@@ -15340,13 +15439,13 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
 
                     Method (VPCW, 2, Serialized)
                     {
-                        If (LEqual (Arg0, One))
+                        If ((Arg0 == One))
                         {
-                            Store (Arg1, VCMD)
+                            VCMD = Arg1
                         }
                         Else
                         {
-                            Store (Arg1, VDAT)
+                            VDAT = Arg1
                         }
 
                         Return (Zero)
@@ -15358,62 +15457,62 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
 
                     Method (HALS, 0, NotSerialized)
                     {
-                        Store (Zero, Local0)
-                        If (LEqual (One, KBLO))
+                        Local0 = Zero
+                        If ((One == KBLO))
                         {
-                            Or (Local0, 0x20, Local0)
+                            Local0 |= 0x20
                         }
 
-                        Or (Local0, 0x0200, Local0)
+                        Local0 |= 0x0200
                         If (HKDB)
                         {
-                            Or (Local0, 0x0400, Local0)
+                            Local0 |= 0x0400
                         }
 
-                        Or (Local0, 0x0800, Local0)
+                        Local0 |= 0x0800
                         Return (Local0)
                     }
 
                     Method (SALS, 1, Serialized)
                     {
-                        Store (ToInteger (Arg0), Local0)
-                        If (LEqual (Local0, 0x08))
+                        Local0 = ToInteger (Arg0)
+                        If ((Local0 == 0x08))
                         {
-                            Store (One, KBLO)
+                            KBLO = One
                             Return (Zero)
                         }
 
-                        If (LEqual (Local0, 0x09))
+                        If ((Local0 == 0x09))
                         {
-                            Store (Zero, KBLO)
+                            KBLO = Zero
                             Return (Zero)
                         }
 
-                        If (LEqual (Local0, 0x0A))
+                        If ((Local0 == 0x0A))
                         {
-                            Store (One, UCHE)
+                            UCHE = One
                             Return (Zero)
                         }
 
-                        If (LEqual (Local0, 0x0B))
+                        If ((Local0 == 0x0B))
                         {
-                            Store (Zero, UCHE)
+                            UCHE = Zero
                             Return (Zero)
                         }
 
-                        If (LEqual (Local0, 0x0E))
+                        If ((Local0 == 0x0E))
                         {
-                            Store (One, HKDB)
-                            Store (0x31, SMID)
-                            Store (0xCA, SMIC)
+                            HKDB = One
+                            SMID = 0x31
+                            SMIC = 0xCA
                             Return (Zero)
                         }
 
-                        If (LEqual (Local0, 0x0F))
+                        If ((Local0 == 0x0F))
                         {
-                            Store (Zero, HKDB)
-                            Store (0x30, SMID)
-                            Store (0xCA, SMIC)
+                            HKDB = Zero
+                            SMID = 0x30
+                            SMIC = 0xCA
                             Return (Zero)
                         }
 
@@ -15422,65 +15521,65 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
 
                     Method (GBMD, 0, NotSerialized)
                     {
-                        Store (0x10000000, Local0)
-                        If (LEqual (One, CDMB))
+                        Local0 = 0x10000000
+                        If ((One == CDMB))
                         {
-                            Or (Local0, One, Local0)
+                            Local0 |= One
                         }
 
-                        If (LEqual (One, BBAD))
+                        If ((One == BBAD))
                         {
-                            Or (Local0, 0x08, Local0)
+                            Local0 |= 0x08
                         }
 
-                        If (LEqual (One, BTSM))
+                        If ((One == BTSM))
                         {
-                            Or (Local0, 0x20, Local0)
+                            Local0 |= 0x20
                         }
 
-                        If (LEqual (One, BLEG))
+                        If ((One == BLEG))
                         {
-                            Or (Local0, 0x80, Local0)
+                            Local0 |= 0x80
                         }
 
-                        If (LEqual (One, BATF))
+                        If ((One == BATF))
                         {
-                            Or (Local0, 0x0100, Local0)
+                            Local0 |= 0x0100
                         }
 
-                        If (LEqual (Zero, BTSM))
+                        If ((Zero == BTSM))
                         {
-                            Or (Local0, 0x0200, Local0)
+                            Local0 |= 0x0200
                         }
                         Else
                         {
-                            Or (Local0, 0x20, Local0)
-                            And (Local0, 0xFFFFFDFF, Local0)
+                            Local0 |= 0x20
+                            Local0 &= 0xFFFFFDFF
                         }
 
-                        If (LEqual (One, BUSG))
+                        If ((One == BUSG))
                         {
-                            Or (Local0, 0x0800, Local0)
+                            Local0 |= 0x0800
                         }
 
-                        If (LEqual (Zero, ADPI))
+                        If ((Zero == ADPI))
                         {
-                            And (Local0, 0xFFFE7FFF, Local0)
+                            Local0 &= 0xFFFE7FFF
                         }
 
-                        If (LEqual (One, ADPI))
+                        If ((One == ADPI))
                         {
-                            Or (Local0, 0x8000, Local0)
+                            Local0 |= 0x8000
                         }
 
-                        If (LEqual (0x02, ADPI))
+                        If ((0x02 == ADPI))
                         {
-                            Or (Local0, 0x00010000, Local0)
+                            Local0 |= 0x00010000
                         }
 
-                        If (LEqual (One, ESMC))
+                        If ((One == ESMC))
                         {
-                            Or (Local0, 0x00400000, Local0)
+                            Local0 |= 0x00400000
                         }
 
                         Return (Local0)
@@ -15495,33 +15594,33 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                     Name (VBCT, Zero)
                     Method (SMTF, 1, NotSerialized)
                     {
-                        If (LEqual (Arg0, Zero))
+                        If ((Arg0 == Zero))
                         {
-                            If (LEqual (B1B2(B2FV,B3FV), Zero))
+                            If ((B1B2 (B2FV, B3FV) == Zero))
                             {
                                 Return (Zero)
                             }
 
-                            If (LEqual (B1B2(B2AC,B3AC), Zero))
+                            If ((B1B2 (B2AC, B3AC) == Zero))
                             {
                                 Return (Zero)
                             }
 
-                            Store (B1B2(B2FC,B3FC), Local0)
-                            Multiply (Local0, 0x0A, Local0)
-                            Store (Local0, VBFC)
-                            Store (B1B2(B2RC,B3RC), Local1)
-                            Multiply (Local1, 0x0A, Local1)
-                            Store (Local1, VBRC)
-                            If (LGreater (VBFC, VBRC))
+                            Local0 = B1B2 (B2FC, B3FC)
+                            Local0 *= 0x0A
+                            VBFC = Local0
+                            Local1 = B1B2 (B2RC, B3RC)
+                            Local1 *= 0x0A
+                            VBRC = Local1
+                            If ((VBFC > VBRC))
                             {
-                                Store (B1B2(B2FV,B3FV), VBPV)
-                                Store (B1B2(B2AC,B3AC), VBAC)
-                                Subtract (Local0, Local1, Local0)
-                                Store (Multiply (VBAC, VBPV), Local1)
-                                Store (Multiply (Local0, 0x03E8), Local3)
-                                Store (Multiply (Local3, 0x3C), Local3)
-                                Store (Divide (Local3, Local1, ), VBCT)
+                                VBPV = B1B2 (B2FV, B3FV)
+                                VBAC = B1B2 (B2AC, B3AC)
+                                Local0 -= Local1
+                                Local1 = (VBAC * VBPV)
+                                Local3 = (Local0 * 0x03E8)
+                                Local3 = (Local3 * 0x3C)
+                                VBCT = (Local3 / Local1)
                                 Return (VBCT)
                             }
                             Else
@@ -15530,7 +15629,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                             }
                         }
 
-                        If (LEqual (Arg0, One))
+                        If ((Arg0 == One))
                         {
                             Return (Zero)
                         }
@@ -15547,40 +15646,40 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                     Name (QBCT, Zero)
                     Method (SMTE, 1, NotSerialized)
                     {
-                        If (LEqual (Arg0, Zero))
+                        If ((Arg0 == Zero))
                         {
-                            If (LEqual (B1B2(B2FV,B3FV), Zero))
+                            If ((B1B2 (B2FV, B3FV) == Zero))
                             {
                                 Return (Zero)
                             }
 
-                            If (LEqual (B1B2(B2AC,B3AC), Zero))
+                            If ((B1B2 (B2AC, B3AC) == Zero))
                             {
                                 Return (Zero)
                             }
 
-                            Store (B1B2(B2RC,B3RC), Local0)
-                            Multiply (Local0, 0x0A, Local0)
-                            Store (Local0, QBRC)
-                            Store (B1B2(B2FC,B3FC), Local1)
-                            Multiply (Local1, 0x0A, Local1)
-                            Store (Local1, QBFC)
-                            If (LGreater (QBFC, QBRC))
+                            Local0 = B1B2 (B2RC, B3RC)
+                            Local0 *= 0x0A
+                            QBRC = Local0
+                            Local1 = B1B2 (B2FC, B3FC)
+                            Local1 *= 0x0A
+                            QBFC = Local1
+                            If ((QBFC > QBRC))
                             {
-                                Store (B1B2(B2FV,B3FV), QBPV)
-                                If (LEqual (And (B1B2(B2AC,B3AC), 0x8000), Zero))
+                                QBPV = B1B2 (B2FV, B3FV)
+                                If (((B1B2 (B2AC, B3AC) & 0x8000) == Zero))
                                 {
-                                    Store (B1B2(B2AC,B3AC), QBAC)
+                                    QBAC = B1B2 (B2AC, B3AC)
                                 }
                                 Else
                                 {
-                                    Store (Subtract (0xFFFF, B1B2(B2AC,B3AC)), QBAC)
+                                    QBAC = (0xFFFF - B1B2 (B2AC, B3AC))
                                 }
 
-                                Store (Multiply (QBAC, QBPV), Local1)
-                                Store (Multiply (Local0, 0x03E8), Local3)
-                                Store (Multiply (Local3, 0x3C), Local3)
-                                Store (Divide (Local3, Local1, ), QBCT)
+                                Local1 = (QBAC * QBPV)
+                                Local3 = (Local0 * 0x03E8)
+                                Local3 = (Local3 * 0x3C)
+                                QBCT = (Local3 / Local1)
                                 Return (QBCT)
                             }
                             Else
@@ -15589,7 +15688,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                             }
                         }
 
-                        If (LEqual (Arg0, One))
+                        If ((Arg0 == One))
                         {
                             Return (Zero)
                         }
@@ -15599,40 +15698,40 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
 
                     Method (SBMC, 1, NotSerialized)
                     {
-                        If (LEqual (Arg0, Zero))
+                        If ((Arg0 == Zero))
                         {
-                            Store (Zero, CDMB)
-                            Store (One, EDCC)
+                            CDMB = Zero
+                            EDCC = One
                             Return (Zero)
                         }
 
-                        If (LEqual (Arg0, One))
+                        If ((Arg0 == One))
                         {
-                            Store (One, CDMB)
+                            CDMB = One
                             Return (Zero)
                         }
 
-                        If (LEqual (Arg0, 0x03))
+                        If ((Arg0 == 0x03))
                         {
-                            Store (One, BTSM)
+                            BTSM = One
                             Return (Zero)
                         }
 
-                        If (LEqual (Arg0, 0x05))
+                        If ((Arg0 == 0x05))
                         {
-                            Store (Zero, BTSM)
+                            BTSM = Zero
                             Return (Zero)
                         }
 
-                        If (LEqual (Arg0, 0x09))
+                        If ((Arg0 == 0x09))
                         {
-                            Store (One, ESMC)
+                            ESMC = One
                             Return (Zero)
                         }
 
-                        If (LEqual (Arg0, 0x10))
+                        If ((Arg0 == 0x10))
                         {
-                            Store (Zero, ESMC)
+                            ESMC = Zero
                             Return (Zero)
                         }
 
@@ -15641,11 +15740,11 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
 
                     Method (MHCF, 1, NotSerialized)
                     {
-                        Store (0x78, P80H)
-                        Store (Arg0, Local0)
-                        And (Local0, 0x20, Local0)
-                        ShiftRight (Local0, 0x05, Local0)
-                        Store (Local0, RMBT)
+                        P80H = 0x78
+                        Local0 = Arg0
+                        Local0 &= 0x20
+                        Local0 >>= 0x05
+                        RMBT = Local0
                         Sleep (0x14)
                         Return (Local0)
                     }
@@ -15659,48 +15758,48 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                         CreateByteField (BFWB, 0x03, FB3)
                         CreateField (BFWB, 0x20, 0x0100, FB4)
                         CreateByteField (BFWB, 0x24, FB5)
-                        If (LLessEqual (SizeOf (Arg0), 0x25))
+                        If ((SizeOf (Arg0) <= 0x25))
                         {
-                            If (LNotEqual (SMPR, Zero))
+                            If ((SMPR != Zero))
                             {
-                                Store (SMST, FB1)
+                                FB1 = SMST
                             }
                             Else
                             {
-                                Store (Arg0, BFWB)
-                                Store (FB2, SMAD)
-                                Store (FB3, SMCM)
-                                Store (FB5, BCNT)
-                                Store (FB0, Local0)
-                                If (LEqual (And (Local0, One), Zero))
+                                BFWB = Arg0
+                                SMAD = FB2
+                                SMCM = FB3
+                                BCNT = FB5
+                                Local0 = FB0
+                                If (((Local0 & One) == Zero))
                                 {
-                                    WECB(0x64,256,FB4)
+                                    WECB (0x64, 0x0100, FB4)
                                 }
 
-                                Store (Zero, SMST)
-                                Store (FB0, SMPR)
-                                Store (0x03E8, Local1)
+                                SMST = Zero
+                                SMPR = FB0
+                                Local1 = 0x03E8
                                 While (Local1)
                                 {
                                     Sleep (One)
-                                    Decrement (Local1)
-                                    If (LOr (LAnd (SMST, 0x80), LEqual (SMPR, Zero)))
+                                    Local1--
+                                    If (((SMST && 0x80) || (SMPR == Zero)))
                                     {
                                         Break
                                     }
                                 }
 
-                                Store (FB0, Local0)
-                                If (LNotEqual (And (Local0, One), Zero))
+                                Local0 = FB0
+                                If (((Local0 & One) != Zero))
                                 {
-                                    Store(RECB(0x64,256),FB4)
+                                    FB4 = RECB (0x64, 0x0100)
                                 }
 
-                                Store (SMST, FB1)
-                                If (LOr (LEqual (Local1, Zero), LNot (LAnd (SMST, 0x80))))
+                                FB1 = SMST
+                                If (((Local1 == Zero) || !(SMST && 0x80)))
                                 {
-                                    Store (Zero, SMPR)
-                                    Store (0x92, FB1)
+                                    SMPR = Zero
+                                    FB1 = 0x92
                                 }
                             }
 
@@ -15710,12 +15809,12 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
 
                     Method (MHIF, 1, NotSerialized)
                     {
-                        Store (0x50, P80H)
-                        If (LEqual (Arg0, Zero))
+                        P80H = 0x50
+                        If ((Arg0 == Zero))
                         {
                             Name (RETB, Buffer (0x0A){})
                             Name (BUF1, Buffer (0x08){})
-                            Store (RECB(0x14,64), BUF1)
+                            BUF1 = RECB (0x14, 0x40)
                             CreateByteField (BUF1, Zero, FW0)
                             CreateByteField (BUF1, One, FW1)
                             CreateByteField (BUF1, 0x02, FW2)
@@ -15724,16 +15823,16 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                             CreateByteField (BUF1, 0x05, FW5)
                             CreateByteField (BUF1, 0x06, FW6)
                             CreateByteField (BUF1, 0x07, FW7)
-                            Store (FUSL, Index (RETB, Zero))
-                            Store (FUSH, Index (RETB, One))
-                            Store (FW0, Index (RETB, 0x02))
-                            Store (FW1, Index (RETB, 0x03))
-                            Store (FW2, Index (RETB, 0x04))
-                            Store (FW3, Index (RETB, 0x05))
-                            Store (FW4, Index (RETB, 0x06))
-                            Store (FW5, Index (RETB, 0x07))
-                            Store (FW6, Index (RETB, 0x08))
-                            Store (FW7, Index (RETB, 0x09))
+                            RETB [Zero] = FUSL
+                            RETB [One] = FUSH
+                            RETB [0x02] = FW0
+                            RETB [0x03] = FW1
+                            RETB [0x04] = FW2
+                            RETB [0x05] = FW3
+                            RETB [0x06] = FW4
+                            RETB [0x07] = FW5
+                            RETB [0x08] = FW6
+                            RETB [0x09] = FW7
                             Return (RETB)
                         }
                     }
@@ -15770,71 +15869,71 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                         CreateField (BIFB, 0x0140, 0x60, MNAM)
                         CreateField (BIFB, 0x01A0, 0xB8, BRNB)
                         CreateQWordField (BIFB, 0x4B, BFW0)
-                        If (LEqual (Arg0, Zero))
+                        If ((Arg0 == Zero))
                         {
-                            If (LEqual (ECON, One))
+                            If ((ECON == One))
                             {
-                                Store (B1B2(B2DC,B3DC), Local0)
-                                Multiply (Local0, 0x0A, Local0)
-                                Store (Local0, DCAP)
-                                Store (B1B2(B2FC,B3FC), Local0)
-                                Multiply (Local0, 0x0A, Local0)
-                                Store (Local0, FCAP)
-                                Store (B1B2(B2RC,B3RC), Local0)
-                                Multiply (Local0, 0x0A, Local0)
-                                Store (Local0, RCAP)
-                                Store (SMTE (Zero), ATTE)
-                                Store (SMTF (Zero), ATTF)
-                                Store (B1B2(B2FV,B3FV), BTVT)
-                                Store (B1B2(B2AC,B3AC), BTCT)
-                                Store (B1AT, Local0)
-                                Add (Local0, 0x0111, Local0)
-                                Multiply (Local0, 0x0A, Local0)
-                                Store (Local0, BTMP)
-                                Store (B1B2(B2DA,B3DA), MDAT)
-                                Store (B1B2(B2UD,B3UD), FUDT)
-                                Store (B1B2(B2DV,B3DV), DVLT)
+                                Local0 = B1B2 (B2DC, B3DC)
+                                Local0 *= 0x0A
+                                DCAP = Local0
+                                Local0 = B1B2 (B2FC, B3FC)
+                                Local0 *= 0x0A
+                                FCAP = Local0
+                                Local0 = B1B2 (B2RC, B3RC)
+                                Local0 *= 0x0A
+                                RCAP = Local0
+                                ATTE = SMTE (Zero)
+                                ATTF = SMTF (Zero)
+                                BTVT = B1B2 (B2FV, B3FV)
+                                BTCT = B1B2 (B2AC, B3AC)
+                                Local0 = B1AT
+                                Local0 += 0x0111
+                                Local0 *= 0x0A
+                                BTMP = Local0
+                                MDAT = B1B2 (B2DA, B3DA)
+                                FUDT = B1B2 (B2UD, B3UD)
+                                DVLT = B1B2 (B2DV, B3DV)
                                 Name (DCH0, Buffer (0x0A)
                                 {
                                      0x00                                           
                                 })
                                 Name (DCH1, "LION")
                                 Name (DCH2, "LiP")
-                                If (LEqual (B1TY, One))
+                                If ((B1TY == One))
                                 {
-                                    Store (DCH1, DCH0)
-                                    Store (DCH0, DCHE)
+                                    DCH0 = DCH1
+                                    DCHE = DCH0
                                 }
                                 Else
                                 {
-                                    Store (DCH2, DCH0)
-                                    Store (DCH0, DCHE)
+                                    DCH0 = DCH2
+                                    DCHE = DCH0
                                 }
 
                                 Name (BDNT, Buffer (0x08)
                                 {
                                      0x00                                           
                                 })
-                                Store (RECB(0x98,56), BDNT)
-                                Store (BDNT, DNAM)
+                                BDNT = RECB (0x98, 0x38)
+                                DNAM = BDNT
                                 Name (BMNT, Buffer (0x0C)
                                 {
                                      0x00                                           
                                 })
-                                Store (RECB(0x8f,72), BMNT)
-                                Store (BMNT, MNAM)
+                                BMNT = RECB (0x8F, 0x48)
+                                MNAM = BMNT
                                 Name (BRN0, Buffer (0x17)
                                 {
                                      0x00                                           
                                 })
-                                Store (BRN0, BRNB)
-                                Store (RECB(0x14,64), BFW0)
+                                BRNB = BRN0
+                                BFW0 = RECB (0x14, 0x40)
                             }
 
                             Return (BIFB)
                         }
 
-                        If (LEqual (Arg0, 0x02))
+                        If ((Arg0 == 0x02))
                         {
                             Return (BIFB)
                         }
@@ -15874,10 +15973,10 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                                  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 
                             }
                         })
-                        Store (B1CT, Index (DerefOf (Index (GBUF, Zero)), Zero))
-                        Store (Zero, Index (DerefOf (Index (GBUF, One)), Zero))
+                        DerefOf (GBUF [Zero]) [Zero] = B1CT
+                        DerefOf (GBUF [One]) [Zero] = Zero
                         Name (BUF1, Buffer (0x08){})
-                        Store (RECB(0x14,64), BUF1)
+                        BUF1 = RECB (0x14, 0x40)
                         CreateByteField (BUF1, Zero, FW0)
                         CreateByteField (BUF1, One, FW1)
                         CreateByteField (BUF1, 0x02, FW2)
@@ -15886,22 +15985,22 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                         CreateByteField (BUF1, 0x05, FW5)
                         CreateByteField (BUF1, 0x06, FW6)
                         CreateByteField (BUF1, 0x07, FW7)
-                        Store (FW0, Index (DerefOf (Index (GBUF, 0x02)), Zero))
-                        Store (FW1, Index (DerefOf (Index (GBUF, 0x02)), One))
-                        Store (FW2, Index (DerefOf (Index (GBUF, 0x02)), 0x02))
-                        Store (FW3, Index (DerefOf (Index (GBUF, 0x02)), 0x03))
-                        Store (FW4, Index (DerefOf (Index (GBUF, 0x02)), 0x04))
-                        Store (FW5, Index (DerefOf (Index (GBUF, 0x02)), 0x05))
-                        Store (FW6, Index (DerefOf (Index (GBUF, 0x02)), 0x06))
-                        Store (FW7, Index (DerefOf (Index (GBUF, 0x02)), 0x07))
-                        Store (Zero, Index (DerefOf (Index (GBUF, 0x03)), Zero))
+                        DerefOf (GBUF [0x02]) [Zero] = FW0
+                        DerefOf (GBUF [0x02]) [One] = FW1
+                        DerefOf (GBUF [0x02]) [0x02] = FW2
+                        DerefOf (GBUF [0x02]) [0x03] = FW3
+                        DerefOf (GBUF [0x02]) [0x04] = FW4
+                        DerefOf (GBUF [0x02]) [0x05] = FW5
+                        DerefOf (GBUF [0x02]) [0x06] = FW6
+                        DerefOf (GBUF [0x02]) [0x07] = FW7
+                        DerefOf (GBUF [0x03]) [Zero] = Zero
                         Return (GBUF)
                     }
 
                     Name (APDT, Zero)
                     Method (APPC, 1, Serialized)
                     {
-                        Store (Arg0, APDT)
+                        APDT = Arg0
                         Return (Zero)
                     }
 
@@ -15930,15 +16029,15 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
 
                     Method (SBSL, 1, Serialized)
                     {
-                        Store (Arg0, Local0)
-                        If (LEqual (Local0, One))
+                        Local0 = Arg0
+                        If ((Local0 == One))
                         {
-                            Store (0x0E, LCBV)
+                            LCBV = 0x0E
                         }
 
-                        If (LEqual (Local0, 0x02))
+                        If ((Local0 == 0x02))
                         {
-                            Store (0x07, LCBV)
+                            LCBV = 0x07
                         }
 
                         Return (Zero)
@@ -15953,7 +16052,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
 
             Scope (\)
             {
-                OperationRegion (LFCN, SystemMemory, 0x77F6CD98, 0x00E7)
+                OperationRegion (LFCN, SystemMemory, 0x77F6CD98, 0xE7)
                 Field (LFCN, AnyAcc, Lock, Preserve)
                 {
                     PS2V,   8, 
@@ -15973,51 +16072,51 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
 
             Method (_REG, 2, NotSerialized)  // _REG: Region Availability
             {
-                If (LAnd (LEqual (Arg0, 0x03), LEqual (Arg1, One)))
+                If (((Arg0 == 0x03) && (Arg1 == One)))
                 {
-                    If (LEqual (OSYS, 0x03E8))
+                    If ((OSYS == 0x03E8))
                     {
-                        Store (One, Local0)
+                        Local0 = One
                     }
 
-                    If (LEqual (OSYS, 0x07D6))
+                    If ((OSYS == 0x07D6))
                     {
-                        Store (0x02, Local0)
+                        Local0 = 0x02
                     }
 
-                    If (LEqual (OSYS, 0x07D9))
+                    If ((OSYS == 0x07D9))
                     {
-                        Store (0x03, Local0)
+                        Local0 = 0x03
                     }
 
-                    If (LEqual (OSYS, 0x07DC))
+                    If ((OSYS == 0x07DC))
                     {
-                        Store (0x04, Local0)
+                        Local0 = 0x04
                     }
 
-                    If (LEqual (OSYS, 0x07DD))
+                    If ((OSYS == 0x07DD))
                     {
-                        Store (0x05, Local0)
+                        Local0 = 0x05
                     }
 
-                    If (LEqual (OSYS, 0x07DF))
+                    If ((OSYS == 0x07DF))
                     {
-                        Store (0x06, Local0)
+                        Local0 = 0x06
                     }
 
-                    Store (Local0, OSTY)
-                    Store (One, ECON)
-                    If (LEqual (LSTE, Zero))
+                    OSTY = Local0
+                    ECON = One
+                    If ((LSTE == Zero))
                     {
-                        Store (Zero, ^^^IGPU.CLID)
+                        ^^^IGPU.CLID = Zero
                     }
 
-                    If (LEqual (LSTE, One))
+                    If ((LSTE == One))
                     {
-                        Store (0x03, ^^^IGPU.CLID)
+                        ^^^IGPU.CLID = 0x03
                     }
 
-                    Store (LSTE, LIDS)
+                    LIDS = LSTE
                 }
             }
 
@@ -16028,89 +16127,89 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
 
             Method (GCBL, 0, Serialized)
             {
-                Store (0x43, P80H)
-                Store (Zero, Local0)
-                Store (^^^IGPU.CBLV, Local1)
-                And (Local1, 0xFF, Local1)
+                P80H = 0x43
+                Local0 = Zero
+                Local1 = ^^^IGPU.CBLV
+                Local1 &= 0xFF
                 Switch (ToInteger (Local1))
                 {
                     Case (One)
                     {
-                        Store (Zero, Local0)
+                        Local0 = Zero
                         Break
                     }
                     Case (0x03)
                     {
-                        Store (One, Local0)
+                        Local0 = One
                         Break
                     }
                     Case (0x05)
                     {
-                        Store (0x02, Local0)
+                        Local0 = 0x02
                         Break
                     }
                     Case (0x07)
                     {
-                        Store (0x03, Local0)
+                        Local0 = 0x03
                         Break
                     }
                     Case (0x10)
                     {
-                        Store (0x04, Local0)
+                        Local0 = 0x04
                         Break
                     }
                     Case (0x15)
                     {
-                        Store (0x05, Local0)
+                        Local0 = 0x05
                         Break
                     }
                     Case (0x1B)
                     {
-                        Store (0x06, Local0)
+                        Local0 = 0x06
                         Break
                     }
                     Case (0x2C)
                     {
-                        Store (0x07, Local0)
+                        Local0 = 0x07
                         Break
                     }
                     Case (0x3D)
                     {
-                        Store (0x08, Local0)
+                        Local0 = 0x08
                         Break
                     }
                     Case (0x50)
                     {
-                        Store (0x09, Local0)
+                        Local0 = 0x09
                         Break
                     }
                     Case (0x64)
                     {
-                        Store (0x0A, Local0)
+                        Local0 = 0x0A
                         Break
                     }
 
                 }
 
-                Store (Local0, LCBV)
+                LCBV = Local0
             }
 
             Method (_Q11, 0, NotSerialized)  // _Qxx: EC Query
             {
-                Store (0x11, P80H)
-                If (LEqual (OSYS, 0x07D9))
+                P80H = 0x11
+                If ((OSYS == 0x07D9))
                 {
                     GCBL ()
-                    Store (LCBV, Local0)
-                    If (LGreater (Local0, 0x0A))
+                    Local0 = LCBV
+                    If ((Local0 > 0x0A))
                     {
-                        Store (0x0A, LCBV)
+                        LCBV = 0x0A
                     }
 
-                    If (LNotEqual (Local0, Zero))
+                    If ((Local0 != Zero))
                     {
-                        Subtract (Local0, One, Local0)
-                        Store (Local0, LCBV)
+                        Local0 -= One
+                        LCBV = Local0
                     }
                 }
 
@@ -16120,19 +16219,19 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
 
             Method (_Q12, 0, NotSerialized)  // _Qxx: EC Query
             {
-                Store (0x12, P80H)
-                If (LEqual (OSYS, 0x07D9))
+                P80H = 0x12
+                If ((OSYS == 0x07D9))
                 {
                     GCBL ()
-                    Store (LCBV, Local0)
-                    If (LLess (Local0, 0x0A))
+                    Local0 = LCBV
+                    If ((Local0 < 0x0A))
                     {
-                        Add (Local0, One, Local0)
-                        Store (Local0, LCBV)
+                        Local0 += One
+                        LCBV = Local0
                     }
                     Else
                     {
-                        Store (0x0A, LCBV)
+                        LCBV = 0x0A
                     }
                 }
 
@@ -16142,38 +16241,38 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
 
             Method (_Q15, 0, NotSerialized)  // _Qxx: EC Query
             {
-                Store (0x15, P80H)
+                P80H = 0x15
                 Notify (PS2M, 0x0E)
-                Store (One, LIDS)
+                LIDS = One
                 ^^^IGPU.GLID (LIDS)
                 Notify (LID0, 0x80)
             }
 
             Method (_Q16, 0, NotSerialized)  // _Qxx: EC Query
             {
-                Store (0x16, P80H)
+                P80H = 0x16
                 Notify (PS2M, 0x0D)
-                Store (Zero, LIDS)
+                LIDS = Zero
                 ^^^IGPU.GLID (LIDS)
                 Notify (LID0, 0x80)
             }
 
             Method (_Q1C, 0, NotSerialized)  // _Qxx: EC Query
             {
-                Store (0x1C, P80H)
+                P80H = 0x1C
             }
 
             Method (_Q1D, 0, NotSerialized)  // _Qxx: EC Query
             {
-                Store (0x1D, P80H)
-                Store (TLVL, Local0)
-                Store (Local0, \_PR.CPU0._PPC ())
+                P80H = 0x1D
+                Local0 = TLVL
+                \_PR.CPU0._PPC () = Local0
                 PNOT ()
             }
 
             Method (_Q25, 0, NotSerialized)  // _Qxx: EC Query
             {
-                Store (0x25, P80H)
+                P80H = 0x25
                 Notify (ADP0, 0x80)
                 Notify (BAT0, 0x80)
                 Notify (BAT0, 0x81)
@@ -16182,8 +16281,8 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
             Method (_Q37, 0, NotSerialized)  // _Qxx: EC Query
             {
                 Sleep (0x012C)
-                Store (0x37, P80H)
-                Store (One, PWRS)
+                P80H = 0x37
+                PWRS = One
                 Notify (ADP0, 0x80)
                 Notify (BAT0, 0x80)
                 PNOT ()
@@ -16192,8 +16291,8 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
             Method (_Q38, 0, NotSerialized)  // _Qxx: EC Query
             {
                 Sleep (0x012C)
-                Store (0x38, P80H)
-                Store (Zero, PWRS)
+                P80H = 0x38
+                PWRS = Zero
                 Notify (ADP0, 0x80)
                 Notify (BAT0, 0x80)
                 PNOT ()
@@ -16201,37 +16300,37 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
 
             Method (_Q32, 0, NotSerialized)  // _Qxx: EC Query
             {
-                Store (0x32, P80H)
+                P80H = 0x32
                 Notify (PWRB, 0x80)
             }
 
             Method (_Q42, 0, NotSerialized)  // _Qxx: EC Query
             {
-                If (LEqual (OSYS, 0x07D9))
+                If ((OSYS == 0x07D9))
                 {
-                    Store (0x42, P80H)
-                    If (LEqual (APFG, One))
+                    P80H = 0x42
+                    If ((APFG == One))
                     {
-                        If (LAnd (WLAN, WEXT))
+                        If ((WLAN && WEXT))
                         {
                             SGOV (0x02020012, One)
-                            Store (Zero, CMWL)
+                            CMWL = Zero
                         }
                         Else
                         {
                             SGOV (0x02020012, Zero)
-                            Store (One, CMWL)
+                            CMWL = One
                         }
 
-                        If (LAnd (BLUE, BEXT))
+                        If ((BLUE && BEXT))
                         {
                             SGOV (0x02020013, One)
-                            Store (Zero, CMBL)
+                            CMBL = Zero
                         }
                         Else
                         {
                             SGOV (0x02020013, Zero)
-                            Store (One, CMBL)
+                            CMBL = One
                         }
                     }
                     Else
@@ -16244,18 +16343,18 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
 
             Method (_Q44, 0, NotSerialized)  // _Qxx: EC Query
             {
-                Store (0x44, P80H)
+                P80H = 0x44
                 Notify (VPC0, 0x80)
             }
 
             Method (_Q66, 0, NotSerialized)  // _Qxx: EC Query
             {
-                Store (0xCC, SMIC)
+                SMIC = 0xCC
             }
 
             Method (_Q67, 0, NotSerialized)  // _Qxx: EC Query
             {
-                Store (0xCD, SMIC)
+                SMIC = 0xCD
             }
 
             Scope (\)
@@ -16267,74 +16366,74 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
             Name (DGST, 0xD1)
             Method (_Q62, 0, NotSerialized)  // _Qxx: EC Query
             {
-                Store (0xFF, RP94)
+                RP94 = 0xFF
             }
 
             Method (_Q63, 0, NotSerialized)  // _Qxx: EC Query
             {
                 If (GSKU ())
                 {
-                    If (LGreater (RP98, 0x0C))
+                    If ((RP98 > 0x0C))
                     {
-                        Store (0x0C, RP94)
+                        RP94 = 0x0C
                     }
                 }
-                ElseIf (LGreater (RP98, 0x10))
+                ElseIf ((RP98 > 0x10))
                 {
-                    Store (0x10, RP94)
+                    RP94 = 0x10
                 }
             }
-            
-            
-            
-            
-            
-            
-            
-            
+
             Method (RE1B, 1, NotSerialized)
             {
-                OperationRegion(ERAM, EmbeddedControl, Arg0, 1)
-                Field(ERAM, ByteAcc, NoLock, Preserve) { BYTE, 8 }
-                Return(BYTE)
-            }
-            Method (RECB, 2, Serialized)
-            // Arg0 - offset in bytes from zero-based EC
-            // Arg1 - size of buffer in bits
-            {
-                ShiftRight(Arg1, 3, Arg1)
-                Name(TEMP, Buffer(Arg1) { })
-                Add(Arg0, Arg1, Arg1)
-                Store(0, Local0)
-                While (LLess(Arg0, Arg1))
+                OperationRegion (ERAM, EmbeddedControl, Arg0, One)
+                Field (ERAM, ByteAcc, NoLock, Preserve)
                 {
-                    Store(RE1B(Arg0), Index(TEMP, Local0))
-                    Increment(Arg0)
-                    Increment(Local0)
+                    BYTE,   8
                 }
-                Return(TEMP)
+
+                Return (BYTE)
             }
+
+            Method (RECB, 2, Serialized)
+            {
+                Arg1 >>= 0x03
+                Name (TEMP, Buffer (Arg1){})
+                Arg1 += Arg0
+                Local0 = Zero
+                While ((Arg0 < Arg1))
+                {
+                    TEMP [Local0] = RE1B (Arg0)
+                    Arg0++
+                    Local0++
+                }
+
+                Return (TEMP)
+            }
+
             Method (WE1B, 2, NotSerialized)
             {
-                OperationRegion(ERAM, EmbeddedControl, Arg0, 1)
-                Field(ERAM, ByteAcc, NoLock, Preserve) { BYTE, 8 }
-                Store(Arg1, BYTE)
-            }
-            Method (WECB, 3, Serialized)
-            // Arg0 - offset in bytes from zero-based EC
-            // Arg1 - size of buffer in bits
-            // Arg2 - value to write
-            {
-                ShiftRight(Arg1, 3, Arg1)
-                Name(TEMP, Buffer(Arg1) { })
-                Store(Arg2, TEMP)
-                Add(Arg0, Arg1, Arg1)
-                Store(0, Local0)
-                While (LLess(Arg0, Arg1))
+                OperationRegion (ERAM, EmbeddedControl, Arg0, One)
+                Field (ERAM, ByteAcc, NoLock, Preserve)
                 {
-                    WE1B(Arg0, DerefOf(Index(TEMP, Local0)))
-                    Increment(Arg0)
-                    Increment(Local0)
+                    BYTE,   8
+                }
+
+                BYTE = Arg1
+            }
+
+            Method (WECB, 3, Serialized)
+            {
+                Arg1 >>= 0x03
+                Name (TEMP, Buffer (Arg1){})
+                TEMP = Arg2
+                Arg1 += Arg0
+                Local0 = Zero
+                While ((Arg0 < Arg1))
+                {
+                    WE1B (Arg0, DerefOf (TEMP [Local0]))
+                    Arg0++
+                    Local0++
                 }
             }
         }
@@ -16346,7 +16445,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                 Name (_HID, "ACPI0003")  // _HID: Hardware ID
                 Method (_STA, 0, NotSerialized)  // _STA: Status
                 {
-                    If (LEqual (ECON, One))
+                    If ((ECON == One))
                     {
                         Return (0x0F)
                     }
@@ -16373,7 +16472,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                 Name (_HID, EisaId ("PNP0C0D"))  // _HID: Hardware ID
                 Method (_STA, 0, NotSerialized)  // _STA: Status
                 {
-                    If (LEqual (ECON, One))
+                    If ((ECON == One))
                     {
                         Return (0x0F)
                     }
@@ -16392,7 +16491,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                 Name (_HID, EisaId ("PNP0C0C"))  // _HID: Hardware ID
                 Method (_STA, 0, NotSerialized)  // _STA: Status
                 {
-                    If (LEqual (ECON, One))
+                    If ((ECON == One))
                     {
                         Return (0x0F)
                     }
@@ -16440,7 +16539,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                 If (HPTE)
                 {
                     CreateDWordField (BUF0, \_SB.PCI0.LPCB.HPET._Y23._BAS, HPT0)  // _BAS: Base Address
-                    Store (HPTB, HPT0)
+                    HPT0 = HPTB
                 }
 
                 Return (BUF0)
@@ -16575,7 +16674,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
             })
             Method (_STA, 0, NotSerialized)  // _STA: Status
             {
-                If (LEqual (PCHV (), SPTH))
+                If ((PCHV () == SPTH))
                 {
                     Return (0x1F)
                 }
@@ -16706,7 +16805,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
             })
             Method (_STA, 0, NotSerialized)  // _STA: Status
             {
-                If (LEqual (PCHV (), SPTH))
+                If ((PCHV () == SPTH))
                 {
                     Return (0x0F)
                 }
@@ -16846,7 +16945,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         {
             Method (_HID, 0, Serialized)  // _HID: Hardware ID
             {
-                If (LEqual (PS2V, One))
+                If ((PS2V == One))
                 {
                     Switch (ToInteger (MCSZ))
                     {
@@ -16874,7 +16973,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                     }
                 }
 
-                If (LEqual (PS2V, 0x02))
+                If ((PS2V == 0x02))
                 {
                     Switch (ToInteger (MCSZ))
                     {
@@ -16907,7 +17006,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
 
             Method (_CID, 0, NotSerialized)  // _CID: Compatible ID
             {
-                If (LEqual (PS2V, 0x02))
+                If ((PS2V == 0x02))
                 {
                     Return (Package (0x03)
                     {
@@ -16916,11 +17015,11 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                         0x002B2E4F
                     })
                 }
-                ElseIf (LEqual (PS2V, 0x03))
+                ElseIf ((PS2V == 0x03))
                 {
                     Return (0x130FD041)
                 }
-                ElseIf (LEqual (PS2V, One))
+                ElseIf ((PS2V == One))
                 {
                     Return (Package (0x02)
                     {
@@ -16957,7 +17056,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
     }
 
     Name (ECUP, One)
-    Mutex(EHLD, 0)
+    Mutex (EHLD, 0x00)
     Scope (_SB)
     {
         OperationRegion (ITSS, SystemMemory, 0xFDC43100, 0x0208)
@@ -16978,8 +17077,8 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         }
     }
 
-    Mutex(MUTX, 0)
-    Mutex(OSUM, 0)
+    Mutex (MUTX, 0x00)
+    Mutex (OSUM, 0x00)
     Event (WFEV)
     Name (H2OE, One)
     Name (P8XE, Zero)
@@ -16992,9 +17091,9 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
 
     Method (H2OP, 1, Serialized)
     {
-        If (LNotEqual (H2OE, Zero))
+        If ((H2OE != Zero))
         {
-            Store (Arg0, H2OD)
+            H2OD = Arg0
         }
     }
 
@@ -17006,29 +17105,29 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
 
     Method (P8XH, 2, Serialized)
     {
-        If (LEqual (Arg0, Zero))
+        If ((Arg0 == Zero))
         {
-            Store (Or (And (P80D, 0xFFFFFF00), Arg1), P80D)
+            P80D = ((P80D & 0xFFFFFF00) | Arg1)
         }
 
-        If (LEqual (Arg0, One))
+        If ((Arg0 == One))
         {
-            Store (Or (And (P80D, 0xFFFF00FF), ShiftLeft (Arg1, 0x08)), P80D)
+            P80D = ((P80D & 0xFFFF00FF) | (Arg1 << 0x08))
         }
 
-        If (LEqual (Arg0, 0x02))
+        If ((Arg0 == 0x02))
         {
-            Store (Or (And (P80D, 0xFF00FFFF), ShiftLeft (Arg1, 0x10)), P80D)
+            P80D = ((P80D & 0xFF00FFFF) | (Arg1 << 0x10))
         }
 
-        If (LEqual (Arg0, 0x03))
+        If ((Arg0 == 0x03))
         {
-            Store (Or (And (P80D, 0x00FFFFFF), ShiftLeft (Arg1, 0x18)), P80D)
+            P80D = ((P80D & 0x00FFFFFF) | (Arg1 << 0x18))
         }
 
-        If (LNotEqual (P8XE, Zero))
+        If ((P8XE != Zero))
         {
-            Store (P80D, P80H)
+            P80H = P80D
         }
     }
 
@@ -17047,20 +17146,20 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
 
     Method (RECM, 1, Serialized)
     {
-        Store (Arg0, INDX)
+        INDX = Arg0
         Return (DATA)
     }
 
     Method (WECM, 2, Serialized)
     {
-        Store (Arg0, INDX)
-        Store (Arg1, DATA)
+        INDX = Arg0
+        DATA = Arg1
     }
 
     Method (_PIC, 1, NotSerialized)  // _PIC: Interrupt Model
     {
-        Store (Arg0, GPIC)
-        Store (Arg0, PICM)
+        GPIC = Arg0
+        PICM = Arg0
     }
 
     IndexField (INDX, DATA, ByteAcc, NoLock, Preserve)
@@ -17072,78 +17171,78 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
 
     Method (_PTS, 1, NotSerialized)  // _PTS: Prepare To Sleep
     {
-        Store (Zero, P80D)
+        P80D = Zero
         P8XH (Zero, Arg0)
-        If (LEqual (Arg0, One))
+        If ((Arg0 == One))
         {
             H2OP (0x51)
         }
 
-        If (LEqual (Arg0, 0x03))
+        If ((Arg0 == 0x03))
         {
             H2OP (0x53)
         }
 
-        If (LEqual (Arg0, 0x04))
+        If ((Arg0 == 0x04))
         {
             H2OP (0x54)
         }
 
-        If (LEqual (Arg0, 0x05))
+        If ((Arg0 == 0x05))
         {
             H2OP (0x55)
         }
 
         ADBG (Concatenate ("_PTS=", ToHexString (Arg0)))
-        If (LEqual (TBTS, One))
+        If ((TBTS == One))
         {
             Reset (WFEV)
         }
 
-        If (LEqual (Arg0, 0x03))
+        If ((Arg0 == 0x03))
         {
             If (CondRefOf (\_PR.DTSE))
             {
-                If (LAnd (\_PR.DTSE, LGreater (TCNT, One)))
+                If ((\_PR.DTSE && (TCNT > One)))
                 {
                     TRAP (0x02, 0x1E)
                 }
             }
         }
 
-        If (LAnd (LEqual (OSYS, 0x07D9), LEqual (ECON, One)))
+        If (((OSYS == 0x07D9) && (ECON == One)))
         {
-            If (LEqual (APFG, One))
+            If ((APFG == One))
             {
-                If (LEqual (\_SB.PCI0.LPCB.EC0.WLAN, One))
+                If ((\_SB.PCI0.LPCB.EC0.WLAN == One))
                 {
-                    Store (Zero, CMWL)
+                    CMWL = Zero
                 }
                 Else
                 {
-                    Store (One, CMWL)
+                    CMWL = One
                 }
 
-                If (LEqual (\_SB.PCI0.LPCB.EC0.BLUE, One))
+                If ((\_SB.PCI0.LPCB.EC0.BLUE == One))
                 {
-                    Store (Zero, CMBL)
+                    CMBL = Zero
                 }
                 Else
                 {
-                    Store (One, CMBL)
+                    CMBL = One
                 }
             }
         }
 
-        If (LOr (LEqual (Arg0, 0x03), LEqual (Arg0, 0x04))){}
+        If (((Arg0 == 0x03) || (Arg0 == 0x04))){}
         If (CondRefOf (\_SB.TPM.PTS))
         {
             \_SB.TPM.PTS (Arg0)
         }
 
-        If (LOr (LOr (LEqual (Arg0, 0x03), LEqual (Arg0, 0x04)), LEqual (Arg0, 0x05)))
+        If ((((Arg0 == 0x03) || (Arg0 == 0x04)) || (Arg0 == 0x05)))
         {
-            If (LEqual (PFLV, 0x02))
+            If ((PFLV == 0x02))
             {
                 \_SB.SGOV (0x02010003, One)
             }
@@ -17153,227 +17252,227 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
     Method (_WAK, 1, Serialized)  // _WAK: Wake
     {
         P8XH (One, 0xAB)
-        If (LEqual (OSYS, 0x03E8))
+        If ((OSYS == 0x03E8))
         {
-            Store (One, Local0)
+            Local0 = One
         }
 
-        If (LEqual (OSYS, 0x07D6))
+        If ((OSYS == 0x07D6))
         {
-            Store (0x02, Local0)
+            Local0 = 0x02
         }
 
-        If (LEqual (OSYS, 0x07D9))
+        If ((OSYS == 0x07D9))
         {
-            Store (0x03, Local0)
+            Local0 = 0x03
         }
 
-        If (LEqual (OSYS, 0x07DC))
+        If ((OSYS == 0x07DC))
         {
-            Store (0x04, Local0)
+            Local0 = 0x04
         }
 
-        If (LEqual (OSYS, 0x07DD))
+        If ((OSYS == 0x07DD))
         {
-            Store (0x05, Local0)
+            Local0 = 0x05
         }
 
-        If (LEqual (OSYS, 0x07DF))
+        If ((OSYS == 0x07DF))
         {
-            Store (0x06, Local0)
+            Local0 = 0x06
         }
 
-        Store (Local0, \_SB.PCI0.LPCB.EC0.OSTY)
-        If (LEqual (Arg0, One))
+        \_SB.PCI0.LPCB.EC0.OSTY = Local0
+        If ((Arg0 == One))
         {
             H2OP (0xE1)
         }
 
-        If (LEqual (Arg0, 0x03))
+        If ((Arg0 == 0x03))
         {
             H2OP (0xE3)
         }
 
-        If (LEqual (Arg0, 0x04))
+        If ((Arg0 == 0x04))
         {
             H2OP (0xE4)
         }
 
-        If (LEqual (Arg0, 0x05))
+        If ((Arg0 == 0x05))
         {
             H2OP (0xE5)
         }
 
-        Store (\_SB.PCI0.LPCB.PKBD, Local2)
-        Store (\_SB.PCI0.LPCB.ECBD, Local2)
+        Local2 = \_SB.PCI0.LPCB.PKBD
+        Local2 = \_SB.PCI0.LPCB.ECBD
         ADBG ("_WAK")
-        If (LEqual (S0ID, One))
+        If ((S0ID == One))
         {
-            Store (One, \_SB.SCGE)
+            \_SB.SCGE = One
         }
 
         If (NEXP)
         {
-            If (And (OSCC, 0x02))
+            If ((OSCC & 0x02))
             {
                 \_SB.PCI0.NHPG ()
             }
 
-            If (And (OSCC, 0x04))
+            If ((OSCC & 0x04))
             {
                 \_SB.PCI0.NPME ()
             }
         }
 
-        If (LOr (LEqual (Arg0, 0x03), LEqual (Arg0, 0x04)))
+        If (((Arg0 == 0x03) || (Arg0 == 0x04)))
         {
             If (CondRefOf (\_PR.DTSE))
             {
-                If (LAnd (\_PR.DTSE, LGreater (TCNT, One)))
+                If ((\_PR.DTSE && (TCNT > One)))
                 {
                     TRAP (0x02, 0x14)
                 }
             }
 
-            If (LEqual (ECON, One))
+            If ((ECON == One))
             {
-                If (LOr (LEqual (Arg0, 0x03), LEqual (Arg0, 0x04)))
+                If (((Arg0 == 0x03) || (Arg0 == 0x04)))
                 {
-                    Store (One, LIDS)
+                    LIDS = One
                     If (IGDS)
                     {
-                        If (LEqual (LIDS, Zero))
+                        If ((LIDS == Zero))
                         {
-                            Store (0x80000000, \_SB.PCI0.IGPU.CLID)
+                            \_SB.PCI0.IGPU.CLID = 0x80000000
                         }
 
-                        If (LEqual (LIDS, One))
+                        If ((LIDS == One))
                         {
-                            Store (0x80000003, \_SB.PCI0.IGPU.CLID)
+                            \_SB.PCI0.IGPU.CLID = 0x80000003
                         }
                     }
 
-                    If (LEqual (RECM (0x85), 0x05))
+                    If ((RECM (0x85) == 0x05))
                     {
                         Notify (\_SB.LID0, 0x80)
                     }
 
-                    If (LEqual (RECM (0x85), 0x08))
+                    If ((RECM (0x85) == 0x08))
                     {
                         Notify (\_SB.LID0, 0x80)
                     }
                 }
             }
 
-            If (LNotEqual (\_SB.PCI0.RP01.VDID, 0xFFFFFFFF))
+            If ((\_SB.PCI0.RP01.VDID != 0xFFFFFFFF))
             {
                 Notify (\_SB.PCI0.RP01, Zero)
             }
 
-            If (LNotEqual (\_SB.PCI0.RP02.VDID, 0xFFFFFFFF))
+            If ((\_SB.PCI0.RP02.VDID != 0xFFFFFFFF))
             {
                 Notify (\_SB.PCI0.RP02, Zero)
             }
 
-            If (LNotEqual (\_SB.PCI0.RP03.VDID, 0xFFFFFFFF))
+            If ((\_SB.PCI0.RP03.VDID != 0xFFFFFFFF))
             {
                 Notify (\_SB.PCI0.RP03, Zero)
             }
 
-            If (LNotEqual (\_SB.PCI0.RP04.VDID, 0xFFFFFFFF))
+            If ((\_SB.PCI0.RP04.VDID != 0xFFFFFFFF))
             {
                 Notify (\_SB.PCI0.RP04, Zero)
             }
 
-            If (LNotEqual (\_SB.PCI0.RP05.VDID, 0xFFFFFFFF))
+            If ((\_SB.PCI0.RP05.VDID != 0xFFFFFFFF))
             {
                 Notify (\_SB.PCI0.RP05, Zero)
             }
 
-            If (LNotEqual (\_SB.PCI0.RP06.VDID, 0xFFFFFFFF))
+            If ((\_SB.PCI0.RP06.VDID != 0xFFFFFFFF))
             {
                 Notify (\_SB.PCI0.RP06, Zero)
             }
 
-            If (LNotEqual (\_SB.PCI0.RP07.VDID, 0xFFFFFFFF))
+            If ((\_SB.PCI0.RP07.VDID != 0xFFFFFFFF))
             {
-                If (LEqual (DSTS, Zero))
+                If ((DSTS == Zero))
                 {
                     Notify (\_SB.PCI0.RP07, Zero)
                 }
             }
 
-            If (LNotEqual (\_SB.PCI0.RP08.VDID, 0xFFFFFFFF))
+            If ((\_SB.PCI0.RP08.VDID != 0xFFFFFFFF))
             {
-                If (LEqual (DSTS, Zero))
+                If ((DSTS == Zero))
                 {
                     Notify (\_SB.PCI0.RP08, Zero)
                 }
             }
 
-            If (LNotEqual (\_SB.PCI0.RP09.VDID, 0xFFFFFFFF))
+            If ((\_SB.PCI0.RP09.VDID != 0xFFFFFFFF))
             {
                 Notify (\_SB.PCI0.RP09, Zero)
             }
 
-            If (LNotEqual (\_SB.PCI0.RP10.VDID, 0xFFFFFFFF))
+            If ((\_SB.PCI0.RP10.VDID != 0xFFFFFFFF))
             {
                 Notify (\_SB.PCI0.RP10, Zero)
             }
 
-            If (LNotEqual (\_SB.PCI0.RP11.VDID, 0xFFFFFFFF))
+            If ((\_SB.PCI0.RP11.VDID != 0xFFFFFFFF))
             {
                 Notify (\_SB.PCI0.RP11, Zero)
             }
 
-            If (LNotEqual (\_SB.PCI0.RP12.VDID, 0xFFFFFFFF))
+            If ((\_SB.PCI0.RP12.VDID != 0xFFFFFFFF))
             {
                 Notify (\_SB.PCI0.RP12, Zero)
             }
 
-            If (LNotEqual (\_SB.PCI0.RP13.VDID, 0xFFFFFFFF))
+            If ((\_SB.PCI0.RP13.VDID != 0xFFFFFFFF))
             {
                 Notify (\_SB.PCI0.RP13, Zero)
             }
 
-            If (LNotEqual (\_SB.PCI0.RP14.VDID, 0xFFFFFFFF))
+            If ((\_SB.PCI0.RP14.VDID != 0xFFFFFFFF))
             {
                 Notify (\_SB.PCI0.RP14, Zero)
             }
 
-            If (LNotEqual (\_SB.PCI0.RP15.VDID, 0xFFFFFFFF))
+            If ((\_SB.PCI0.RP15.VDID != 0xFFFFFFFF))
             {
                 Notify (\_SB.PCI0.RP15, Zero)
             }
 
-            If (LNotEqual (\_SB.PCI0.RP16.VDID, 0xFFFFFFFF))
+            If ((\_SB.PCI0.RP16.VDID != 0xFFFFFFFF))
             {
                 Notify (\_SB.PCI0.RP16, Zero)
             }
 
-            If (LNotEqual (\_SB.PCI0.RP17.VDID, 0xFFFFFFFF))
+            If ((\_SB.PCI0.RP17.VDID != 0xFFFFFFFF))
             {
                 Notify (\_SB.PCI0.RP17, Zero)
             }
 
-            If (LNotEqual (\_SB.PCI0.RP18.VDID, 0xFFFFFFFF))
+            If ((\_SB.PCI0.RP18.VDID != 0xFFFFFFFF))
             {
                 Notify (\_SB.PCI0.RP18, Zero)
             }
 
-            If (LNotEqual (\_SB.PCI0.RP19.VDID, 0xFFFFFFFF))
+            If ((\_SB.PCI0.RP19.VDID != 0xFFFFFFFF))
             {
                 Notify (\_SB.PCI0.RP19, Zero)
             }
 
-            If (LNotEqual (\_SB.PCI0.RP20.VDID, 0xFFFFFFFF))
+            If ((\_SB.PCI0.RP20.VDID != 0xFFFFFFFF))
             {
                 Notify (\_SB.PCI0.RP20, Zero)
             }
         }
 
-        If (LOr (LEqual (Arg0, 0x03), LEqual (Arg0, 0x04))){}
-        If (LEqual (TBTS, One))
+        If (((Arg0 == 0x03) || (Arg0 == 0x04))){}
+        If ((TBTS == One))
         {
             Signal (WFEV)
         }
@@ -17387,52 +17486,52 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
 
     Method (GETB, 3, Serialized)
     {
-        Multiply (Arg0, 0x08, Local0)
-        Multiply (Arg1, 0x08, Local1)
+        Local0 = (Arg0 * 0x08)
+        Local1 = (Arg1 * 0x08)
         CreateField (Arg2, Local0, Local1, TBF3)
         Return (TBF3)
     }
 
     Method (PNOT, 0, Serialized)
     {
-        If (LGreater (TCNT, One))
+        If ((TCNT > One))
         {
-            If (And (PDC0, 0x08))
+            If ((PDC0 & 0x08))
             {
                 Notify (\_PR.CPU0, 0x80)
             }
 
-            If (And (PDC1, 0x08))
+            If ((PDC1 & 0x08))
             {
                 Notify (\_PR.CPU1, 0x80)
             }
 
-            If (And (PDC2, 0x08))
+            If ((PDC2 & 0x08))
             {
                 Notify (\_PR.CPU2, 0x80)
             }
 
-            If (And (PDC3, 0x08))
+            If ((PDC3 & 0x08))
             {
                 Notify (\_PR.CPU3, 0x80)
             }
 
-            If (And (PDC4, 0x08))
+            If ((PDC4 & 0x08))
             {
                 Notify (\_PR.CPU4, 0x80)
             }
 
-            If (And (PDC5, 0x08))
+            If ((PDC5 & 0x08))
             {
                 Notify (\_PR.CPU5, 0x80)
             }
 
-            If (And (PDC6, 0x08))
+            If ((PDC6 & 0x08))
             {
                 Notify (\_PR.CPU6, 0x80)
             }
 
-            If (And (PDC7, 0x08))
+            If ((PDC7 & 0x08))
             {
                 Notify (\_PR.CPU7, 0x80)
             }
@@ -17442,44 +17541,44 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
             Notify (\_PR.CPU0, 0x80)
         }
 
-        If (LGreater (TCNT, One))
+        If ((TCNT > One))
         {
-            If (LAnd (And (PDC0, 0x08), And (PDC0, 0x10)))
+            If (((PDC0 & 0x08) && (PDC0 & 0x10)))
             {
                 Notify (\_PR.CPU0, 0x81)
             }
 
-            If (LAnd (And (PDC1, 0x08), And (PDC1, 0x10)))
+            If (((PDC1 & 0x08) && (PDC1 & 0x10)))
             {
                 Notify (\_PR.CPU1, 0x81)
             }
 
-            If (LAnd (And (PDC2, 0x08), And (PDC2, 0x10)))
+            If (((PDC2 & 0x08) && (PDC2 & 0x10)))
             {
                 Notify (\_PR.CPU2, 0x81)
             }
 
-            If (LAnd (And (PDC3, 0x08), And (PDC3, 0x10)))
+            If (((PDC3 & 0x08) && (PDC3 & 0x10)))
             {
                 Notify (\_PR.CPU3, 0x81)
             }
 
-            If (LAnd (And (PDC4, 0x08), And (PDC4, 0x10)))
+            If (((PDC4 & 0x08) && (PDC4 & 0x10)))
             {
                 Notify (\_PR.CPU4, 0x81)
             }
 
-            If (LAnd (And (PDC5, 0x08), And (PDC5, 0x10)))
+            If (((PDC5 & 0x08) && (PDC5 & 0x10)))
             {
                 Notify (\_PR.CPU5, 0x81)
             }
 
-            If (LAnd (And (PDC6, 0x08), And (PDC6, 0x10)))
+            If (((PDC6 & 0x08) && (PDC6 & 0x10)))
             {
                 Notify (\_PR.CPU6, 0x81)
             }
 
-            If (LAnd (And (PDC7, 0x08), And (PDC7, 0x10)))
+            If (((PDC7 & 0x08) && (PDC7 & 0x10)))
             {
                 Notify (\_PR.CPU7, 0x81)
             }
@@ -17490,7 +17589,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         }
     }
 
-    OperationRegion (MBAR, SystemMemory, Add (\_SB.PCI0.GMHB (), 0x5000), 0x1000)
+    OperationRegion (MBAR, SystemMemory, (\_SB.PCI0.GMHB () + 0x5000), 0x1000)
     Field (MBAR, ByteAcc, NoLock, Preserve)
     {
         Offset (0x938), 
@@ -17508,37 +17607,37 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
     Method (SPL1, 0, Serialized)
     {
         Name (PPUU, Zero)
-        If (LEqual (CSEM, One))
+        If ((CSEM == One))
         {
             Return (Zero)
         }
 
-        Store (One, CSEM)
-        Store (PPL1, PLSV)
-        Store (PL1E, PLEN)
-        Store (CLP1, CLMP)
-        If (LEqual (PWRU, Zero))
+        CSEM = One
+        PLSV = PPL1
+        PLEN = PL1E
+        CLMP = CLP1
+        If ((PWRU == Zero))
         {
-            Store (One, PPUU)
+            PPUU = One
         }
         Else
         {
-            ShiftLeft (Decrement (PWRU), 0x02, PPUU)
+            PPUU = (PWRU-- << 0x02)
         }
 
-        Multiply (PLVL, PPUU, Local0)
-        Divide (Local0, 0x03E8, , Local1)
-        Store (Local1, PPL1)
-        Store (One, PL1E)
-        Store (One, CLP1)
+        Local0 = (PLVL * PPUU)
+        Local1 = (Local0 / 0x03E8)
+        PPL1 = Local1
+        PL1E = One
+        CLP1 = One
     }
 
     Method (RPL1, 0, Serialized)
     {
-        Store (PLSV, PPL1)
-        Store (PLEN, PL1E)
-        Store (CLMP, CLP1)
-        Store (Zero, CSEM)
+        PPL1 = PLSV
+        PL1E = PLEN
+        CLP1 = CLMP
+        CSEM = Zero
     }
 
     Name (UAMS, Zero)
@@ -17554,22 +17653,22 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
 
     Method (TRAP, 2, Serialized)
     {
-        Store (Arg1, SMIF)
-        If (LEqual (Arg0, 0x02))
+        SMIF = Arg1
+        If ((Arg0 == 0x02))
         {
-            Store (Arg1, \_PR.DTSF)
-            Store (Zero, \_PR.TRPD)
+            \_PR.DTSF = Arg1
+            \_PR.TRPD = Zero
             Return (\_PR.DTSF)
         }
 
-        If (LEqual (Arg0, 0x03))
+        If ((Arg0 == 0x03))
         {
-            Store (Zero, TRPH)
+            TRPH = Zero
         }
 
-        If (LEqual (Arg0, 0x04))
+        If ((Arg0 == 0x04))
         {
-            Store (Zero, \_PR.TRPF)
+            \_PR.TRPF = Zero
         }
 
         Return (SMIF)
@@ -17594,155 +17693,155 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
 
         Method (_INI, 0, Serialized)  // _INI: Initialize
         {
-            Store (0x07D0, OSYS)
+            OSYS = 0x07D0
             If (CondRefOf (\_OSI, Local0))
             {
                 If (_OSI ("Linux"))
                 {
-                    Store (0x03E8, OSYS)
+                    OSYS = 0x03E8
                 }
 
                 If (_OSI ("Windows 2001"))
                 {
-                    Store (0x07D1, OSYS)
+                    OSYS = 0x07D1
                 }
 
                 If (_OSI ("Windows 2001 SP1"))
                 {
-                    Store (0x07D1, OSYS)
+                    OSYS = 0x07D1
                 }
 
                 If (_OSI ("Windows 2001 SP2"))
                 {
-                    Store (0x07D2, OSYS)
+                    OSYS = 0x07D2
                 }
 
                 If (_OSI ("Windows 2001.1"))
                 {
-                    Store (0x07D3, OSYS)
+                    OSYS = 0x07D3
                 }
 
                 If (_OSI ("Windows 2006"))
                 {
-                    Store (0x07D6, OSYS)
+                    OSYS = 0x07D6
                 }
 
                 If (_OSI ("Windows 2009"))
                 {
-                    Store (0x07D9, OSYS)
+                    OSYS = 0x07D9
                 }
 
                 If (_OSI ("Windows 2012"))
                 {
-                    Store (0x07DC, OSYS)
+                    OSYS = 0x07DC
                 }
 
                 If (_OSI ("Windows 2013"))
                 {
-                    Store (0x07DD, OSYS)
+                    OSYS = 0x07DD
                 }
 
                 If (_OSI ("Windows 2015"))
                 {
-                    Store (0x07DF, OSYS)
+                    OSYS = 0x07DF
                 }
             }
 
             If (CondRefOf (\_PR.DTSE))
             {
-                If (LGreaterEqual (\_PR.DTSE, One))
+                If ((\_PR.DTSE >= One))
                 {
-                    Store (One, \_PR.DSAE)
+                    \_PR.DSAE = One
                 }
             }
         }
 
         Method (NHPG, 0, Serialized)
         {
-            Store (Zero, ^RP01.HPEX)
-            Store (Zero, ^RP02.HPEX)
-            Store (Zero, ^RP03.HPEX)
-            Store (Zero, ^RP04.HPEX)
-            Store (Zero, ^RP05.HPEX)
-            Store (Zero, ^RP06.HPEX)
-            Store (Zero, ^RP07.HPEX)
-            Store (Zero, ^RP08.HPEX)
-            Store (Zero, ^RP09.HPEX)
-            Store (Zero, ^RP10.HPEX)
-            Store (Zero, ^RP11.HPEX)
-            Store (Zero, ^RP12.HPEX)
-            Store (Zero, ^RP13.HPEX)
-            Store (Zero, ^RP14.HPEX)
-            Store (Zero, ^RP15.HPEX)
-            Store (Zero, ^RP16.HPEX)
-            Store (Zero, ^RP17.HPEX)
-            Store (Zero, ^RP18.HPEX)
-            Store (Zero, ^RP19.HPEX)
-            Store (Zero, ^RP20.HPEX)
-            Store (One, ^RP01.HPSX)
-            Store (One, ^RP02.HPSX)
-            Store (One, ^RP03.HPSX)
-            Store (One, ^RP04.HPSX)
-            Store (One, ^RP05.HPSX)
-            Store (One, ^RP06.HPSX)
-            Store (One, ^RP07.HPSX)
-            Store (One, ^RP08.HPSX)
-            Store (One, ^RP09.HPSX)
-            Store (One, ^RP10.HPSX)
-            Store (One, ^RP11.HPSX)
-            Store (One, ^RP12.HPSX)
-            Store (One, ^RP13.HPSX)
-            Store (One, ^RP14.HPSX)
-            Store (One, ^RP15.HPSX)
-            Store (One, ^RP16.HPSX)
-            Store (One, ^RP17.HPSX)
-            Store (One, ^RP18.HPSX)
-            Store (One, ^RP19.HPSX)
-            Store (One, ^RP20.HPSX)
+            ^RP01.HPEX = Zero
+            ^RP02.HPEX = Zero
+            ^RP03.HPEX = Zero
+            ^RP04.HPEX = Zero
+            ^RP05.HPEX = Zero
+            ^RP06.HPEX = Zero
+            ^RP07.HPEX = Zero
+            ^RP08.HPEX = Zero
+            ^RP09.HPEX = Zero
+            ^RP10.HPEX = Zero
+            ^RP11.HPEX = Zero
+            ^RP12.HPEX = Zero
+            ^RP13.HPEX = Zero
+            ^RP14.HPEX = Zero
+            ^RP15.HPEX = Zero
+            ^RP16.HPEX = Zero
+            ^RP17.HPEX = Zero
+            ^RP18.HPEX = Zero
+            ^RP19.HPEX = Zero
+            ^RP20.HPEX = Zero
+            ^RP01.HPSX = One
+            ^RP02.HPSX = One
+            ^RP03.HPSX = One
+            ^RP04.HPSX = One
+            ^RP05.HPSX = One
+            ^RP06.HPSX = One
+            ^RP07.HPSX = One
+            ^RP08.HPSX = One
+            ^RP09.HPSX = One
+            ^RP10.HPSX = One
+            ^RP11.HPSX = One
+            ^RP12.HPSX = One
+            ^RP13.HPSX = One
+            ^RP14.HPSX = One
+            ^RP15.HPSX = One
+            ^RP16.HPSX = One
+            ^RP17.HPSX = One
+            ^RP18.HPSX = One
+            ^RP19.HPSX = One
+            ^RP20.HPSX = One
         }
 
         Method (NPME, 0, Serialized)
         {
-            Store (Zero, ^RP01.PMEX)
-            Store (Zero, ^RP02.PMEX)
-            Store (Zero, ^RP03.PMEX)
-            Store (Zero, ^RP04.PMEX)
-            Store (Zero, ^RP05.PMEX)
-            Store (Zero, ^RP06.PMEX)
-            Store (Zero, ^RP07.PMEX)
-            Store (Zero, ^RP08.PMEX)
-            Store (Zero, ^RP09.PMEX)
-            Store (Zero, ^RP10.PMEX)
-            Store (Zero, ^RP11.PMEX)
-            Store (Zero, ^RP12.PMEX)
-            Store (Zero, ^RP13.PMEX)
-            Store (Zero, ^RP14.PMEX)
-            Store (Zero, ^RP15.PMEX)
-            Store (Zero, ^RP16.PMEX)
-            Store (Zero, ^RP17.PMEX)
-            Store (Zero, ^RP18.PMEX)
-            Store (Zero, ^RP19.PMEX)
-            Store (Zero, ^RP20.PMEX)
-            Store (One, ^RP01.PMSX)
-            Store (One, ^RP02.PMSX)
-            Store (One, ^RP03.PMSX)
-            Store (One, ^RP04.PMSX)
-            Store (One, ^RP05.PMSX)
-            Store (One, ^RP06.PMSX)
-            Store (One, ^RP07.PMSX)
-            Store (One, ^RP08.PMSX)
-            Store (One, ^RP09.PMSX)
-            Store (One, ^RP10.PMSX)
-            Store (One, ^RP11.PMSX)
-            Store (One, ^RP12.PMSX)
-            Store (One, ^RP13.PMSX)
-            Store (One, ^RP14.PMSX)
-            Store (One, ^RP15.PMSX)
-            Store (One, ^RP16.PMSX)
-            Store (One, ^RP17.PMSX)
-            Store (One, ^RP18.PMSX)
-            Store (One, ^RP19.PMSX)
-            Store (One, ^RP20.PMSX)
+            ^RP01.PMEX = Zero
+            ^RP02.PMEX = Zero
+            ^RP03.PMEX = Zero
+            ^RP04.PMEX = Zero
+            ^RP05.PMEX = Zero
+            ^RP06.PMEX = Zero
+            ^RP07.PMEX = Zero
+            ^RP08.PMEX = Zero
+            ^RP09.PMEX = Zero
+            ^RP10.PMEX = Zero
+            ^RP11.PMEX = Zero
+            ^RP12.PMEX = Zero
+            ^RP13.PMEX = Zero
+            ^RP14.PMEX = Zero
+            ^RP15.PMEX = Zero
+            ^RP16.PMEX = Zero
+            ^RP17.PMEX = Zero
+            ^RP18.PMEX = Zero
+            ^RP19.PMEX = Zero
+            ^RP20.PMEX = Zero
+            ^RP01.PMSX = One
+            ^RP02.PMSX = One
+            ^RP03.PMSX = One
+            ^RP04.PMSX = One
+            ^RP05.PMSX = One
+            ^RP06.PMSX = One
+            ^RP07.PMSX = One
+            ^RP08.PMSX = One
+            ^RP09.PMSX = One
+            ^RP10.PMSX = One
+            ^RP11.PMSX = One
+            ^RP12.PMSX = One
+            ^RP13.PMSX = One
+            ^RP14.PMSX = One
+            ^RP15.PMSX = One
+            ^RP16.PMSX = One
+            ^RP17.PMSX = One
+            ^RP18.PMSX = One
+            ^RP19.PMSX = One
+            ^RP20.PMSX = One
         }
     }
 
@@ -17756,19 +17855,19 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         })
         Method (GPRW, 2, NotSerialized)
         {
-            Store (Arg0, Index (PRWP, Zero))
-            Store (ShiftLeft (SS1, One), Local0)
-            Or (Local0, ShiftLeft (SS2, 0x02), Local0)
-            Or (Local0, ShiftLeft (SS3, 0x03), Local0)
-            Or (Local0, ShiftLeft (SS4, 0x04), Local0)
-            If (And (ShiftLeft (One, Arg1), Local0))
+            PRWP [Zero] = Arg0
+            Local0 = (SS1 << One)
+            Local0 |= (SS2 << 0x02)
+            Local0 |= (SS3 << 0x03)
+            Local0 |= (SS4 << 0x04)
+            If (((One << Arg1) & Local0))
             {
-                Store (Arg1, Index (PRWP, One))
+                PRWP [One] = Arg1
             }
             Else
             {
-                ShiftRight (Local0, One, Local0)
-                FindSetLeftBit (Local0, Index (PRWP, One))
+                Local0 >>= One
+                FindSetLeftBit (Local0, PRWP [One])
             }
 
             Return (PRWP)
@@ -17784,39 +17883,39 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         {
             CreateDWordField (Arg3, Zero, STS0)
             CreateDWordField (Arg3, 0x04, CAP0)
-            If (LEqual (S0ID, One))
+            If ((S0ID == One))
             {
-                Store (One, SCGE)
+                SCGE = One
             }
 
-            If (LEqual (Arg0, ToUUID ("0811b06e-4a27-44f9-8d60-3cbbc22e7b48") /* Platform-wide Capabilities */))
+            If ((Arg0 == ToUUID ("0811b06e-4a27-44f9-8d60-3cbbc22e7b48") /* Platform-wide Capabilities */))
             {
-                If (LEqual (Arg1, One))
+                If ((Arg1 == One))
                 {
-                    Store (CAP0, OSCP)
-                    If (And (CAP0, 0x04))
+                    OSCP = CAP0
+                    If ((CAP0 & 0x04))
                     {
-                        Store (0x04, OSCO)
-                        If (LNotEqual (And (SGMD, 0x0F), 0x02))
+                        OSCO = 0x04
+                        If (((SGMD & 0x0F) != 0x02))
                         {
-                            If (LEqual (RTD3, Zero))
+                            If ((RTD3 == Zero))
                             {
-                                And (CAP0, 0x3B, CAP0)
-                                Or (STS0, 0x10, STS0)
+                                CAP0 &= 0x3B
+                                STS0 |= 0x10
                             }
                         }
                     }
                 }
                 Else
                 {
-                    And (STS0, 0xFFFFFF00, STS0)
-                    Or (STS0, 0x0A, STS0)
+                    STS0 &= 0xFFFFFF00
+                    STS0 |= 0x0A
                 }
             }
             Else
             {
-                And (STS0, 0xFFFFFF00, STS0)
-                Or (STS0, 0x06, STS0)
+                STS0 &= 0xFFFFFF00
+                STS0 |= 0x06
             }
 
             Return (Arg3)
@@ -17849,13 +17948,13 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                 CreateQWordField (RBUF, \_SB.EPC._Y24._MIN, EMIN)  // _MIN: Minimum Base Address
                 CreateQWordField (RBUF, \_SB.EPC._Y24._MAX, EMAX)  // _MAX: Maximum Base Address
                 CreateQWordField (RBUF, \_SB.EPC._Y24._LEN, ELEN)  // _LEN: Length
-                Store (\_PR.EMNA, EMIN)
-                Store (\_PR.ELNG, ELEN)
-                Subtract (Add (\_PR.EMNA, \_PR.ELNG), One, EMAX)
+                EMIN = \_PR.EMNA
+                ELEN = \_PR.ELNG
+                EMAX = ((\_PR.EMNA + \_PR.ELNG) - One)
                 Return (RBUF)
             }
 
-            Method (XDSM, 4, Serialized)  // _DSM: Device-Specific Method
+            Method (XDSM, 4, Serialized)
             {
                 Name (BUFX, Package (0x09)
                 {
@@ -17869,9 +17968,9 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                     0x80000000, 
                     0x80000000
                 })
-                If (LEqual (Arg0, ToUUID ("c60fac0c-fd9e-4273-9a3f-938f2327035e")))
+                If ((Arg0 == ToUUID ("c60fac0c-fd9e-4273-9a3f-938f2327035e")))
                 {
-                    If (LEqual (Zero, ToInteger (Arg1)))
+                    If ((Zero == ToInteger (Arg1)))
                     {
                         Switch (ToInteger (Arg2))
                         {
@@ -17884,15 +17983,15 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                             }
                             Case (One)
                             {
-                                Store (SEC0, Index (BUFX, Zero))
-                                Store (SEC1, Index (BUFX, One))
-                                Store (SEC2, Index (BUFX, 0x02))
-                                Store (SEC3, Index (BUFX, 0x03))
-                                Store (SEC4, Index (BUFX, 0x04))
-                                Store (SEC5, Index (BUFX, 0x05))
-                                Store (SEC6, Index (BUFX, 0x06))
-                                Store (SEC7, Index (BUFX, 0x07))
-                                Store (SEC8, Index (BUFX, 0x08))
+                                BUFX [Zero] = SEC0
+                                BUFX [One] = SEC1
+                                BUFX [0x02] = SEC2
+                                BUFX [0x03] = SEC3
+                                BUFX [0x04] = SEC4
+                                BUFX [0x05] = SEC5
+                                BUFX [0x06] = SEC6
+                                BUFX [0x07] = SEC7
+                                BUFX [0x08] = SEC8
                                 Return (BUFX)
                             }
 
@@ -17909,7 +18008,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
 
             Method (_STA, 0, NotSerialized)  // _STA: Status
             {
-                If (LNotEqual (\_PR.EPCS, Zero))
+                If ((\_PR.EPCS != Zero))
                 {
                     Return (0x0F)
                 }
@@ -17965,7 +18064,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
 
 )
                 {
-                    Store (0x1C, Local0)
+                    Local0 = 0x1C
                 }
                 Case (Package (0x08)
                     {
@@ -17981,7 +18080,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
 
 )
                 {
-                    Store (0x1D, Local0)
+                    Local0 = 0x1D
                 }
                 Case (Package (0x04)
                     {
@@ -17993,7 +18092,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
 
 )
                 {
-                    Store (0x1B, Local0)
+                    Local0 = 0x1B
                 }
                 Case (Package (0x03)
                     {
@@ -18004,7 +18103,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
 
 )
                 {
-                    Store (One, Local0)
+                    Local0 = One
                 }
 
             }
@@ -18020,95 +18119,95 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
             {
                 Case (One)
                 {
-                    Store (And (RPA1, 0x0F), Local0)
+                    Local0 = (RPA1 & 0x0F)
                 }
                 Case (0x02)
                 {
-                    Store (And (RPA2, 0x0F), Local0)
+                    Local0 = (RPA2 & 0x0F)
                 }
                 Case (0x03)
                 {
-                    Store (And (RPA3, 0x0F), Local0)
+                    Local0 = (RPA3 & 0x0F)
                 }
                 Case (0x04)
                 {
-                    Store (And (RPA4, 0x0F), Local0)
+                    Local0 = (RPA4 & 0x0F)
                 }
                 Case (0x05)
                 {
-                    Store (And (RPA5, 0x0F), Local0)
+                    Local0 = (RPA5 & 0x0F)
                 }
                 Case (0x06)
                 {
-                    Store (And (RPA6, 0x0F), Local0)
+                    Local0 = (RPA6 & 0x0F)
                 }
                 Case (0x07)
                 {
-                    Store (And (RPA7, 0x0F), Local0)
+                    Local0 = (RPA7 & 0x0F)
                 }
                 Case (0x08)
                 {
-                    Store (And (RPA8, 0x0F), Local0)
+                    Local0 = (RPA8 & 0x0F)
                 }
                 Case (0x09)
                 {
-                    Store (And (RPA9, 0x0F), Local0)
+                    Local0 = (RPA9 & 0x0F)
                 }
                 Case (0x0A)
                 {
-                    Store (And (RPAA, 0x0F), Local0)
+                    Local0 = (RPAA & 0x0F)
                 }
                 Case (0x0B)
                 {
-                    Store (And (RPAB, 0x0F), Local0)
+                    Local0 = (RPAB & 0x0F)
                 }
                 Case (0x0C)
                 {
-                    Store (And (RPAC, 0x0F), Local0)
+                    Local0 = (RPAC & 0x0F)
                 }
                 Case (0x0D)
                 {
-                    Store (And (RPAD, 0x0F), Local0)
+                    Local0 = (RPAD & 0x0F)
                 }
                 Case (0x0E)
                 {
-                    Store (And (RPAE, 0x0F), Local0)
+                    Local0 = (RPAE & 0x0F)
                 }
                 Case (0x0F)
                 {
-                    Store (And (RPAF, 0x0F), Local0)
+                    Local0 = (RPAF & 0x0F)
                 }
                 Case (0x10)
                 {
-                    Store (And (RPAG, 0x0F), Local0)
+                    Local0 = (RPAG & 0x0F)
                 }
                 Case (0x11)
                 {
-                    Store (And (RPAH, 0x0F), Local0)
+                    Local0 = (RPAH & 0x0F)
                 }
                 Case (0x12)
                 {
-                    Store (And (RPAI, 0x0F), Local0)
+                    Local0 = (RPAI & 0x0F)
                 }
                 Case (0x13)
                 {
-                    Store (And (RPAJ, 0x0F), Local0)
+                    Local0 = (RPAJ & 0x0F)
                 }
                 Case (0x14)
                 {
-                    Store (And (RPAK, 0x0F), Local0)
+                    Local0 = (RPAK & 0x0F)
                 }
                 Case (0x15)
                 {
-                    Store (Zero, Local0)
+                    Local0 = Zero
                 }
                 Case (0x16)
                 {
-                    Store (One, Local0)
+                    Local0 = One
                 }
                 Case (0x17)
                 {
-                    Store (0x02, Local0)
+                    Local0 = 0x02
                 }
 
             }
@@ -18119,16 +18218,16 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
 
         Method (MMRP, 0, NotSerialized)
         {
-            Store (\_SB.PCI0.GPCB (), Local0)
-            Add (Local0, ShiftLeft (TBTD (TBSE), 0x0F), Local0)
-            Add (Local0, ShiftLeft (TBTF (TBSE), 0x0C), Local0)
+            Local0 = \_SB.PCI0.GPCB ()
+            Local0 += (TBTD (TBSE) << 0x0F)
+            Local0 += (TBTF (TBSE) << 0x0C)
             Return (Local0)
         }
 
         Method (OSUP, 1, Serialized)
         {
             ADBG ("OSUP")
-            Add (Arg0, 0x0548, Local0)
+            Local0 = (Arg0 + 0x0548)
             OperationRegion (PXVD, SystemMemory, Local0, 0x08)
             Field (PXVD, DWordAcc, NoLock, Preserve)
             {
@@ -18136,19 +18235,19 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                 P2TB,   32
             }
 
-            Store (0x64, Local1)
-            Store (0x0D, P2TB)
-            While (LGreater (Local1, Zero))
+            Local1 = 0x64
+            P2TB = 0x0D
+            While ((Local1 > Zero))
             {
-                Store (Subtract (Local1, One), Local1)
-                Store (TB2P, Local2)
-                If (LEqual (Local2, 0xFFFFFFFF))
+                Local1 = (Local1 - One)
+                Local2 = TB2P
+                If ((Local2 == 0xFFFFFFFF))
                 {
                     ADBG ("Dev gone")
                     Return (0x02)
                 }
 
-                If (And (Local2, One))
+                If ((Local2 & One))
                 {
                     ADBG ("Cmd acknowledged")
                     Break
@@ -18157,7 +18256,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                 Sleep (0x32)
             }
 
-            Store (Zero, P2TB)
+            P2TB = Zero
             ADBG ("End-of-OSUP")
             Return (One)
         }
@@ -18165,9 +18264,9 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         Method (MMTB, 0, Serialized)
         {
             ADBG ("MMTB")
-            Store (\_SB.PCI0.GPCB (), Local0)
-            Add (Local0, ShiftLeft (TBTD (TBSE), 0x0F), Local0)
-            Add (Local0, ShiftLeft (TBTF (TBSE), 0x0C), Local0)
+            Local0 = \_SB.PCI0.GPCB ()
+            Local0 += (TBTD (TBSE) << 0x0F)
+            Local0 += (TBTF (TBSE) << 0x0C)
             OperationRegion (MMMM, SystemMemory, Local0, 0x1A)
             Field (MMMM, AnyAcc, NoLock, Preserve)
             {
@@ -18175,10 +18274,10 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                 SBUS,   8
             }
 
-            Store (SBUS, Local2)
-            Store (\_SB.PCI0.GPCB (), Local0)
-            Multiply (Local2, 0x00100000, Local2)
-            Add (Local2, Local0, Local0)
+            Local2 = SBUS
+            Local0 = \_SB.PCI0.GPCB ()
+            Local2 *= 0x00100000
+            Local0 += Local2
             ADBG ("TBT-US-ADR")
             Return (Local0)
         }
@@ -18186,15 +18285,15 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         Method (TBFF, 0, Serialized)
         {
             ADBG ("TBFF")
-            Store (MMTB (), Local0)
+            Local0 = MMTB ()
             OperationRegion (PXVD, SystemMemory, Local0, 0x04)
             Field (PXVD, DWordAcc, NoLock, Preserve)
             {
                 VEDI,   32
             }
 
-            Store (VEDI, Local1)
-            If (LEqual (Local1, 0xFFFFFFFF))
+            Local1 = VEDI
+            If ((Local1 == 0xFFFFFFFF))
             {
                 Return (OSUP (Local0))
             }
@@ -18208,9 +18307,9 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         Method (TSUB, 0, Serialized)
         {
             ADBG ("TSUB")
-            Store (\_SB.PCI0.GPCB (), Local0)
-            Add (Local0, ShiftLeft (TBTD (TBSE), 0x0F), Local0)
-            Add (Local0, ShiftLeft (TBTF (TBSE), 0x0C), Local0)
+            Local0 = \_SB.PCI0.GPCB ()
+            Local0 += (TBTD (TBSE) << 0x0F)
+            Local0 += (TBTF (TBSE) << 0x0C)
             ADBG ("ADR")
             OperationRegion (MMMM, SystemMemory, Local0, 0x1A)
             Field (MMMM, AnyAcc, NoLock, Preserve)
@@ -18226,11 +18325,11 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         Method (WSUB, 0, NotSerialized)
         {
             ADBG ("WSUB")
-            Store (Zero, Local0)
-            Store (Zero, Local1)
+            Local0 = Zero
+            Local1 = Zero
             While (One)
             {
-                Store (TSUB (), Local1)
+                Local1 = TSUB ()
                 If (Local1)
                 {
                     ADBG ("WSUB-Finished")
@@ -18238,8 +18337,8 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                 }
                 Else
                 {
-                    Add (Local0, One, Local0)
-                    If (LGreater (Local0, 0x03E8))
+                    Local0 += One
+                    If ((Local0 > 0x03E8))
                     {
                         Sleep (0x03E8)
                         ADBG ("WSUB-Deadlock")
@@ -18262,7 +18361,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         Method (NTFY, 0, Serialized)
         {
             ADBG ("NTFY")
-            If (LEqual (NOHP, One))
+            If ((NOHP == One))
             {
                 Switch (ToInteger (TBSE))
                 {
@@ -18392,7 +18491,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         Method (TFPS, 0, NotSerialized)
         {
             ADBG ("TFPS")
-            Store (\_SB.CGRD (FPAT, FPEN, FPGN, Zero), Local0)
+            Local0 = \_SB.CGRD (FPAT, FPEN, FPGN, Zero)
             If (Local0)
             {
                 ADBG ("ExtFrcPwr1")
@@ -18410,12 +18509,12 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
             ADBG ("CNCT")
             ADBG ("Read")
             ADBG ("ACPI_GPE_STS")
-            Store (CPAD, Local7)
-            Store (CPAB, Local6)
-            While (LGreater (Local6, 0x08))
+            Local7 = CPAD
+            Local6 = CPAB
+            While ((Local6 > 0x08))
             {
-                Add (Local7, One, Local7)
-                Subtract (Local6, 0x08, Local6)
+                Local7 += One
+                Local6 -= 0x08
             }
 
             OperationRegion (GPE0, SystemIO, Local7, One)
@@ -18424,9 +18523,9 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                 TEMP,   8
             }
 
-            Store (TEMP, Local0)
-            ShiftRight (Local0, Local6, Local0)
-            And (Local0, One, Local0)
+            Local0 = TEMP
+            Local0 >>= Local6
+            Local0 &= One
             Return (Local0)
         }
 
@@ -18435,12 +18534,12 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
             ADBG ("CLNE")
             ADBG ("Clear")
             ADBG ("ACPI_GPE_STS")
-            Store (CPAD, Local7)
-            Store (CPAB, Local6)
-            While (LGreater (Local6, 0x08))
+            Local7 = CPAD
+            Local6 = CPAB
+            While ((Local6 > 0x08))
             {
-                Add (Local7, One, Local7)
-                Subtract (Local6, 0x08, Local6)
+                Local7 += One
+                Local6 -= 0x08
             }
 
             OperationRegion (GPE0, SystemIO, Local7, One)
@@ -18449,29 +18548,29 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                 TEMP,   8
             }
 
-            ShiftLeft (One, Local6, Local6)
-            Or (TEMP, Local6, TEMP)
+            Local6 = (One << Local6)
+            TEMP |= Local6
         }
 
         Method (DRPM, 0, NotSerialized)
         {
             ADBG ("DRPM")
-            Store (\_SB.STDC (\_SB.PCI0.GPCB (), Zero, TBTD (TBSE), TBTF (TBSE), 0x05), Local7)
-            Store (MMRP (), Local6)
-            Add (Local7, Local6, Local0)
+            Local7 = \_SB.STDC (\_SB.PCI0.GPCB (), Zero, TBTD (TBSE), TBTF (TBSE), 0x05)
+            Local6 = MMRP ()
+            Local0 = (Local7 + Local6)
             OperationRegion (MMMS, SystemMemory, Local0, 0x02)
             Field (MMMS, WordAcc, NoLock, Preserve)
             {
                 MSIC,   1
             }
 
-            Store (Zero, MSIC)
+            MSIC = Zero
         }
 
         Method (FFTB, 0, NotSerialized)
         {
             ADBG ("FFTB")
-            Add (MMTB (), 0x0548, Local0)
+            Local0 = (MMTB () + 0x0548)
             OperationRegion (PXVD, SystemMemory, Local0, 0x08)
             Field (PXVD, DWordAcc, NoLock, Preserve)
             {
@@ -18479,8 +18578,8 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                 P2TB,   32
             }
 
-            Store (TB2P, Local1)
-            If (LEqual (Local1, 0xFFFFFFFF))
+            Local1 = TB2P
+            If ((Local1 == 0xFFFFFFFF))
             {
                 ADBG ("FFTb 1")
                 Return (One)
@@ -18495,7 +18594,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         Method (DMSI, 0, NotSerialized)
         {
             ADBG ("DMSI")
-            Add (MMTB (), 0x0548, Local0)
+            Local0 = (MMTB () + 0x0548)
             OperationRegion (PXVD, SystemMemory, Local0, 0x08)
             Field (PXVD, DWordAcc, NoLock, Preserve)
             {
@@ -18509,25 +18608,25 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                 SSMP,   8
             }
 
-            Store (TB2P, Local1)
-            If (LEqual (Local1, 0x25))
+            Local1 = TB2P
+            If ((Local1 == 0x25))
             {
-                Store (0x17, TBSF)
-                Store (0xF7, SSMP)
+                TBSF = 0x17
+                SSMP = 0xF7
                 ADBG ("0x25->P2TB")
-                Store (0x25, P2TB)
-                Store (0x64, Local2)
-                While (LGreater (Local2, Zero))
+                P2TB = 0x25
+                Local2 = 0x64
+                While ((Local2 > Zero))
                 {
-                    Store (Subtract (Local2, One), Local2)
-                    Store (TB2P, Local1)
-                    If (LEqual (Local1, 0xFFFFFFFF))
+                    Local2 = (Local2 - One)
+                    Local1 = TB2P
+                    If ((Local1 == 0xFFFFFFFF))
                     {
                         ADBG ("DMSiF")
                         Return (Zero)
                     }
 
-                    If (LEqual (Local1, 0x24))
+                    If ((Local1 == 0x24))
                     {
                         Break
                     }
@@ -18535,7 +18634,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                     Sleep (0x32)
                 }
 
-                Store (Zero, P2TB)
+                P2TB = Zero
                 ADBG ("DMSi 1")
                 Return (One)
             }
@@ -18547,8 +18646,8 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         Method (RSMI, 0, NotSerialized)
         {
             ADBG ("RSMI")
-            Store (TFPS (), Local0)
-            Add (MMTB (), Zero, Local1)
+            Local0 = TFPS ()
+            Local1 = (MMTB () + Zero)
             OperationRegion (PXVD, SystemMemory, Local1, 0x0550)
             Field (PXVD, DWordAcc, NoLock, Preserve)
             {
@@ -18558,14 +18657,14 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                 P2TB,   32
             }
 
-            Store (TB2P, Local2)
-            If (LNotEqual (Local2, 0xFFFFFFFF))
+            Local2 = TB2P
+            If ((Local2 != 0xFFFFFFFF))
             {
                 ADBG ("RSMi 1")
                 Return (One)
             }
 
-            If (LNot (CNCT ()))
+            If (!CNCT ())
             {
                 ADBG ("RSMi 2")
                 Return (0x02)
@@ -18581,19 +18680,19 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                 \_SB.TBFP (One)
             }
 
-            Store (Zero, Local3)
-            While (LOr (FFTB (), CNCT ()))
+            Local3 = Zero
+            While ((FFTB () || CNCT ()))
             {
                 Sleep (0x05)
                 CLNE ()
-                Add (Local3, One, Local3)
-                If (LGreater (Local3, 0x14))
+                Local3 += One
+                If ((Local3 > 0x14))
                 {
                     Sleep (0x03E8)
                     ADBG ("RSMi PCIe down")
                 }
 
-                If (LGreater (Local3, 0x19))
+                If ((Local3 > 0x19))
                 {
                     ADBG ("RSMi Oops")
                     If (Local0)
@@ -18625,13 +18724,13 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         Method (GNIS, 0, NotSerialized)
         {
             ADBG ("GNIS")
-            If (LEqual (GP5F, Zero))
+            If ((GP5F == Zero))
             {
                 ADBG ("GNIS_Dis=0")
                 Return (Zero)
             }
 
-            Add (MMTB (), 0x0544, Local0)
+            Local0 = (MMTB () + 0x0544)
             OperationRegion (PXVD, SystemMemory, Local0, 0x08)
             Field (PXVD, DWordAcc, NoLock, Preserve)
             {
@@ -18640,19 +18739,19 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                 TB2P,   32
             }
 
-            Store (TB2P, Local1)
+            Local1 = TB2P
             ADBG (Concatenate ("TB2P=", ToHexString (Local1)))
-            If (LEqual (Local1, 0xFFFFFFFF))
+            If ((Local1 == 0xFFFFFFFF))
             {
                 ADBG ("GNIS=0")
                 Return (Zero)
             }
 
-            Store (HPFI, Local2)
+            Local2 = HPFI
             ADBG (Concatenate ("HPFI=", ToHexString (Local2)))
-            If (LEqual (Local2, One))
+            If ((Local2 == One))
             {
-                Store (Zero, HPFI)
+                HPFI = Zero
                 ADBG ("GNIS=0")
                 Return (Zero)
             }
@@ -18666,14 +18765,14 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
     {
         Method (CGWR, 4, Serialized)
         {
-            If (LEqual (Arg0, Zero))
+            If ((Arg0 == Zero))
             {
                 If (CondRefOf (\_SB.SGOV))
                 {
                     SGOV (Arg2, Arg3)
                 }
             }
-            ElseIf (LEqual (Arg0, One))
+            ElseIf ((Arg0 == One))
             {
                 If (CondRefOf (\_SB.PCI0.GEXP.SGEP))
                 {
@@ -18684,28 +18783,28 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
 
         Method (CGRD, 4, Serialized)
         {
-            If (LEqual (Arg0, Zero))
+            If ((Arg0 == Zero))
             {
-                If (LEqual (Arg3, Zero))
+                If ((Arg3 == Zero))
                 {
                     If (CondRefOf (\_SB.GGOV))
                     {
-                        Store (GGOV (Arg2), Local0)
+                        Local0 = GGOV (Arg2)
                     }
                 }
-                ElseIf (LEqual (Arg3, One))
+                ElseIf ((Arg3 == One))
                 {
                     If (CondRefOf (\_SB.GGIV))
                     {
-                        Store (GGIV (Arg2), Local0)
+                        Local0 = GGIV (Arg2)
                     }
                 }
             }
-            ElseIf (LEqual (Arg0, One))
+            ElseIf ((Arg0 == One))
             {
                 If (CondRefOf (\_SB.PCI0.GEXP.GEPS))
                 {
-                    Store (^PCI0.GEXP.GEPS (Arg1, Arg2), Local0)
+                    Local0 = ^PCI0.GEXP.GEPS (Arg1, Arg2)
                 }
             }
 
@@ -18723,7 +18822,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
             }
             Else
             {
-                CGWR (FPAT, FPEN, FPGN, LNot (FPLV))
+                CGWR (FPAT, FPEN, FPGN, !FPLV)
             }
         }
 
@@ -18752,7 +18851,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         }
     }
 
-    If (LAnd (LEqual (TBTS, One), LEqual (TBSE, One)))
+    If (((TBTS == One) && (TBSE == One)))
     {
         Scope (_SB.PCI0.RP01)
         {
@@ -18767,7 +18866,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         }
     }
 
-    If (LAnd (LEqual (TBTS, One), LEqual (TBSE, 0x02)))
+    If (((TBTS == One) && (TBSE == 0x02)))
     {
         Scope (_SB.PCI0.RP02)
         {
@@ -18782,7 +18881,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         }
     }
 
-    If (LAnd (LEqual (TBTS, One), LEqual (TBSE, 0x03)))
+    If (((TBTS == One) && (TBSE == 0x03)))
     {
         Scope (_SB.PCI0.RP03)
         {
@@ -18797,7 +18896,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         }
     }
 
-    If (LAnd (LEqual (TBTS, One), LEqual (TBSE, 0x04)))
+    If (((TBTS == One) && (TBSE == 0x04)))
     {
         Scope (_SB.PCI0.RP04)
         {
@@ -18812,7 +18911,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         }
     }
 
-    If (LAnd (LEqual (TBTS, One), LEqual (TBSE, 0x05)))
+    If (((TBTS == One) && (TBSE == 0x05)))
     {
         Scope (_SB.PCI0.RP05)
         {
@@ -18827,7 +18926,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         }
     }
 
-    If (LAnd (LEqual (TBTS, One), LEqual (TBSE, 0x06)))
+    If (((TBTS == One) && (TBSE == 0x06)))
     {
         Scope (_SB.PCI0.RP06)
         {
@@ -18842,7 +18941,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         }
     }
 
-    If (LAnd (LEqual (TBTS, One), LEqual (TBSE, 0x07)))
+    If (((TBTS == One) && (TBSE == 0x07)))
     {
         Scope (_SB.PCI0.RP07)
         {
@@ -18857,7 +18956,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         }
     }
 
-    If (LAnd (LEqual (TBTS, One), LEqual (TBSE, 0x08)))
+    If (((TBTS == One) && (TBSE == 0x08)))
     {
         Scope (_SB.PCI0.RP08)
         {
@@ -18872,7 +18971,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         }
     }
 
-    If (LAnd (LEqual (TBTS, One), LEqual (TBSE, 0x09)))
+    If (((TBTS == One) && (TBSE == 0x09)))
     {
         Scope (_SB.PCI0.RP09)
         {
@@ -18887,7 +18986,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         }
     }
 
-    If (LAnd (LEqual (TBTS, One), LEqual (TBSE, 0x0A)))
+    If (((TBTS == One) && (TBSE == 0x0A)))
     {
         Scope (_SB.PCI0.RP10)
         {
@@ -18902,7 +19001,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         }
     }
 
-    If (LAnd (LEqual (TBTS, One), LEqual (TBSE, 0x0B)))
+    If (((TBTS == One) && (TBSE == 0x0B)))
     {
         Scope (_SB.PCI0.RP11)
         {
@@ -18917,7 +19016,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         }
     }
 
-    If (LAnd (LEqual (TBTS, One), LEqual (TBSE, 0x0C)))
+    If (((TBTS == One) && (TBSE == 0x0C)))
     {
         Scope (_SB.PCI0.RP12)
         {
@@ -18932,7 +19031,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         }
     }
 
-    If (LAnd (LEqual (TBTS, One), LEqual (TBSE, 0x0D)))
+    If (((TBTS == One) && (TBSE == 0x0D)))
     {
         Scope (_SB.PCI0.RP13)
         {
@@ -18947,7 +19046,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         }
     }
 
-    If (LAnd (LEqual (TBTS, One), LEqual (TBSE, 0x0E)))
+    If (((TBTS == One) && (TBSE == 0x0E)))
     {
         Scope (_SB.PCI0.RP14)
         {
@@ -18962,7 +19061,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         }
     }
 
-    If (LAnd (LEqual (TBTS, One), LEqual (TBSE, 0x0F)))
+    If (((TBTS == One) && (TBSE == 0x0F)))
     {
         Scope (_SB.PCI0.RP15)
         {
@@ -18977,7 +19076,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         }
     }
 
-    If (LAnd (LEqual (TBTS, One), LEqual (TBSE, 0x10)))
+    If (((TBTS == One) && (TBSE == 0x10)))
     {
         Scope (_SB.PCI0.RP16)
         {
@@ -18992,7 +19091,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         }
     }
 
-    If (LAnd (LEqual (TBTS, One), LEqual (TBSE, 0x11)))
+    If (((TBTS == One) && (TBSE == 0x11)))
     {
         Scope (_SB.PCI0.RP17)
         {
@@ -19007,7 +19106,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         }
     }
 
-    If (LAnd (LEqual (TBTS, One), LEqual (TBSE, 0x12)))
+    If (((TBTS == One) && (TBSE == 0x12)))
     {
         Scope (_SB.PCI0.RP18)
         {
@@ -19022,7 +19121,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         }
     }
 
-    If (LAnd (LEqual (TBTS, One), LEqual (TBSE, 0x13)))
+    If (((TBTS == One) && (TBSE == 0x13)))
     {
         Scope (_SB.PCI0.RP19)
         {
@@ -19037,7 +19136,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         }
     }
 
-    If (LAnd (LEqual (TBTS, One), LEqual (TBSE, 0x14)))
+    If (((TBTS == One) && (TBSE == 0x14)))
     {
         Scope (_SB.PCI0.RP20)
         {
@@ -19052,7 +19151,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         }
     }
 
-    If (LAnd (LEqual (TBTS, One), LEqual (TBSE, 0x15)))
+    If (((TBTS == One) && (TBSE == 0x15)))
     {
         Scope (_SB.PCI0.PEG0)
         {
@@ -19067,7 +19166,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         }
     }
 
-    If (LAnd (LEqual (TBTS, One), LEqual (TBSE, 0x16)))
+    If (((TBTS == One) && (TBSE == 0x16)))
     {
         Scope (_SB.PCI0.PEG1)
         {
@@ -19082,7 +19181,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         }
     }
 
-    If (LAnd (LEqual (TBTS, One), LEqual (TBSE, 0x17)))
+    If (((TBTS == One) && (TBSE == 0x17)))
     {
         Scope (_SB.PCI0.PEG2)
         {
@@ -19102,11 +19201,11 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         Method (PERB, 5, Serialized)
         {
             ADBG ("PERB")
-            Store (Arg0, Local7)
-            Or (Local7, ShiftLeft (Arg1, 0x14), Local7)
-            Or (Local7, ShiftLeft (Arg2, 0x0F), Local7)
-            Or (Local7, ShiftLeft (Arg3, 0x0C), Local7)
-            Or (Local7, Arg4, Local7)
+            Local7 = Arg0
+            Local7 |= (Arg1 << 0x14)
+            Local7 |= (Arg2 << 0x0F)
+            Local7 |= (Arg3 << 0x0C)
+            Local7 |= Arg4
             OperationRegion (PCI0, SystemMemory, Local7, One)
             Field (PCI0, ByteAcc, NoLock, Preserve)
             {
@@ -19119,28 +19218,28 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         Method (PEWB, 6, Serialized)
         {
             ADBG ("PEWB")
-            Store (Arg0, Local7)
-            Or (Local7, ShiftLeft (Arg1, 0x14), Local7)
-            Or (Local7, ShiftLeft (Arg2, 0x0F), Local7)
-            Or (Local7, ShiftLeft (Arg3, 0x0C), Local7)
-            Or (Local7, Arg4, Local7)
+            Local7 = Arg0
+            Local7 |= (Arg1 << 0x14)
+            Local7 |= (Arg2 << 0x0F)
+            Local7 |= (Arg3 << 0x0C)
+            Local7 |= Arg4
             OperationRegion (PCI0, SystemMemory, Local7, One)
             Field (PCI0, ByteAcc, NoLock, Preserve)
             {
                 TEMP,   8
             }
 
-            Store (Arg5, TEMP)
+            TEMP = Arg5
         }
 
         Method (PERW, 5, Serialized)
         {
             ADBG ("PERW")
-            Store (Arg0, Local7)
-            Or (Local7, ShiftLeft (Arg1, 0x14), Local7)
-            Or (Local7, ShiftLeft (Arg2, 0x0F), Local7)
-            Or (Local7, ShiftLeft (Arg3, 0x0C), Local7)
-            Or (Local7, Arg4, Local7)
+            Local7 = Arg0
+            Local7 |= (Arg1 << 0x14)
+            Local7 |= (Arg2 << 0x0F)
+            Local7 |= (Arg3 << 0x0C)
+            Local7 |= Arg4
             OperationRegion (PCI0, SystemMemory, Local7, 0x02)
             Field (PCI0, ByteAcc, NoLock, Preserve)
             {
@@ -19153,28 +19252,28 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         Method (PEWW, 6, Serialized)
         {
             ADBG ("PEWW")
-            Store (Arg0, Local7)
-            Or (Local7, ShiftLeft (Arg1, 0x14), Local7)
-            Or (Local7, ShiftLeft (Arg2, 0x0F), Local7)
-            Or (Local7, ShiftLeft (Arg3, 0x0C), Local7)
-            Or (Local7, Arg4, Local7)
+            Local7 = Arg0
+            Local7 |= (Arg1 << 0x14)
+            Local7 |= (Arg2 << 0x0F)
+            Local7 |= (Arg3 << 0x0C)
+            Local7 |= Arg4
             OperationRegion (PCI0, SystemMemory, Local7, 0x02)
             Field (PCI0, ByteAcc, NoLock, Preserve)
             {
                 TEMP,   16
             }
 
-            Store (Arg5, TEMP)
+            TEMP = Arg5
         }
 
         Method (PERD, 5, Serialized)
         {
             ADBG ("PERD")
-            Store (Arg0, Local7)
-            Or (Local7, ShiftLeft (Arg1, 0x14), Local7)
-            Or (Local7, ShiftLeft (Arg2, 0x0F), Local7)
-            Or (Local7, ShiftLeft (Arg3, 0x0C), Local7)
-            Or (Local7, Arg4, Local7)
+            Local7 = Arg0
+            Local7 |= (Arg1 << 0x14)
+            Local7 |= (Arg2 << 0x0F)
+            Local7 |= (Arg3 << 0x0C)
+            Local7 |= Arg4
             OperationRegion (PCI0, SystemMemory, Local7, 0x04)
             Field (PCI0, ByteAcc, NoLock, Preserve)
             {
@@ -19187,56 +19286,56 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         Method (PEWD, 6, Serialized)
         {
             ADBG ("PEWD")
-            Store (Arg0, Local7)
-            Or (Local7, ShiftLeft (Arg1, 0x14), Local7)
-            Or (Local7, ShiftLeft (Arg2, 0x0F), Local7)
-            Or (Local7, ShiftLeft (Arg3, 0x0C), Local7)
-            Or (Local7, Arg4, Local7)
+            Local7 = Arg0
+            Local7 |= (Arg1 << 0x14)
+            Local7 |= (Arg2 << 0x0F)
+            Local7 |= (Arg3 << 0x0C)
+            Local7 |= Arg4
             OperationRegion (PCI0, SystemMemory, Local7, 0x04)
             Field (PCI0, ByteAcc, NoLock, Preserve)
             {
                 TEMP,   32
             }
 
-            Store (Arg5, TEMP)
+            TEMP = Arg5
         }
 
         Method (STDC, 5, Serialized)
         {
             ADBG ("STDC")
-            Store (PERW (Arg0, Arg1, Arg2, Arg3, Zero), Local7)
-            If (LEqual (Local7, 0xFFFF))
+            Local7 = PERW (Arg0, Arg1, Arg2, Arg3, Zero)
+            If ((Local7 == 0xFFFF))
             {
                 ADBG ("Referenced device is not present")
                 Return (Zero)
             }
 
-            Store (PERW (Arg0, Arg1, Arg2, Arg3, 0x06), Local0)
-            If (LEqual (And (Local0, 0x10), Zero))
+            Local0 = PERW (Arg0, Arg1, Arg2, Arg3, 0x06)
+            If (((Local0 & 0x10) == Zero))
             {
                 ADBG ("No Capabilities linked list is available")
                 Return (Zero)
             }
 
-            Store (PERB (Arg0, Arg1, Arg2, Arg3, 0x34), Local2)
+            Local2 = PERB (Arg0, Arg1, Arg2, Arg3, 0x34)
             While (One)
             {
-                And (Local2, 0xFC, Local2)
-                If (LEqual (Local2, Zero))
+                Local2 &= 0xFC
+                If ((Local2 == Zero))
                 {
                     ADBG ("Capability ID is not found")
                     Return (Zero)
                 }
 
-                Store (PERB (Arg0, Arg1, Arg2, Arg3, Local2), Local1)
-                If (LEqual (Arg4, Local1))
+                Local1 = PERB (Arg0, Arg1, Arg2, Arg3, Local2)
+                If ((Arg4 == Local1))
                 {
                     ADBG ("Capability ID is found")
                     ADBG ("Capability Offset : ")
                     Return (Local2)
                 }
 
-                Store (PERB (Arg0, Arg1, Arg2, Arg3, Add (Local2, One)), Local2)
+                Local2 = PERB (Arg0, Arg1, Arg2, Arg3, (Local2 + One))
             }
         }
     }
@@ -19636,25 +19735,25 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
             Method (_CRS, 0, Serialized)  // _CRS: Current Resource Settings
             {
                 CreateDWordField (BUF0, \_SB.PCI0.PDRC._Y25._BAS, MBR0)  // _BAS: Base Address
-                Store (GMHB (), MBR0)
+                MBR0 = GMHB ()
                 CreateDWordField (BUF0, \_SB.PCI0.PDRC._Y26._BAS, DBR0)  // _BAS: Base Address
-                Store (GDMB (), DBR0)
+                DBR0 = GDMB ()
                 CreateDWordField (BUF0, \_SB.PCI0.PDRC._Y27._BAS, EBR0)  // _BAS: Base Address
-                Store (GEPB (), EBR0)
+                EBR0 = GEPB ()
                 CreateDWordField (BUF0, \_SB.PCI0.PDRC._Y28._BAS, XBR0)  // _BAS: Base Address
-                Store (GPCB (), XBR0)
+                XBR0 = GPCB ()
                 CreateDWordField (BUF0, \_SB.PCI0.PDRC._Y28._LEN, XSZ0)  // _LEN: Length
-                Store (GPCL (), XSZ0)
+                XSZ0 = GPCL ()
                 CreateDWordField (BUF0, \_SB.PCI0.PDRC._Y29._BAS, SXRA)  // _BAS: Base Address
-                Store (SXRB, SXRA)
+                SXRA = SXRB
                 CreateDWordField (BUF0, \_SB.PCI0.PDRC._Y29._LEN, SXRL)  // _LEN: Length
-                Store (SXRS, SXRL)
-                If (LNot (HPTE))
+                SXRL = SXRS
+                If (!HPTE)
                 {
                     CreateDWordField (BUF0, \_SB.PCI0.PDRC._Y2A._BAS, HBAS)  // _BAS: Base Address
                     CreateDWordField (BUF0, \_SB.PCI0.PDRC._Y2A._LEN, HLEN)  // _LEN: Length
-                    Store (HPTB, HBAS)
-                    Store (0x0400, HLEN)
+                    HBAS = HPTB
+                    HLEN = 0x0400
                 }
 
                 Return (BUF0)
@@ -19664,7 +19763,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
 
     Method (BRTN, 1, Serialized)
     {
-        If (LEqual (And (DIDX, 0x0F00), 0x0400))
+        If (((DIDX & 0x0F00) == 0x0400))
         {
             Notify (\_SB.PCI0.IGPU.DD1F, Arg0)
         }
@@ -19674,140 +19773,140 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
     {
         Method (_L69, 0, NotSerialized)  // _Lxx: Level-Triggered GPE
         {
-            If (LNotEqual (\_SB.PCI0.RP01.VDID, 0xFFFFFFFF))
+            If ((\_SB.PCI0.RP01.VDID != 0xFFFFFFFF))
             {
                 \_SB.PCI0.RP01.HPME ()
                 Notify (\_SB.PCI0.RP01, 0x02)
             }
 
-            If (LNotEqual (\_SB.PCI0.RP02.VDID, 0xFFFFFFFF))
+            If ((\_SB.PCI0.RP02.VDID != 0xFFFFFFFF))
             {
                 \_SB.PCI0.RP02.HPME ()
                 Notify (\_SB.PCI0.RP02, 0x02)
             }
 
-            If (LNotEqual (\_SB.PCI0.RP03.VDID, 0xFFFFFFFF))
+            If ((\_SB.PCI0.RP03.VDID != 0xFFFFFFFF))
             {
                 \_SB.PCI0.RP03.HPME ()
                 Notify (\_SB.PCI0.RP03, 0x02)
             }
 
-            If (LNotEqual (\_SB.PCI0.RP04.VDID, 0xFFFFFFFF))
+            If ((\_SB.PCI0.RP04.VDID != 0xFFFFFFFF))
             {
                 \_SB.PCI0.RP04.HPME ()
                 Notify (\_SB.PCI0.RP04, 0x02)
             }
 
-            If (LNotEqual (\_SB.PCI0.RP05.VDID, 0xFFFFFFFF))
+            If ((\_SB.PCI0.RP05.VDID != 0xFFFFFFFF))
             {
                 \_SB.PCI0.RP05.HPME ()
                 Notify (\_SB.PCI0.RP05, 0x02)
             }
 
-            If (LNotEqual (\_SB.PCI0.RP06.VDID, 0xFFFFFFFF))
+            If ((\_SB.PCI0.RP06.VDID != 0xFFFFFFFF))
             {
                 \_SB.PCI0.RP06.HPME ()
                 Notify (\_SB.PCI0.RP06, 0x02)
             }
 
-            If (LNotEqual (\_SB.PCI0.RP07.VDID, 0xFFFFFFFF))
+            If ((\_SB.PCI0.RP07.VDID != 0xFFFFFFFF))
             {
                 \_SB.PCI0.RP07.HPME ()
                 Notify (\_SB.PCI0.RP07, 0x02)
             }
 
-            If (LNotEqual (\_SB.PCI0.RP08.VDID, 0xFFFFFFFF))
+            If ((\_SB.PCI0.RP08.VDID != 0xFFFFFFFF))
             {
                 \_SB.PCI0.RP08.HPME ()
                 Notify (\_SB.PCI0.RP08, 0x02)
             }
 
-            If (LNotEqual (\_SB.PCI0.RP09.VDID, 0xFFFFFFFF))
+            If ((\_SB.PCI0.RP09.VDID != 0xFFFFFFFF))
             {
                 \_SB.PCI0.RP09.HPME ()
                 Notify (\_SB.PCI0.RP09, 0x02)
             }
 
-            If (LNotEqual (\_SB.PCI0.RP10.VDID, 0xFFFFFFFF))
+            If ((\_SB.PCI0.RP10.VDID != 0xFFFFFFFF))
             {
                 \_SB.PCI0.RP10.HPME ()
                 Notify (\_SB.PCI0.RP10, 0x02)
             }
 
-            If (LNotEqual (\_SB.PCI0.RP11.VDID, 0xFFFFFFFF))
+            If ((\_SB.PCI0.RP11.VDID != 0xFFFFFFFF))
             {
                 \_SB.PCI0.RP11.HPME ()
                 Notify (\_SB.PCI0.RP11, 0x02)
             }
 
-            If (LNotEqual (\_SB.PCI0.RP12.VDID, 0xFFFFFFFF))
+            If ((\_SB.PCI0.RP12.VDID != 0xFFFFFFFF))
             {
                 \_SB.PCI0.RP12.HPME ()
                 Notify (\_SB.PCI0.RP12, 0x02)
             }
 
-            If (LNotEqual (\_SB.PCI0.RP13.VDID, 0xFFFFFFFF))
+            If ((\_SB.PCI0.RP13.VDID != 0xFFFFFFFF))
             {
                 \_SB.PCI0.RP13.HPME ()
                 Notify (\_SB.PCI0.RP13, 0x02)
             }
 
-            If (LNotEqual (\_SB.PCI0.RP14.VDID, 0xFFFFFFFF))
+            If ((\_SB.PCI0.RP14.VDID != 0xFFFFFFFF))
             {
                 \_SB.PCI0.RP14.HPME ()
                 Notify (\_SB.PCI0.RP14, 0x02)
             }
 
-            If (LNotEqual (\_SB.PCI0.RP15.VDID, 0xFFFFFFFF))
+            If ((\_SB.PCI0.RP15.VDID != 0xFFFFFFFF))
             {
                 \_SB.PCI0.RP15.HPME ()
                 Notify (\_SB.PCI0.RP15, 0x02)
             }
 
-            If (LNotEqual (\_SB.PCI0.RP16.VDID, 0xFFFFFFFF))
+            If ((\_SB.PCI0.RP16.VDID != 0xFFFFFFFF))
             {
                 \_SB.PCI0.RP16.HPME ()
                 Notify (\_SB.PCI0.RP16, 0x02)
             }
 
-            If (LNotEqual (\_SB.PCI0.RP17.VDID, 0xFFFFFFFF))
+            If ((\_SB.PCI0.RP17.VDID != 0xFFFFFFFF))
             {
                 \_SB.PCI0.RP17.HPME ()
                 Notify (\_SB.PCI0.RP17, 0x02)
             }
 
-            If (LNotEqual (\_SB.PCI0.RP18.VDID, 0xFFFFFFFF))
+            If ((\_SB.PCI0.RP18.VDID != 0xFFFFFFFF))
             {
                 \_SB.PCI0.RP18.HPME ()
                 Notify (\_SB.PCI0.RP18, 0x02)
             }
 
-            If (LNotEqual (\_SB.PCI0.RP19.VDID, 0xFFFFFFFF))
+            If ((\_SB.PCI0.RP19.VDID != 0xFFFFFFFF))
             {
                 \_SB.PCI0.RP19.HPME ()
                 Notify (\_SB.PCI0.RP19, 0x02)
             }
 
-            If (LNotEqual (\_SB.PCI0.RP20.VDID, 0xFFFFFFFF))
+            If ((\_SB.PCI0.RP20.VDID != 0xFFFFFFFF))
             {
                 \_SB.PCI0.RP20.HPME ()
                 Notify (\_SB.PCI0.RP20, 0x02)
             }
 
-            If (LEqual (D1F0, One))
+            If ((D1F0 == One))
             {
                 \_SB.PCI0.PEG0.HPME ()
                 Notify (\_SB.PCI0.PEG0, 0x02)
                 Notify (\_SB.PCI0.PEG0.PEGP, 0x02)
             }
 
-            If (LEqual (D1F1, One))
+            If ((D1F1 == One))
             {
                 \_SB.PCI0.PEG1.HPME ()
                 Notify (\_SB.PCI0.PEG1, 0x02)
             }
 
-            If (LEqual (D1F2, One))
+            If ((D1F2 == One))
             {
                 \_SB.PCI0.PEG2.HPME ()
                 Notify (\_SB.PCI0.PEG2, 0x02)
@@ -19816,10 +19915,10 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
 
         Method (_L62, 0, NotSerialized)  // _Lxx: Level-Triggered GPE
         {
-            Store (Zero, GPEC)
+            GPEC = Zero
             If (CondRefOf (\_PR.DTSE))
             {
-                If (LGreaterEqual (\_PR.DTSE, One))
+                If ((\_PR.DTSE >= One))
                 {
                     Notify (\_TZ.TZ00, 0x80)
                     Notify (\_TZ.TZ01, 0x80)
@@ -19834,7 +19933,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
 
         Method (_L66, 0, NotSerialized)  // _Lxx: Level-Triggered GPE
         {
-            If (LAnd (\_SB.PCI0.IGPU.GSSE, LNot (GSMI)))
+            If ((\_SB.PCI0.IGPU.GSSE && !GSMI))
             {
                 \_SB.PCI0.IGPU.GSCI ()
             }
@@ -19842,7 +19941,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
 
         Method (_L67, 0, NotSerialized)  // _Lxx: Level-Triggered GPE
         {
-            Store (0x20, \_SB.PCI0.SBUS.HSTS)
+            \_SB.PCI0.SBUS.HSTS = 0x20
         }
 
         Method (_L50, 0, NotSerialized)  // _Lxx: Level-Triggered GPE
@@ -19899,15 +19998,15 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         })
         Method (SPLC, 0, Serialized)
         {
-            Store (DOM1, Index (DerefOf (Index (SPLX, One)), Zero))
-            Store (LIM1, Index (DerefOf (Index (SPLX, One)), One))
-            Store (TIM1, Index (DerefOf (Index (SPLX, One)), 0x02))
-            Store (DOM2, Index (DerefOf (Index (SPLX, 0x02)), Zero))
-            Store (LIM2, Index (DerefOf (Index (SPLX, 0x02)), One))
-            Store (TIM2, Index (DerefOf (Index (SPLX, 0x02)), 0x02))
-            Store (DOM3, Index (DerefOf (Index (SPLX, 0x03)), Zero))
-            Store (LIM3, Index (DerefOf (Index (SPLX, 0x03)), One))
-            Store (TIM3, Index (DerefOf (Index (SPLX, 0x03)), 0x02))
+            DerefOf (SPLX [One]) [Zero] = DOM1
+            DerefOf (SPLX [One]) [One] = LIM1
+            DerefOf (SPLX [One]) [0x02] = TIM1
+            DerefOf (SPLX [0x02]) [Zero] = DOM2
+            DerefOf (SPLX [0x02]) [One] = LIM2
+            DerefOf (SPLX [0x02]) [0x02] = TIM2
+            DerefOf (SPLX [0x03]) [Zero] = DOM3
+            DerefOf (SPLX [0x03]) [One] = LIM3
+            DerefOf (SPLX [0x03]) [0x02] = TIM3
             Return (SPLX)
         }
 
@@ -19930,12 +20029,12 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         })
         Method (WAND, 0, Serialized)
         {
-            Store (Zero, Index (DerefOf (Index (WANX, One)), Zero))
-            Store (TRD0, Index (DerefOf (Index (WANX, One)), One))
-            Store (TRL0, Index (DerefOf (Index (WANX, One)), 0x02))
-            Store (One, Index (DerefOf (Index (WANX, 0x02)), Zero))
-            Store (TRD1, Index (DerefOf (Index (WANX, 0x02)), One))
-            Store (TRL1, Index (DerefOf (Index (WANX, 0x02)), 0x02))
+            DerefOf (WANX [One]) [Zero] = Zero
+            DerefOf (WANX [One]) [One] = TRD0
+            DerefOf (WANX [One]) [0x02] = TRL0
+            DerefOf (WANX [0x02]) [Zero] = One
+            DerefOf (WANX [0x02]) [One] = TRD1
+            DerefOf (WANX [0x02]) [0x02] = TRL1
             Return (WANX)
         }
 
@@ -19956,10 +20055,10 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         })
         Method (WRDD, 0, Serialized)
         {
-            Store (WDM1, Index (DerefOf (Index (WRDX, One)), Zero))
-            Store (CID1, Index (DerefOf (Index (WRDX, One)), One))
-            Store (WDM2, Index (DerefOf (Index (WRDX, 0x02)), Zero))
-            Store (CID2, Index (DerefOf (Index (WRDX, 0x02)), One))
+            DerefOf (WRDX [One]) [Zero] = WDM1
+            DerefOf (WRDX [One]) [One] = CID1
+            DerefOf (WRDX [0x02]) [Zero] = WDM2
+            DerefOf (WRDX [0x02]) [One] = CID2
             Return (WRDX)
         }
 
@@ -20072,15 +20171,15 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         })
         Method (SPLC, 0, Serialized)
         {
-            Store (DOM1, Index (DerefOf (Index (SPLX, One)), Zero))
-            Store (LIM1, Index (DerefOf (Index (SPLX, One)), One))
-            Store (TIM1, Index (DerefOf (Index (SPLX, One)), 0x02))
-            Store (DOM2, Index (DerefOf (Index (SPLX, 0x02)), Zero))
-            Store (LIM2, Index (DerefOf (Index (SPLX, 0x02)), One))
-            Store (TIM2, Index (DerefOf (Index (SPLX, 0x02)), 0x02))
-            Store (DOM3, Index (DerefOf (Index (SPLX, 0x03)), Zero))
-            Store (LIM3, Index (DerefOf (Index (SPLX, 0x03)), One))
-            Store (TIM3, Index (DerefOf (Index (SPLX, 0x03)), 0x02))
+            DerefOf (SPLX [One]) [Zero] = DOM1
+            DerefOf (SPLX [One]) [One] = LIM1
+            DerefOf (SPLX [One]) [0x02] = TIM1
+            DerefOf (SPLX [0x02]) [Zero] = DOM2
+            DerefOf (SPLX [0x02]) [One] = LIM2
+            DerefOf (SPLX [0x02]) [0x02] = TIM2
+            DerefOf (SPLX [0x03]) [Zero] = DOM3
+            DerefOf (SPLX [0x03]) [One] = LIM3
+            DerefOf (SPLX [0x03]) [0x02] = TIM3
             Return (SPLX)
         }
 
@@ -20103,12 +20202,12 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         })
         Method (WAND, 0, Serialized)
         {
-            Store (Zero, Index (DerefOf (Index (WANX, One)), Zero))
-            Store (TRD0, Index (DerefOf (Index (WANX, One)), One))
-            Store (TRL0, Index (DerefOf (Index (WANX, One)), 0x02))
-            Store (One, Index (DerefOf (Index (WANX, 0x02)), Zero))
-            Store (TRD1, Index (DerefOf (Index (WANX, 0x02)), One))
-            Store (TRL1, Index (DerefOf (Index (WANX, 0x02)), 0x02))
+            DerefOf (WANX [One]) [Zero] = Zero
+            DerefOf (WANX [One]) [One] = TRD0
+            DerefOf (WANX [One]) [0x02] = TRL0
+            DerefOf (WANX [0x02]) [Zero] = One
+            DerefOf (WANX [0x02]) [One] = TRD1
+            DerefOf (WANX [0x02]) [0x02] = TRL1
             Return (WANX)
         }
 
@@ -20129,10 +20228,10 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         })
         Method (WRDD, 0, Serialized)
         {
-            Store (WDM1, Index (DerefOf (Index (WRDX, One)), Zero))
-            Store (CID1, Index (DerefOf (Index (WRDX, One)), One))
-            Store (WDM2, Index (DerefOf (Index (WRDX, 0x02)), Zero))
-            Store (CID2, Index (DerefOf (Index (WRDX, 0x02)), One))
+            DerefOf (WRDX [One]) [Zero] = WDM1
+            DerefOf (WRDX [One]) [One] = CID1
+            DerefOf (WRDX [0x02]) [Zero] = WDM2
+            DerefOf (WRDX [0x02]) [One] = CID2
             Return (WRDX)
         }
 
@@ -20245,15 +20344,15 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         })
         Method (SPLC, 0, Serialized)
         {
-            Store (DOM1, Index (DerefOf (Index (SPLX, One)), Zero))
-            Store (LIM1, Index (DerefOf (Index (SPLX, One)), One))
-            Store (TIM1, Index (DerefOf (Index (SPLX, One)), 0x02))
-            Store (DOM2, Index (DerefOf (Index (SPLX, 0x02)), Zero))
-            Store (LIM2, Index (DerefOf (Index (SPLX, 0x02)), One))
-            Store (TIM2, Index (DerefOf (Index (SPLX, 0x02)), 0x02))
-            Store (DOM3, Index (DerefOf (Index (SPLX, 0x03)), Zero))
-            Store (LIM3, Index (DerefOf (Index (SPLX, 0x03)), One))
-            Store (TIM3, Index (DerefOf (Index (SPLX, 0x03)), 0x02))
+            DerefOf (SPLX [One]) [Zero] = DOM1
+            DerefOf (SPLX [One]) [One] = LIM1
+            DerefOf (SPLX [One]) [0x02] = TIM1
+            DerefOf (SPLX [0x02]) [Zero] = DOM2
+            DerefOf (SPLX [0x02]) [One] = LIM2
+            DerefOf (SPLX [0x02]) [0x02] = TIM2
+            DerefOf (SPLX [0x03]) [Zero] = DOM3
+            DerefOf (SPLX [0x03]) [One] = LIM3
+            DerefOf (SPLX [0x03]) [0x02] = TIM3
             Return (SPLX)
         }
 
@@ -20276,12 +20375,12 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         })
         Method (WAND, 0, Serialized)
         {
-            Store (Zero, Index (DerefOf (Index (WANX, One)), Zero))
-            Store (TRD0, Index (DerefOf (Index (WANX, One)), One))
-            Store (TRL0, Index (DerefOf (Index (WANX, One)), 0x02))
-            Store (One, Index (DerefOf (Index (WANX, 0x02)), Zero))
-            Store (TRD1, Index (DerefOf (Index (WANX, 0x02)), One))
-            Store (TRL1, Index (DerefOf (Index (WANX, 0x02)), 0x02))
+            DerefOf (WANX [One]) [Zero] = Zero
+            DerefOf (WANX [One]) [One] = TRD0
+            DerefOf (WANX [One]) [0x02] = TRL0
+            DerefOf (WANX [0x02]) [Zero] = One
+            DerefOf (WANX [0x02]) [One] = TRD1
+            DerefOf (WANX [0x02]) [0x02] = TRL1
             Return (WANX)
         }
 
@@ -20302,10 +20401,10 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         })
         Method (WRDD, 0, Serialized)
         {
-            Store (WDM1, Index (DerefOf (Index (WRDX, One)), Zero))
-            Store (CID1, Index (DerefOf (Index (WRDX, One)), One))
-            Store (WDM2, Index (DerefOf (Index (WRDX, 0x02)), Zero))
-            Store (CID2, Index (DerefOf (Index (WRDX, 0x02)), One))
+            DerefOf (WRDX [One]) [Zero] = WDM1
+            DerefOf (WRDX [One]) [One] = CID1
+            DerefOf (WRDX [0x02]) [Zero] = WDM2
+            DerefOf (WRDX [0x02]) [One] = CID2
             Return (WRDX)
         }
 
@@ -20418,15 +20517,15 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         })
         Method (SPLC, 0, Serialized)
         {
-            Store (DOM1, Index (DerefOf (Index (SPLX, One)), Zero))
-            Store (LIM1, Index (DerefOf (Index (SPLX, One)), One))
-            Store (TIM1, Index (DerefOf (Index (SPLX, One)), 0x02))
-            Store (DOM2, Index (DerefOf (Index (SPLX, 0x02)), Zero))
-            Store (LIM2, Index (DerefOf (Index (SPLX, 0x02)), One))
-            Store (TIM2, Index (DerefOf (Index (SPLX, 0x02)), 0x02))
-            Store (DOM3, Index (DerefOf (Index (SPLX, 0x03)), Zero))
-            Store (LIM3, Index (DerefOf (Index (SPLX, 0x03)), One))
-            Store (TIM3, Index (DerefOf (Index (SPLX, 0x03)), 0x02))
+            DerefOf (SPLX [One]) [Zero] = DOM1
+            DerefOf (SPLX [One]) [One] = LIM1
+            DerefOf (SPLX [One]) [0x02] = TIM1
+            DerefOf (SPLX [0x02]) [Zero] = DOM2
+            DerefOf (SPLX [0x02]) [One] = LIM2
+            DerefOf (SPLX [0x02]) [0x02] = TIM2
+            DerefOf (SPLX [0x03]) [Zero] = DOM3
+            DerefOf (SPLX [0x03]) [One] = LIM3
+            DerefOf (SPLX [0x03]) [0x02] = TIM3
             Return (SPLX)
         }
 
@@ -20449,12 +20548,12 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         })
         Method (WAND, 0, Serialized)
         {
-            Store (Zero, Index (DerefOf (Index (WANX, One)), Zero))
-            Store (TRD0, Index (DerefOf (Index (WANX, One)), One))
-            Store (TRL0, Index (DerefOf (Index (WANX, One)), 0x02))
-            Store (One, Index (DerefOf (Index (WANX, 0x02)), Zero))
-            Store (TRD1, Index (DerefOf (Index (WANX, 0x02)), One))
-            Store (TRL1, Index (DerefOf (Index (WANX, 0x02)), 0x02))
+            DerefOf (WANX [One]) [Zero] = Zero
+            DerefOf (WANX [One]) [One] = TRD0
+            DerefOf (WANX [One]) [0x02] = TRL0
+            DerefOf (WANX [0x02]) [Zero] = One
+            DerefOf (WANX [0x02]) [One] = TRD1
+            DerefOf (WANX [0x02]) [0x02] = TRL1
             Return (WANX)
         }
 
@@ -20475,10 +20574,10 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         })
         Method (WRDD, 0, Serialized)
         {
-            Store (WDM1, Index (DerefOf (Index (WRDX, One)), Zero))
-            Store (CID1, Index (DerefOf (Index (WRDX, One)), One))
-            Store (WDM2, Index (DerefOf (Index (WRDX, 0x02)), Zero))
-            Store (CID2, Index (DerefOf (Index (WRDX, 0x02)), One))
+            DerefOf (WRDX [One]) [Zero] = WDM1
+            DerefOf (WRDX [One]) [One] = CID1
+            DerefOf (WRDX [0x02]) [Zero] = WDM2
+            DerefOf (WRDX [0x02]) [One] = CID2
             Return (WRDX)
         }
 
@@ -20591,15 +20690,15 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         })
         Method (SPLC, 0, Serialized)
         {
-            Store (DOM1, Index (DerefOf (Index (SPLX, One)), Zero))
-            Store (LIM1, Index (DerefOf (Index (SPLX, One)), One))
-            Store (TIM1, Index (DerefOf (Index (SPLX, One)), 0x02))
-            Store (DOM2, Index (DerefOf (Index (SPLX, 0x02)), Zero))
-            Store (LIM2, Index (DerefOf (Index (SPLX, 0x02)), One))
-            Store (TIM2, Index (DerefOf (Index (SPLX, 0x02)), 0x02))
-            Store (DOM3, Index (DerefOf (Index (SPLX, 0x03)), Zero))
-            Store (LIM3, Index (DerefOf (Index (SPLX, 0x03)), One))
-            Store (TIM3, Index (DerefOf (Index (SPLX, 0x03)), 0x02))
+            DerefOf (SPLX [One]) [Zero] = DOM1
+            DerefOf (SPLX [One]) [One] = LIM1
+            DerefOf (SPLX [One]) [0x02] = TIM1
+            DerefOf (SPLX [0x02]) [Zero] = DOM2
+            DerefOf (SPLX [0x02]) [One] = LIM2
+            DerefOf (SPLX [0x02]) [0x02] = TIM2
+            DerefOf (SPLX [0x03]) [Zero] = DOM3
+            DerefOf (SPLX [0x03]) [One] = LIM3
+            DerefOf (SPLX [0x03]) [0x02] = TIM3
             Return (SPLX)
         }
 
@@ -20622,12 +20721,12 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         })
         Method (WAND, 0, Serialized)
         {
-            Store (Zero, Index (DerefOf (Index (WANX, One)), Zero))
-            Store (TRD0, Index (DerefOf (Index (WANX, One)), One))
-            Store (TRL0, Index (DerefOf (Index (WANX, One)), 0x02))
-            Store (One, Index (DerefOf (Index (WANX, 0x02)), Zero))
-            Store (TRD1, Index (DerefOf (Index (WANX, 0x02)), One))
-            Store (TRL1, Index (DerefOf (Index (WANX, 0x02)), 0x02))
+            DerefOf (WANX [One]) [Zero] = Zero
+            DerefOf (WANX [One]) [One] = TRD0
+            DerefOf (WANX [One]) [0x02] = TRL0
+            DerefOf (WANX [0x02]) [Zero] = One
+            DerefOf (WANX [0x02]) [One] = TRD1
+            DerefOf (WANX [0x02]) [0x02] = TRL1
             Return (WANX)
         }
 
@@ -20648,10 +20747,10 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         })
         Method (WRDD, 0, Serialized)
         {
-            Store (WDM1, Index (DerefOf (Index (WRDX, One)), Zero))
-            Store (CID1, Index (DerefOf (Index (WRDX, One)), One))
-            Store (WDM2, Index (DerefOf (Index (WRDX, 0x02)), Zero))
-            Store (CID2, Index (DerefOf (Index (WRDX, 0x02)), One))
+            DerefOf (WRDX [One]) [Zero] = WDM1
+            DerefOf (WRDX [One]) [One] = CID1
+            DerefOf (WRDX [0x02]) [Zero] = WDM2
+            DerefOf (WRDX [0x02]) [One] = CID2
             Return (WRDX)
         }
 
@@ -20764,15 +20863,15 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         })
         Method (SPLC, 0, Serialized)
         {
-            Store (DOM1, Index (DerefOf (Index (SPLX, One)), Zero))
-            Store (LIM1, Index (DerefOf (Index (SPLX, One)), One))
-            Store (TIM1, Index (DerefOf (Index (SPLX, One)), 0x02))
-            Store (DOM2, Index (DerefOf (Index (SPLX, 0x02)), Zero))
-            Store (LIM2, Index (DerefOf (Index (SPLX, 0x02)), One))
-            Store (TIM2, Index (DerefOf (Index (SPLX, 0x02)), 0x02))
-            Store (DOM3, Index (DerefOf (Index (SPLX, 0x03)), Zero))
-            Store (LIM3, Index (DerefOf (Index (SPLX, 0x03)), One))
-            Store (TIM3, Index (DerefOf (Index (SPLX, 0x03)), 0x02))
+            DerefOf (SPLX [One]) [Zero] = DOM1
+            DerefOf (SPLX [One]) [One] = LIM1
+            DerefOf (SPLX [One]) [0x02] = TIM1
+            DerefOf (SPLX [0x02]) [Zero] = DOM2
+            DerefOf (SPLX [0x02]) [One] = LIM2
+            DerefOf (SPLX [0x02]) [0x02] = TIM2
+            DerefOf (SPLX [0x03]) [Zero] = DOM3
+            DerefOf (SPLX [0x03]) [One] = LIM3
+            DerefOf (SPLX [0x03]) [0x02] = TIM3
             Return (SPLX)
         }
 
@@ -20795,12 +20894,12 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         })
         Method (WAND, 0, Serialized)
         {
-            Store (Zero, Index (DerefOf (Index (WANX, One)), Zero))
-            Store (TRD0, Index (DerefOf (Index (WANX, One)), One))
-            Store (TRL0, Index (DerefOf (Index (WANX, One)), 0x02))
-            Store (One, Index (DerefOf (Index (WANX, 0x02)), Zero))
-            Store (TRD1, Index (DerefOf (Index (WANX, 0x02)), One))
-            Store (TRL1, Index (DerefOf (Index (WANX, 0x02)), 0x02))
+            DerefOf (WANX [One]) [Zero] = Zero
+            DerefOf (WANX [One]) [One] = TRD0
+            DerefOf (WANX [One]) [0x02] = TRL0
+            DerefOf (WANX [0x02]) [Zero] = One
+            DerefOf (WANX [0x02]) [One] = TRD1
+            DerefOf (WANX [0x02]) [0x02] = TRL1
             Return (WANX)
         }
 
@@ -20821,10 +20920,10 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         })
         Method (WRDD, 0, Serialized)
         {
-            Store (WDM1, Index (DerefOf (Index (WRDX, One)), Zero))
-            Store (CID1, Index (DerefOf (Index (WRDX, One)), One))
-            Store (WDM2, Index (DerefOf (Index (WRDX, 0x02)), Zero))
-            Store (CID2, Index (DerefOf (Index (WRDX, 0x02)), One))
+            DerefOf (WRDX [One]) [Zero] = WDM1
+            DerefOf (WRDX [One]) [One] = CID1
+            DerefOf (WRDX [0x02]) [Zero] = WDM2
+            DerefOf (WRDX [0x02]) [One] = CID2
             Return (WRDX)
         }
 
@@ -20937,15 +21036,15 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         })
         Method (SPLC, 0, Serialized)
         {
-            Store (DOM1, Index (DerefOf (Index (SPLX, One)), Zero))
-            Store (LIM1, Index (DerefOf (Index (SPLX, One)), One))
-            Store (TIM1, Index (DerefOf (Index (SPLX, One)), 0x02))
-            Store (DOM2, Index (DerefOf (Index (SPLX, 0x02)), Zero))
-            Store (LIM2, Index (DerefOf (Index (SPLX, 0x02)), One))
-            Store (TIM2, Index (DerefOf (Index (SPLX, 0x02)), 0x02))
-            Store (DOM3, Index (DerefOf (Index (SPLX, 0x03)), Zero))
-            Store (LIM3, Index (DerefOf (Index (SPLX, 0x03)), One))
-            Store (TIM3, Index (DerefOf (Index (SPLX, 0x03)), 0x02))
+            DerefOf (SPLX [One]) [Zero] = DOM1
+            DerefOf (SPLX [One]) [One] = LIM1
+            DerefOf (SPLX [One]) [0x02] = TIM1
+            DerefOf (SPLX [0x02]) [Zero] = DOM2
+            DerefOf (SPLX [0x02]) [One] = LIM2
+            DerefOf (SPLX [0x02]) [0x02] = TIM2
+            DerefOf (SPLX [0x03]) [Zero] = DOM3
+            DerefOf (SPLX [0x03]) [One] = LIM3
+            DerefOf (SPLX [0x03]) [0x02] = TIM3
             Return (SPLX)
         }
 
@@ -20968,12 +21067,12 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         })
         Method (WAND, 0, Serialized)
         {
-            Store (Zero, Index (DerefOf (Index (WANX, One)), Zero))
-            Store (TRD0, Index (DerefOf (Index (WANX, One)), One))
-            Store (TRL0, Index (DerefOf (Index (WANX, One)), 0x02))
-            Store (One, Index (DerefOf (Index (WANX, 0x02)), Zero))
-            Store (TRD1, Index (DerefOf (Index (WANX, 0x02)), One))
-            Store (TRL1, Index (DerefOf (Index (WANX, 0x02)), 0x02))
+            DerefOf (WANX [One]) [Zero] = Zero
+            DerefOf (WANX [One]) [One] = TRD0
+            DerefOf (WANX [One]) [0x02] = TRL0
+            DerefOf (WANX [0x02]) [Zero] = One
+            DerefOf (WANX [0x02]) [One] = TRD1
+            DerefOf (WANX [0x02]) [0x02] = TRL1
             Return (WANX)
         }
 
@@ -20994,10 +21093,10 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         })
         Method (WRDD, 0, Serialized)
         {
-            Store (WDM1, Index (DerefOf (Index (WRDX, One)), Zero))
-            Store (CID1, Index (DerefOf (Index (WRDX, One)), One))
-            Store (WDM2, Index (DerefOf (Index (WRDX, 0x02)), Zero))
-            Store (CID2, Index (DerefOf (Index (WRDX, 0x02)), One))
+            DerefOf (WRDX [One]) [Zero] = WDM1
+            DerefOf (WRDX [One]) [One] = CID1
+            DerefOf (WRDX [0x02]) [Zero] = WDM2
+            DerefOf (WRDX [0x02]) [One] = CID2
             Return (WRDX)
         }
 
@@ -21110,15 +21209,15 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         })
         Method (SPLC, 0, Serialized)
         {
-            Store (DOM1, Index (DerefOf (Index (SPLX, One)), Zero))
-            Store (LIM1, Index (DerefOf (Index (SPLX, One)), One))
-            Store (TIM1, Index (DerefOf (Index (SPLX, One)), 0x02))
-            Store (DOM2, Index (DerefOf (Index (SPLX, 0x02)), Zero))
-            Store (LIM2, Index (DerefOf (Index (SPLX, 0x02)), One))
-            Store (TIM2, Index (DerefOf (Index (SPLX, 0x02)), 0x02))
-            Store (DOM3, Index (DerefOf (Index (SPLX, 0x03)), Zero))
-            Store (LIM3, Index (DerefOf (Index (SPLX, 0x03)), One))
-            Store (TIM3, Index (DerefOf (Index (SPLX, 0x03)), 0x02))
+            DerefOf (SPLX [One]) [Zero] = DOM1
+            DerefOf (SPLX [One]) [One] = LIM1
+            DerefOf (SPLX [One]) [0x02] = TIM1
+            DerefOf (SPLX [0x02]) [Zero] = DOM2
+            DerefOf (SPLX [0x02]) [One] = LIM2
+            DerefOf (SPLX [0x02]) [0x02] = TIM2
+            DerefOf (SPLX [0x03]) [Zero] = DOM3
+            DerefOf (SPLX [0x03]) [One] = LIM3
+            DerefOf (SPLX [0x03]) [0x02] = TIM3
             Return (SPLX)
         }
 
@@ -21141,12 +21240,12 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         })
         Method (WAND, 0, Serialized)
         {
-            Store (Zero, Index (DerefOf (Index (WANX, One)), Zero))
-            Store (TRD0, Index (DerefOf (Index (WANX, One)), One))
-            Store (TRL0, Index (DerefOf (Index (WANX, One)), 0x02))
-            Store (One, Index (DerefOf (Index (WANX, 0x02)), Zero))
-            Store (TRD1, Index (DerefOf (Index (WANX, 0x02)), One))
-            Store (TRL1, Index (DerefOf (Index (WANX, 0x02)), 0x02))
+            DerefOf (WANX [One]) [Zero] = Zero
+            DerefOf (WANX [One]) [One] = TRD0
+            DerefOf (WANX [One]) [0x02] = TRL0
+            DerefOf (WANX [0x02]) [Zero] = One
+            DerefOf (WANX [0x02]) [One] = TRD1
+            DerefOf (WANX [0x02]) [0x02] = TRL1
             Return (WANX)
         }
 
@@ -21167,10 +21266,10 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         })
         Method (WRDD, 0, Serialized)
         {
-            Store (WDM1, Index (DerefOf (Index (WRDX, One)), Zero))
-            Store (CID1, Index (DerefOf (Index (WRDX, One)), One))
-            Store (WDM2, Index (DerefOf (Index (WRDX, 0x02)), Zero))
-            Store (CID2, Index (DerefOf (Index (WRDX, 0x02)), One))
+            DerefOf (WRDX [One]) [Zero] = WDM1
+            DerefOf (WRDX [One]) [One] = CID1
+            DerefOf (WRDX [0x02]) [Zero] = WDM2
+            DerefOf (WRDX [0x02]) [One] = CID2
             Return (WRDX)
         }
 
@@ -21283,15 +21382,15 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         })
         Method (SPLC, 0, Serialized)
         {
-            Store (DOM1, Index (DerefOf (Index (SPLX, One)), Zero))
-            Store (LIM1, Index (DerefOf (Index (SPLX, One)), One))
-            Store (TIM1, Index (DerefOf (Index (SPLX, One)), 0x02))
-            Store (DOM2, Index (DerefOf (Index (SPLX, 0x02)), Zero))
-            Store (LIM2, Index (DerefOf (Index (SPLX, 0x02)), One))
-            Store (TIM2, Index (DerefOf (Index (SPLX, 0x02)), 0x02))
-            Store (DOM3, Index (DerefOf (Index (SPLX, 0x03)), Zero))
-            Store (LIM3, Index (DerefOf (Index (SPLX, 0x03)), One))
-            Store (TIM3, Index (DerefOf (Index (SPLX, 0x03)), 0x02))
+            DerefOf (SPLX [One]) [Zero] = DOM1
+            DerefOf (SPLX [One]) [One] = LIM1
+            DerefOf (SPLX [One]) [0x02] = TIM1
+            DerefOf (SPLX [0x02]) [Zero] = DOM2
+            DerefOf (SPLX [0x02]) [One] = LIM2
+            DerefOf (SPLX [0x02]) [0x02] = TIM2
+            DerefOf (SPLX [0x03]) [Zero] = DOM3
+            DerefOf (SPLX [0x03]) [One] = LIM3
+            DerefOf (SPLX [0x03]) [0x02] = TIM3
             Return (SPLX)
         }
 
@@ -21314,12 +21413,12 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         })
         Method (WAND, 0, Serialized)
         {
-            Store (Zero, Index (DerefOf (Index (WANX, One)), Zero))
-            Store (TRD0, Index (DerefOf (Index (WANX, One)), One))
-            Store (TRL0, Index (DerefOf (Index (WANX, One)), 0x02))
-            Store (One, Index (DerefOf (Index (WANX, 0x02)), Zero))
-            Store (TRD1, Index (DerefOf (Index (WANX, 0x02)), One))
-            Store (TRL1, Index (DerefOf (Index (WANX, 0x02)), 0x02))
+            DerefOf (WANX [One]) [Zero] = Zero
+            DerefOf (WANX [One]) [One] = TRD0
+            DerefOf (WANX [One]) [0x02] = TRL0
+            DerefOf (WANX [0x02]) [Zero] = One
+            DerefOf (WANX [0x02]) [One] = TRD1
+            DerefOf (WANX [0x02]) [0x02] = TRL1
             Return (WANX)
         }
 
@@ -21340,10 +21439,10 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         })
         Method (WRDD, 0, Serialized)
         {
-            Store (WDM1, Index (DerefOf (Index (WRDX, One)), Zero))
-            Store (CID1, Index (DerefOf (Index (WRDX, One)), One))
-            Store (WDM2, Index (DerefOf (Index (WRDX, 0x02)), Zero))
-            Store (CID2, Index (DerefOf (Index (WRDX, 0x02)), One))
+            DerefOf (WRDX [One]) [Zero] = WDM1
+            DerefOf (WRDX [One]) [One] = CID1
+            DerefOf (WRDX [0x02]) [Zero] = WDM2
+            DerefOf (WRDX [0x02]) [One] = CID2
             Return (WRDX)
         }
 
@@ -21456,15 +21555,15 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         })
         Method (SPLC, 0, Serialized)
         {
-            Store (DOM1, Index (DerefOf (Index (SPLX, One)), Zero))
-            Store (LIM1, Index (DerefOf (Index (SPLX, One)), One))
-            Store (TIM1, Index (DerefOf (Index (SPLX, One)), 0x02))
-            Store (DOM2, Index (DerefOf (Index (SPLX, 0x02)), Zero))
-            Store (LIM2, Index (DerefOf (Index (SPLX, 0x02)), One))
-            Store (TIM2, Index (DerefOf (Index (SPLX, 0x02)), 0x02))
-            Store (DOM3, Index (DerefOf (Index (SPLX, 0x03)), Zero))
-            Store (LIM3, Index (DerefOf (Index (SPLX, 0x03)), One))
-            Store (TIM3, Index (DerefOf (Index (SPLX, 0x03)), 0x02))
+            DerefOf (SPLX [One]) [Zero] = DOM1
+            DerefOf (SPLX [One]) [One] = LIM1
+            DerefOf (SPLX [One]) [0x02] = TIM1
+            DerefOf (SPLX [0x02]) [Zero] = DOM2
+            DerefOf (SPLX [0x02]) [One] = LIM2
+            DerefOf (SPLX [0x02]) [0x02] = TIM2
+            DerefOf (SPLX [0x03]) [Zero] = DOM3
+            DerefOf (SPLX [0x03]) [One] = LIM3
+            DerefOf (SPLX [0x03]) [0x02] = TIM3
             Return (SPLX)
         }
 
@@ -21487,12 +21586,12 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         })
         Method (WAND, 0, Serialized)
         {
-            Store (Zero, Index (DerefOf (Index (WANX, One)), Zero))
-            Store (TRD0, Index (DerefOf (Index (WANX, One)), One))
-            Store (TRL0, Index (DerefOf (Index (WANX, One)), 0x02))
-            Store (One, Index (DerefOf (Index (WANX, 0x02)), Zero))
-            Store (TRD1, Index (DerefOf (Index (WANX, 0x02)), One))
-            Store (TRL1, Index (DerefOf (Index (WANX, 0x02)), 0x02))
+            DerefOf (WANX [One]) [Zero] = Zero
+            DerefOf (WANX [One]) [One] = TRD0
+            DerefOf (WANX [One]) [0x02] = TRL0
+            DerefOf (WANX [0x02]) [Zero] = One
+            DerefOf (WANX [0x02]) [One] = TRD1
+            DerefOf (WANX [0x02]) [0x02] = TRL1
             Return (WANX)
         }
 
@@ -21513,10 +21612,10 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         })
         Method (WRDD, 0, Serialized)
         {
-            Store (WDM1, Index (DerefOf (Index (WRDX, One)), Zero))
-            Store (CID1, Index (DerefOf (Index (WRDX, One)), One))
-            Store (WDM2, Index (DerefOf (Index (WRDX, 0x02)), Zero))
-            Store (CID2, Index (DerefOf (Index (WRDX, 0x02)), One))
+            DerefOf (WRDX [One]) [Zero] = WDM1
+            DerefOf (WRDX [One]) [One] = CID1
+            DerefOf (WRDX [0x02]) [Zero] = WDM2
+            DerefOf (WRDX [0x02]) [One] = CID2
             Return (WRDX)
         }
 
@@ -21629,15 +21728,15 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         })
         Method (SPLC, 0, Serialized)
         {
-            Store (DOM1, Index (DerefOf (Index (SPLX, One)), Zero))
-            Store (LIM1, Index (DerefOf (Index (SPLX, One)), One))
-            Store (TIM1, Index (DerefOf (Index (SPLX, One)), 0x02))
-            Store (DOM2, Index (DerefOf (Index (SPLX, 0x02)), Zero))
-            Store (LIM2, Index (DerefOf (Index (SPLX, 0x02)), One))
-            Store (TIM2, Index (DerefOf (Index (SPLX, 0x02)), 0x02))
-            Store (DOM3, Index (DerefOf (Index (SPLX, 0x03)), Zero))
-            Store (LIM3, Index (DerefOf (Index (SPLX, 0x03)), One))
-            Store (TIM3, Index (DerefOf (Index (SPLX, 0x03)), 0x02))
+            DerefOf (SPLX [One]) [Zero] = DOM1
+            DerefOf (SPLX [One]) [One] = LIM1
+            DerefOf (SPLX [One]) [0x02] = TIM1
+            DerefOf (SPLX [0x02]) [Zero] = DOM2
+            DerefOf (SPLX [0x02]) [One] = LIM2
+            DerefOf (SPLX [0x02]) [0x02] = TIM2
+            DerefOf (SPLX [0x03]) [Zero] = DOM3
+            DerefOf (SPLX [0x03]) [One] = LIM3
+            DerefOf (SPLX [0x03]) [0x02] = TIM3
             Return (SPLX)
         }
 
@@ -21660,12 +21759,12 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         })
         Method (WAND, 0, Serialized)
         {
-            Store (Zero, Index (DerefOf (Index (WANX, One)), Zero))
-            Store (TRD0, Index (DerefOf (Index (WANX, One)), One))
-            Store (TRL0, Index (DerefOf (Index (WANX, One)), 0x02))
-            Store (One, Index (DerefOf (Index (WANX, 0x02)), Zero))
-            Store (TRD1, Index (DerefOf (Index (WANX, 0x02)), One))
-            Store (TRL1, Index (DerefOf (Index (WANX, 0x02)), 0x02))
+            DerefOf (WANX [One]) [Zero] = Zero
+            DerefOf (WANX [One]) [One] = TRD0
+            DerefOf (WANX [One]) [0x02] = TRL0
+            DerefOf (WANX [0x02]) [Zero] = One
+            DerefOf (WANX [0x02]) [One] = TRD1
+            DerefOf (WANX [0x02]) [0x02] = TRL1
             Return (WANX)
         }
 
@@ -21686,10 +21785,10 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         })
         Method (WRDD, 0, Serialized)
         {
-            Store (WDM1, Index (DerefOf (Index (WRDX, One)), Zero))
-            Store (CID1, Index (DerefOf (Index (WRDX, One)), One))
-            Store (WDM2, Index (DerefOf (Index (WRDX, 0x02)), Zero))
-            Store (CID2, Index (DerefOf (Index (WRDX, 0x02)), One))
+            DerefOf (WRDX [One]) [Zero] = WDM1
+            DerefOf (WRDX [One]) [One] = CID1
+            DerefOf (WRDX [0x02]) [Zero] = WDM2
+            DerefOf (WRDX [0x02]) [One] = CID2
             Return (WRDX)
         }
 
@@ -21802,15 +21901,15 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         })
         Method (SPLC, 0, Serialized)
         {
-            Store (DOM1, Index (DerefOf (Index (SPLX, One)), Zero))
-            Store (LIM1, Index (DerefOf (Index (SPLX, One)), One))
-            Store (TIM1, Index (DerefOf (Index (SPLX, One)), 0x02))
-            Store (DOM2, Index (DerefOf (Index (SPLX, 0x02)), Zero))
-            Store (LIM2, Index (DerefOf (Index (SPLX, 0x02)), One))
-            Store (TIM2, Index (DerefOf (Index (SPLX, 0x02)), 0x02))
-            Store (DOM3, Index (DerefOf (Index (SPLX, 0x03)), Zero))
-            Store (LIM3, Index (DerefOf (Index (SPLX, 0x03)), One))
-            Store (TIM3, Index (DerefOf (Index (SPLX, 0x03)), 0x02))
+            DerefOf (SPLX [One]) [Zero] = DOM1
+            DerefOf (SPLX [One]) [One] = LIM1
+            DerefOf (SPLX [One]) [0x02] = TIM1
+            DerefOf (SPLX [0x02]) [Zero] = DOM2
+            DerefOf (SPLX [0x02]) [One] = LIM2
+            DerefOf (SPLX [0x02]) [0x02] = TIM2
+            DerefOf (SPLX [0x03]) [Zero] = DOM3
+            DerefOf (SPLX [0x03]) [One] = LIM3
+            DerefOf (SPLX [0x03]) [0x02] = TIM3
             Return (SPLX)
         }
 
@@ -21833,12 +21932,12 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         })
         Method (WAND, 0, Serialized)
         {
-            Store (Zero, Index (DerefOf (Index (WANX, One)), Zero))
-            Store (TRD0, Index (DerefOf (Index (WANX, One)), One))
-            Store (TRL0, Index (DerefOf (Index (WANX, One)), 0x02))
-            Store (One, Index (DerefOf (Index (WANX, 0x02)), Zero))
-            Store (TRD1, Index (DerefOf (Index (WANX, 0x02)), One))
-            Store (TRL1, Index (DerefOf (Index (WANX, 0x02)), 0x02))
+            DerefOf (WANX [One]) [Zero] = Zero
+            DerefOf (WANX [One]) [One] = TRD0
+            DerefOf (WANX [One]) [0x02] = TRL0
+            DerefOf (WANX [0x02]) [Zero] = One
+            DerefOf (WANX [0x02]) [One] = TRD1
+            DerefOf (WANX [0x02]) [0x02] = TRL1
             Return (WANX)
         }
 
@@ -21859,10 +21958,10 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         })
         Method (WRDD, 0, Serialized)
         {
-            Store (WDM1, Index (DerefOf (Index (WRDX, One)), Zero))
-            Store (CID1, Index (DerefOf (Index (WRDX, One)), One))
-            Store (WDM2, Index (DerefOf (Index (WRDX, 0x02)), Zero))
-            Store (CID2, Index (DerefOf (Index (WRDX, 0x02)), One))
+            DerefOf (WRDX [One]) [Zero] = WDM1
+            DerefOf (WRDX [One]) [One] = CID1
+            DerefOf (WRDX [0x02]) [Zero] = WDM2
+            DerefOf (WRDX [0x02]) [One] = CID2
             Return (WRDX)
         }
 
@@ -21975,15 +22074,15 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         })
         Method (SPLC, 0, Serialized)
         {
-            Store (DOM1, Index (DerefOf (Index (SPLX, One)), Zero))
-            Store (LIM1, Index (DerefOf (Index (SPLX, One)), One))
-            Store (TIM1, Index (DerefOf (Index (SPLX, One)), 0x02))
-            Store (DOM2, Index (DerefOf (Index (SPLX, 0x02)), Zero))
-            Store (LIM2, Index (DerefOf (Index (SPLX, 0x02)), One))
-            Store (TIM2, Index (DerefOf (Index (SPLX, 0x02)), 0x02))
-            Store (DOM3, Index (DerefOf (Index (SPLX, 0x03)), Zero))
-            Store (LIM3, Index (DerefOf (Index (SPLX, 0x03)), One))
-            Store (TIM3, Index (DerefOf (Index (SPLX, 0x03)), 0x02))
+            DerefOf (SPLX [One]) [Zero] = DOM1
+            DerefOf (SPLX [One]) [One] = LIM1
+            DerefOf (SPLX [One]) [0x02] = TIM1
+            DerefOf (SPLX [0x02]) [Zero] = DOM2
+            DerefOf (SPLX [0x02]) [One] = LIM2
+            DerefOf (SPLX [0x02]) [0x02] = TIM2
+            DerefOf (SPLX [0x03]) [Zero] = DOM3
+            DerefOf (SPLX [0x03]) [One] = LIM3
+            DerefOf (SPLX [0x03]) [0x02] = TIM3
             Return (SPLX)
         }
 
@@ -22006,12 +22105,12 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         })
         Method (WAND, 0, Serialized)
         {
-            Store (Zero, Index (DerefOf (Index (WANX, One)), Zero))
-            Store (TRD0, Index (DerefOf (Index (WANX, One)), One))
-            Store (TRL0, Index (DerefOf (Index (WANX, One)), 0x02))
-            Store (One, Index (DerefOf (Index (WANX, 0x02)), Zero))
-            Store (TRD1, Index (DerefOf (Index (WANX, 0x02)), One))
-            Store (TRL1, Index (DerefOf (Index (WANX, 0x02)), 0x02))
+            DerefOf (WANX [One]) [Zero] = Zero
+            DerefOf (WANX [One]) [One] = TRD0
+            DerefOf (WANX [One]) [0x02] = TRL0
+            DerefOf (WANX [0x02]) [Zero] = One
+            DerefOf (WANX [0x02]) [One] = TRD1
+            DerefOf (WANX [0x02]) [0x02] = TRL1
             Return (WANX)
         }
 
@@ -22032,10 +22131,10 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         })
         Method (WRDD, 0, Serialized)
         {
-            Store (WDM1, Index (DerefOf (Index (WRDX, One)), Zero))
-            Store (CID1, Index (DerefOf (Index (WRDX, One)), One))
-            Store (WDM2, Index (DerefOf (Index (WRDX, 0x02)), Zero))
-            Store (CID2, Index (DerefOf (Index (WRDX, 0x02)), One))
+            DerefOf (WRDX [One]) [Zero] = WDM1
+            DerefOf (WRDX [One]) [One] = CID1
+            DerefOf (WRDX [0x02]) [Zero] = WDM2
+            DerefOf (WRDX [0x02]) [One] = CID2
             Return (WRDX)
         }
 
@@ -22148,15 +22247,15 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         })
         Method (SPLC, 0, Serialized)
         {
-            Store (DOM1, Index (DerefOf (Index (SPLX, One)), Zero))
-            Store (LIM1, Index (DerefOf (Index (SPLX, One)), One))
-            Store (TIM1, Index (DerefOf (Index (SPLX, One)), 0x02))
-            Store (DOM2, Index (DerefOf (Index (SPLX, 0x02)), Zero))
-            Store (LIM2, Index (DerefOf (Index (SPLX, 0x02)), One))
-            Store (TIM2, Index (DerefOf (Index (SPLX, 0x02)), 0x02))
-            Store (DOM3, Index (DerefOf (Index (SPLX, 0x03)), Zero))
-            Store (LIM3, Index (DerefOf (Index (SPLX, 0x03)), One))
-            Store (TIM3, Index (DerefOf (Index (SPLX, 0x03)), 0x02))
+            DerefOf (SPLX [One]) [Zero] = DOM1
+            DerefOf (SPLX [One]) [One] = LIM1
+            DerefOf (SPLX [One]) [0x02] = TIM1
+            DerefOf (SPLX [0x02]) [Zero] = DOM2
+            DerefOf (SPLX [0x02]) [One] = LIM2
+            DerefOf (SPLX [0x02]) [0x02] = TIM2
+            DerefOf (SPLX [0x03]) [Zero] = DOM3
+            DerefOf (SPLX [0x03]) [One] = LIM3
+            DerefOf (SPLX [0x03]) [0x02] = TIM3
             Return (SPLX)
         }
 
@@ -22179,12 +22278,12 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         })
         Method (WAND, 0, Serialized)
         {
-            Store (Zero, Index (DerefOf (Index (WANX, One)), Zero))
-            Store (TRD0, Index (DerefOf (Index (WANX, One)), One))
-            Store (TRL0, Index (DerefOf (Index (WANX, One)), 0x02))
-            Store (One, Index (DerefOf (Index (WANX, 0x02)), Zero))
-            Store (TRD1, Index (DerefOf (Index (WANX, 0x02)), One))
-            Store (TRL1, Index (DerefOf (Index (WANX, 0x02)), 0x02))
+            DerefOf (WANX [One]) [Zero] = Zero
+            DerefOf (WANX [One]) [One] = TRD0
+            DerefOf (WANX [One]) [0x02] = TRL0
+            DerefOf (WANX [0x02]) [Zero] = One
+            DerefOf (WANX [0x02]) [One] = TRD1
+            DerefOf (WANX [0x02]) [0x02] = TRL1
             Return (WANX)
         }
 
@@ -22205,10 +22304,10 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         })
         Method (WRDD, 0, Serialized)
         {
-            Store (WDM1, Index (DerefOf (Index (WRDX, One)), Zero))
-            Store (CID1, Index (DerefOf (Index (WRDX, One)), One))
-            Store (WDM2, Index (DerefOf (Index (WRDX, 0x02)), Zero))
-            Store (CID2, Index (DerefOf (Index (WRDX, 0x02)), One))
+            DerefOf (WRDX [One]) [Zero] = WDM1
+            DerefOf (WRDX [One]) [One] = CID1
+            DerefOf (WRDX [0x02]) [Zero] = WDM2
+            DerefOf (WRDX [0x02]) [One] = CID2
             Return (WRDX)
         }
 
@@ -22321,15 +22420,15 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         })
         Method (SPLC, 0, Serialized)
         {
-            Store (DOM1, Index (DerefOf (Index (SPLX, One)), Zero))
-            Store (LIM1, Index (DerefOf (Index (SPLX, One)), One))
-            Store (TIM1, Index (DerefOf (Index (SPLX, One)), 0x02))
-            Store (DOM2, Index (DerefOf (Index (SPLX, 0x02)), Zero))
-            Store (LIM2, Index (DerefOf (Index (SPLX, 0x02)), One))
-            Store (TIM2, Index (DerefOf (Index (SPLX, 0x02)), 0x02))
-            Store (DOM3, Index (DerefOf (Index (SPLX, 0x03)), Zero))
-            Store (LIM3, Index (DerefOf (Index (SPLX, 0x03)), One))
-            Store (TIM3, Index (DerefOf (Index (SPLX, 0x03)), 0x02))
+            DerefOf (SPLX [One]) [Zero] = DOM1
+            DerefOf (SPLX [One]) [One] = LIM1
+            DerefOf (SPLX [One]) [0x02] = TIM1
+            DerefOf (SPLX [0x02]) [Zero] = DOM2
+            DerefOf (SPLX [0x02]) [One] = LIM2
+            DerefOf (SPLX [0x02]) [0x02] = TIM2
+            DerefOf (SPLX [0x03]) [Zero] = DOM3
+            DerefOf (SPLX [0x03]) [One] = LIM3
+            DerefOf (SPLX [0x03]) [0x02] = TIM3
             Return (SPLX)
         }
 
@@ -22352,12 +22451,12 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         })
         Method (WAND, 0, Serialized)
         {
-            Store (Zero, Index (DerefOf (Index (WANX, One)), Zero))
-            Store (TRD0, Index (DerefOf (Index (WANX, One)), One))
-            Store (TRL0, Index (DerefOf (Index (WANX, One)), 0x02))
-            Store (One, Index (DerefOf (Index (WANX, 0x02)), Zero))
-            Store (TRD1, Index (DerefOf (Index (WANX, 0x02)), One))
-            Store (TRL1, Index (DerefOf (Index (WANX, 0x02)), 0x02))
+            DerefOf (WANX [One]) [Zero] = Zero
+            DerefOf (WANX [One]) [One] = TRD0
+            DerefOf (WANX [One]) [0x02] = TRL0
+            DerefOf (WANX [0x02]) [Zero] = One
+            DerefOf (WANX [0x02]) [One] = TRD1
+            DerefOf (WANX [0x02]) [0x02] = TRL1
             Return (WANX)
         }
 
@@ -22378,10 +22477,10 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         })
         Method (WRDD, 0, Serialized)
         {
-            Store (WDM1, Index (DerefOf (Index (WRDX, One)), Zero))
-            Store (CID1, Index (DerefOf (Index (WRDX, One)), One))
-            Store (WDM2, Index (DerefOf (Index (WRDX, 0x02)), Zero))
-            Store (CID2, Index (DerefOf (Index (WRDX, 0x02)), One))
+            DerefOf (WRDX [One]) [Zero] = WDM1
+            DerefOf (WRDX [One]) [One] = CID1
+            DerefOf (WRDX [0x02]) [Zero] = WDM2
+            DerefOf (WRDX [0x02]) [One] = CID2
             Return (WRDX)
         }
 
@@ -22494,15 +22593,15 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         })
         Method (SPLC, 0, Serialized)
         {
-            Store (DOM1, Index (DerefOf (Index (SPLX, One)), Zero))
-            Store (LIM1, Index (DerefOf (Index (SPLX, One)), One))
-            Store (TIM1, Index (DerefOf (Index (SPLX, One)), 0x02))
-            Store (DOM2, Index (DerefOf (Index (SPLX, 0x02)), Zero))
-            Store (LIM2, Index (DerefOf (Index (SPLX, 0x02)), One))
-            Store (TIM2, Index (DerefOf (Index (SPLX, 0x02)), 0x02))
-            Store (DOM3, Index (DerefOf (Index (SPLX, 0x03)), Zero))
-            Store (LIM3, Index (DerefOf (Index (SPLX, 0x03)), One))
-            Store (TIM3, Index (DerefOf (Index (SPLX, 0x03)), 0x02))
+            DerefOf (SPLX [One]) [Zero] = DOM1
+            DerefOf (SPLX [One]) [One] = LIM1
+            DerefOf (SPLX [One]) [0x02] = TIM1
+            DerefOf (SPLX [0x02]) [Zero] = DOM2
+            DerefOf (SPLX [0x02]) [One] = LIM2
+            DerefOf (SPLX [0x02]) [0x02] = TIM2
+            DerefOf (SPLX [0x03]) [Zero] = DOM3
+            DerefOf (SPLX [0x03]) [One] = LIM3
+            DerefOf (SPLX [0x03]) [0x02] = TIM3
             Return (SPLX)
         }
 
@@ -22525,12 +22624,12 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         })
         Method (WAND, 0, Serialized)
         {
-            Store (Zero, Index (DerefOf (Index (WANX, One)), Zero))
-            Store (TRD0, Index (DerefOf (Index (WANX, One)), One))
-            Store (TRL0, Index (DerefOf (Index (WANX, One)), 0x02))
-            Store (One, Index (DerefOf (Index (WANX, 0x02)), Zero))
-            Store (TRD1, Index (DerefOf (Index (WANX, 0x02)), One))
-            Store (TRL1, Index (DerefOf (Index (WANX, 0x02)), 0x02))
+            DerefOf (WANX [One]) [Zero] = Zero
+            DerefOf (WANX [One]) [One] = TRD0
+            DerefOf (WANX [One]) [0x02] = TRL0
+            DerefOf (WANX [0x02]) [Zero] = One
+            DerefOf (WANX [0x02]) [One] = TRD1
+            DerefOf (WANX [0x02]) [0x02] = TRL1
             Return (WANX)
         }
 
@@ -22551,10 +22650,10 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         })
         Method (WRDD, 0, Serialized)
         {
-            Store (WDM1, Index (DerefOf (Index (WRDX, One)), Zero))
-            Store (CID1, Index (DerefOf (Index (WRDX, One)), One))
-            Store (WDM2, Index (DerefOf (Index (WRDX, 0x02)), Zero))
-            Store (CID2, Index (DerefOf (Index (WRDX, 0x02)), One))
+            DerefOf (WRDX [One]) [Zero] = WDM1
+            DerefOf (WRDX [One]) [One] = CID1
+            DerefOf (WRDX [0x02]) [Zero] = WDM2
+            DerefOf (WRDX [0x02]) [One] = CID2
             Return (WRDX)
         }
 
@@ -22667,15 +22766,15 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         })
         Method (SPLC, 0, Serialized)
         {
-            Store (DOM1, Index (DerefOf (Index (SPLX, One)), Zero))
-            Store (LIM1, Index (DerefOf (Index (SPLX, One)), One))
-            Store (TIM1, Index (DerefOf (Index (SPLX, One)), 0x02))
-            Store (DOM2, Index (DerefOf (Index (SPLX, 0x02)), Zero))
-            Store (LIM2, Index (DerefOf (Index (SPLX, 0x02)), One))
-            Store (TIM2, Index (DerefOf (Index (SPLX, 0x02)), 0x02))
-            Store (DOM3, Index (DerefOf (Index (SPLX, 0x03)), Zero))
-            Store (LIM3, Index (DerefOf (Index (SPLX, 0x03)), One))
-            Store (TIM3, Index (DerefOf (Index (SPLX, 0x03)), 0x02))
+            DerefOf (SPLX [One]) [Zero] = DOM1
+            DerefOf (SPLX [One]) [One] = LIM1
+            DerefOf (SPLX [One]) [0x02] = TIM1
+            DerefOf (SPLX [0x02]) [Zero] = DOM2
+            DerefOf (SPLX [0x02]) [One] = LIM2
+            DerefOf (SPLX [0x02]) [0x02] = TIM2
+            DerefOf (SPLX [0x03]) [Zero] = DOM3
+            DerefOf (SPLX [0x03]) [One] = LIM3
+            DerefOf (SPLX [0x03]) [0x02] = TIM3
             Return (SPLX)
         }
 
@@ -22698,12 +22797,12 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         })
         Method (WAND, 0, Serialized)
         {
-            Store (Zero, Index (DerefOf (Index (WANX, One)), Zero))
-            Store (TRD0, Index (DerefOf (Index (WANX, One)), One))
-            Store (TRL0, Index (DerefOf (Index (WANX, One)), 0x02))
-            Store (One, Index (DerefOf (Index (WANX, 0x02)), Zero))
-            Store (TRD1, Index (DerefOf (Index (WANX, 0x02)), One))
-            Store (TRL1, Index (DerefOf (Index (WANX, 0x02)), 0x02))
+            DerefOf (WANX [One]) [Zero] = Zero
+            DerefOf (WANX [One]) [One] = TRD0
+            DerefOf (WANX [One]) [0x02] = TRL0
+            DerefOf (WANX [0x02]) [Zero] = One
+            DerefOf (WANX [0x02]) [One] = TRD1
+            DerefOf (WANX [0x02]) [0x02] = TRL1
             Return (WANX)
         }
 
@@ -22724,10 +22823,10 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         })
         Method (WRDD, 0, Serialized)
         {
-            Store (WDM1, Index (DerefOf (Index (WRDX, One)), Zero))
-            Store (CID1, Index (DerefOf (Index (WRDX, One)), One))
-            Store (WDM2, Index (DerefOf (Index (WRDX, 0x02)), Zero))
-            Store (CID2, Index (DerefOf (Index (WRDX, 0x02)), One))
+            DerefOf (WRDX [One]) [Zero] = WDM1
+            DerefOf (WRDX [One]) [One] = CID1
+            DerefOf (WRDX [0x02]) [Zero] = WDM2
+            DerefOf (WRDX [0x02]) [One] = CID2
             Return (WRDX)
         }
 
@@ -22840,15 +22939,15 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         })
         Method (SPLC, 0, Serialized)
         {
-            Store (DOM1, Index (DerefOf (Index (SPLX, One)), Zero))
-            Store (LIM1, Index (DerefOf (Index (SPLX, One)), One))
-            Store (TIM1, Index (DerefOf (Index (SPLX, One)), 0x02))
-            Store (DOM2, Index (DerefOf (Index (SPLX, 0x02)), Zero))
-            Store (LIM2, Index (DerefOf (Index (SPLX, 0x02)), One))
-            Store (TIM2, Index (DerefOf (Index (SPLX, 0x02)), 0x02))
-            Store (DOM3, Index (DerefOf (Index (SPLX, 0x03)), Zero))
-            Store (LIM3, Index (DerefOf (Index (SPLX, 0x03)), One))
-            Store (TIM3, Index (DerefOf (Index (SPLX, 0x03)), 0x02))
+            DerefOf (SPLX [One]) [Zero] = DOM1
+            DerefOf (SPLX [One]) [One] = LIM1
+            DerefOf (SPLX [One]) [0x02] = TIM1
+            DerefOf (SPLX [0x02]) [Zero] = DOM2
+            DerefOf (SPLX [0x02]) [One] = LIM2
+            DerefOf (SPLX [0x02]) [0x02] = TIM2
+            DerefOf (SPLX [0x03]) [Zero] = DOM3
+            DerefOf (SPLX [0x03]) [One] = LIM3
+            DerefOf (SPLX [0x03]) [0x02] = TIM3
             Return (SPLX)
         }
 
@@ -22871,12 +22970,12 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         })
         Method (WAND, 0, Serialized)
         {
-            Store (Zero, Index (DerefOf (Index (WANX, One)), Zero))
-            Store (TRD0, Index (DerefOf (Index (WANX, One)), One))
-            Store (TRL0, Index (DerefOf (Index (WANX, One)), 0x02))
-            Store (One, Index (DerefOf (Index (WANX, 0x02)), Zero))
-            Store (TRD1, Index (DerefOf (Index (WANX, 0x02)), One))
-            Store (TRL1, Index (DerefOf (Index (WANX, 0x02)), 0x02))
+            DerefOf (WANX [One]) [Zero] = Zero
+            DerefOf (WANX [One]) [One] = TRD0
+            DerefOf (WANX [One]) [0x02] = TRL0
+            DerefOf (WANX [0x02]) [Zero] = One
+            DerefOf (WANX [0x02]) [One] = TRD1
+            DerefOf (WANX [0x02]) [0x02] = TRL1
             Return (WANX)
         }
 
@@ -22897,10 +22996,10 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         })
         Method (WRDD, 0, Serialized)
         {
-            Store (WDM1, Index (DerefOf (Index (WRDX, One)), Zero))
-            Store (CID1, Index (DerefOf (Index (WRDX, One)), One))
-            Store (WDM2, Index (DerefOf (Index (WRDX, 0x02)), Zero))
-            Store (CID2, Index (DerefOf (Index (WRDX, 0x02)), One))
+            DerefOf (WRDX [One]) [Zero] = WDM1
+            DerefOf (WRDX [One]) [One] = CID1
+            DerefOf (WRDX [0x02]) [Zero] = WDM2
+            DerefOf (WRDX [0x02]) [One] = CID2
             Return (WRDX)
         }
 
@@ -23013,15 +23112,15 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         })
         Method (SPLC, 0, Serialized)
         {
-            Store (DOM1, Index (DerefOf (Index (SPLX, One)), Zero))
-            Store (LIM1, Index (DerefOf (Index (SPLX, One)), One))
-            Store (TIM1, Index (DerefOf (Index (SPLX, One)), 0x02))
-            Store (DOM2, Index (DerefOf (Index (SPLX, 0x02)), Zero))
-            Store (LIM2, Index (DerefOf (Index (SPLX, 0x02)), One))
-            Store (TIM2, Index (DerefOf (Index (SPLX, 0x02)), 0x02))
-            Store (DOM3, Index (DerefOf (Index (SPLX, 0x03)), Zero))
-            Store (LIM3, Index (DerefOf (Index (SPLX, 0x03)), One))
-            Store (TIM3, Index (DerefOf (Index (SPLX, 0x03)), 0x02))
+            DerefOf (SPLX [One]) [Zero] = DOM1
+            DerefOf (SPLX [One]) [One] = LIM1
+            DerefOf (SPLX [One]) [0x02] = TIM1
+            DerefOf (SPLX [0x02]) [Zero] = DOM2
+            DerefOf (SPLX [0x02]) [One] = LIM2
+            DerefOf (SPLX [0x02]) [0x02] = TIM2
+            DerefOf (SPLX [0x03]) [Zero] = DOM3
+            DerefOf (SPLX [0x03]) [One] = LIM3
+            DerefOf (SPLX [0x03]) [0x02] = TIM3
             Return (SPLX)
         }
 
@@ -23044,12 +23143,12 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         })
         Method (WAND, 0, Serialized)
         {
-            Store (Zero, Index (DerefOf (Index (WANX, One)), Zero))
-            Store (TRD0, Index (DerefOf (Index (WANX, One)), One))
-            Store (TRL0, Index (DerefOf (Index (WANX, One)), 0x02))
-            Store (One, Index (DerefOf (Index (WANX, 0x02)), Zero))
-            Store (TRD1, Index (DerefOf (Index (WANX, 0x02)), One))
-            Store (TRL1, Index (DerefOf (Index (WANX, 0x02)), 0x02))
+            DerefOf (WANX [One]) [Zero] = Zero
+            DerefOf (WANX [One]) [One] = TRD0
+            DerefOf (WANX [One]) [0x02] = TRL0
+            DerefOf (WANX [0x02]) [Zero] = One
+            DerefOf (WANX [0x02]) [One] = TRD1
+            DerefOf (WANX [0x02]) [0x02] = TRL1
             Return (WANX)
         }
 
@@ -23070,10 +23169,10 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         })
         Method (WRDD, 0, Serialized)
         {
-            Store (WDM1, Index (DerefOf (Index (WRDX, One)), Zero))
-            Store (CID1, Index (DerefOf (Index (WRDX, One)), One))
-            Store (WDM2, Index (DerefOf (Index (WRDX, 0x02)), Zero))
-            Store (CID2, Index (DerefOf (Index (WRDX, 0x02)), One))
+            DerefOf (WRDX [One]) [Zero] = WDM1
+            DerefOf (WRDX [One]) [One] = CID1
+            DerefOf (WRDX [0x02]) [Zero] = WDM2
+            DerefOf (WRDX [0x02]) [One] = CID2
             Return (WRDX)
         }
 
@@ -23174,7 +23273,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
 
     Name (BUFN, Zero)
     Name (MBUF, Buffer (0x1000){})
-    OperationRegion (MDBG, SystemMemory, 0x77F4C018, 0x00001004)
+    OperationRegion (MDBG, SystemMemory, 0x77F4C018, 0x1004)
     Field (MDBG, AnyAcc, Lock, Preserve)
     {
         MDG0,   32768
@@ -23186,7 +23285,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         {
             SHOW (Arg0)
             MDGC (0x20)
-            Store (MBUF, MDG0)
+            MDG0 = MBUF
         }
         Else
         {
@@ -23196,23 +23295,23 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
 
     Method (DW2H, 1, Serialized)
     {
-        Store (Arg0, Local0)
-        ShiftRight (Arg0, 0x08, Local1)
-        And (Local0, 0xFF, Local0)
-        And (Local1, 0xFF, Local1)
+        Local0 = Arg0
+        Local1 = (Arg0 >> 0x08)
+        Local0 &= 0xFF
+        Local1 &= 0xFF
         DB2H (Local1)
-        Decrement (BUFN)
+        BUFN--
         DB2H (Local0)
     }
 
     Method (DD2H, 1, Serialized)
     {
-        Store (Arg0, Local0)
-        ShiftRight (Arg0, 0x10, Local1)
-        And (Local0, 0xFFFF, Local0)
-        And (Local1, 0xFFFF, Local1)
+        Local0 = Arg0
+        Local1 = (Arg0 >> 0x10)
+        Local0 &= 0xFFFF
+        Local1 &= 0xFFFF
         DW2H (Local1)
-        Decrement (BUFN)
+        BUFN--
         DW2H (Local0)
     }
 
@@ -23220,17 +23319,17 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
     {
         If (MDEN)
         {
-            Store (SizeOf (Arg0), Local0)
+            Local0 = SizeOf (Arg0)
             Name (BUFS, Buffer (Local0){})
-            Store (Arg0, BUFS)
+            BUFS = Arg0
             MDGC (0x20)
             While (Local0)
             {
-                MDGC (DerefOf (Index (BUFS, Subtract (SizeOf (Arg0), Local0))))
-                Decrement (Local0)
+                MDGC (DerefOf (BUFS [(SizeOf (Arg0) - Local0)]))
+                Local0--
             }
 
-            Store (MBUF, MDG0)
+            MDG0 = MBUF
         }
         Else
         {
@@ -23240,78 +23339,76 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
 
     Method (ADBG, 1, Serialized)
     {
-        
-        Return(0)
-
+        Return (Zero)
     }
 
     Method (SHOW, 1, Serialized)
     {
-        MDGC (NTOC (ShiftRight (Arg0, 0x04)))
+        MDGC (NTOC ((Arg0 >> 0x04)))
         MDGC (NTOC (Arg0))
     }
 
     Method (LINE, 0, Serialized)
     {
-        Store (BUFN, Local0)
-        And (Local0, 0x0F, Local0)
+        Local0 = BUFN
+        Local0 &= 0x0F
         While (Local0)
         {
             MDGC (Zero)
-            Increment (Local0)
-            And (Local0, 0x0F, Local0)
+            Local0++
+            Local0 &= 0x0F
         }
     }
 
     Method (MDGC, 1, Serialized)
     {
-        Store (Arg0, Index (MBUF, BUFN))
-        Add (BUFN, One, BUFN)
-        If (LGreater (BUFN, 0x0FFF))
+        MBUF [BUFN] = Arg0
+        BUFN += One
+        If ((BUFN > 0x0FFF))
         {
-            And (BUFN, 0x0FFF, BUFN)
+            BUFN &= 0x0FFF
             UP_L (0x0F)
         }
     }
 
     Method (UP_L, 1, Serialized)
     {
-        Store (Arg0, Local2)
-        ShiftLeft (Local2, 0x04, Local2)
+        Local2 = Arg0
+        Local2 <<= 0x04
         MOVE (Local2)
-        Subtract (0x1000, Local2, Local3)
+        Local3 = (0x1000 - Local2)
         While (Local2)
         {
-            Store (Zero, Index (MBUF, Local3))
-            Increment (Local3)
-            Decrement (Local2)
+            MBUF [Local3] = Zero
+            Local3++
+            Local2--
         }
     }
 
     Method (MOVE, 1, Serialized)
     {
-        Store (Arg0, Local4)
-        Store (Zero, BUFN)
-        Subtract (0x1000, Local4, Local5)
+        Local4 = Arg0
+        BUFN = Zero
+        Local5 = (0x1000 - Local4)
         While (Local5)
         {
-            Decrement (Local5)
-            Store (DerefOf (Index (MBUF, Local4)), Index (MBUF, BUFN))
-            Increment (BUFN)
-            Increment (Local4)
+            Local5--
+            MBUF [BUFN] = DerefOf (MBUF [Local4])
+            BUFN++
+            Local4++
         }
     }
 
     Method (NTOC, 1, Serialized)
     {
-        And (Arg0, 0x0F, Local0)
-        If (LLess (Local0, 0x0A))
+        Local0 = (Arg0 & 0x0F)
+        If ((Local0 < 0x0A))
         {
-            Add (Local0, 0x30, Local0)
+            Local0 += 0x30
         }
         Else
         {
-            Add (Local0, 0x37, Local0)
+            Local0 += 0x37
         }
 
         Return (Local0)
@@ -23324,7 +23421,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         Name (_STR, Unicode ("Power Sharing Manager"))  // _STR: Description String
         Method (_STA, 0, NotSerialized)  // _STA: Status
         {
-            If (LEqual (PSME, One))
+            If ((PSME == One))
             {
                 Return (0x0F)
             }
@@ -23353,12 +23450,12 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         })
         Method (SPLC, 0, Serialized)
         {
-            Store (PDT1, Index (DerefOf (Index (SPLX, One)), Zero))
-            Store (PLM1, Index (DerefOf (Index (SPLX, One)), One))
-            Store (PTW1, Index (DerefOf (Index (SPLX, One)), 0x02))
-            Store (PDT2, Index (DerefOf (Index (SPLX, 0x02)), Zero))
-            Store (PLM2, Index (DerefOf (Index (SPLX, 0x02)), One))
-            Store (PTW2, Index (DerefOf (Index (SPLX, 0x02)), 0x02))
+            DerefOf (SPLX [One]) [Zero] = PDT1
+            DerefOf (SPLX [One]) [One] = PLM1
+            DerefOf (SPLX [One]) [0x02] = PTW1
+            DerefOf (SPLX [0x02]) [Zero] = PDT2
+            DerefOf (SPLX [0x02]) [One] = PLM2
+            DerefOf (SPLX [0x02]) [0x02] = PTW2
             Return (SPLX)
         }
 
@@ -23368,48 +23465,46 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
             Package (0x03)
             {
                 0x80000000, 
-                0x80000000, 
-                
+                0x80000000
             }, 
 
             Package (0x03)
             {
                 0x80000000, 
-                0x80000000, 
-                
+                0x80000000
             }
         })
         Method (DPLC, 0, Serialized)
         {
-            Store (DDT1, Index (DerefOf (Index (DPLX, One)), Zero))
-            Store (DDP1, Index (DerefOf (Index (DPLX, One)), One))
-            Store (DLI1, Index (DerefOf (Index (DerefOf (Index (DPLX, One)), 0x02)), Zero))
-            Store (DPL1, Index (DerefOf (Index (DerefOf (Index (DPLX, One)), 0x02)), One))
-            Store (DTW1, Index (DerefOf (Index (DerefOf (Index (DPLX, One)), 0x02)), 0x02))
-            Store (DMI1, Index (DerefOf (Index (DerefOf (Index (DPLX, One)), 0x02)), 0x03))
-            Store (DMA1, Index (DerefOf (Index (DerefOf (Index (DPLX, One)), 0x02)), 0x04))
-            Store (DMT1, Index (DerefOf (Index (DerefOf (Index (DPLX, One)), 0x02)), 0x05))
-            Store (DDT2, Index (DerefOf (Index (DPLX, 0x02)), Zero))
-            Store (DDP2, Index (DerefOf (Index (DPLX, 0x02)), One))
-            Store (DLI2, Index (DerefOf (Index (DerefOf (Index (DPLX, 0x02)), 0x02)), Zero))
-            Store (DPL2, Index (DerefOf (Index (DerefOf (Index (DPLX, 0x02)), 0x02)), One))
-            Store (DTW2, Index (DerefOf (Index (DerefOf (Index (DPLX, 0x02)), 0x02)), 0x02))
-            Store (DMI2, Index (DerefOf (Index (DerefOf (Index (DPLX, 0x02)), 0x02)), 0x03))
-            Store (DMA2, Index (DerefOf (Index (DerefOf (Index (DPLX, 0x02)), 0x02)), 0x04))
-            Store (DMT2, Index (DerefOf (Index (DerefOf (Index (DPLX, 0x02)), 0x02)), 0x05))
+            DerefOf (DPLX [One]) [Zero] = DDT1
+            DerefOf (DPLX [One]) [One] = DDP1
+            DerefOf (DerefOf (DPLX [One]) [0x02]) [Zero] = DLI1
+            DerefOf (DerefOf (DPLX [One]) [0x02]) [One] = DPL1
+            DerefOf (DerefOf (DPLX [One]) [0x02]) [0x02] = DTW1
+            DerefOf (DerefOf (DPLX [One]) [0x02]) [0x03] = DMI1
+            DerefOf (DerefOf (DPLX [One]) [0x02]) [0x04] = DMA1
+            DerefOf (DerefOf (DPLX [One]) [0x02]) [0x05] = DMT1
+            DerefOf (DPLX [0x02]) [Zero] = DDT2
+            DerefOf (DPLX [0x02]) [One] = DDP2
+            DerefOf (DerefOf (DPLX [0x02]) [0x02]) [Zero] = DLI2
+            DerefOf (DerefOf (DPLX [0x02]) [0x02]) [One] = DPL2
+            DerefOf (DerefOf (DPLX [0x02]) [0x02]) [0x02] = DTW2
+            DerefOf (DerefOf (DPLX [0x02]) [0x02]) [0x03] = DMI2
+            DerefOf (DerefOf (DPLX [0x02]) [0x02]) [0x04] = DMA2
+            DerefOf (DerefOf (DPLX [0x02]) [0x02]) [0x05] = DMT2
             Return (DPLX)
         }
     }
 
-    If (LEqual (PCHV (), SPTL))
+    If ((PCHV () == SPTL))
     {
-        If (LNotEqual (SDWE, Zero))
+        If ((SDWE != Zero))
         {
             Scope (_SB.PCI0.PSDC)
             {
                 Method (_CRS, 0, NotSerialized)  // _CRS: Current Resource Settings
                 {
-                    If (LLess (OSYS, 0x07DC))
+                    If ((OSYS < 0x07DC))
                     {
                         Return (Buffer (0x02)
                         {
@@ -23434,16 +23529,16 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                     })
                     CreateWordField (RBUF, 0x17, SDIP)
                     CreateWordField (RBUF, 0x3F, SDGP)
-                    If (LEqual (SDWE, One))
+                    If ((SDWE == One))
                     {
-                        Store (GNUM (0x02010011), SDIP)
-                        Store (GNUM (0x02010011), SDGP)
+                        SDIP = GNUM (0x02010011)
+                        SDGP = GNUM (0x02010011)
                     }
 
-                    If (LEqual (SDWE, 0x02))
+                    If ((SDWE == 0x02))
                     {
-                        Store (GNUM (0x02060005), SDIP)
-                        Store (GNUM (0x02060005), SDGP)
+                        SDIP = GNUM (0x02060005)
+                        SDGP = GNUM (0x02060005)
                     }
 
                     Return (RBUF)
@@ -23507,8 +23602,10 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
     Method (WAK, 1, NotSerialized)
     {
     }
-    Method (B1B2, 2, NotSerialized) { Return(Or(Arg0, ShiftLeft(Arg1, 8))) }
-    
-    
+
+    Method (B1B2, 2, NotSerialized)
+    {
+        Return ((Arg0 | (Arg1 << 0x08)))
+    }
 }
 
