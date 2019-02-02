@@ -1,3 +1,4 @@
+.DS_Store
 DumpLog.txt
 *.hex
 *.aml
