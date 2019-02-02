@@ -5,13 +5,13 @@
  * 
  * Disassembling to symbolic ASL+ operators
  *
- * Disassembly of DSDT.aml, Sat Feb  2 10:28:42 2019
+ * Disassembly of DSDT.aml, Sat Feb  2 10:41:54 2019
  *
  * Original Table Header:
  *     Signature        "DSDT"
- *     Length           0x00017147 (94535)
+ *     Length           0x00016FF5 (94197)
  *     Revision         0x02
- *     Checksum         0x11
+ *     Checksum         0x23
  *     OEM ID           "LENOVO"
  *     OEM Table ID     "CB-01   "
  *     OEM Revision     0x00000001 (1)
@@ -15619,7 +15619,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                                 Local0 -= Local1
                                 Local1 = (VBAC * VBPV)
                                 Local3 = (Local0 * 0x03E8)
-                                Local3 = (Local3 * 0x3C)
+                                Local3 *= 0x3C
                                 VBCT = (Local3 / Local1)
                                 Return (VBCT)
                             }
@@ -15678,7 +15678,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
 
                                 Local1 = (QBAC * QBPV)
                                 Local3 = (Local0 * 0x03E8)
-                                Local3 = (Local3 * 0x3C)
+                                Local3 *= 0x3C
                                 QBCT = (Local3 / Local1)
                                 Return (QBCT)
                             }
@@ -16517,13 +16517,16 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
         {
             Name (_HID, EisaId ("PNP0103"))  // _HID: Hardware ID
             Name (_UID, Zero)  // _UID: Unique ID
-            Name (BUF0, ResourceTemplate ()
-            {
+            Name (BUF0, ResourceTemplate()
+{
+    IRQNoFlags() { 0, 8, 11, 15 }
+
                 Memory32Fixed (ReadWrite,
                     0xFED00000,         // Address Base
                     0x00000400,         // Address Length
                     _Y23)
             })
+
             Method (_STA, 0, NotSerialized)  // _STA: Status
             {
                 If (HPTE)
@@ -16653,8 +16656,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                     0x01,               // Alignment
                     0x02,               // Length
                     )
-                IRQNoFlags ()
-                    {2}
+                
             })
         }
 
@@ -16827,8 +16829,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                     0x01,               // Alignment
                     0x08,               // Length
                     )
-                IRQNoFlags ()
-                    {8}
+                
             })
         }
 
@@ -16849,8 +16850,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                     0x10,               // Alignment
                     0x04,               // Length
                     )
-                IRQNoFlags ()
-                    {0}
+                
             })
         }
 
@@ -18239,7 +18239,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
             P2TB = 0x0D
             While ((Local1 > Zero))
             {
-                Local1 = (Local1 - One)
+                Local1 -= One
                 Local2 = TB2P
                 If ((Local2 == 0xFFFFFFFF))
                 {
@@ -18618,7 +18618,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                 Local2 = 0x64
                 While ((Local2 > Zero))
                 {
-                    Local2 = (Local2 - One)
+                    Local2 -= One
                     Local1 = TB2P
                     If ((Local1 == 0xFFFFFFFF))
                     {
