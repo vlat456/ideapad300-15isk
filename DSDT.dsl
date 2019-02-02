@@ -4453,6 +4453,14 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CB-01   ", 0x00000001)
                     ,   2, 
                 ESPI,   1
             }
+            Method (_DSM, 4, NotSerialized)
+            {
+                If (LEqual (Arg2, Zero)) { Return (Buffer() { 0x03 } ) }
+                Return (Package()
+                {
+                    "compatible", "pci8086,9cc1",
+                })
+            }
         }
 
         Device (PPMC)
