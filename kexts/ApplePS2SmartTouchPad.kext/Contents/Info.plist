@@ -714,7 +714,7 @@
 					<key>5FingersPinchAction</key>
 					<integer>3</integer>
 					<key>CircularRotate</key>
-					<true/>
+					<false/>
 					<key>DisableTPadOnLIDClose</key>
 					<true/>
 					<key>MaxTouchEndDelta</key>
@@ -786,17 +786,17 @@
 						<integer>9</integer>
 					</dict>
 					<key>PalmDetection</key>
-					<true/>
+					<false/>
 					<key>PinchDeltaScale</key>
 					<integer>3</integer>
 					<key>PinchRotateMinSamples</key>
 					<integer>3</integer>
 					<key>PinchZoom</key>
-					<true/>
+					<false/>
 					<key>PinchZoomDelta</key>
 					<integer>300</integer>
 					<key>Rotation</key>
-					<true/>
+					<false/>
 					<key>RotationDelta</key>
 					<integer>350</integer>
 					<key>RotationMaxCFingDelta</key>
@@ -859,13 +859,13 @@
 					<key>Sensitivity</key>
 					<dict>
 						<key>ELANv2</key>
-						<integer>2</integer>
+						<integer>0</integer>
 						<key>ELANv3</key>
-						<integer>2</integer>
+						<integer>0</integer>
 						<key>ELANv4</key>
-						<integer>2</integer>
+						<integer>0</integer>
 						<key>ELANv4ClickPad</key>
-						<integer>2</integer>
+						<integer>0</integer>
 						<key>FocalTech</key>
 						<integer>0</integer>
 						<key>Synaptics</key>
@@ -926,13 +926,13 @@
 						<key>2FHorizontalScroll</key>
 						<true/>
 						<key>2FScrollAccelMode</key>
-						<integer>2</integer>
+						<integer>0</integer>
 						<key>2FVerticalScroll</key>
 						<true/>
 						<key>Auto2FingScroll</key>
 						<false/>
 						<key>Continuous2FingScroll</key>
-						<true/>
+						<false/>
 						<key>Inertial2FingScroll</key>
 						<true/>
 						<key>ScrollSmoothSamples</key>
@@ -1016,7 +1016,7 @@
 					<key>ScrollLevelAtBoot</key>
 					<integer>0</integer>
 					<key>ScrollLevelFactor</key>
-					<integer>1</integer>
+					<integer>3</integer>
 					<key>ScrollLevelGranularity</key>
 					<integer>40</integer>
 					<key>ScrollMaxIdleDetectTimeout</key>
@@ -1058,7 +1058,7 @@
 					<key>3FingerSwipeUpAction</key>
 					<integer>0</integer>
 					<key>3FingerSwipes</key>
-					<true/>
+					<false/>
 					<key>4FingerSwipeDownAction</key>
 					<integer>9</integer>
 					<key>4FingerSwipeLeftAction</key>
@@ -1068,7 +1068,7 @@
 					<key>4FingerSwipeUpAction</key>
 					<integer>4</integer>
 					<key>4FingerSwipes</key>
-					<true/>
+					<false/>
 					<key>EdgeSwipeBottom</key>
 					<integer>0</integer>
 					<key>EdgeSwipeDeltaX</key>
@@ -1088,11 +1088,11 @@
 					<key>EdgeSwipeTop</key>
 					<integer>0</integer>
 					<key>EdgeSwipes</key>
-					<true/>
+					<false/>
 					<key>EdgeSwipes2Ways</key>
-					<true/>
+					<false/>
 					<key>EdgeSwipesResetPointer</key>
-					<true/>
+					<false/>
 					<key>MultiFingerSwipesDeltaX</key>
 					<integer>250</integer>
 					<key>MultiFingerSwipesDeltaY</key>
