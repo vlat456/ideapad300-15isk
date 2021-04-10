@@ -2,6 +2,7 @@ Lenovo Ideapad 300-15ISK / High Sierra 10.13.6
 ======================================
 Confirmed to work flawlessly with 10.13.6
 At this point DSDT.dsl and SSDT-2-CB-01.dsl ACPI tables (GFX0->IGPU rename) were used. Other tables appearing here are not in use.
+
 Notes
 =====
 * Multitouch, 2-finger scroll and two-finger-click support can be located in "AppleSmartTouchpad" branch. At the point of writing this lines AppleSmartTouchpad is in early development stage and probably more or less buggy.
