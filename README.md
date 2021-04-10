@@ -1,7 +1,7 @@
 Lenovo Ideapad 300-15ISK / High Sierra 10.13.6 
 ======================================
 Confirmed to work flawlessly with 10.13.6
-At this point DSDT.dsl and SSDT-2-CB-01.dsl ACPI tables (GFX0->IGPU rename) were used. Other tables appearing here are not in use.
+At this point DSDT.dsl and SSDT-2-CB-01.dsl ACPI tables (GFX0->IGPU rename) were used. Other tables listed here are not in use.
 
 Notes
 =====
